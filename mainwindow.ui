@@ -186,6 +186,9 @@
      <property name="text">
       <string>Display log</string>
      </property>
+     <property name="icon">
+      <iconset theme="emblem-documents"/>
+     </property>
      <property name="autoDefault">
       <bool>false</bool>
      </property>

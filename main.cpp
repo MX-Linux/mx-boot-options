@@ -42,14 +42,20 @@ int main(int argc, char *argv[])
     appTran.load(QString("mx-boot-options_") + QLocale::system().name(), "/usr/share/mx-boot-options/locale");
     a.installTranslator(&appTran);
 
-//    if (getuid() == 0) {
+    if (getuid() == 0) {
+        if (system("mountpoint -q /live/aufs") == 0) {
+            QApplication::beep();
+            QMessageBox::critical(0, QString::null,
+                                  QApplication::tr("This programs is not meant to run in a live environment."));
+            return 1;
+        }
         MainWindow w;
         w.show();
         return a.exec();
-//    } else {
-//        QApplication::beep();
-//        QMessageBox::critical(0, QString::null,
-//                              QApplication::tr("You must run this program as root."));
-//        return 1;
-//    }
+    } else {
+        QApplication::beep();
+        QMessageBox::critical(0, QString::null,
+                              QApplication::tr("You must run this program as root."));
+        return 1;
+    }
 }

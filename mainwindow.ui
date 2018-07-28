@@ -20,7 +20,7 @@
       <string>Boot loader options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="4" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="label_bg_image">
         <property name="text">
          <string>Default background </string>
@@ -29,6 +29,9 @@
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_timeout">
+        <property name="toolTip">
+         <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
+        </property>
         <property name="text">
          <string>Menu timeout (sec)</string>
         </property>
@@ -44,10 +47,23 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="1" colspan="2">
+      <item row="0" column="1" alignment="Qt::AlignLeft">
+       <widget class="QSpinBox" name="spinBoxTimeout">
+        <property name="minimum">
+         <number>-1</number>
+        </property>
+        <property name="value">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2">
        <widget class="QPushButton" name="pb_filename">
         <property name="text">
          <string>Filename of background image</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -81,13 +97,6 @@
       <item row="1" column="2">
        <widget class="QComboBox" name="combo_menu_entry"/>
       </item>
-      <item row="0" column="1" alignment="Qt::AlignLeft">
-       <widget class="QSpinBox" name="spinBoxTimeout">
-        <property name="value">
-         <number>5</number>
-        </property>
-       </widget>
-      </item>
      </layout>
     </widget>
    </item>
@@ -119,7 +128,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Use Bootsplash (Plymouth)</string>
+         <string>Use bootsplash (Plymouth)</string>
         </property>
        </widget>
       </item>
@@ -163,6 +172,9 @@
        <widget class="QPushButton" name="pb_log">
         <property name="text">
          <string>Open Boot Log</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -308,10 +320,10 @@
         <string>Alt+N</string>
        </property>
        <property name="autoDefault">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="default">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -416,6 +428,22 @@
     <hint type="destinationlabel">
      <x>171</x>
      <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_lastbooted</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>combo_menu_entry</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>454</x>
+     <y>83</y>
     </hint>
    </hints>
   </connection>

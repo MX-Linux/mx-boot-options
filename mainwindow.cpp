@@ -37,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setup();
+    readGrubCfg();
+    readDefaultGrub();
 }
 
 MainWindow::~MainWindow()
@@ -53,6 +55,24 @@ void MainWindow::setup()
     this->adjustSize();
     ui->buttonCancel->setEnabled(true);
     ui->buttonApply->setEnabled(true);
+    ui->label_theme->setDisabled(true);
+    ui->combo_theme->setDisabled(true);
+}
+
+// find menuentry by id
+int MainWindow::findMenuEntryById(QString id)
+{
+    int count = 0;
+    foreach (QString line, grub_cfg) {
+        if (line.startsWith("menuentry ")) {
+            if(line.contains("--id " + id)) {
+                return count;
+            }
+            ++count;
+        }
+    }
+    return 0;
+
 }
 
 // cleanup environment when window is closed
@@ -67,6 +87,55 @@ QString MainWindow::getVersion(QString name)
 {
     Cmd cmd;
     return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
+}
+
+
+// Read and parse grub.cfg file
+void MainWindow::readGrubCfg()
+{
+    QFile file("/boot/grub/grub.cfg");
+    if(!file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Count not open file: " << file.fileName();
+        return;
+    }
+    QString line;
+    while (!file.atEnd()) {
+        line = file.readLine().trimmed();
+        grub_cfg << line;
+        if (line.startsWith("menuentry ")) {
+            ui->combo_menu_entry->addItem(line.section(QRegularExpression("['\"]"), 1, 1));
+        }
+    }
+    file.close();
+}
+
+// Read default grub config file
+void MainWindow::readDefaultGrub()
+{
+    QFile file("/etc/default/grub");
+    if(!file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Count not open file: " << file.fileName();
+        return;
+    }
+    QString line;
+    while (!file.atEnd()) {
+        line = file.readLine().trimmed();
+        default_grub << line;
+        if (line.startsWith("GRUB_DEFAULT=")) {
+            QString entry = line.section("=", 1, 1);
+            bool ok;
+            int number = entry.toInt(&ok);
+            if (ok) {
+                ui->combo_menu_entry->setCurrentIndex(number);
+            } else if (entry == "saved") {
+                ui->rb_lastbooted->setChecked(true);
+            } else if (entry.size() > 1) {  // if not saved but still long word assume it's a GRUB id
+                ui->combo_menu_entry->setCurrentIndex(findMenuEntryById(entry));
+            }
+        } else if (line.startsWith("GRUB_TIMEOUT=")) {
+            ui->spinBoxTimeout->setValue(line.section("=", 1, 1).toInt());
+        }
+    }
 }
 
 void MainWindow::cmdStart()

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>648</width>
-    <height>609</height>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -185,32 +185,6 @@
         </property>
         <property name="autoDefault">
          <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>Initializer</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QRadioButton" name="radioButton">
-        <property name="text">
-         <string>SysVinit (default)</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="radioButton_2">
-        <property name="text">
-         <string>systemd</string>
         </property>
        </widget>
       </item>

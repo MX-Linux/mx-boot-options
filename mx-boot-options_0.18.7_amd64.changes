@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Thu, 26 Jul 2018 12:43:48 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 0.18.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (0.18.7) mx; urgency=medium
+ .
+   * initial release
+Checksums-Sha1:
+ 07f9fb1c480d28b8826eddf7a8546b6d993a1f68 1155 mx-boot-options_0.18.7.dsc
+ 49ff11bafa83bb048f41591cbeff99d71f7ddc09 12520 mx-boot-options_0.18.7.tar.xz
+ ee8d7e0a748fe23708a7a9027bf2796567bbd5a8 414610 mx-boot-options-dbgsym_0.18.7_amd64.deb
+ 66b9a60e175fbfa87c7ef85a41178f5ad980dc20 11380 mx-boot-options_0.18.7_amd64.buildinfo
+ acdf6fd1d0626b0d05b46e7609f623f027cb122e 23848 mx-boot-options_0.18.7_amd64.deb
+Checksums-Sha256:
+ a866053ceadb0473e1717a65a651f700f8f24fca2d9912e5575b224cf4694c61 1155 mx-boot-options_0.18.7.dsc
+ 19861dec17cc87cd8cc6ac9157cfe050927f915384e717873e818b2b06e62920 12520 mx-boot-options_0.18.7.tar.xz
+ e4fa03635c04793f6fdc4e83885830013ad17dabf18aa461c1ef7d472aa74254 414610 mx-boot-options-dbgsym_0.18.7_amd64.deb
+ e95ecd903769cd0822438cdc55e79dad1a6e4aac110cc9426ed25bde0570bf14 11380 mx-boot-options_0.18.7_amd64.buildinfo
+ 4e0e97a6d9c8ce42e10e10a37c25027ee2b403a8c911cfc6cc620d2c02149250 23848 mx-boot-options_0.18.7_amd64.deb
+Files:
+ 2fed9a1f1b2138094e96e4a81738562b 1155 admin optional mx-boot-options_0.18.7.dsc
+ b508bb886867ad7f5fea6c56dee3e1d1 12520 admin optional mx-boot-options_0.18.7.tar.xz
+ 3dec1581f7d83fef9c3737c26f293c84 414610 debug optional mx-boot-options-dbgsym_0.18.7_amd64.deb
+ 6d362b3480baecbca0a216aafc02930b 11380 admin optional mx-boot-options_0.18.7_amd64.buildinfo
+ cf6f51418cbb2d61f8b0d65b6a2869a9 23848 admin optional mx-boot-options_0.18.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltb2CITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumKX9B/9G9T/4/9uRC1+NAZ2MftG0J5cpBjPd
+9QR82UiHHHQ5PmrI1ezsMhBvt4pejah3uFSvlTIJClAWBB9DjhdfopQnKyI7zISa
+L0oiCSvEv57PrbMmIAxb99TRRfVfzuLuDBEmRSF/XiIRyaBVRWGFnghT5HLrDih8
+bDcU5H/gfp0oVFrO1aArXkk8miWWBW8eJ7R0QDx09JsXTDPdrCYh8C81ovZIIu3e
+k5Uk9F9zLGChCkuCJIE/jH72uDZvkFt1VrQTNcLplPVTouTgJAqB7ViOw0rjh8hG
+G5bqe/P+7IjIeWRKfdfQxOcbLBS1DQfw+pNhxdS/OxcK9OUANYxsz/fa
+=hGyf
+-----END PGP SIGNATURE-----

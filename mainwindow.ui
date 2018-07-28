@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>784</width>
+    <width>648</width>
     <height>505</height>
    </rect>
   </property>
@@ -14,6 +14,161 @@
    <string>Program_Name</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBoxLoader">
+     <property name="title">
+      <string>Boot loader options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_bg_image">
+        <property name="text">
+         <string>Default background </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_timeout">
+        <property name="text">
+         <string>Menu timeout (sec)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="rb_predefined">
+        <property name="text">
+         <string>Predefined</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" colspan="2">
+       <widget class="QPushButton" name="pb_filename">
+        <property name="text">
+         <string>Filename of background image</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="1">
+       <widget class="QRadioButton" name="rb_lastbooted">
+        <property name="text">
+         <string>Last booted</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_default_entry">
+        <property name="text">
+         <string>Default entry</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QComboBox" name="combo_menu_entry"/>
+      </item>
+      <item row="0" column="1" alignment="Qt::AlignLeft">
+       <widget class="QSpinBox" name="spinBoxTimeout">
+        <property name="value">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxBootsplash">
+     <property name="title">
+      <string>Enable bootsplash</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="0" alignment="Qt::AlignRight">
+       <widget class="QLabel" name="label_theme">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Bootsplash theme</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="cb_bootsplash">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Use Bootsplash (Plymouth)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QComboBox" name="combo_theme"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxInfo">
+     <property name="title">
+      <string>Boot message options</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="rb_very_detailed_msg">
+        <property name="text">
+         <string>Very detailed messages</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rb_detailed_msg">
+        <property name="text">
+         <string>Detailed messages (default setting)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rb_limited_msg">
+        <property name="text">
+         <string>Limited messages</string>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QPushButton" name="pb_log">
+        <property name="text">
+         <string>Open Boot Log</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -194,7 +349,8 @@
         <string>Apply</string>
        </property>
        <property name="icon">
-        <iconset theme="dialog-ok"/>
+        <iconset theme="dialog-ok">
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string/>
@@ -228,6 +384,38 @@
     <hint type="destinationlabel">
      <x>388</x>
      <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cb_bootsplash</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>combo_theme</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>433</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cb_bootsplash</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>label_theme</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>171</x>
+     <y>247</y>
     </hint>
    </hints>
   </connection>

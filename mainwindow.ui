@@ -64,7 +64,7 @@
       <item row="3" column="1" colspan="2">
        <widget class="QPushButton" name="button_filename">
         <property name="text">
-         <string>Filename of background image</string>
+         <string/>
         </property>
         <property name="autoDefault">
          <bool>false</bool>

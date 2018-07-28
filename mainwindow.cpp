@@ -243,3 +243,13 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
     ui->rb_limited_msg->setVisible(!checked);
 }
+
+void MainWindow::on_button_filename_clicked()
+{
+    QFileDialog dialog;
+    QString selected = dialog.getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
+                                              "/usr/share/backgrounds/MXLinux/grub", tr("Images (*.png *.jpg *.jpeg *.tga)"));
+    if (selected != "") {
+        ui->button_filename->setText(selected);
+    }
+}

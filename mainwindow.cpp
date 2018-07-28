@@ -50,9 +50,30 @@ void MainWindow::setup()
     cmd = new Cmd(this);
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("MX Boot Options");
-    this->adjustSize();
     ui->buttonCancel->setEnabled(true);
     ui->buttonApply->setEnabled(true);
+    ui->label_theme->setDisabled(true);
+    ui->combo_theme->setDisabled(true);
+    readGrubCfg();
+    readDefaultGrub();
+    ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
+    this->adjustSize();
+}
+
+// find menuentry by id
+int MainWindow::findMenuEntryById(QString id)
+{
+    int count = 0;
+    foreach (QString line, grub_cfg) {
+        if (line.startsWith("menuentry ")) {
+            if(line.contains("--id " + id)) {
+                return count;
+            }
+            ++count;
+        }
+    }
+    return 0;
+
 }
 
 // cleanup environment when window is closed
@@ -67,6 +88,66 @@ QString MainWindow::getVersion(QString name)
 {
     Cmd cmd;
     return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
+}
+
+
+// Read and parse grub.cfg file
+void MainWindow::readGrubCfg()
+{
+    QFile file("/boot/grub/grub.cfg");
+    if(!file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Count not open file: " << file.fileName();
+        return;
+    }
+    QString line;
+    while (!file.atEnd()) {
+        line = file.readLine().trimmed();
+        grub_cfg << line;
+        if (line.startsWith("menuentry ")) {
+            ui->combo_menu_entry->addItem(line.section(QRegularExpression("['\"]"), 1, 1));
+        }
+    }
+    file.close();
+}
+
+// Read default grub config file
+void MainWindow::readDefaultGrub()
+{
+    QFile file("/etc/default/grub");
+    if(!file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Count not open file: " << file.fileName();
+        return;
+    }
+    QString line;
+    while (!file.atEnd()) {
+        line = file.readLine().trimmed();
+        default_grub << line;
+        if (line.startsWith("GRUB_DEFAULT=")) {
+            QString entry = line.section("=", 1, 1);
+            bool ok;
+            int number = entry.toInt(&ok);
+            if (ok) {
+                ui->combo_menu_entry->setCurrentIndex(number);
+            } else if (entry == "saved") {
+                ui->rb_lastbooted->setChecked(true);
+            } else if (entry.size() > 1) {  // if not saved but still long word assume it's a GRUB id
+                ui->combo_menu_entry->setCurrentIndex(findMenuEntryById(entry));
+            }
+        } else if (line.startsWith("GRUB_TIMEOUT=")) {
+            ui->spinBoxTimeout->setValue(line.section("=", 1, 1).toInt());
+        } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
+            ui->button_filename->setText(line.section("=", 1, 1).remove("\""));
+        } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
+            QString options = line.section("=", 1, 1).remove("\"");
+            if (options.contains("hush")) {
+                ui->rb_limited_msg->setChecked(true);
+            } else if (options.contains("quiet")) {
+                ui->rb_detailed_msg->setChecked(true);
+            } else {
+                ui->rb_very_detailed_msg->setChecked(true);
+            }
+        }
+    }
 }
 
 void MainWindow::cmdStart()
@@ -157,3 +238,18 @@ void MainWindow::on_buttonHelp_clicked()
     system(cmd.toUtf8());
 }
 
+
+void MainWindow::on_cb_bootsplash_clicked(bool checked)
+{
+    ui->rb_limited_msg->setVisible(!checked);
+}
+
+void MainWindow::on_button_filename_clicked()
+{
+    QFileDialog dialog;
+    QString selected = dialog.getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
+                                              "/usr/share/backgrounds/MXLinux/grub", tr("Images (*.png *.jpg *.jpeg *.tga)"));
+    if (selected != "") {
+        ui->button_filename->setText(selected);
+    }
+}

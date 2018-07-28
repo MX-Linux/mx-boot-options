@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Thu, 26 Jul 2018 12:43:48 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 0.18.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (0.18.7) mx; urgency=medium
+ .
+   * initial release
+Checksums-Sha1:
+ f3f9aaf9603bb699777f19595e6c621fbbe08d99 1155 mx-boot-options_0.18.7.dsc
+ db8307135ae69995386d72874d1440e1a02ad777 13352 mx-boot-options_0.18.7.tar.xz
+ dd6b694ab4af21a35bed54852ba64a9a92998b78 30768 mx-boot-options_0.18.7_amd64.deb
+Checksums-Sha256:
+ 1b8f13e38938999b0c3a775d285cbb4601de5215809186fec3bb9d305471c4fa 1155 mx-boot-options_0.18.7.dsc
+ 5e98f65dc6f873822e1d8c9ae6c6798dde3273526532c231c96dd5c6fdb9abeb 13352 mx-boot-options_0.18.7.tar.xz
+ 76bfa67c2f2d6ebba7b7d5db109caecc81fcce882162ffaacf02533a61653016 30768 mx-boot-options_0.18.7_amd64.deb
+Files:
+ 1c7ba8360bada1dda5d55465411cd2b0 1155 admin optional mx-boot-options_0.18.7.dsc
+ e0d32407a45623790f4f021a37455a78 13352 admin optional mx-boot-options_0.18.7.tar.xz
+ f5565f2a26491434f5ddc14ae574d485 30768 admin optional mx-boot-options_0.18.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltcjJATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHr6B/9kBNGvMkfkyOpj+0xBEVa4gA21ukZa
+cPICQKErKJHVOrE+GEC6mLsIEMESqDvZhKpXQZcnMzWXDfHaPpFMaetxS9BbIfe/
+h/c/l3DILbNNeHLg5p+Ckbm+9/FcWsQgf5SIWn8oIrBsg1rTYAyRiwUsXZnV17J2
+10LNb65X0O3ZBY8tz6PezuXXmZO+WXF2XQo5a2JzpKP9HeauJHGaMbkjrf6NQ2zm
+64WC2ylsO6PaqBrobhKxAkjE4w0Jt50FVz0nL5G3yY5hvHNMkz2lWoSuSL/zVKpj
+LtNVtbdEJNCJzjxY+lulPJp3tEUmMgoNyCn47MdhUBtu1CR/UJnHhW0W
+=Beu1
+-----END PGP SIGNATURE-----

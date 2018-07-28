@@ -6,14 +6,191 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>784</width>
-    <height>505</height>
+    <width>648</width>
+    <height>511</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Program_Name</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="boot">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBoxOptions">
+     <property name="title">
+      <string>Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_bg_image">
+        <property name="text">
+         <string>Default background </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_timeout">
+        <property name="toolTip">
+         <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
+        </property>
+        <property name="text">
+         <string>Menu timeout (sec)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="rb_predefined">
+        <property name="text">
+         <string>Predefined</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" alignment="Qt::AlignLeft">
+       <widget class="QSpinBox" name="spinBoxTimeout">
+        <property name="minimum">
+         <number>-1</number>
+        </property>
+        <property name="value">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="2">
+       <widget class="QPushButton" name="button_filename">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="1">
+       <widget class="QRadioButton" name="rb_lastbooted">
+        <property name="text">
+         <string>Last booted</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_default_entry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Default OS</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QComboBox" name="combo_menu_entry"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxSplash">
+     <property name="title">
+      <string>Splash</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="cb_bootsplash">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Enable</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QComboBox" name="combo_theme"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_theme">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Theme</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxMessages">
+     <property name="title">
+      <string>Messages</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="rb_very_detailed_msg">
+        <property name="text">
+         <string>Very detailed</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rb_detailed_msg">
+        <property name="text">
+         <string>Detailed (default setting)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rb_limited_msg">
+        <property name="text">
+         <string>Limited</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pb_log">
+     <property name="text">
+      <string>Display log</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
    <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -153,10 +330,10 @@
         <string>Alt+N</string>
        </property>
        <property name="autoDefault">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="default">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -194,7 +371,8 @@
         <string>Apply</string>
        </property>
        <property name="icon">
-        <iconset theme="dialog-ok"/>
+        <iconset theme="dialog-ok">
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="shortcut">
         <string/>
@@ -228,6 +406,54 @@
     <hint type="destinationlabel">
      <x>388</x>
      <y>272</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cb_bootsplash</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>combo_theme</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>433</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cb_bootsplash</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>label_theme</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>171</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_lastbooted</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>combo_menu_entry</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>454</x>
+     <y>83</y>
     </hint>
    </hints>
   </connection>

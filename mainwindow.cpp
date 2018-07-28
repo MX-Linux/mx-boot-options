@@ -139,6 +139,15 @@ void MainWindow::readDefaultGrub()
             ui->spinBoxTimeout->setValue(line.section("=", 1, 1).toInt());
         } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
             ui->button_filename->setText(line.section("=", 1, 1).remove("\""));
+        } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
+            QString options = line.section("=", 1, 1).remove("\"");
+            if (options.contains("hush")) {
+                ui->rb_limited_msg->setChecked(true);
+            } else if (options.contains("quiet")) {
+                ui->rb_detailed_msg->setChecked(true);
+            } else {
+                ui->rb_very_detailed_msg->setChecked(true);
+            }
         }
     }
 }

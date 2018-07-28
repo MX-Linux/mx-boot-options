@@ -37,8 +37,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setup();
-    readGrubCfg();
-    readDefaultGrub();
 }
 
 MainWindow::~MainWindow()
@@ -52,11 +50,16 @@ void MainWindow::setup()
     cmd = new Cmd(this);
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("MX Boot Options");
-    this->adjustSize();
     ui->buttonCancel->setEnabled(true);
     ui->buttonApply->setEnabled(true);
     ui->label_theme->setDisabled(true);
     ui->combo_theme->setDisabled(true);
+    readGrubCfg();
+    readDefaultGrub();
+    if (ui->cb_bootsplash->isChecked()) {
+        ui->groupBoxMessages->setVisible(false);
+    }
+    this->adjustSize();
 }
 
 // find menuentry by id
@@ -228,3 +231,8 @@ void MainWindow::on_buttonHelp_clicked()
     system(cmd.toUtf8());
 }
 
+
+void MainWindow::on_cb_bootsplash_clicked(bool checked)
+{
+    ui->groupBoxMessages->setVisible(!checked);
+}

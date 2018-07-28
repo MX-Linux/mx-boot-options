@@ -19,7 +19,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QGroupBox" name="groupBoxLoader">
+    <widget class="QGroupBox" name="groupBoxOptions">
      <property name="title">
       <string>Options</string>
      </property>
@@ -111,7 +111,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBoxBootsplash">
+    <widget class="QGroupBox" name="groupBoxSplash">
      <property name="title">
       <string>Splash</string>
      </property>
@@ -149,7 +149,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBoxInfo">
+    <widget class="QGroupBox" name="groupBoxMessages">
      <property name="title">
       <string>Messages</string>
      </property>
@@ -178,17 +178,17 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QPushButton" name="pb_log">
-        <property name="text">
-         <string>Display log</string>
-        </property>
-        <property name="autoDefault">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
      </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pb_log">
+     <property name="text">
+      <string>Display log</string>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
     </widget>
    </item>
    <item>

@@ -60,6 +60,8 @@ private slots:
     void on_buttonAbout_clicked();
     void on_buttonHelp_clicked();
 
+    void on_cb_bootsplash_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
     Cmd *cmd;

@@ -56,6 +56,7 @@ void MainWindow::setup()
     ui->combo_theme->setDisabled(true);
     readGrubCfg();
     readDefaultGrub();
+    readKernelOpts();
     ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
     this->adjustSize();
 }
@@ -137,17 +138,27 @@ void MainWindow::readDefaultGrub()
             ui->spinBoxTimeout->setValue(line.section("=", 1, 1).toInt());
         } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
             ui->button_filename->setText(line.section("=", 1, 1).remove("\""));
-        } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
-            QString options = line.section("=", 1, 1).remove("\"");
-            if (options.contains("hush")) {
-                ui->rb_limited_msg->setChecked(true);
-            } else if (options.contains("quiet")) {
-                ui->rb_detailed_msg->setChecked(true);
-            } else {
-                ui->rb_very_detailed_msg->setChecked(true);
-            }
         }
     }
+}
+
+// Read kernel line and options from /proc/cmdline
+void MainWindow::readKernelOpts()
+{
+    QFile file("/proc/cmdline");
+    if(!file.open(QIODevice::ReadOnly)) {
+        qDebug() << "Count not open file: " << file.fileName();
+        return;
+    }
+    kernel_options = file.readAll();
+    if (kernel_options.contains("hush")) {
+        ui->rb_limited_msg->setChecked(true);
+    } else if (kernel_options.contains("quiet")) {
+        ui->rb_detailed_msg->setChecked(true);
+    } else {
+        ui->rb_very_detailed_msg->setChecked(true);
+    }
+    ui->cb_bootsplash->setChecked(kernel_options.contains("splash"));
 }
 
 void MainWindow::cmdStart()
@@ -246,8 +257,7 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
 
 void MainWindow::on_button_filename_clicked()
 {
-    QFileDialog dialog;
-    QString selected = dialog.getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
+    QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
                                               "/usr/share/backgrounds/MXLinux/grub", tr("Images (*.png *.jpg *.jpeg *.tga)"));
     if (selected != "") {
         ui->button_filename->setText(selected);

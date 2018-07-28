@@ -46,6 +46,7 @@ public:
 
     void readGrubCfg();
     void readDefaultGrub();
+    void readKernelOpts();
     void setup();
     int findMenuEntryById(QString id);
 
@@ -59,9 +60,7 @@ private slots:
     void on_buttonApply_clicked();
     void on_buttonAbout_clicked();
     void on_buttonHelp_clicked();
-
     void on_cb_bootsplash_clicked(bool checked);
-
     void on_button_filename_clicked();
 
 private:
@@ -69,6 +68,7 @@ private:
     Cmd *cmd;
     QStringList grub_cfg;
     QStringList default_grub;
+    QString kernel_options;
 };
 
 

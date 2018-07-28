@@ -7,17 +7,21 @@
     <x>0</x>
     <y>0</y>
     <width>648</width>
-    <height>505</height>
+    <height>609</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Program_Name</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="boot">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="groupBoxLoader">
      <property name="title">
-      <string>Boot loader options</string>
+      <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="3" column="0">
@@ -58,7 +62,7 @@
        </widget>
       </item>
       <item row="3" column="1" colspan="2">
-       <widget class="QPushButton" name="pb_filename">
+       <widget class="QPushButton" name="button_filename">
         <property name="text">
          <string>Filename of background image</string>
         </property>
@@ -89,8 +93,14 @@
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_default_entry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>Default entry</string>
+         <string>Default OS</string>
         </property>
        </widget>
       </item>
@@ -103,10 +113,26 @@
    <item>
     <widget class="QGroupBox" name="groupBoxBootsplash">
      <property name="title">
-      <string>Enable bootsplash</string>
+      <string>Splash</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="1" column="0" alignment="Qt::AlignRight">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="cb_bootsplash">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Enable</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QComboBox" name="combo_theme"/>
+      </item>
+      <item row="1" column="1">
        <widget class="QLabel" name="label_theme">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -115,25 +141,9 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Bootsplash theme</string>
+         <string>Theme</string>
         </property>
        </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="cb_bootsplash">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Use bootsplash (Plymouth)</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" colspan="2">
-       <widget class="QComboBox" name="combo_theme"/>
       </item>
      </layout>
     </widget>
@@ -141,20 +151,20 @@
    <item>
     <widget class="QGroupBox" name="groupBoxInfo">
      <property name="title">
-      <string>Boot message options</string>
+      <string>Messages</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QRadioButton" name="rb_very_detailed_msg">
         <property name="text">
-         <string>Very detailed messages</string>
+         <string>Very detailed</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QRadioButton" name="rb_detailed_msg">
         <property name="text">
-         <string>Detailed messages (default setting)</string>
+         <string>Detailed (default setting)</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -164,17 +174,43 @@
       <item>
        <widget class="QRadioButton" name="rb_limited_msg">
         <property name="text">
-         <string>Limited messages</string>
+         <string>Limited</string>
         </property>
        </widget>
       </item>
-      <item alignment="Qt::AlignHCenter">
+      <item>
        <widget class="QPushButton" name="pb_log">
         <property name="text">
-         <string>Open Boot Log</string>
+         <string>Display log</string>
         </property>
         <property name="autoDefault">
          <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Initializer</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QRadioButton" name="radioButton">
+        <property name="text">
+         <string>SysVinit (default)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_2">
+        <property name="text">
+         <string>systemd</string>
         </property>
        </widget>
       </item>

@@ -134,6 +134,8 @@ void MainWindow::readDefaultGrub()
             }
         } else if (line.startsWith("GRUB_TIMEOUT=")) {
             ui->spinBoxTimeout->setValue(line.section("=", 1, 1).toInt());
+        } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
+            ui->button_filename->setText(line.section("=", 1, 1).remove("\""));
         }
     }
 }

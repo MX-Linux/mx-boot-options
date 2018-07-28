@@ -56,9 +56,7 @@ void MainWindow::setup()
     ui->combo_theme->setDisabled(true);
     readGrubCfg();
     readDefaultGrub();
-    if (ui->cb_bootsplash->isChecked()) {
-        ui->groupBoxMessages->setVisible(false);
-    }
+    ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
     this->adjustSize();
 }
 
@@ -243,5 +241,5 @@ void MainWindow::on_buttonHelp_clicked()
 
 void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
-    ui->groupBoxMessages->setVisible(!checked);
+    ui->rb_limited_msg->setVisible(!checked);
 }

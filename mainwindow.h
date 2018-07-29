@@ -26,6 +26,7 @@
 #define MAINWINDOW_H
 
 #include <QMessageBox>
+#include <QProgressBar>
 
 #include <cmd.h>
 
@@ -49,12 +50,17 @@ public:
     void disableGrubLine(QString item);
     void remGrubArg(QString key, QString item);
     void replaceGrubArg(QString key, QString item);
+    void loadPlymouthThemes();
     void readGrubCfg();
     void readDefaultGrub();
     void readKernelOpts();
     void setup();
     void writeDefaultGrub();
+
+    bool checkInstalled(QString package);
+    bool installSplash();
     int findMenuEntryById(QString id);
+
 
 public slots:
 
@@ -62,6 +68,7 @@ private slots:
     void cleanup();
     void cmdStart();
     void cmdDone();
+    void procTime(int counter, int);
     void setConnections();
     void on_buttonApply_clicked();
     void on_buttonAbout_clicked();
@@ -77,9 +84,11 @@ private slots:
     void on_combo_menu_entry_currentIndexChanged(int index);
     void on_cb_bootsplash_toggled(bool checked);
     void on_buttonLog_clicked();
+    void on_combo_theme_currentIndexChanged(int index);
 
 protected:
     void keyPressEvent(QKeyEvent* event);
+    QProgressBar *bar;
 
 private:
     Ui::MainWindow *ui;

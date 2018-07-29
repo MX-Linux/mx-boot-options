@@ -28,6 +28,7 @@
 #include <QFileDialog>
 #include <QKeyEvent>
 #include <QTextEdit>
+#include <QProgressDialog>
 
 #include <QDebug>
 
@@ -43,6 +44,19 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+// Return the name of the defualt theme
+void MainWindow::loadPlymouthThemes()
+{
+    // load combobox
+    ui->combo_theme->addItems(cmd->getOutput("plymouth-set-default-theme -l").split("\n"));
+
+    // set current theme
+    QString current_theme = cmd->getOutput("plymouth-set-default-theme");
+    if (current_theme != "") {
+        ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
+    }
 }
 
 // Process keystrokes
@@ -63,6 +77,8 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 void MainWindow::setup()
 {
     cmd = new Cmd(this);
+    bar = 0;
+
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("MX Boot Options");
     ui->buttonCancel->setEnabled(true);
@@ -81,6 +97,54 @@ void MainWindow::setup()
 
     ui->buttonApply->setDisabled(true);
     this->adjustSize();
+}
+
+
+// Checks if package is installed
+bool MainWindow::checkInstalled(QString package)
+{
+    //qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    QString cmdstr = QString("dpkg -s %1 | grep Status").arg(package);
+    if (cmd->getOutput(cmdstr) == "Status: install ok installed") {
+        return true;
+    }
+    return false;
+}
+
+
+// Install Bootsplash
+bool MainWindow::installSplash()
+{
+    QProgressDialog *progress = new QProgressDialog(this);
+    bar = new QProgressBar(progress);
+
+    QString packages = "plymouth plymouth-x11 plymouth-themes";
+    progress->setWindowModality(Qt::WindowModal);
+    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
+    progress->setCancelButton(0);
+    progress->setWindowTitle(tr("Installing bootsplash, please wait"));
+    progress->setBar(bar);
+    bar->setTextVisible(false);
+    progress->resize(500, progress->height());
+    progress->show();
+
+    setConnections();
+    connect(cmd, &Cmd::runTime, this, &MainWindow::procTime);
+
+    progress->setLabelText(tr("Updating sources"));
+    cmd->run("apt-get update");
+    progress->setLabelText(tr("Installing") + " " + packages);
+    cmd->run("apt-get install -y " + packages);
+
+    if (cmd->getExitCode() != 0) {
+        progress->close();
+        QMessageBox::critical(this, tr("Error"), tr("Could not install the bootsplash."));
+        ui->cb_bootsplash->setChecked(false);
+        return false;
+    }
+
+    progress->close();
+    return true;
 }
 
 
@@ -302,6 +366,19 @@ void MainWindow::cmdStart()
 void MainWindow::cmdDone()
 {
     setCursor(QCursor(Qt::ArrowCursor));
+    if (bar) {
+        bar->setValue(100);
+    }
+}
+
+void MainWindow::procTime(int counter, int)
+{
+    if (bar != 0) {
+        if (bar->value() == 100) {
+            bar->reset();
+        }
+        bar->setValue(counter);
+    }
 }
 
 // set proc and timer connections
@@ -330,8 +407,14 @@ void MainWindow::on_buttonApply_clicked()
     if (splash_changed) {
         if (ui->cb_bootsplash->isChecked()) {
             addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
+            if (!ui->combo_theme->currentText().isEmpty()) {
+                cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
+
+            }
+            cmd->run("update-rc.d bootlogd disable");
         } else {
             remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
+            cmd->run("update-rc.d bootlogd enable");
         }
     }
     if (messages_changed) {
@@ -422,9 +505,17 @@ void MainWindow::on_buttonHelp_clicked()
 
 void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
+    splash_changed = true;
+    ui->buttonApply->setEnabled(true);
     ui->rb_limited_msg->setVisible(!checked);
     splash_changed = true;
     ui->buttonApply->setEnabled(true);
+    if (checked) {
+        if (!checkInstalled("plymouth") || !checkInstalled("plymouth-x11") || !checkInstalled("plymouth-themes")) {
+            installSplash();
+        }
+        loadPlymouthThemes();
+    }
 }
 
 void MainWindow::on_button_filename_clicked()
@@ -492,12 +583,12 @@ void MainWindow::on_combo_menu_entry_currentIndexChanged(int)
 }
 
 
+// Toggled either by user or when reading the status of bootsplash
 void MainWindow::on_cb_bootsplash_toggled(bool checked)
 {
-      if (checked) {
-          splash_changed = true;
-          ui->buttonApply->setEnabled(true);
-      }
+    ui->combo_theme->setEnabled(checked);
+    ui->label_theme->setEnabled(checked);
+    loadPlymouthThemes();
 }
 
 void MainWindow::on_buttonLog_clicked()
@@ -510,4 +601,10 @@ void MainWindow::on_buttonLog_clicked()
     }
     QString sed = "sed '/^FOOTER/d; s/\\^\\[\\[\\S*\\?0c.//g; s/\\^\\[\\[\\S*\\?0c//g; s/\\^\\[\\[\\S*//g'";  // remove formatting escape char
     system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " /var/log/boot; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
+}
+
+void MainWindow::on_combo_theme_currentIndexChanged(int)
+{
+    splash_changed = true;
+    ui->buttonApply->setEnabled(true);
 }

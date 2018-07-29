@@ -109,7 +109,7 @@ QString MainWindow::getVersion(QString name)
 }
 
 // Add item to the key in /etc/default/grub
-void MainWindow::addDefaultArg(QString key, QString item)
+void MainWindow::addGrubArg(QString key, QString item)
 {
     QStringList new_list;
     foreach (QString line, default_grub) {
@@ -133,13 +133,67 @@ void MainWindow::addDefaultArg(QString key, QString item)
     default_grub = new_list;
 }
 
+// uncomment or add line in /etc/default/grub
+void MainWindow::enableGrubLine(QString item)
+{
+    bool found = false;
+    QStringList new_list;
+    foreach (QString line, default_grub) {
+        if (line == item) {
+            qDebug() << "found item";
+            found = true;
+        } else if (line.contains(QRegularExpression("^#.*" + item))) { // if commented out
+            qDebug() << "found commented item";
+            found = true;
+            line = item;
+        }
+        new_list << line;
+    }
+    if (found) {
+        default_grub = new_list;
+    } else {
+        qDebug() << "item not found, adding";
+        default_grub << "\n" << item << "\n";
+    }
+}
+
+// comment out line in /etc/default/grub
+void MainWindow::disableGrubLine(QString item)
+{
+    QStringList new_list;
+    foreach (QString line, default_grub) {
+        if (line == item) {
+            line = "#" + item;
+        }
+        new_list << line;
+    }
+    default_grub = new_list;
+}
+
 // Remove itme from key in /etc/default/grub
-void MainWindow::remDefaultArg(QString key, QString item)
+void MainWindow::remGrubArg(QString key, QString item)
 {
     QStringList new_list;
     foreach (QString line, default_grub) {
         if (line.contains(key)) { // find key
             line.remove(QRegularExpression("\\s*" + item + "\\s*"));
+        }
+        new_list << line;
+    }
+    default_grub = new_list;
+}
+
+// Replace the argument in /etc/default/grub
+void MainWindow::replaceGrubArg(QString key, QString item)
+{
+    QStringList new_list;
+    foreach (QString line, default_grub) {
+        if (line.contains(key)) { // find key
+            if (line.endsWith("\"")) { // if quoted string
+                line = key + "=\"" + item + "\"";
+            } else {  // for unquoted string
+                line = key + "=" + item;
+            }
         }
         new_list << line;
     }
@@ -242,25 +296,36 @@ void MainWindow::setConnections()
 void MainWindow::on_buttonApply_clicked()
 {
     if (options_changed) {
-
+        replaceGrubArg("GRUB_TIMEOUT", QString::number(ui->spinBoxTimeout->value()));
+        replaceGrubArg("export GRUB_MENU_PICTURE", ui->button_filename->text());
+        if (ui->rb_lastbooted->isChecked()) {
+            replaceGrubArg("GRUB_DEFAULT", "saved");
+            enableGrubLine("GRUB_SAVEDEFAULT=true");
+        } else if (ui->rb_predefined->isChecked()) {
+            replaceGrubArg("GRUB_DEFAULT", QString::number(ui->combo_menu_entry->currentIndex()));
+            disableGrubLine("GRUB_SAVEDEFAULT=true");
+        }
     }
     if (splash_changed) {
+
 
     }
     if (messages_changed) {
         if (ui->rb_detailed_msg->isChecked()) { // remove "hush", add "quiet" if not present
-            addDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
-            remDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
+            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
+            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
         } else if (ui->rb_limited_msg->isChecked()) { // add "quiet" and "hush" to /boot/default/grub
-            addDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
-            addDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
+            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
+            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
         } else if (ui->rb_very_detailed_msg->isChecked()) { // remove "hush" and/or "quiet"
-            remDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
-            remDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
+            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
+            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
         }
     }
     if (options_changed || splash_changed || messages_changed) {
         writeDefaultGrub();
+        setConnections();
+        cmd->run("update-grub");
     }
     ui->buttonApply->setDisabled(true);
 }
@@ -412,7 +477,9 @@ void MainWindow::on_buttonLog_clicked()
 {
     QString location = "/var/log/boot";
     if (kernel_options.contains("hush")) {
-      location = "/run/rc.log";
+        location = "/run/rc.log";
+    } else if (kernel_options.contains("splash")) {
+        location = "/var/log/boot.log";
     }
     QString sed = "sed '/^FOOTER/d; s/\\^\\[\\[\\S*\\?0c.//g; s/\\^\\[\\[\\S*\\?0c//g; s/\\^\\[\\[\\S*//g'";  // remove formatting escape char
     system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " /var/log/boot; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");

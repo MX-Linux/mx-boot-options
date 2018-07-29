@@ -44,8 +44,11 @@ public:
 
     QString getVersion(QString name);
 
-    void addDefaultArg(QString key, QString item);
-    void remDefaultArg(QString key, QString item);
+    void addGrubArg(QString key, QString item);
+    void enableGrubLine(QString item);
+    void disableGrubLine(QString item);
+    void remGrubArg(QString key, QString item);
+    void replaceGrubArg(QString key, QString item);
     void readGrubCfg();
     void readDefaultGrub();
     void readKernelOpts();

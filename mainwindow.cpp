@@ -47,7 +47,7 @@ MainWindow::~MainWindow()
 }
 
 // Return the name of the defualt theme
-void MainWindow::loadPlymouthThemes()
+void MainWindow::loadPlymouthThemes() const
 {
     // load combobox
     ui->combo_theme->addItems(cmd->getOutput("plymouth-set-default-theme -l").split("\n"));
@@ -101,7 +101,7 @@ void MainWindow::setup()
 
 
 // Checks if package is installed
-bool MainWindow::checkInstalled(QString package)
+bool MainWindow::checkInstalled(const QString &package) const
 {
     //qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
     QString cmdstr = QString("dpkg -s %1 | grep Status").arg(package);
@@ -149,7 +149,7 @@ bool MainWindow::installSplash()
 
 
 // Write new config in /etc/default/grup
-void MainWindow::writeDefaultGrub()
+void MainWindow::writeDefaultGrub() const
 {
     QFile file("/etc/default/grub");
     if(!file.open(QIODevice::WriteOnly)) {
@@ -164,7 +164,7 @@ void MainWindow::writeDefaultGrub()
 }
 
 // find menuentry by id
-int MainWindow::findMenuEntryById(QString id)
+int MainWindow::findMenuEntryById(const QString &id) const
 {
     int count = 0;
     foreach (QString line, grub_cfg) {
@@ -176,7 +176,6 @@ int MainWindow::findMenuEntryById(QString id)
         }
     }
     return 0;
-
 }
 
 // cleanup environment when window is closed
@@ -187,14 +186,14 @@ void MainWindow::cleanup()
 
 
 // Get version of the program
-QString MainWindow::getVersion(QString name)
+QString MainWindow::getVersion(QString name) const
 {
     Cmd cmd;
     return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
 }
 
 // Add item to the key in /etc/default/grub
-void MainWindow::addGrubArg(QString key, QString item)
+void MainWindow::addGrubArg(const QString &key, const QString &item)
 {
     QStringList new_list;
     foreach (QString line, default_grub) {
@@ -219,7 +218,7 @@ void MainWindow::addGrubArg(QString key, QString item)
 }
 
 // uncomment or add line in /etc/default/grub
-void MainWindow::enableGrubLine(QString item)
+void MainWindow::enableGrubLine(const QString &item)
 {
     bool found = false;
     QStringList new_list;
@@ -243,7 +242,7 @@ void MainWindow::enableGrubLine(QString item)
 }
 
 // comment out line in /etc/default/grub
-void MainWindow::disableGrubLine(QString item)
+void MainWindow::disableGrubLine(const QString &item)
 {
     QStringList new_list;
     foreach (QString line, default_grub) {
@@ -256,7 +255,7 @@ void MainWindow::disableGrubLine(QString item)
 }
 
 // Remove itme from key in /etc/default/grub
-void MainWindow::remGrubArg(QString key, QString item)
+void MainWindow::remGrubArg(const QString &key, const QString &item)
 {
     QStringList new_list;
     foreach (QString line, default_grub) {
@@ -269,7 +268,7 @@ void MainWindow::remGrubArg(QString key, QString item)
 }
 
 // Replace the argument in /etc/default/grub
-void MainWindow::replaceGrubArg(QString key, QString item)
+void MainWindow::replaceGrubArg(const QString &key, const QString &item)
 {
     QStringList new_list;
     foreach (QString line, default_grub) {

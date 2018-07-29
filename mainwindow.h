@@ -43,23 +43,23 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    QString getVersion(QString name);
+    QString getVersion(QString name) const;
 
-    void addGrubArg(QString key, QString item);
-    void enableGrubLine(QString item);
-    void disableGrubLine(QString item);
-    void remGrubArg(QString key, QString item);
-    void replaceGrubArg(QString key, QString item);
-    void loadPlymouthThemes();
+    void addGrubArg(const QString &key, const QString &item);
+    void enableGrubLine(const QString &item);
+    void disableGrubLine(const QString &item);
+    void remGrubArg(const QString &key, const QString &item);
+    void replaceGrubArg(const QString &key, const QString &item);
+    void loadPlymouthThemes() const;
     void readGrubCfg();
     void readDefaultGrub();
     void readKernelOpts();
     void setup();
-    void writeDefaultGrub();
+    void writeDefaultGrub() const;
 
-    bool checkInstalled(QString package);
+    bool checkInstalled(const QString &package) const;
     bool installSplash();
-    int findMenuEntryById(QString id);
+    int findMenuEntryById(const QString &id) const;
 
 
 public slots:

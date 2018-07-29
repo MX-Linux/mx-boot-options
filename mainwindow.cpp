@@ -58,7 +58,24 @@ void MainWindow::setup()
     readDefaultGrub();
     readKernelOpts();
     ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
+    ui->buttonApply->setDisabled(true);
     this->adjustSize();
+}
+
+
+// Write new config in /etc/default/grup
+void MainWindow::writeDefaultGrub()
+{
+    QFile file("/etc/default/grub");
+    if(!file.open(QIODevice::WriteOnly)) {
+        qDebug() << "Count not open file: " << file.fileName();
+        return;
+    }
+    QTextStream stream(&file);
+    foreach (const QString &line, default_grub) {
+        stream << line << "\n";
+    }
+    file.close();
 }
 
 // find menuentry by id
@@ -91,6 +108,43 @@ QString MainWindow::getVersion(QString name)
     return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
 }
 
+// Add item to the key in /etc/default/grub
+void MainWindow::addDefaultArg(QString key, QString item)
+{
+    QStringList new_list;
+    foreach (QString line, default_grub) {
+        if (line.contains(key)) {               // find key
+            if (line.contains(item)) {          // return if already has the item
+                return;
+            } else if (line.endsWith("=")) {    // empty line terminated in equal
+                line.append(item);
+            } else if (line.endsWith("\"\"")) { // line that ends with a double quote
+                line.chop(1); // chop last quote
+                line.append(item).append("\"");
+            } else if (line.endsWith("\"")) {   // line ends with one quote (has other elements
+                line.chop(1); // chop last quote
+                line.append(" ").append(item).append("\"");
+            } else {                            // line ends with another item
+                line.append(" ").append(item);
+            }
+        }
+        new_list << line;
+    }
+    default_grub = new_list;
+}
+
+// Remove itme from key in /etc/default/grub
+void MainWindow::remDefaultArg(QString key, QString item)
+{
+    QStringList new_list;
+    foreach (QString line, default_grub) {
+        if (line.contains(key)) { // find key
+            line.remove(QRegularExpression("\\s*" + item + "\\s*"));
+        }
+        new_list << line;
+    }
+    default_grub = new_list;
+}
 
 // Read and parse grub.cfg file
 void MainWindow::readGrubCfg()
@@ -138,7 +192,18 @@ void MainWindow::readDefaultGrub()
             ui->spinBoxTimeout->setValue(line.section("=", 1, 1).toInt());
         } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
             ui->button_filename->setText(line.section("=", 1, 1).remove("\""));
+        } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
+            QString entry = line.section("=", 1, 1);
+            if (entry.contains("hush")) {
+                ui->rb_limited_msg->setChecked(true);
+            } else if (entry.contains("quiet")) {
+                ui->rb_detailed_msg->setChecked(true);
+            } else {
+                ui->rb_very_detailed_msg->setChecked(true);
+            }
+            ui->cb_bootsplash->setChecked(entry.contains("splash"));
         }
+
     }
 }
 
@@ -151,14 +216,6 @@ void MainWindow::readKernelOpts()
         return;
     }
     kernel_options = file.readAll();
-    if (kernel_options.contains("hush")) {
-        ui->rb_limited_msg->setChecked(true);
-    } else if (kernel_options.contains("quiet")) {
-        ui->rb_detailed_msg->setChecked(true);
-    } else {
-        ui->rb_very_detailed_msg->setChecked(true);
-    }
-    ui->cb_bootsplash->setChecked(kernel_options.contains("splash"));
 }
 
 void MainWindow::cmdStart()
@@ -184,7 +241,28 @@ void MainWindow::setConnections()
 // Next button clicked
 void MainWindow::on_buttonApply_clicked()
 {
+    if (options_changed) {
 
+    }
+    if (splash_changed) {
+
+    }
+    if (messages_changed) {
+        if (ui->rb_detailed_msg->isChecked()) { // remove "hush", add "quiet" if not present
+            addDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
+            remDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
+        } else if (ui->rb_limited_msg->isChecked()) { // add "quiet" and "hush" to /boot/default/grub
+            addDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
+            addDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
+        } else if (ui->rb_very_detailed_msg->isChecked()) { // remove "hush" and/or "quiet"
+            remDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
+            remDefaultArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
+        }
+    }
+    if (options_changed || splash_changed || messages_changed) {
+        writeDefaultGrub();
+    }
+    ui->buttonApply->setDisabled(true);
 }
 
 
@@ -194,7 +272,7 @@ void MainWindow::on_buttonAbout_clicked()
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About") + " MX Boot Options", "<p align=\"center\"><b><h2>MX Boot Options</h2></b></p><p align=\"center\">" +
                        tr("Version: ") + getVersion("mx-boot-options") + "</p><p align=\"center\"><h3>" +
-                       tr("Description goes here") +
+                       tr("Program for selecting common start-up choices") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>");
     QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
@@ -237,7 +315,7 @@ void MainWindow::on_buttonAbout_clicked()
 // Help button clicked
 void MainWindow::on_buttonHelp_clicked()
 {
-    QString url = "google.com";
+    QString url = "https://mxlinux.org/wiki/help-files/help-boot-options";
     QString exec = "xdg-open";
     if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
         exec = "mx-viewer";
@@ -253,6 +331,8 @@ void MainWindow::on_buttonHelp_clicked()
 void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
     ui->rb_limited_msg->setVisible(!checked);
+    splash_changed = true;
+    ui->buttonApply->setEnabled(true);
 }
 
 void MainWindow::on_button_filename_clicked()
@@ -261,5 +341,79 @@ void MainWindow::on_button_filename_clicked()
                                               "/usr/share/backgrounds/MXLinux/grub", tr("Images (*.png *.jpg *.jpeg *.tga)"));
     if (selected != "") {
         ui->button_filename->setText(selected);
+        options_changed = true;
+        ui->buttonApply->setEnabled(true);
     }
+}
+
+
+void MainWindow::on_rb_detailed_msg_toggled(bool checked)
+{
+    if (checked) {
+        messages_changed = true;
+        ui->buttonApply->setEnabled(true);
+    }
+}
+
+void MainWindow::on_rb_very_detailed_msg_toggled(bool checked)
+{
+    if (checked) {
+        messages_changed = true;
+        ui->buttonApply->setEnabled(true);
+    }
+}
+
+void MainWindow::on_rb_limited_msg_toggled(bool checked)
+{
+    if (checked) {
+        messages_changed = true;
+        ui->buttonApply->setEnabled(true);
+    }
+}
+
+void MainWindow::on_rb_predefined_toggled(bool checked)
+{
+    if (checked) {
+        options_changed = true;
+        ui->buttonApply->setEnabled(true);
+    }
+}
+
+void MainWindow::on_rb_lastbooted_toggled(bool checked)
+{
+    if (checked) {
+        options_changed = true;
+        ui->buttonApply->setEnabled(true);
+    }
+}
+
+void MainWindow::on_spinBoxTimeout_valueChanged(int)
+{
+    options_changed = true;
+    ui->buttonApply->setEnabled(true);
+}
+
+void MainWindow::on_combo_menu_entry_currentIndexChanged(int)
+{
+    options_changed = true;
+    ui->buttonApply->setEnabled(true);
+}
+
+
+void MainWindow::on_cb_bootsplash_toggled(bool checked)
+{
+      if (checked) {
+          splash_changed = true;
+          ui->buttonApply->setEnabled(true);
+      }
+}
+
+void MainWindow::on_buttonLog_clicked()
+{
+    QString location = "/var/log/boot";
+    if (kernel_options.contains("hush")) {
+      location = "/run/rc.log";
+    }
+    QString sed = "sed '/^FOOTER/d; s/\\^\\[\\[\\S*\\?0c.//g; s/\\^\\[\\[\\S*\\?0c//g; s/\\^\\[\\[\\S*//g'";  // remove formatting escape char
+    system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " /var/log/boot; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
 }

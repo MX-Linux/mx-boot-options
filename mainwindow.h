@@ -44,10 +44,13 @@ public:
 
     QString getVersion(QString name);
 
+    void addDefaultArg(QString key, QString item);
+    void remDefaultArg(QString key, QString item);
     void readGrubCfg();
     void readDefaultGrub();
     void readKernelOpts();
     void setup();
+    void writeDefaultGrub();
     int findMenuEntryById(QString id);
 
 public slots:
@@ -62,10 +65,25 @@ private slots:
     void on_buttonHelp_clicked();
     void on_cb_bootsplash_clicked(bool checked);
     void on_button_filename_clicked();
+    void on_rb_detailed_msg_toggled(bool checked);
+    void on_rb_very_detailed_msg_toggled(bool checked);
+    void on_rb_limited_msg_toggled(bool checked);
+    void on_rb_predefined_toggled(bool checked);
+    void on_rb_lastbooted_toggled(bool checked);
+    void on_spinBoxTimeout_valueChanged(int val);
+    void on_combo_menu_entry_currentIndexChanged(int index);
+    void on_cb_bootsplash_toggled(bool checked);
+
+    void on_buttonLog_clicked();
 
 private:
     Ui::MainWindow *ui;
     Cmd *cmd;
+
+    bool options_changed;
+    bool splash_changed;
+    bool messages_changed;
+
     QStringList grub_cfg;
     QStringList default_grub;
     QString kernel_options;

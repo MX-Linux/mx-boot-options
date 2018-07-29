@@ -182,7 +182,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pb_log">
+    <widget class="QPushButton" name="buttonLog">
      <property name="text">
       <string>Display log</string>
      </property>

@@ -73,6 +73,12 @@ void MainWindow::setup()
     readDefaultGrub();
     readKernelOpts();
     ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
+
+    // hide limited msg option if running systemd
+    if (system("pgrep systemd -ns 1 2>&1 >/dev/null") == 0) {
+        ui->rb_limited_msg->setVisible(false);
+    }
+
     ui->buttonApply->setDisabled(true);
     this->adjustSize();
 }

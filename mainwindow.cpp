@@ -50,6 +50,7 @@ MainWindow::~MainWindow()
 void MainWindow::loadPlymouthThemes() const
 {
     // load combobox
+    ui->combo_theme->clear();;
     ui->combo_theme->addItems(cmd->getOutput("plymouth-set-default-theme -l").split("\n"));
 
     // set current theme
@@ -619,7 +620,7 @@ void MainWindow::on_buttonLog_clicked()
         location = "/var/log/boot.log";
     }
     QString sed = "sed '/^FOOTER/d; s/\\^\\[\\[\\S*\\?0c.//g; s/\\^\\[\\[\\S*\\?0c//g; s/\\^\\[\\[\\S*//g'";  // remove formatting escape char
-    system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " /var/log/boot; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
+    system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
 }
 
 

@@ -78,6 +78,9 @@ void MainWindow::setup()
 {
     cmd = new Cmd(this);
     bar = 0;
+    options_changed = false;
+    splash_changed = false;
+    messages_changed =false;
 
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("MX Boot Options");
@@ -153,7 +156,7 @@ void MainWindow::writeDefaultGrub() const
 {
     QFile file("/etc/default/grub");
     if(!file.open(QIODevice::WriteOnly)) {
-        qDebug() << "Count not open file: " << file.fileName();
+        qDebug() << "Could not open file:" << file.fileName();
         return;
     }
     QTextStream stream(&file);
@@ -224,10 +227,8 @@ void MainWindow::enableGrubLine(const QString &item)
     QStringList new_list;
     foreach (QString line, default_grub) {
         if (line == item) {
-            qDebug() << "found item";
             found = true;
         } else if (line.contains(QRegularExpression("^#.*" + item))) { // if commented out
-            qDebug() << "found commented item";
             found = true;
             line = item;
         }
@@ -236,7 +237,6 @@ void MainWindow::enableGrubLine(const QString &item)
     if (found) {
         default_grub = new_list;
     } else {
-        qDebug() << "item not found, adding";
         default_grub << "\n" << item << "\n";
     }
 }
@@ -289,7 +289,7 @@ void MainWindow::readGrubCfg()
 {
     QFile file("/boot/grub/grub.cfg");
     if(!file.open(QIODevice::ReadOnly)) {
-        qDebug() << "Count not open file: " << file.fileName();
+        qDebug() << "Could not open file:" << file.fileName();
         return;
     }
     QString line;
@@ -308,7 +308,7 @@ void MainWindow::readDefaultGrub()
 {
     QFile file("/etc/default/grub");
     if(!file.open(QIODevice::ReadOnly)) {
-        qDebug() << "Count not open file: " << file.fileName();
+        qDebug() << "Could not open file:" << file.fileName();
         return;
     }
     QString line;
@@ -350,7 +350,7 @@ void MainWindow::readKernelOpts()
 {
     QFile file("/proc/cmdline");
     if(!file.open(QIODevice::ReadOnly)) {
-        qDebug() << "Count not open file: " << file.fileName();
+        qDebug() << "Could not open file:" << file.fileName();
         return;
     }
     kernel_options = file.readAll();
@@ -454,6 +454,9 @@ void MainWindow::on_buttonApply_clicked()
         progress->close();
         QMessageBox::information(this, tr("Done") , tr("Changes have been sucessfully applied."));
     }
+    options_changed = false;
+    splash_changed = false;
+    messages_changed = false;
     ui->buttonCancel->setEnabled(true);
 }
 
@@ -620,7 +623,8 @@ void MainWindow::on_buttonLog_clicked()
     system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " /var/log/boot; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
 }
 
-void MainWindow::on_combo_theme_currentIndexChanged(int)
+
+void MainWindow::on_combo_theme_activated()
 {
     splash_changed = true;
     ui->buttonApply->setEnabled(true);

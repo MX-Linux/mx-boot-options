@@ -26,6 +26,7 @@
 #include "ui_mainwindow.h"
 
 #include <QFileDialog>
+#include <QKeyEvent>
 #include <QTextEdit>
 
 #include <QDebug>
@@ -44,7 +45,21 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// setup versious items first time program runs
+// Process keystrokes
+void MainWindow::keyPressEvent(QKeyEvent *event) {
+    if (event->key() == Qt::Key_Escape) {
+        if (!cmd->isRunning()) {
+            return qApp->quit();
+        } else {
+            int ans = QMessageBox::question(this, tr("Still running") , "Process still running. Are you sure you want to quit?");
+            if (ans == QMessageBox::Yes) {
+                return qApp->quit();
+            }
+        }
+    }
+}
+
+// Setup versious items first time program runs
 void MainWindow::setup()
 {
     cmd = new Cmd(this);
@@ -307,8 +322,11 @@ void MainWindow::on_buttonApply_clicked()
         }
     }
     if (splash_changed) {
-
-
+        if (ui->cb_bootsplash->isChecked()) {
+            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
+        } else {
+            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
+        }
     }
     if (messages_changed) {
         if (ui->rb_detailed_msg->isChecked()) { // remove "hush", add "quiet" if not present
@@ -323,11 +341,14 @@ void MainWindow::on_buttonApply_clicked()
         }
     }
     if (options_changed || splash_changed || messages_changed) {
+        ui->buttonCancel->setDisabled(true);
+        ui->buttonApply->setDisabled(true);
         writeDefaultGrub();
         setConnections();
         cmd->run("update-grub");
+        QMessageBox::information(this, tr("Done") , tr("Changes have been sucessfully applied."));
     }
-    ui->buttonApply->setDisabled(true);
+    ui->buttonCancel->setEnabled(true);
 }
 
 

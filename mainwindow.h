@@ -76,8 +76,10 @@ private slots:
     void on_spinBoxTimeout_valueChanged(int val);
     void on_combo_menu_entry_currentIndexChanged(int index);
     void on_cb_bootsplash_toggled(bool checked);
-
     void on_buttonLog_clicked();
+
+protected:
+    void keyPressEvent(QKeyEvent* event);
 
 private:
     Ui::MainWindow *ui;

@@ -84,7 +84,7 @@ private slots:
     void on_combo_menu_entry_currentIndexChanged(int index);
     void on_cb_bootsplash_toggled(bool checked);
     void on_buttonLog_clicked();
-    void on_combo_theme_activated();
+    void on_combo_theme_activated(int);
 
 protected:
     void keyPressEvent(QKeyEvent* event);

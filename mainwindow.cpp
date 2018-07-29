@@ -54,7 +54,7 @@ void MainWindow::loadPlymouthThemes() const
 
     // set current theme
     QString current_theme = cmd->getOutput("plymouth-set-default-theme");
-    if (current_theme != "") {
+    if (!current_theme.isEmpty()) {
         ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
     }
 }
@@ -425,7 +425,6 @@ void MainWindow::on_buttonApply_clicked()
             addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
             if (!ui->combo_theme->currentText().isEmpty()) {
                 cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
-
             }
             cmd->run("update-rc.d bootlogd disable");
         } else {
@@ -542,7 +541,7 @@ void MainWindow::on_button_filename_clicked()
 {
     QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
                                               "/usr/share/backgrounds/MXLinux/grub", tr("Images (*.png *.jpg *.jpeg *.tga)"));
-    if (selected != "") {
+    if (!selected.isEmpty()) {
         ui->button_filename->setText(selected);
         options_changed = true;
         ui->buttonApply->setEnabled(true);
@@ -624,7 +623,7 @@ void MainWindow::on_buttonLog_clicked()
 }
 
 
-void MainWindow::on_combo_theme_activated()
+void MainWindow::on_combo_theme_activated(int)
 {
     splash_changed = true;
     ui->buttonApply->setEnabled(true);

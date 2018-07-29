@@ -1,3 +1,6 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
 Format: 1.8
 Date: Thu, 26 Jul 2018 12:43:48 -0400
 Source: mx-boot-options
@@ -15,14 +18,26 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- bb69bd44c4a15c514d57ba1d245a662a72c3da69 593 mx-boot-options_0.18.7.dsc
- c057926a30cae6033dfd491d231063871de9c679 16160 mx-boot-options_0.18.7.tar.xz
- c9410ca0c978a9a27d548a2a67d799b77393802b 42072 mx-boot-options_0.18.7_amd64.deb
+ a3fad3440d4a3e2cb120349bf7217317efbfc0c0 1155 mx-boot-options_0.18.7.dsc
+ 46363ad8b20fdb8b855282d4ea25660475c88b1c 16252 mx-boot-options_0.18.7.tar.xz
+ 40366e026dea011d485dbc54d94faccda0cc415c 42334 mx-boot-options_0.18.7_amd64.deb
 Checksums-Sha256:
- d0343d18210bece7dd8fcff56ef42700a8370744fa0895ff0eaa942ba639139f 593 mx-boot-options_0.18.7.dsc
- f2f4b971dfd0bf3b23ad1a4e740a93329b5f0a67f40816282ead41f966e79882 16160 mx-boot-options_0.18.7.tar.xz
- 3fc013500f9c65e1f7c864f0bfebfa056f09907599c2e9f87147d99c9d6af398 42072 mx-boot-options_0.18.7_amd64.deb
+ d3f553d3cf712264e4a143ad258ac8dc3573f8bc20ea5aa3d2bc531966c68c1e 1155 mx-boot-options_0.18.7.dsc
+ 861c3c36b27ee11c7186c3f83bfff53f5ec2bcecd840c758936895a8181d6c8f 16252 mx-boot-options_0.18.7.tar.xz
+ 5934b7a62bd4f8d22f2ef9a525c9adf4046183c2253a99094057ebe81eb3c8f5 42334 mx-boot-options_0.18.7_amd64.deb
 Files:
- f691653db8868e85a2c8ed0bfd42b17c 593 admin optional mx-boot-options_0.18.7.dsc
- baab1aa2082e3809b601793ba6a10367 16160 admin optional mx-boot-options_0.18.7.tar.xz
- 901ccf08e4ca022a75622e18663bdb1e 42072 admin optional mx-boot-options_0.18.7_amd64.deb
+ 81ae944e3e80d87f9736d560b753f170 1155 admin optional mx-boot-options_0.18.7.dsc
+ 8f4afe46af293756ad5fe570d3ef0e52 16252 admin optional mx-boot-options_0.18.7.tar.xz
+ 362b92e750402b715181b41d41db181a 42334 admin optional mx-boot-options_0.18.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlteGeQTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumO93CACnWsAsNiVnDy2Kdbw8QEH4euq2ewaP
+9bqD4A82r2Qm2ScxYk2h9OoVS1Naly2SjdgposSR5tPFGqEPMioZPktKN4DBt5es
+4K35bIXsn8N7WPJ16i38AhaTEb3bqmpPujPhm2x4uX5ecj3ekSVtPvIJeUDh7xD9
+0tOuJncPKrFlHlxIsaAunhPYO/lfB4lg9NZ3de7BKQq7oov1NmD7j3CW/1mhAp47
+7j4cW9M0Er6mZ78U0267zXbpuIHnhIWhrqnTq9/lNr3UCPn6OYtAQNzYfVSXlmK5
+FFeI/O/D0UasEZ8AuQDJ6UdR7LOJG5PALtUenHwlEM26CYTHxNkZX07z
+=DO8u
+-----END PGP SIGNATURE-----

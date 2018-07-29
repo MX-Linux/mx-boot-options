@@ -392,6 +392,23 @@ void MainWindow::setConnections()
 // Next button clicked
 void MainWindow::on_buttonApply_clicked()
 {
+    ui->buttonCancel->setDisabled(true);
+    ui->buttonApply->setDisabled(true);
+    QProgressDialog *progress = new QProgressDialog(this);
+    bar = new QProgressBar(progress);
+
+    progress->setWindowModality(Qt::WindowModal);
+    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
+    progress->setCancelButton(0);
+    progress->setWindowTitle(tr("Updating configuration, please wait"));
+    progress->setBar(bar);
+    bar->setTextVisible(false);
+    progress->resize(500, progress->height());
+    progress->show();
+
+    setConnections();
+    connect(cmd, &Cmd::runTime, this, &MainWindow::procTime);
+
     if (options_changed) {
         replaceGrubArg("GRUB_TIMEOUT", QString::number(ui->spinBoxTimeout->value()));
         replaceGrubArg("export GRUB_MENU_PICTURE", ui->button_filename->text());
@@ -415,6 +432,8 @@ void MainWindow::on_buttonApply_clicked()
             remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
             cmd->run("update-rc.d bootlogd enable");
         }
+        progress->setLabelText(tr("Updating initramfs..."));
+        cmd->run("update-initramfs -u -k all");
     }
     if (messages_changed) {
         if (ui->rb_detailed_msg->isChecked()) { // remove "hush", add "quiet" if not present
@@ -429,11 +448,10 @@ void MainWindow::on_buttonApply_clicked()
         }
     }
     if (options_changed || splash_changed || messages_changed) {
-        ui->buttonCancel->setDisabled(true);
-        ui->buttonApply->setDisabled(true);
         writeDefaultGrub();
-        setConnections();
+        progress->setLabelText(tr("Updating grub..."));
         cmd->run("update-grub");
+        progress->close();
         QMessageBox::information(this, tr("Done") , tr("Changes have been sucessfully applied."));
     }
     ui->buttonCancel->setEnabled(true);

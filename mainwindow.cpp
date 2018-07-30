@@ -323,7 +323,7 @@ void MainWindow::readDefaultGrub()
         line = file.readLine().trimmed();
         default_grub << line;
         if (line.startsWith("GRUB_DEFAULT=")) {
-            QString entry = line.section("=", 1, 1);
+            QString entry = line.section("=", 1, -1);
             bool ok;
             int number = entry.toInt(&ok);
             if (ok) {
@@ -338,7 +338,7 @@ void MainWindow::readDefaultGrub()
         } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
             ui->button_filename->setText(line.section("=", 1, 1).remove("\""));
         } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
-            QString entry = line.section("=", 1, 1);
+            QString entry = line.section("=", 1, -1);
             if (entry.contains("hush")) {
                 ui->rb_limited_msg->setChecked(true);
             } else if (entry.contains("quiet")) {

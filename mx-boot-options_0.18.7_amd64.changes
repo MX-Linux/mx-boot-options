@@ -18,26 +18,26 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- a696b0035181ea563990fb1010781b3d0f7f4881 1155 mx-boot-options_0.18.7.dsc
- 6fc8eaa1a0a750909bdb029fb35d7e84e8f7b99b 16296 mx-boot-options_0.18.7.tar.xz
- 6d5abb3cb77fa346a93d56c7ed77cd90cb997423 42144 mx-boot-options_0.18.7_amd64.deb
+ ce6cbe4d24393e9b63d5110addb5875e57650ad7 1155 mx-boot-options_0.18.7.dsc
+ ec298054ac6fa6005afa5ac8412f18c8922c18c7 16308 mx-boot-options_0.18.7.tar.xz
+ 3ef377be35f218c96f5eb9d815ba3a6d5afc4410 42108 mx-boot-options_0.18.7_amd64.deb
 Checksums-Sha256:
- ba95c7ac1e9f7990132bd02c9ebd5a6054a18b072763ac269d2449081bc0a8d2 1155 mx-boot-options_0.18.7.dsc
- ff5a4ffc2212c5bb3f80a3b56554aa053b11ba6613d06cdf4b8610bd06b70ff9 16296 mx-boot-options_0.18.7.tar.xz
- 493504ceb3a5ace6ec9b668ed5143fbc244ef120e39dabdffd90a2906fb037ae 42144 mx-boot-options_0.18.7_amd64.deb
+ 900a6e92b0588f3d4a197d3b3c5c9bbb3fd563ad6dd42ea8f8d6471e530f3b53 1155 mx-boot-options_0.18.7.dsc
+ 1ce3758e74880683798807fe60d8afb9ea4f4ac9b18fc33d981370b5739ca521 16308 mx-boot-options_0.18.7.tar.xz
+ 06599e6492a2ca302b6aea9d0bac80ca608a22775fa9659e0b09e4e4372a4bec 42108 mx-boot-options_0.18.7_amd64.deb
 Files:
- cdd25761fb8f7656c28695a65cdd1a47 1155 admin optional mx-boot-options_0.18.7.dsc
- 27aabd4d4b0e3af6af62cf3954b79acc 16296 admin optional mx-boot-options_0.18.7.tar.xz
- 354c7bd3af1e4a2675277384d57af245 42144 admin optional mx-boot-options_0.18.7_amd64.deb
+ 62ce0cd557fe342e6660bdf1a3376087 1155 admin optional mx-boot-options_0.18.7.dsc
+ 4802bbc66a2518d2d3563d2373257be8 16308 admin optional mx-boot-options_0.18.7.tar.xz
+ 330c02bef341fd18e4f29e5d4173c521 42108 admin optional mx-boot-options_0.18.7_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltebU0THGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAhkCACX1RkdUniVfC2PsfQOSw76qPde45lc
-xfG/k6U8ZuctP1QFUUyDf0DWiRx8U6xXTt32qjPszFBN6jpHHascqwIrmMTP90mq
-GANJBNb+7A7P6S4DSADv0c3Qa3MR4Zi+SwKmUG/qb8Dos+JRNvwdqwvtesaai1eJ
-CT2YaHk8XVvQM1sankq5Ac7zI4K7lSCDyefA1hLnUvlLvqv/7DAUftl7D3xJYo0G
-+RV6q0IVyLp0Mm87PWacq0Vh2MxVrQ8qhm6/tHgUlUi3lKbld2aTwwY1tFpAUorp
-SIIwyzupXryLpIT/ftjcEjN1gLe1a0DvSCw0KQtfkiCKRcQlQGYZK/8g
-=Xp6d
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltedYgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumC3pB/9LBAqpV1UJarqjKEiI8hYiqe9T6vNF
+cnxlMGjF9YvLRlbNjp7xLZFa886hZ9Kqthxxgb/41o1Q+lKGLriZpvldUcXiD9fb
+zSmuHM1RitwPPT+iMcDQXIQwki5QV+zsM0AGslDGS8LWC7lKLYsuXVZG+qJbF2oF
+9x0gMFMpXncEgSYWOE2/5Q661vjjOw7bHADy90UnyNqw3pJ8XST6NSTbRywD4KM0
+/+i0CCbmgVuiaLEYpTfIXrV4Gj4ufYGfdk+xUTCh5cF0Ct2bjYT8e9p9qW5wIi7F
+8nmZtZf24SWGiHku5n3FqfqZIVqe8Gb0xmtnsJMAu+0dt/9R41l3+yDk
+=GtWC
 -----END PGP SIGNATURE-----

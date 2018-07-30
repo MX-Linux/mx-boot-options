@@ -212,6 +212,12 @@ void MainWindow::addGrubArg(const QString &key, const QString &item)
             } else if (line.endsWith("\"")) {   // line ends with one quote (has other elements
                 line.chop(1); // chop last quote
                 line.append(" ").append(item).append("\"");
+            } else if (line.endsWith("''")) {    // line ends with 2 single quotes
+                line.chop(1); // chop last quote
+                line.append(item).append("'");
+            } else if     (line.endsWith("'")) {    // line ends with a single quote
+                line.chop(1); // chop last quote
+                line.append(" ").append(item).append("'");
             } else {                            // line ends with another item
                 line.append(" ").append(item);
             }
@@ -261,7 +267,7 @@ void MainWindow::remGrubArg(const QString &key, const QString &item)
     QStringList new_list;
     foreach (QString line, default_grub) {
         if (line.contains(key)) { // find key
-            line.remove(QRegularExpression("\\s*" + item + "\\s*"));
+            line.remove(QRegularExpression("\\s*" + item));
         }
         new_list << line;
     }
@@ -527,6 +533,9 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
     splash_changed = true;
     ui->buttonApply->setEnabled(true);
+    if (checked && ui->rb_limited_msg->isChecked()) {
+        ui->rb_detailed_msg->setChecked(true);
+    }
     ui->rb_limited_msg->setVisible(!checked);
     splash_changed = true;
     ui->buttonApply->setEnabled(true);

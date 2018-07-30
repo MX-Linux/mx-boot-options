@@ -384,6 +384,7 @@ void MainWindow::procTime(int counter, int)
             bar->reset();
         }
         bar->setValue(counter);
+        qApp->processEvents();
     }
 }
 

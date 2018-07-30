@@ -27,7 +27,7 @@
       <item row="3" column="0">
        <widget class="QLabel" name="label_bg_image">
         <property name="text">
-         <string>Default background </string>
+         <string>Background</string>
         </property>
        </widget>
       </item>
@@ -187,7 +187,8 @@
       <string>Display log</string>
      </property>
      <property name="icon">
-      <iconset theme="emblem-documents"/>
+      <iconset theme="emblem-documents">
+       <normaloff>.</normaloff>.</iconset>
      </property>
      <property name="autoDefault">
       <bool>false</bool>

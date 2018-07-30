@@ -12,5 +12,5 @@ Package: mx-boot-options
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, libcmd, xdg-utils|mx-viewer, gzip
 Description: mx-boot-options
- mx-boot-options
+ Program for selecting common start-up choices
 

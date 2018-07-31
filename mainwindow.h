@@ -86,6 +86,8 @@ private slots:
     void on_buttonLog_clicked();
     void on_combo_theme_activated(int);
 
+    void on_button_preview_clicked();
+
 protected:
     void keyPressEvent(QKeyEvent* event);
     QProgressBar *bar;

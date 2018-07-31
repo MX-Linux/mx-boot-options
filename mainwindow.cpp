@@ -53,7 +53,7 @@ void MainWindow::loadPlymouthThemes() const
     ui->combo_theme->clear();;
     ui->combo_theme->addItems(cmd->getOutput("plymouth-set-default-theme -l").split("\n"));
 
-    // set current theme
+    // get current theme
     QString current_theme = cmd->getOutput("plymouth-set-default-theme");
     if (!current_theme.isEmpty()) {
         ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
@@ -89,6 +89,7 @@ void MainWindow::setup()
     ui->buttonApply->setEnabled(true);
     ui->label_theme->setDisabled(true);
     ui->combo_theme->setDisabled(true);
+    ui->button_preview->setDisabled(true);
     readGrubCfg();
     readDefaultGrub();
     readKernelOpts();
@@ -618,6 +619,7 @@ void MainWindow::on_cb_bootsplash_toggled(bool checked)
 {
     ui->combo_theme->setEnabled(checked);
     ui->label_theme->setEnabled(checked);
+    ui->button_preview->setEnabled(checked);
     loadPlymouthThemes();
 }
 
@@ -638,4 +640,15 @@ void MainWindow::on_combo_theme_activated(int)
 {
     splash_changed = true;
     ui->buttonApply->setEnabled(true);
+}
+
+void MainWindow::on_button_preview_clicked()
+{
+    QString current_theme = cmd->getOutput("plymouth-set-default-theme");
+    if (ui->combo_theme->currentText() == "details") {
+        return;
+    }
+    cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
+    cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<5; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
+    cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
 }

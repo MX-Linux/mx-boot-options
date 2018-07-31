@@ -15,17 +15,17 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- 90648056173369a1c14c8763570e3ec7e84b8349 593 mx-boot-options_0.18.7.dsc
- 630d25c5f0a435f34297f7fd025eb525ba211129 16212 mx-boot-options_0.18.7.tar.xz
- 2cdbce83bd03b1ea77821a151b6f2d968bf63ff9 10679 mx-boot-options_0.18.7_amd64.buildinfo
- 61428c790f54818a63b615717de09c6857c6918f 42332 mx-boot-options_0.18.7_amd64.deb
+ 7c5b789a11a92cd2f98b4837bbe0f1f2ee7f336b 593 mx-boot-options_0.18.7.dsc
+ 2463b3d0b7df4e80657222dd8de540522c049c6f 16440 mx-boot-options_0.18.7.tar.xz
+ 4e12002015a67ad74dbc287379b0915530bfe3c8 10679 mx-boot-options_0.18.7_amd64.buildinfo
+ 23c50bf9eaeaaae213e9d8f03bb3edb550e30262 42770 mx-boot-options_0.18.7_amd64.deb
 Checksums-Sha256:
- dbd486e12532d0f67655941f53dcde62a341f4a9c7220e68373f78f9630e8ccd 593 mx-boot-options_0.18.7.dsc
- 63a2588fc31cab4ec5efa469ce38e8781f1b2cb89339627aea7d9f6aa81fb02d 16212 mx-boot-options_0.18.7.tar.xz
- 4dbbca762d627cb8d7190510854fe1190437d6fd49cec52fee4c168f40015ae4 10679 mx-boot-options_0.18.7_amd64.buildinfo
- 7aa6fa13f1c816412dcb75ba56e42475ffb062d092412aa027589ae6446e0ec9 42332 mx-boot-options_0.18.7_amd64.deb
+ 62218e2800642a553d1cb53e7bd02d7c73a15a8a7f659a3191e9022fe5f96e18 593 mx-boot-options_0.18.7.dsc
+ df3b383ac34d7c5ec6021ff5d4949fd5989baff50fa86816c22ac59945cdd5b9 16440 mx-boot-options_0.18.7.tar.xz
+ ca09c4d771b4480cce908140a39614a5f04c58a04dca8b22f17ff9f1f80cb0a4 10679 mx-boot-options_0.18.7_amd64.buildinfo
+ c8c3802ab6ba9cc5a745211dad7d65bf4a59a59a6bc3fb7f3c6865a51d62f84a 42770 mx-boot-options_0.18.7_amd64.deb
 Files:
- 1b0722a199e7b44ba3bb210279fdac0e 593 admin optional mx-boot-options_0.18.7.dsc
- 0ba0ef0d37f9bfc92a62a987570a79fe 16212 admin optional mx-boot-options_0.18.7.tar.xz
- 9c2757e00b549a497448acaa8685944b 10679 admin optional mx-boot-options_0.18.7_amd64.buildinfo
- 11535e5407560252d1ca87dbd01d6cc7 42332 admin optional mx-boot-options_0.18.7_amd64.deb
+ 1f826f8ee9b4b2fe439f25ce16a073e6 593 admin optional mx-boot-options_0.18.7.dsc
+ adb654b0556dc9fb5d431ef8d71e9bec 16440 admin optional mx-boot-options_0.18.7.tar.xz
+ f6f084c0e2b075ed39b563e8013755b7 10679 admin optional mx-boot-options_0.18.7_amd64.buildinfo
+ d2b13766a50ec34db89fcd07b9540eb9 42770 admin optional mx-boot-options_0.18.7_amd64.deb

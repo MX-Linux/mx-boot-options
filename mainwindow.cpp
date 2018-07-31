@@ -631,7 +631,7 @@ void MainWindow::on_buttonLog_clicked()
     } else if (kernel_options.contains("splash")) {
         location = "/var/log/boot.log";
     }
-    QString sed = "sed '/^FOOTER/d; s/\\^\\[\\[\\S*\\?0c.//g; s/\\^\\[\\[\\S*\\?0c//g; s/\\^\\[\\[\\S*//g'";  // remove formatting escape char
+    QString sed = "sed 's/\\^\\[/\\x1b/g'";  // remove formatting escape char
     system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
 }
 

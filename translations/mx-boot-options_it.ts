@@ -149,12 +149,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="489"/>
+        <location filename="../mainwindow.cpp" line="495"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="490"/>
+        <location filename="../mainwindow.cpp" line="496"/>
         <source>Version: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -189,96 +189,107 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="418"/>
-        <location filename="../mainwindow.cpp" line="672"/>
+        <location filename="../mainwindow.cpp" line="424"/>
+        <location filename="../mainwindow.cpp" line="684"/>
         <source>Updating configuration, please wait</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="456"/>
+        <location filename="../mainwindow.cpp" line="462"/>
         <source>Updating initramfs...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="473"/>
-        <location filename="../mainwindow.cpp" line="685"/>
+        <location filename="../mainwindow.cpp" line="479"/>
+        <location filename="../mainwindow.cpp" line="697"/>
         <source>Updating grub...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="482"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="482"/>
         <source>Changes have been sucessfully applied.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="491"/>
+        <location filename="../mainwindow.cpp" line="497"/>
         <source>Program for selecting common start-up choices</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="493"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>Copyright (c) MX Linux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="494"/>
-        <location filename="../mainwindow.cpp" line="506"/>
+        <location filename="../mainwindow.cpp" line="500"/>
+        <location filename="../mainwindow.cpp" line="512"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="495"/>
+        <location filename="../mainwindow.cpp" line="501"/>
         <source>Changelog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="496"/>
+        <location filename="../mainwindow.cpp" line="502"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="519"/>
+        <location filename="../mainwindow.cpp" line="525"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="544"/>
         <source>MX Boot Options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="551"/>
+        <location filename="../mainwindow.cpp" line="557"/>
         <source>Plymouth not installed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="551"/>
+        <location filename="../mainwindow.cpp" line="557"/>
         <source>Plymouth bootloader is not installed.
 OK to go ahead and install it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="575"/>
+        <location filename="../mainwindow.cpp" line="565"/>
+        <source>Running in a Virtual Machine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="566"/>
+        <source>You current system is running in a Virtual Machine,
+Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="587"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="640"/>
+        <location filename="../mainwindow.cpp" line="652"/>
         <source>Press and key to close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="642"/>
+        <location filename="../mainwindow.cpp" line="654"/>
         <source>Log not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="642"/>
+        <location filename="../mainwindow.cpp" line="654"/>
         <source>Could not find log at </source>
         <translation type="unfinished"></translation>
     </message>
@@ -299,7 +310,7 @@ OK to go ahead and install it?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../mainwindow.cpp" line="574"/>
+        <location filename="../mainwindow.cpp" line="586"/>
         <source>Select image to display in bootloader</source>
         <translation type="unfinished"></translation>
     </message>

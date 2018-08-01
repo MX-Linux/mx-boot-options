@@ -59,6 +59,7 @@ public:
 
     bool checkInstalled(const QString &package) const;
     bool installSplash();
+    bool inVirtualMachine();
     int findMenuEntryById(const QString &id) const;
 
 

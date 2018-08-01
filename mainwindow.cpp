@@ -151,6 +151,12 @@ bool MainWindow::installSplash()
     return true;
 }
 
+// detect Virtual Machine to let user know Plymouth is not fully functional
+bool MainWindow::inVirtualMachine()
+{
+    return (system("test -z \"$(lspci -d 80ee:beef)\"") != 0);
+}
+
 
 // Write new config in /etc/default/grup
 void MainWindow::writeDefaultGrub() const
@@ -555,6 +561,11 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
             }
             installSplash();
         }
+        if (inVirtualMachine()) {
+            QMessageBox::information(this, tr("Running in a Virtual Machine"),
+                                     tr("You current system is running in a Virtual Machine,\n"
+                                        "Plymouth bootsplash will work in a limited way, you also won't be able to preview the theme"));
+        }
         loadPlymouthThemes();
         splash_changed = true;
         ui->buttonApply->setEnabled(true);
@@ -567,6 +578,7 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
     }
     ui->rb_limited_msg->setVisible(!checked);
     ui->buttonApply->setEnabled(true);
+
 }
 
 void MainWindow::on_button_filename_clicked()

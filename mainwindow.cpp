@@ -81,7 +81,8 @@ void MainWindow::setup()
     bar = 0;
     options_changed = false;
     splash_changed = false;
-    messages_changed =false;
+    messages_changed = false;
+    just_installed = false;
 
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
     this->setWindowTitle("MX Boot Options");
@@ -562,6 +563,7 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
                 return;
             }
             installSplash();
+            just_installed = true;
         }
         if (inVirtualMachine()) {
             QMessageBox::information(this, tr("Running in a Virtual Machine"),
@@ -665,12 +667,15 @@ void MainWindow::on_combo_theme_activated(int)
 
 void MainWindow::on_button_preview_clicked()
 {
+    if (just_installed) {
+        QMessageBox::warning(this, tr("Needs reboot"), tr("Plymouth was just installed, you might need to reboot before being able to display previews"));
+    }
     QString current_theme = cmd->getOutput("plymouth-set-default-theme");
     if (ui->combo_theme->currentText() == "details") {
         return;
     }
     cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
-    cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<5; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
+    cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
     cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
 }
 

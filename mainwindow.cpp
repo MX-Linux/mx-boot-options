@@ -135,8 +135,6 @@ bool MainWindow::installSplash()
     progress->show();
 
     setConnections();
-    connect(cmd, &Cmd::runTime, this, &MainWindow::procTime);
-
     progress->setLabelText(tr("Updating sources"));
     cmd->run("apt-get update");
     progress->setLabelText(tr("Installing") + " " + packages);
@@ -402,6 +400,7 @@ void MainWindow::setConnections()
     cmd->disconnect();
     connect(cmd, &Cmd::started, this, &MainWindow::cmdStart);
     connect(cmd, &Cmd::finished, this, &MainWindow::cmdDone);
+    connect(cmd, &Cmd::runTime, this, &MainWindow::procTime);
 }
 
 
@@ -421,9 +420,7 @@ void MainWindow::on_buttonApply_clicked()
     bar->setTextVisible(false);
     progress->resize(500, progress->height());
     progress->show();
-
     setConnections();
-    connect(cmd, &Cmd::runTime, this, &MainWindow::procTime);
 
     if (options_changed) {
         replaceGrubArg("GRUB_TIMEOUT", QString::number(ui->spinBoxTimeout->value()));
@@ -549,21 +546,27 @@ void MainWindow::on_buttonHelp_clicked()
 
 void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
+    if (checked) {
+        if (!checkInstalled("plymouth") || !checkInstalled("plymouth-x11") || !checkInstalled("plymouth-themes")) {
+            int ans = QMessageBox::question(this, tr("Plymouth not installed"), tr("Plymouth bootloader is not installed.\nOK to go ahead and install it?"));
+            if (ans == QMessageBox::No) {
+                ui->cb_bootsplash->setChecked(false);
+                return;
+            }
+            installSplash();
+        }
+        loadPlymouthThemes();
+        splash_changed = true;
+        ui->buttonApply->setEnabled(true);
+        on_buttonApply_clicked();
+    }
     splash_changed = true;
     ui->buttonApply->setEnabled(true);
     if (checked && ui->rb_limited_msg->isChecked()) {
         ui->rb_detailed_msg->setChecked(true);
     }
     ui->rb_limited_msg->setVisible(!checked);
-    splash_changed = true;
     ui->buttonApply->setEnabled(true);
-    if (checked) {
-        if (!checkInstalled("plymouth") || !checkInstalled("plymouth-x11") || !checkInstalled("plymouth-themes")) {
-            installSplash();
-        }
-        loadPlymouthThemes();
-    }
-    on_buttonApply_clicked();
 }
 
 void MainWindow::on_button_filename_clicked()
@@ -672,14 +675,15 @@ void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
     progress->resize(500, progress->height());
     progress->show();
 
-    setConnections();
     if (checked) {
         enableGrubLine("GRUB_DISABLE_SUBMENU=y");
     } else {
         disableGrubLine("GRUB_DISABLE_SUBMENU=y");
     }
+
     writeDefaultGrub();
     progress->setLabelText(tr("Updating grub..."));
+    setConnections();
     cmd->run("update-grub");
     readGrubCfg();
     progress->close();

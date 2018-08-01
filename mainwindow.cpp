@@ -90,6 +90,7 @@ void MainWindow::setup()
     ui->label_theme->setDisabled(true);
     ui->combo_theme->setDisabled(true);
     ui->button_preview->setDisabled(true);
+    ui->cb_enable_flatmenus->setEnabled(true);
     readGrubCfg();
     readDefaultGrub();
     readKernelOpts();
@@ -354,7 +355,7 @@ void MainWindow::readDefaultGrub()
             }
             ui->cb_bootsplash->setChecked(entry.contains("splash"));
         } else if (line == "GRUB_DISABLE_SUBMENU=y") {
-            ui->cb_disable_submenus->setChecked(true);
+            ui->cb_enable_flatmenus->setChecked(true);
         }
     }
 }
@@ -427,7 +428,7 @@ void MainWindow::on_buttonApply_clicked()
     if (options_changed) {
         replaceGrubArg("GRUB_TIMEOUT", QString::number(ui->spinBoxTimeout->value()));
         replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->button_filename->text() + "\"");
-        if (ui->cb_disable_submenus->isChecked()) { // for simple menu index number is sufficient
+        if (ui->cb_enable_flatmenus->isChecked()) { // for simple menu index number is sufficient
             replaceGrubArg("GRUB_DEFAULT", QString::number(ui->combo_menu_entry->currentIndex()));
         } else {  // if submenus exists then use menuentry_id
             if (!ui->combo_menu_entry->currentData().isNull()) {
@@ -562,6 +563,7 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
         }
         loadPlymouthThemes();
     }
+    on_buttonApply_clicked();
 }
 
 void MainWindow::on_button_filename_clicked()
@@ -656,7 +658,7 @@ void MainWindow::on_button_preview_clicked()
     cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
 }
 
-void MainWindow::on_cb_disable_submenus_clicked(bool checked)
+void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
 {
     QProgressDialog *progress = new QProgressDialog(this);
     bar = new QProgressBar(progress);

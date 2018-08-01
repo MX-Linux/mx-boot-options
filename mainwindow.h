@@ -84,7 +84,7 @@ private slots:
     void on_buttonLog_clicked();
     void on_combo_theme_activated(int);
     void on_button_preview_clicked();
-    void on_cb_disable_submenus_clicked(bool checked);
+    void on_cb_enable_flatmenus_clicked(bool checked);
     void on_cb_save_default_clicked();
 
 protected:

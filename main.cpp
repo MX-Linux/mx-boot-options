@@ -32,7 +32,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    a.setWindowIcon(QIcon("/usr/share/pixmaps/mx-boot-options.png"));
+    a.setWindowIcon(QIcon::fromTheme("boot", QIcon("/usr/share/pixmaps/boot.svg")));
 
     QTranslator qtTran;
     qtTran.load(QString("qt_") + QLocale::system().name());

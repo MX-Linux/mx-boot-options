@@ -19,10 +19,6 @@
   <property name="windowTitle">
    <string>Program_Name</string>
   </property>
-  <property name="windowIcon">
-   <iconset theme="boot">
-    <normaloff>.</normaloff>.</iconset>
-  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="groupBoxOptions">

@@ -245,7 +245,7 @@ void MainWindow::enableGrubLine(const QString &item)
     if (found) {
         default_grub = new_list;
     } else {
-        default_grub << "\n" << item << "\n";
+        default_grub << "\n" << item;
     }
 }
 
@@ -281,11 +281,7 @@ void MainWindow::replaceGrubArg(const QString &key, const QString &item)
     QStringList new_list;
     foreach (QString line, default_grub) {
         if (line.contains(key)) { // find key
-            if (line.endsWith("\"")) { // if quoted string
-                line = key + "=\"" + item + "\"";
-            } else {  // for unquoted string
-                line = key + "=" + item;
-            }
+            line = key + "=" + item;
         }
         new_list << line;
     }
@@ -300,12 +296,16 @@ void MainWindow::readGrubCfg()
         qDebug() << "Could not open file:" << file.fileName();
         return;
     }
+    ui->combo_menu_entry->clear();
+
+    QString menu_id;
     QString line;
     while (!file.atEnd()) {
         line = file.readLine().trimmed();
         grub_cfg << line;
-        if (line.startsWith("menuentry ")) {
-            ui->combo_menu_entry->addItem(line.section(QRegularExpression("['\"]"), 1, 1));
+        if (line.startsWith("menuentry ") || line.startsWith("submenu ")) {
+            menu_id = line.section("$menuentry_id_option", 1, -1).section(" ", 1, 1);
+            ui->combo_menu_entry->addItem(line.section(QRegularExpression("['\"]"), 1, 1), menu_id);
         }
     }
     file.close();
@@ -330,9 +330,14 @@ void MainWindow::readDefaultGrub()
             if (ok) {
                 ui->combo_menu_entry->setCurrentIndex(number);
             } else if (entry == "saved") {
-                ui->rb_lastbooted->setChecked(true);
-            } else if (entry.size() > 1) {  // if not saved but still long word assume it's a GRUB id
-                ui->combo_menu_entry->setCurrentIndex(findMenuEntryById(entry));
+                ui->cb_save_default->setChecked(true);
+            } else if (entry.size() > 1) {  // if not saved but still long word assume it's a menuendtry_id or menuentry_name
+                int index = ui->combo_menu_entry->findData(entry);
+                if (index != -1) { // menuentry_id
+                    ui->combo_menu_entry->setCurrentIndex(index);
+                } else {           // menuentry_name most likely
+                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findText(entry.remove("'").remove("\"")));
+                }
             }
         } else if (line.startsWith("GRUB_TIMEOUT=")) {
             ui->spinBoxTimeout->setValue(line.section("=", 1, 1).toInt());
@@ -348,8 +353,9 @@ void MainWindow::readDefaultGrub()
                 ui->rb_very_detailed_msg->setChecked(true);
             }
             ui->cb_bootsplash->setChecked(entry.contains("splash"));
+        } else if (line == "GRUB_DISABLE_SUBMENU=y") {
+            ui->cb_disable_submenus->setChecked(true);
         }
-
     }
 }
 
@@ -420,12 +426,21 @@ void MainWindow::on_buttonApply_clicked()
 
     if (options_changed) {
         replaceGrubArg("GRUB_TIMEOUT", QString::number(ui->spinBoxTimeout->value()));
-        replaceGrubArg("export GRUB_MENU_PICTURE", ui->button_filename->text());
-        if (ui->rb_lastbooted->isChecked()) {
+        replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->button_filename->text() + "\"");
+        if (ui->cb_disable_submenus->isChecked()) { // for simple menu index number is sufficient
+            replaceGrubArg("GRUB_DEFAULT", QString::number(ui->combo_menu_entry->currentIndex()));
+        } else {  // if submenus exists then use menuentry_id
+            if (!ui->combo_menu_entry->currentData().isNull()) {
+                replaceGrubArg("GRUB_DEFAULT", ui->combo_menu_entry->currentData().toString());
+            } else if (ui->combo_menu_entry->currentText().contains("memtest")) { // if menuentry_id is empty most likely memtest
+                replaceGrubArg("GRUB_DEFAULT", "\"" + ui->combo_menu_entry->currentText() + "\"");
+            }
+        }
+        if (ui->cb_save_default->isChecked()) {
             replaceGrubArg("GRUB_DEFAULT", "saved");
             enableGrubLine("GRUB_SAVEDEFAULT=true");
-        } else if (ui->rb_predefined->isChecked()) {
-            replaceGrubArg("GRUB_DEFAULT", QString::number(ui->combo_menu_entry->currentIndex()));
+            cmd->run("grub-set-default " + ui->combo_menu_entry->currentData().toString());
+        } else {
             disableGrubLine("GRUB_SAVEDEFAULT=true");
         }
     }
@@ -585,22 +600,6 @@ void MainWindow::on_rb_limited_msg_toggled(bool checked)
     }
 }
 
-void MainWindow::on_rb_predefined_toggled(bool checked)
-{
-    if (checked) {
-        options_changed = true;
-        ui->buttonApply->setEnabled(true);
-    }
-}
-
-void MainWindow::on_rb_lastbooted_toggled(bool checked)
-{
-    if (checked) {
-        options_changed = true;
-        ui->buttonApply->setEnabled(true);
-    }
-}
-
 void MainWindow::on_spinBoxTimeout_valueChanged(int)
 {
     options_changed = true;
@@ -651,4 +650,37 @@ void MainWindow::on_button_preview_clicked()
     cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
     cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<5; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
     cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
+}
+
+void MainWindow::on_cb_disable_submenus_clicked(bool checked)
+{
+    QProgressDialog *progress = new QProgressDialog(this);
+    bar = new QProgressBar(progress);
+
+    progress->setWindowModality(Qt::WindowModal);
+    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
+    progress->setCancelButton(0);
+    progress->setWindowTitle(tr("Updating configuration, please wait"));
+    progress->setBar(bar);
+    bar->setTextVisible(false);
+    progress->resize(500, progress->height());
+    progress->show();
+
+    setConnections();
+    if (checked) {
+        enableGrubLine("GRUB_DISABLE_SUBMENU=y");
+    } else {
+        disableGrubLine("GRUB_DISABLE_SUBMENU=y");
+    }
+    writeDefaultGrub();
+    progress->setLabelText(tr("Updating grub..."));
+    cmd->run("update-grub");
+    readGrubCfg();
+    progress->close();
+}
+
+void MainWindow::on_cb_save_default_clicked()
+{
+    options_changed = true;
+    ui->buttonApply->setEnabled(true);
 }

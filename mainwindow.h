@@ -78,15 +78,14 @@ private slots:
     void on_rb_detailed_msg_toggled(bool checked);
     void on_rb_very_detailed_msg_toggled(bool checked);
     void on_rb_limited_msg_toggled(bool checked);
-    void on_rb_predefined_toggled(bool checked);
-    void on_rb_lastbooted_toggled(bool checked);
     void on_spinBoxTimeout_valueChanged(int val);
     void on_combo_menu_entry_currentIndexChanged(int index);
     void on_cb_bootsplash_toggled(bool checked);
     void on_buttonLog_clicked();
     void on_combo_theme_activated(int);
-
     void on_button_preview_clicked();
+    void on_cb_disable_submenus_clicked(bool checked);
+    void on_cb_save_default_clicked();
 
 protected:
     void keyPressEvent(QKeyEvent* event);

@@ -36,6 +36,35 @@
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="spinBoxTimeout">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimum">
+         <number>-1</number>
+        </property>
+        <property name="value">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_default_entry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Boot to</string>
+        </property>
+       </widget>
+      </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_bg_image">
         <property name="text">
@@ -53,39 +82,24 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QRadioButton" name="rb_predefined">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="cb_save_default">
         <property name="text">
-         <string>Predefined</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
+         <string>Enable saving last boot choice</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1" alignment="Qt::AlignLeft">
-       <widget class="QSpinBox" name="spinBoxTimeout">
+      <item row="1" column="1" colspan="3">
+       <widget class="QComboBox" name="combo_menu_entry">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="minimum">
-         <number>-1</number>
-        </property>
-        <property name="value">
-         <number>5</number>
-        </property>
        </widget>
       </item>
-      <item row="3" column="1" colspan="2">
+      <item row="3" column="1" colspan="3">
        <widget class="QPushButton" name="button_filename">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -101,39 +115,10 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QRadioButton" name="rb_lastbooted">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
+      <item row="2" column="2" colspan="2">
+       <widget class="QCheckBox" name="cb_disable_submenus">
         <property name="text">
-         <string>Last booted</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_default_entry">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Default OS</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QComboBox" name="combo_menu_entry">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+         <string>Disable submenus</string>
         </property>
        </widget>
       </item>
@@ -200,7 +185,8 @@
          <string>Preview</string>
         </property>
         <property name="icon">
-         <iconset theme="document-preview"/>
+         <iconset theme="document-preview">
+          <normaloff>.</normaloff>.</iconset>
         </property>
         <property name="autoDefault">
          <bool>false</bool>
@@ -516,22 +502,6 @@
     <hint type="destinationlabel">
      <x>171</x>
      <y>247</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rb_lastbooted</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>combo_menu_entry</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>220</x>
-     <y>115</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>454</x>
-     <y>83</y>
     </hint>
    </hints>
   </connection>

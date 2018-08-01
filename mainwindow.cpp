@@ -555,11 +555,13 @@ void MainWindow::on_buttonHelp_clicked()
 
 void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
+    ui->rb_limited_msg->setVisible(!checked);
     if (checked) {
         if (!checkInstalled("plymouth") || !checkInstalled("plymouth-x11") || !checkInstalled("plymouth-themes")) {
             int ans = QMessageBox::question(this, tr("Plymouth not installed"), tr("Plymouth bootloader is not installed.\nOK to go ahead and install it?"));
             if (ans == QMessageBox::No) {
                 ui->cb_bootsplash->setChecked(false);
+                ui->rb_limited_msg->setVisible(!checked);
                 return;
             }
             installSplash();
@@ -573,14 +575,13 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
         loadPlymouthThemes();
         splash_changed = true;
         ui->buttonApply->setEnabled(true);
+        if (ui->rb_limited_msg->isChecked()) {
+            ui->rb_detailed_msg->setChecked(true);
+        }
         on_buttonApply_clicked();
+        return;
     }
     splash_changed = true;
-    ui->buttonApply->setEnabled(true);
-    if (checked && ui->rb_limited_msg->isChecked()) {
-        ui->rb_detailed_msg->setChecked(true);
-    }
-    ui->rb_limited_msg->setVisible(!checked);
     ui->buttonApply->setEnabled(true);
 }
 

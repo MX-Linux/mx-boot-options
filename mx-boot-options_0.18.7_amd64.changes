@@ -18,29 +18,29 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- ba69745bf1059b4f8a66cc2899b5fda8a6bfdee5 1155 mx-boot-options_0.18.7.dsc
- 0ef3cf3f03d4ed8e3045875a8407e9085e47b113 16116 mx-boot-options_0.18.7.tar.xz
- a0d3d01f87aa518ce202761dc5233ca09bd36d33 11244 mx-boot-options_0.18.7_amd64.buildinfo
- 5dec82d8587f87cb1ce45107f7ef42eadf9444ba 42740 mx-boot-options_0.18.7_amd64.deb
+ a6f36f74c4261e60b37cb6fad0435eaebfc58244 1155 mx-boot-options_0.18.7.dsc
+ fdce740969735a259565ed6a2712a539b54d3b2f 16116 mx-boot-options_0.18.7.tar.xz
+ fb99e94037c90760750ce55e3d30306e5d0756d5 11244 mx-boot-options_0.18.7_amd64.buildinfo
+ 21048bad4113d04e30a7b8191514356615501fc0 42694 mx-boot-options_0.18.7_amd64.deb
 Checksums-Sha256:
- 446c5a3e78f86053b49e1b16f805444f3e6358a755d1bee4d912a370eb66c630 1155 mx-boot-options_0.18.7.dsc
- 8303741081e67eeb05271ee62eb77aec1e13087c9819ef10e3476c8b32664a62 16116 mx-boot-options_0.18.7.tar.xz
- 7d81a93fa5f85772330b33a65b35945cdc67ee7f41e04b05b593b6235e3046de 11244 mx-boot-options_0.18.7_amd64.buildinfo
- 918ecd0ce5d698c028c5cbad45d0840500ace0a975ff65dda651f08f86ef68d9 42740 mx-boot-options_0.18.7_amd64.deb
+ fefc224ca069cfe737a18587e864565514084e6a8b0dead652d7318c76174523 1155 mx-boot-options_0.18.7.dsc
+ fc15ed899e27e5f20f083f044c40b884bc211f65a6d7d60b5f88ef5aa7a05ab5 16116 mx-boot-options_0.18.7.tar.xz
+ 44d83f565f9bf648fc65fcdb96713b8dd4d072085cda42d243ef9243bca94508 11244 mx-boot-options_0.18.7_amd64.buildinfo
+ 1141ee6891f64713a0c8a0c200c9e4628cf192de7ebd2bf6d483b1642a199952 42694 mx-boot-options_0.18.7_amd64.deb
 Files:
- cb63c86f83c576b28b8a5e4564e828cc 1155 admin optional mx-boot-options_0.18.7.dsc
- 0c3c2e547eaa07e60d1f6f43466a79bb 16116 admin optional mx-boot-options_0.18.7.tar.xz
- bb8ac2eaba16199e8f8ea5042728f93e 11244 admin optional mx-boot-options_0.18.7_amd64.buildinfo
- 18efa13fa5a2f014a6d1ae6c0fbcc860 42740 admin optional mx-boot-options_0.18.7_amd64.deb
+ accb1ff0163ee91ccfd4dccf7fdc322c 1155 admin optional mx-boot-options_0.18.7.dsc
+ 82f65791f93584461ca5622ee6bf76d0 16116 admin optional mx-boot-options_0.18.7.tar.xz
+ 8aa3dfb96f04bf37ca5cab9c25201f5b 11244 admin optional mx-boot-options_0.18.7_amd64.buildinfo
+ 9520a425274f9f5cf35e57442d48ea71 42694 admin optional mx-boot-options_0.18.7_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlth6j4THGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumOiHCACommNHPV2F5QrrBZlq87+7Tv9LJBc+
-+CjOKQxKouSYHm/G/Kk4q/g7gYSoyYH4/AStDr2sAUgY880LmURvk7bKOUk2Po66
-ekibDcrQMJNeFPz/0Mod31ZXoiOmp+CaR6eHwP6lB20Yj7LgZG+Ce0vBUhpLpaPv
-sRZ29IehlZygfKOiunB9yWOLiVZ+XF38jOrxbnwEtcrHangMDJ7+EFQO3CtmbsV/
-oABKMjDK6Ws73Jy5Q9mBe3B0ZdRFw7wIuxYimOoNUAD97+k3Sk4lHodzv3Ydiia8
-s843TC5Hwd4K3t3MsTsYl4aa5dLoAFinNb7xUv/vgmaCsnE8+428k7zE
-=VEgC
+iQFGBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlth8wYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEq2B/iMzJ2HsFrUtqKcqB2R3frBTUr0zVlx
+MPv75sEcma37Y9bT/qWEz+Ro0fXDBfUDfPVQI4aG6sTraIHRE5XHCrinP+AepjBQ
+ZkYL8/mNaQdomNbc3geg7H3AD62Uu0g+iFACKLu2Mxhb30zY+krI4hNqOd0HNoel
+sVkaQBdY2MIZWVv2qfZIJchKeHhpEiSk8MWodxWD+y5JzRVVg+0NCtR0w5/PyOTP
+EnUhGkKP/xKAh9ZpCZ/5lZ9Ze6vlu60JRZJfR61WRwP1J8lRHRIk6w/5XZ5Ahg1W
+Gv093DJx6T0CzVBB1Jb2V5CHpN6Ooizmkr2i9TP6w7VCspfE3Fz0zE4=
+=6PBD
 -----END PGP SIGNATURE-----

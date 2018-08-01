@@ -631,7 +631,11 @@ void MainWindow::on_buttonLog_clicked()
         location = "/var/log/boot.log";
     }
     QString sed = "sed 's/\\^\\[/\\x1b/g'";  // remove formatting escape char
-    system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
+    if (QFile::exists(location)) {
+        system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
+    } else {
+        QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
+    }
 }
 
 

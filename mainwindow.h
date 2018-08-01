@@ -96,9 +96,10 @@ private:
     Ui::MainWindow *ui;
     Cmd *cmd;
 
+    bool just_installed;
+    bool messages_changed;
     bool options_changed;
     bool splash_changed;
-    bool messages_changed;
 
     QStringList grub_cfg;
     QStringList default_grub;

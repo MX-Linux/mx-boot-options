@@ -469,6 +469,8 @@ void MainWindow::on_buttonApply_clicked()
         } else if (ui->rb_limited_msg->isChecked()) { // add "quiet" and "hush" to /boot/default/grub
             addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
             addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
+            system("grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
+       "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
         } else if (ui->rb_very_detailed_msg->isChecked()) { // remove "hush" and/or "quiet"
             remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
             remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
@@ -578,7 +580,6 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
     }
     ui->rb_limited_msg->setVisible(!checked);
     ui->buttonApply->setEnabled(true);
-
 }
 
 void MainWindow::on_button_filename_clicked()

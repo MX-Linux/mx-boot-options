@@ -51,10 +51,10 @@ void MainWindow::loadPlymouthThemes() const
 {
     // load combobox
     ui->combo_theme->clear();;
-    ui->combo_theme->addItems(cmd->getOutput("plymouth-set-default-theme -l").split("\n"));
+    ui->combo_theme->addItems(cmd->getOutput(chroot + "plymouth-set-default-theme -l").split("\n"));
 
     // get current theme
-    QString current_theme = cmd->getOutput("plymouth-set-default-theme");
+    QString current_theme = cmd->getOutput(chroot + "plymouth-set-default-theme");
     if (!current_theme.isEmpty()) {
         ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
     }
@@ -78,6 +78,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 void MainWindow::setup()
 {
     cmd = new Cmd(this);
+    chroot = "";
     bar = 0;
     options_changed = false;
     splash_changed = false;
@@ -85,6 +86,7 @@ void MainWindow::setup()
     just_installed = false;
 
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
+
     this->setWindowTitle("MX Boot Options");
     ui->buttonCancel->setEnabled(true);
     ui->buttonApply->setEnabled(true);
@@ -92,16 +94,17 @@ void MainWindow::setup()
     ui->combo_theme->setDisabled(true);
     ui->button_preview->setDisabled(true);
     ui->cb_enable_flatmenus->setEnabled(true);
+
+    // if running live read linux partitions and set chroot on the selected one
+    if (system("mountpoint -q /live/aufs") == 0) {
+        QString part = selectPartiton(getLinuxPartitions());
+        createChrootEnv(part);
+    }
+
     readGrubCfg();
     readDefaultGrub();
     readKernelOpts();
     ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
-
-    // hide limited msg option if running systemd
-    if (system("pgrep systemd -ns 1 2>&1 >/dev/null") == 0) {
-        ui->rb_limited_msg->setVisible(false);
-    }
-
     ui->buttonApply->setDisabled(true);
     this->adjustSize();
 }
@@ -111,7 +114,7 @@ void MainWindow::setup()
 bool MainWindow::checkInstalled(const QString &package) const
 {
     //qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
-    QString cmdstr = QString("dpkg -s %1 | grep Status").arg(package);
+    QString cmdstr = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
     if (cmd->getOutput(cmdstr) == "Status: install ok installed") {
         return true;
     }
@@ -137,9 +140,9 @@ bool MainWindow::installSplash()
 
     setConnections();
     progress->setLabelText(tr("Updating sources"));
-    cmd->run("apt-get update");
+    cmd->run(chroot + "apt-get update");
     progress->setLabelText(tr("Installing") + " " + packages);
-    cmd->run("apt-get install -y " + packages);
+    cmd->run(chroot + "apt-get install -y " + packages);
 
     if (cmd->getExitCode() != 0) {
         progress->close();
@@ -162,7 +165,7 @@ bool MainWindow::inVirtualMachine()
 // Write new config in /etc/default/grup
 void MainWindow::writeDefaultGrub() const
 {
-    QFile file("/etc/default/grub");
+    QFile file(chroot.section(" ", 1, 1) + "/etc/default/grub");
     if(!file.open(QIODevice::WriteOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
@@ -189,18 +192,66 @@ int MainWindow::findMenuEntryById(const QString &id) const
     return 0;
 }
 
+// get the list of partitions
+QStringList MainWindow::getLinuxPartitions()
+{
+    QStringList partitions = cmd->getOutput("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 | "
+                                            "grep '^[h,s,v].[a-z][0-9]\\|mmcblk[0-9]*p\\|nvme[0-9]*p' | sort").split("\n", QString::SkipEmptyParts);
+
+    QString part;
+    QStringList new_list;
+    foreach (QString part_info, partitions) {
+        part = part_info.section(" ", 0, 0);
+        if (system("lsblk -ln -o PARTTYPE /dev/" + part.toUtf8() +
+                   "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'") == 0) {
+            new_list << part_info;
+        }
+    }
+    return new_list;
+}
+
 // cleanup environment when window is closed
 void MainWindow::cleanup()
 {
-
+    qDebug() << "Running MXBO cleanup code";
+    if (!chroot.isEmpty()) {
+        QString path = chroot.section(" ", 1, 1);
+        if (path.isEmpty()) {
+            return;
+        }
+        // umount and clean temp folder
+        system("mountpoint -q " + path.toUtf8() + "/boot/efi && umount " + path.toUtf8() + "/boot/efi");
+        QString cmd_str = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
+        system(cmd_str.toUtf8());
+    }
 }
-
 
 // Get version of the program
 QString MainWindow::getVersion(QString name) const
 {
     Cmd cmd;
     return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
+}
+
+QString MainWindow::selectPartiton(QStringList list)
+{
+    CustomDialog *dialog = new CustomDialog(list);
+
+    // Guess MX install, find first partition with rootMX* label
+    foreach (QString part_info, list) {
+        if (system("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0).toUtf8() + "| grep -q rootMX") == 0) {
+            dialog->comboBox()->setCurrentIndex(dialog->comboBox()->findText(part_info));
+            break;
+        }
+    }
+    if (dialog->exec()) {
+        qDebug() << "exec true" << dialog->comboBox()->currentText().section(" ", 0, 0);
+        return dialog->comboBox()->currentText().section(" ", 0, 0);
+    } else {
+        qDebug() << "exec false" << dialog->comboBox()->currentText().section(" ", 0, 0);
+        QMessageBox::critical(this, tr("Cannot continue"), tr("Nothing was selected, cannot change boot options. Exiting..."));
+        exit(1);
+    }
 }
 
 // Add item to the key in /etc/default/grub
@@ -232,6 +283,17 @@ void MainWindow::addGrubArg(const QString &key, const QString &item)
         new_list << line;
     }
     default_grub = new_list;
+}
+
+void MainWindow::createChrootEnv(QString root)
+{
+    QString path = cmd->getOutput("mktemp -d --tmpdir -p /tmp");
+    QString cmd_str = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(path);
+    if (cmd->run(cmd_str) != 0) {
+        QMessageBox::critical(this, tr("Cannot continue"), tr("Cannot create chroot environment, cannot change boot options. Exiting..."));
+        exit(1);
+    }
+    chroot = "chroot " + path + " ";
 }
 
 // uncomment or add line in /etc/default/grub
@@ -297,7 +359,7 @@ void MainWindow::replaceGrubArg(const QString &key, const QString &item)
 // Read and parse grub.cfg file
 void MainWindow::readGrubCfg()
 {
-    QFile file("/boot/grub/grub.cfg");
+    QFile file(chroot.section(" ", 1, 1) + "/boot/grub/grub.cfg");
     if(!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
@@ -320,7 +382,7 @@ void MainWindow::readGrubCfg()
 // Read default grub config file
 void MainWindow::readDefaultGrub()
 {
-    QFile file("/etc/default/grub");
+    QFile file(chroot.section(" ", 1, 1) + "/etc/default/grub");
     if(!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
@@ -444,7 +506,7 @@ void MainWindow::on_buttonApply_clicked()
         if (ui->cb_save_default->isChecked()) {
             replaceGrubArg("GRUB_DEFAULT", "saved");
             enableGrubLine("GRUB_SAVEDEFAULT=true");
-            cmd->run("grub-set-default " + ui->combo_menu_entry->currentData().toString());
+            cmd->run(chroot + "grub-set-default " + ui->combo_menu_entry->currentData().toString());
         } else {
             disableGrubLine("GRUB_SAVEDEFAULT=true");
         }
@@ -453,15 +515,15 @@ void MainWindow::on_buttonApply_clicked()
         if (ui->cb_bootsplash->isChecked()) {
             addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
             if (!ui->combo_theme->currentText().isEmpty()) {
-                cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
+                cmd->run(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
             }
-            cmd->run("update-rc.d bootlogd disable");
+            cmd->run(chroot + "update-rc.d bootlogd disable");
         } else {
             remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
-            cmd->run("update-rc.d bootlogd enable");
+            cmd->run(chroot + "update-rc.d bootlogd enable");
         }
         progress->setLabelText(tr("Updating initramfs..."));
-        cmd->run("update-initramfs -u -k all");
+        cmd->run(chroot + "update-initramfs -u -k all");
     }
     if (messages_changed) {
         if (ui->rb_detailed_msg->isChecked()) { // remove "hush", add "quiet" if not present
@@ -470,7 +532,7 @@ void MainWindow::on_buttonApply_clicked()
         } else if (ui->rb_limited_msg->isChecked()) { // add "quiet" and "hush" to /boot/default/grub
             addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
             addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
-            system("grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
+            system(chroot.toUtf8() + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
        "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
         } else if (ui->rb_very_detailed_msg->isChecked()) { // remove "hush" and/or "quiet"
             remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
@@ -480,7 +542,7 @@ void MainWindow::on_buttonApply_clicked()
     if (options_changed || splash_changed || messages_changed) {
         writeDefaultGrub();
         progress->setLabelText(tr("Updating grub..."));
-        cmd->run("update-grub");
+        cmd->run(chroot.toUtf8() + "update-grub");
         progress->close();
         QMessageBox::information(this, tr("Done") , tr("Changes have been sucessfully applied."));
     }
@@ -653,7 +715,7 @@ void MainWindow::on_buttonLog_clicked()
     }
     QString sed = "sed 's/\\^\\[/\\x1b/g'";  // remove formatting escape char
     if (QFile::exists(location)) {
-        system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
+        system("x-terminal-emulator -e bash -c \"" + chroot.toUtf8() + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
     } else {
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
     }
@@ -675,9 +737,9 @@ void MainWindow::on_button_preview_clicked()
     if (ui->combo_theme->currentText() == "details") {
         return;
     }
-    cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
-    cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
-    cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
+    cmd->run(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
+    cmd->run("x-terminal-emulator -e bash -c '" + chroot + "plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
+    cmd->run(chroot + "plymouth-set-default-theme " + current_theme); // return to current theme
 }
 
 void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
@@ -703,7 +765,7 @@ void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
     writeDefaultGrub();
     progress->setLabelText(tr("Updating grub..."));
     setConnections();
-    cmd->run("update-grub");
+    cmd->run(chroot + "update-grub");
     readGrubCfg();
     progress->close();
 }
@@ -713,3 +775,4 @@ void MainWindow::on_cb_save_default_clicked()
     options_changed = true;
     ui->buttonApply->setEnabled(true);
 }
+

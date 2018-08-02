@@ -27,10 +27,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    mainwindow.cpp
+    mainwindow.cpp \
+    dialog.cpp
 
 HEADERS  += \
-    mainwindow.h
+    mainwindow.h \
+    dialog.h
 
 FORMS    += \
     mainwindow.ui

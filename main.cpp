@@ -43,12 +43,12 @@ int main(int argc, char *argv[])
     a.installTranslator(&appTran);
 
     if (getuid() == 0) {
-        if (system("mountpoint -q /live/aufs") == 0) {
-            QApplication::beep();
-            QMessageBox::critical(0, QString::null,
-                                  QApplication::tr("This programs is not meant to run in a live environment."));
-            return 1;
-        }
+//        if (system("mountpoint -q /live/aufs") == 0) {
+//            QApplication::beep();
+//            QMessageBox::critical(0, QString::null,
+//                                  QApplication::tr("This programs is not meant to run in a live environment."));
+//            return 1;
+//        }
         MainWindow w;
         w.show();
         return a.exec();

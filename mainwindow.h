@@ -29,6 +29,7 @@
 #include <QProgressBar>
 
 #include <cmd.h>
+#include <dialog.h>
 
 
 namespace Ui {
@@ -44,8 +45,11 @@ public:
     ~MainWindow();
 
     QString getVersion(QString name) const;
+    QString selectPartiton(QStringList list);
+    QStringList getLinuxPartitions();
 
     void addGrubArg(const QString &key, const QString &item);
+    void createChrootEnv(QString root);
     void enableGrubLine(const QString &item);
     void disableGrubLine(const QString &item);
     void remGrubArg(const QString &key, const QString &item);
@@ -60,8 +64,8 @@ public:
     bool checkInstalled(const QString &package) const;
     bool installSplash();
     bool inVirtualMachine();
-    int findMenuEntryById(const QString &id) const;
 
+    int findMenuEntryById(const QString &id) const;
 
 public slots:
 
@@ -104,6 +108,7 @@ private:
     QStringList grub_cfg;
     QStringList default_grub;
     QString kernel_options;
+    QString chroot;
 };
 
 

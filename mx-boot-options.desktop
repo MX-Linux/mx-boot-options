@@ -23,6 +23,6 @@ Comment[sv]=
 Exec=su-to-root -X -c mx-boot-options
 Terminal=false
 Type=Application
-Icon=boot
+Icon=gnome-system
 Categories=GNOME;GTK;System;MX-Maintenance
 NoDisplay=false

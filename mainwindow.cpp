@@ -294,6 +294,7 @@ void MainWindow::createChrootEnv(QString root)
         exit(1);
     }
     chroot = "chroot " + path + " ";
+    ui->button_preview->setDisabled(true); // no preview when running chroot.
 }
 
 // uncomment or add line in /etc/default/grub
@@ -713,9 +714,10 @@ void MainWindow::on_buttonLog_clicked()
     } else if (kernel_options.contains("splash")) {
         location = "/var/log/boot.log";
     }
+    qDebug() << "log location " << location;
     QString sed = "sed 's/\\^\\[/\\x1b/g'";  // remove formatting escape char
     if (QFile::exists(location)) {
-        system("x-terminal-emulator -e bash -c \"" + chroot.toUtf8() + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
+        system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
     } else {
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
     }
@@ -737,9 +739,9 @@ void MainWindow::on_button_preview_clicked()
     if (ui->combo_theme->currentText() == "details") {
         return;
     }
-    cmd->run(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
-    cmd->run("x-terminal-emulator -e bash -c '" + chroot + "plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
-    cmd->run(chroot + "plymouth-set-default-theme " + current_theme); // return to current theme
+    cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
+    cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
+    cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
 }
 
 void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)

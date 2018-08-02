@@ -708,14 +708,15 @@ void MainWindow::on_cb_bootsplash_toggled(bool checked)
 
 void MainWindow::on_buttonLog_clicked()
 {
-    QString location = "/var/log/boot";
+    QString location = "/var/log/boot.log";
     if (kernel_options.contains("hush")) {
         location = "/run/rc.log";
-    } else if (kernel_options.contains("splash")) {
-        location = "/var/log/boot.log";
     }
-    qDebug() << "log location " << location;
     QString sed = "sed 's/\\^\\[/\\x1b/g'";  // remove formatting escape char
+    if (!QFile::exists(location)) { // try aternate location
+        location = "/var/log/boot";
+    }
+
     if (QFile::exists(location)) {
         system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
     } else {

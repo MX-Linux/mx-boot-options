@@ -12,20 +12,20 @@ Build-Depends: qt5-default, qttools5-dev-tools, debhelper (>= 9.2), libcmd
 Package-List:
  mx-boot-options deb admin optional arch=any
 Checksums-Sha1:
- df2c563e92f4cc974f245f695f02b2fa508c826f 23272 mx-boot-options_0.18.7.tar.xz
+ 1d0c5be1ceda336daaa293167429c44b5d20e5b3 19640 mx-boot-options_0.18.7.tar.xz
 Checksums-Sha256:
- a3c46144a3fba40faeaeceeb6b8cd3019ad38f7de3029d8d7c7e9caf512d87f2 23272 mx-boot-options_0.18.7.tar.xz
+ da1150703b2a0ce01b96ba92f3948fd6645e67404eef64c64c48f12df56deb0a 19640 mx-boot-options_0.18.7.tar.xz
 Files:
- ec4a57bab327667ccee9404208ab46a0 23272 mx-boot-options_0.18.7.tar.xz
+ aa12d1c63d5ee6bb39afcb32045cbc03 19640 mx-boot-options_0.18.7.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltj23sTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumNejB/4xaMOyzvGxNd1rM7l87GD/e4coXkn4
-YkChIKzO79yF6G0ZYR9J2eg8sE8nznlNi4MC1VeuEL447NPRPA7C5bSQ3LNnl9bZ
-QBcoStsOyEjNCFKT/zrCz/QmoUJ7ttArSaebUIoWX9JxqlZSiGlpmbz5kQoo74N/
-YjPyAib3Jok5TyUI5kjHXD5vsQDYqkNIWCOlDROxVrClyLRiK1DygzjnDQmEuTBH
-K1bDecEyeDp9W2YVBUmWZIHWL5ziRued3C+eHtiGiIaCDuV1O998IvsORl+/bb/N
-1IDhbeG7fFRdUVFShfw0jfA6SLO6n/8Rbr0qtrfB2msuj3qtzaaQXYDh
-=aeL+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltkTjoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumNP0B/wJ4EOoJXdbWWBxKsbIkPuerf935J6a
+dBWnGqy0PzyAQmAkuw9s+0RjoIkSnTKrpVOZunPqyu6MNE+fFZpM2DISQSfTUuy4
+DCuDKUm+mXpprN/axxHpeWZkLTw2OeBkxbEkuU+XRn3EnqQkFkK5z88qGS6LgfrU
+3De5bhuwTido3wDdYe52Dx2njG18hcS4EBalGTG7Hq0fNNifsv+d7y9B7jpXDDzA
+Se9xjPRbVCJAFUA2du+jrG5GKdqav4LPhyYLAMTiUalnOCMI9IxThu881wqhwAK/
+SVanpl6yFO2BO01ZWCyfrkriWyr9x9WlPUILolfhS8LISZhGRVEakDJ3
+=lFi/
 -----END PGP SIGNATURE-----

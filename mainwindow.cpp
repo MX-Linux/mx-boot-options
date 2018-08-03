@@ -428,6 +428,9 @@ void MainWindow::readDefaultGrub()
                 ui->rb_very_detailed_msg->setChecked(true);
             }
             ui->cb_bootsplash->setChecked(entry.contains("splash"));
+            if (!checkInstalled("plymouth") || !checkInstalled("plymouth-x11") || !checkInstalled("plymouth-themes")) {
+                ui->cb_bootsplash->setChecked(false);
+            }
         } else if (line == "GRUB_DISABLE_SUBMENU=y") {
             ui->cb_enable_flatmenus->setChecked(true);
         }

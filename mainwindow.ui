@@ -120,7 +120,7 @@
          <string>Use simplified menu structure without submenus</string>
         </property>
         <property name="text">
-         <string>Enable flat menus (no submenus)</string>
+         <string>Use flat menus (no submenus)</string>
         </property>
        </widget>
       </item>

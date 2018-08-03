@@ -29,6 +29,7 @@
 #include <QKeyEvent>
 #include <QTextEdit>
 #include <QProgressDialog>
+#include <QDesktopWidget>
 
 #include <QDebug>
 
@@ -109,6 +110,11 @@ void MainWindow::setup()
     this->adjustSize();
 }
 
+// set mouse in the corner and move it to advance splash preview
+void MainWindow::sendMouseEvents()
+{
+    QCursor::setPos(QApplication::desktop()->screenGeometry().width(), QApplication::desktop()->screenGeometry().height() + 1);
+}
 
 // Checks if package is installed
 bool MainWindow::checkInstalled(const QString &package) const
@@ -744,8 +750,10 @@ void MainWindow::on_button_preview_clicked()
         return;
     }
     cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
+    connect(cmd, &Cmd::runTime, this, &MainWindow::sendMouseEvents);
     cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
     cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
+    cmd->disconnect();
 }
 
 void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)

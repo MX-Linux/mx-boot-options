@@ -59,6 +59,7 @@ public:
     void readDefaultGrub();
     void readKernelOpts();
     void setup();
+    void sendMouseEvents();
     void writeDefaultGrub() const;
 
     bool checkInstalled(const QString &package) const;

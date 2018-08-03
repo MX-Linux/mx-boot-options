@@ -1,6 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
-
 Format: 1.8
 Date: Thu, 26 Jul 2018 12:43:48 -0400
 Source: mx-boot-options
@@ -18,26 +15,14 @@ Changes:
  .
    * initial release
 Checksums-Sha1:
- e9386b9abd431844f7f19bcd754ee3786505c4f8 1155 mx-boot-options_0.18.7.dsc
- f9d81512514f292b2f5de66e24707a4ffd1ce1d7 19496 mx-boot-options_0.18.7.tar.xz
- 3a4538e737a5a08d0663bc4d40ba8521a06f1125 48322 mx-boot-options_0.18.7_amd64.deb
+ b20e6a26fa3b6445ae4a3fd163fbc160aebefd84 593 mx-boot-options_0.18.7.dsc
+ df2c563e92f4cc974f245f695f02b2fa508c826f 23272 mx-boot-options_0.18.7.tar.xz
+ 9dec7cd9be6f2442e110b6e2ff485ee4cc5bd122 48628 mx-boot-options_0.18.7_amd64.deb
 Checksums-Sha256:
- 22febccb6b8489c1b6f1485f54cdea235e90aa28220554740dbd05c328bc899e 1155 mx-boot-options_0.18.7.dsc
- 3365d5aa4bfe7303c4c5e669f2e26544c096de14f545b5ffa0841c39c444e30d 19496 mx-boot-options_0.18.7.tar.xz
- ba22c751cd0c6c896bd75b54125116647b3d4bf7897cd697f8305dd1ac4f4b1f 48322 mx-boot-options_0.18.7_amd64.deb
+ 900b55bfbea278a90817fe529c4dbe25504e88afc3a0e9cea67231a39751ec5a 593 mx-boot-options_0.18.7.dsc
+ a3c46144a3fba40faeaeceeb6b8cd3019ad38f7de3029d8d7c7e9caf512d87f2 23272 mx-boot-options_0.18.7.tar.xz
+ 177ff6a7615875ff87800e87d3199726262b61eaf6b6b48c5a4129fb848cdf1a 48628 mx-boot-options_0.18.7_amd64.deb
 Files:
- f002790992f9a0fee13e8de58b59aab3 1155 admin optional mx-boot-options_0.18.7.dsc
- 35d8bd14941b53da15dc00188a139e2e 19496 admin optional mx-boot-options_0.18.7.tar.xz
- e11ba27beadbef222f52a66037ced07e 48322 admin optional mx-boot-options_0.18.7_amd64.deb
-
------BEGIN PGP SIGNATURE-----
-
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltje6YTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFvBCACMYAyldicNspCk6J0qfufPmtXPfZx3
-pAKnKMo1IR8lK726zrO5u9+Lxg90kGSeEv3Cdvv2d7/zwnAZY5gEVpgOkiueU4GF
-Qh781r1gw5SN6TlCnvifWil92zzAMDmDlPOXpsUS6IO7l3ZvN1fvI88Kl72cJOee
-4qUC3PNDK2PJN5tU4lpBPXbq+pJ7c8FiJims/vzxY88ZGDdry1AS9htmoFTbZc52
-MFN2MP+EOIPMcgaJGEKErPwNCqlZfc5VWEJty9RKTYUYoSjur/gKUl9X3A0tAV50
-OjDDSCkWffVZH9wzr4e+s1/h8j/NfITKG69iVin7WWzOc0CvFfoIS/Lh
-=yD5p
------END PGP SIGNATURE-----
+ 20962eea59d4938188a88b2a3ae2ef6d 593 admin optional mx-boot-options_0.18.7.dsc
+ ec4a57bab327667ccee9404208ab46a0 23272 admin optional mx-boot-options_0.18.7.tar.xz
+ aa26e5d6074f2af1d42102246803ef4f 48628 admin optional mx-boot-options_0.18.7_amd64.deb

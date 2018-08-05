@@ -63,6 +63,7 @@ public:
     void writeDefaultGrub() const;
 
     bool checkInstalled(const QString &package) const;
+    bool checkInstalled(const QStringList &packages) const;
     bool installSplash();
     bool inVirtualMachine();
 

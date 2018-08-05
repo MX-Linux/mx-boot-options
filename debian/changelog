@@ -1,3 +1,9 @@
+mx-boot-options (0.18.8) mx; urgency=medium
+
+  * install plymouth-themes-mx when selecting boot splash
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 05 Aug 2018 14:00:01 -0400
+
 mx-boot-options (0.18.7) mx; urgency=medium
 
   * initial release

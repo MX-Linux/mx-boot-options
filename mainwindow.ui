@@ -32,6 +32,16 @@
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="1" colspan="6">
+       <widget class="QComboBox" name="combo_menu_entry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_bg_image">
         <property name="text">
@@ -45,11 +55,34 @@
          <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
         </property>
         <property name="text">
-         <string>Menu timeout (sec)</string>
+         <string>Menu timeout</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="1" colspan="3">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_default_entry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Boot to</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="5">
+       <widget class="QCheckBox" name="cb_enable_flatmenus">
+        <property name="toolTip">
+         <string>Use simplified menu structure without submenus</string>
+        </property>
+        <property name="text">
+         <string>Use flat menus (no submenus)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="6">
        <widget class="QPushButton" name="button_filename">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -81,28 +114,8 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1" colspan="3">
-       <widget class="QComboBox" name="combo_menu_entry">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QCheckBox" name="cb_save_default">
-        <property name="toolTip">
-         <string>With this option enabled whatever entry you select from the grub boot menu will be saved as the new default for future boots</string>
-        </property>
-        <property name="text">
-         <string>Enable saving last boot choice</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_default_entry">
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_seconds">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -110,17 +123,17 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Boot to</string>
+         <string>seconds</string>
         </property>
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QCheckBox" name="cb_enable_flatmenus">
+       <widget class="QCheckBox" name="cb_save_default">
         <property name="toolTip">
-         <string>Use simplified menu structure without submenus</string>
+         <string>With this option enabled whatever entry you select from the grub boot menu will be saved as the new default for future boots</string>
         </property>
         <property name="text">
-         <string>Use flat menus (no submenus)</string>
+         <string>Enable saving last boot choice</string>
         </property>
        </widget>
       </item>

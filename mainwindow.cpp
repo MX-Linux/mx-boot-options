@@ -127,6 +127,17 @@ bool MainWindow::checkInstalled(const QString &package) const
     return false;
 }
 
+// checks if a list of packages is installed, return false if one of them is not
+bool MainWindow::checkInstalled(const QStringList &packages) const
+{
+    foreach (QString package, packages) {
+        if (!checkInstalled(package)) {
+            return false;
+        }
+    }
+    return true;
+}
+
 
 // Install Bootsplash
 bool MainWindow::installSplash()
@@ -134,7 +145,7 @@ bool MainWindow::installSplash()
     QProgressDialog *progress = new QProgressDialog(this);
     bar = new QProgressBar(progress);
 
-    QString packages = "plymouth plymouth-x11 plymouth-themes";
+    QString packages = "plymouth plymouth-x11 plymouth-themes plymouth-themes-mx";
     progress->setWindowModality(Qt::WindowModal);
     progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
     progress->setCancelButton(0);
@@ -428,7 +439,7 @@ void MainWindow::readDefaultGrub()
                 ui->rb_very_detailed_msg->setChecked(true);
             }
             ui->cb_bootsplash->setChecked(entry.contains("splash"));
-            if (!checkInstalled("plymouth") || !checkInstalled("plymouth-x11") || !checkInstalled("plymouth-themes")) {
+            if (!checkInstalled(QStringList() << "plymouth" << "plymouth-x11" << "plymouth-themes" << "plymouth-themes-mx")) {
                 ui->cb_bootsplash->setChecked(false);
             }
         } else if (line == "GRUB_DISABLE_SUBMENU=y") {
@@ -629,8 +640,8 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
     ui->rb_limited_msg->setVisible(!checked);
     if (checked) {
-        if (!checkInstalled("plymouth") || !checkInstalled("plymouth-x11") || !checkInstalled("plymouth-themes")) {
-            int ans = QMessageBox::question(this, tr("Plymouth not installed"), tr("Plymouth bootloader is not installed.\nOK to go ahead and install it?"));
+        if (!checkInstalled(QStringList() << "plymouth" << "plymouth-x11" << "plymouth-themes" << "plymouth-themes-mx")) {
+            int ans = QMessageBox::question(this, tr("Plymouth packages not installed"), tr("Plymouth packages are not installed.\nOK to go ahead and install them?"));
             if (ans == QMessageBox::No) {
                 ui->cb_bootsplash->setChecked(false);
                 ui->rb_limited_msg->setVisible(!checked);

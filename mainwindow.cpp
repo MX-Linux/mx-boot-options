@@ -804,3 +804,8 @@ void MainWindow::on_cb_save_default_clicked()
     ui->buttonApply->setEnabled(true);
 }
 
+
+void MainWindow::on_combo_theme_currentIndexChanged(const QString &arg1)
+{
+    ui->button_preview->setDisabled(arg1 == "details");
+}

@@ -94,6 +94,8 @@ private slots:
     void on_cb_enable_flatmenus_clicked(bool checked);
     void on_cb_save_default_clicked();
 
+    void on_combo_theme_currentIndexChanged(const QString &arg1);
+
 protected:
     void keyPressEvent(QKeyEvent* event);
     QProgressBar *bar;

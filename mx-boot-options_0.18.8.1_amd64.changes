@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 06 Aug 2018 08:53:22 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 0.18.8.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (0.18.8.1) mx; urgency=medium
+ .
+   * don't apply changes automatically when enabling splash
+Checksums-Sha1:
+ 0b98775f36c40a66569fa0fafd26bab73ec22965 1163 mx-boot-options_0.18.8.1.dsc
+ fe5fdf7af6178963d8ccd78eded186f86b1c84b4 19776 mx-boot-options_0.18.8.1.tar.xz
+ 7cd3b78ba5bb1f1c19647e2dc2e12bf5b99cfddb 49522 mx-boot-options_0.18.8.1_amd64.deb
+Checksums-Sha256:
+ 547f6b689f1fa8f7b5df9ce715b63c87ccf3bcb8200d6b27d74abf9cdfb5b7c4 1163 mx-boot-options_0.18.8.1.dsc
+ ef8ae6963c50fc9cadcb80c51c5f94f50cdf6fcea2e79263aaaf7591167c7693 19776 mx-boot-options_0.18.8.1.tar.xz
+ f324f76f6c324642f3a9f8e39c84ffeb276918cbf49ee28a62dd068455730f0b 49522 mx-boot-options_0.18.8.1_amd64.deb
+Files:
+ 1ab1956c9858519eed625615c37e0f81 1163 admin optional mx-boot-options_0.18.8.1.dsc
+ 1ffc9f850a5ff96107404f6b66f2c658 19776 admin optional mx-boot-options_0.18.8.1.tar.xz
+ 34453cdea6f88378f5b17eeeb60d7af2 49522 admin optional mx-boot-options_0.18.8.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltoRdsTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFcuB/9rVvBgwrsYF0qOVkDg9aNT34FDu7Ke
+USwO25q7WBVDNDxoVCVsSvFhVg/1iZv9ZNTHdtQ9uDm+MjLircyh+4l+5Y2eJbob
+ENRoRcg5x2Oy0Tq5DfHDwJTtmdhe6a0BrAWoh0Mh4uIpFvxw2ap0iZbGnivIrNNo
+5sYTewNg+QIYPrAhnOvPKmeT+wwAVUKLOo8VyCuN8ykTHa7YtVuFtg4pgJPlN2/y
+XFoVUaC8Yc2HPiYinDPgE320zkV91wfZrW9YdAFNjUwODuKP3kSJobu+jGZlIHu1
+1OoyrzlwtivQc9U2tkApb7e0+8MZoSr3nek3O9BiFZdGEmDmkxnOMAXs
+=4Sof
+-----END PGP SIGNATURE-----

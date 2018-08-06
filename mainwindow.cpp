@@ -106,6 +106,9 @@ void MainWindow::setup()
     readDefaultGrub();
     readKernelOpts();
     ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
+    if(inVirtualMachine()) {
+        ui->button_preview->setDisabled(true);
+    }
     ui->buttonApply->setDisabled(true);
     this->adjustSize();
 }
@@ -640,6 +643,12 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
 {
     ui->rb_limited_msg->setVisible(!checked);
     if (checked) {
+        if (inVirtualMachine()) {
+            QMessageBox::information(this, tr("Running in a Virtual Machine"),
+                                     tr("You current system is running in a Virtual Machine,\n"
+                                        "Plymouth bootsplash will work in a limited way, you also won't be able to preview the theme"));
+            ui->button_preview->setDisabled(true);
+        }
         if (!checkInstalled(QStringList() << "plymouth" << "plymouth-x11" << "plymouth-themes" << "plymouth-themes-mx")) {
             int ans = QMessageBox::question(this, tr("Plymouth packages not installed"), tr("Plymouth packages are not installed.\nOK to go ahead and install them?"));
             if (ans == QMessageBox::No) {
@@ -650,19 +659,10 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
             installSplash();
             just_installed = true;
         }
-        if (inVirtualMachine()) {
-            QMessageBox::information(this, tr("Running in a Virtual Machine"),
-                                     tr("You current system is running in a Virtual Machine,\n"
-                                        "Plymouth bootsplash will work in a limited way, you also won't be able to preview the theme"));
-        }
         loadPlymouthThemes();
-        splash_changed = true;
-        ui->buttonApply->setEnabled(true);
         if (ui->rb_limited_msg->isChecked()) {
             ui->rb_detailed_msg->setChecked(true);
         }
-        on_buttonApply_clicked();
-        return;
     }
     splash_changed = true;
     ui->buttonApply->setEnabled(true);

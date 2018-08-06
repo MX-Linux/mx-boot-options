@@ -1,3 +1,9 @@
+mx-boot-options (0.18.8.1) mx; urgency=medium
+
+  * don't apply changes automatically when enabling splash
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 06 Aug 2018 08:53:22 -0400
+
 mx-boot-options (0.18.8) mx; urgency=medium
 
   * install plymouth-themes-mx when selecting boot splash

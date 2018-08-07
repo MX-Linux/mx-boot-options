@@ -611,7 +611,7 @@ void MainWindow::on_buttonAbout_clicked()
         Cmd cmd;
         text->setText(cmd.getOutput("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
 
-        QPushButton *btnClose = new QPushButton(tr("Close"));
+        QPushButton *btnClose = new QPushButton(tr("&Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));
         connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
 
@@ -650,7 +650,7 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
             ui->button_preview->setDisabled(true);
         }
         if (!checkInstalled(QStringList() << "plymouth" << "plymouth-x11" << "plymouth-themes" << "plymouth-themes-mx")) {
-            int ans = QMessageBox::question(this, tr("Plymouth packages not installed"), tr("Plymouth packages are not currently installed.\nOK to go ahead and install them?"));
+            int ans = QMessageBox::question(this, tr("Plymouth packages not installed"), tr("Plymouth packages are not installed.\nOK to go ahead and install them?"));
             if (ans == QMessageBox::No) {
                 ui->cb_bootsplash->setChecked(false);
                 ui->rb_limited_msg->setVisible(!checked);
@@ -741,7 +741,7 @@ void MainWindow::on_buttonLog_clicked()
     }
 
     if (QFile::exists(location)) {
-        system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press any key to close").toUtf8() + "'\"&");
+        system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press and key to close").toUtf8() + "'\"&");
     } else {
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
     }
@@ -804,8 +804,3 @@ void MainWindow::on_cb_save_default_clicked()
     ui->buttonApply->setEnabled(true);
 }
 
-
-void MainWindow::on_combo_theme_currentIndexChanged(const QString &arg1)
-{
-    ui->button_preview->setDisabled(arg1 == "details");
-}

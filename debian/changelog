@@ -1,3 +1,9 @@
+mx-boot-options (0.18.8.2) mx; urgency=medium
+
+  * fix icon other themes
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 11 Aug 2018 15:25:15 -0400
+
 mx-boot-options (0.18.8.1) mx; urgency=medium
 
   * don't apply changes automatically when enabling splash

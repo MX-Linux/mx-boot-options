@@ -3,4 +3,6 @@ mx-boot-options.desktop	usr/share/applications
 mx-boot-options.conf	etc
 translations/*.qm	usr/share/mx-boot-options/locale
 license.html            usr/share/doc/mx-boot-options
-/images/gnome-system.svg	usr/share/pixmaps
+images/gnome-system.svg	usr/share/pixmaps
+images/gnome-system.svg	usr/share/icons/hicolor/scalable/apps
+

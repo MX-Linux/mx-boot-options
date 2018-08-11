@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sat, 11 Aug 2018 15:25:15 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 0.18.8.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (0.18.8.2) mx; urgency=medium
+ .
+   * fix icon other themes
+Checksums-Sha1:
+ 8ccccaac9764df8c90c97896e67f4ad761182078 1163 mx-boot-options_0.18.8.2.dsc
+ 792134b097828b97f343c8f454bbb8dbbc620e70 19828 mx-boot-options_0.18.8.2.tar.xz
+ fbdddb4362a17065c4f27186f97c1768f9515487 49712 mx-boot-options_0.18.8.2_amd64.deb
+Checksums-Sha256:
+ ee10a7f0f3dc17118cd8f85f4db0042aa1030f1eb78e3cc2cfdce343b1031ae3 1163 mx-boot-options_0.18.8.2.dsc
+ 65708f35137d24e9bcdcdcb5151056df239519fa016129563eed9e27570134e5 19828 mx-boot-options_0.18.8.2.tar.xz
+ 3e78f5f95bd8d9d38b4edb5bc31e0dadbb21bce8332bc66c9aaf903c5b0bf6eb 49712 mx-boot-options_0.18.8.2_amd64.deb
+Files:
+ 0cde2957d9ad65a87acbf6ed9663fe67 1163 admin optional mx-boot-options_0.18.8.2.dsc
+ d9d5f84b983e28778a2e65af940c159e 19828 admin optional mx-boot-options_0.18.8.2.tar.xz
+ 5e3a0c02cee80b6bd9694c41163f6d63 49712 admin optional mx-boot-options_0.18.8.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAltvPOkTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJ1jB/4v4Yz+XbADuaXsqrFxy1oZoOycMHT1
+goJ5EleJp/3GI3H/GFR+gnymJ0EtnHojRnQ+s7fqjdKmlAfZGDmViDuoGU6gk+fD
+VP36w8eqIsYfR2u5J7FjDIOT8EXDAZw4w10BMJzBIMc/9o/ygz31s+ehp+BwoJEa
+CLQz9tu6cIyn7oo1bjsW/1SUw+x+5O/Woko6dXHDgr2s3hJuXYWPvbvtGLosiMO5
+MwW6ZPNvsKLXBQhOn14p0e5jIDHHSesaxkMybb1yWbP5FFLYYz+xlHRJ8X39NyEK
+zX2W/NDx7V+vFnX+qCIVcgiwElR/fl/ENKsyEnzr56AIZkoOBrTirV6a
+=P6/O
+-----END PGP SIGNATURE-----

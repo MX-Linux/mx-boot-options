@@ -516,15 +516,20 @@ void MainWindow::on_buttonApply_clicked()
     setConnections();
 
     if (options_changed) {
-        replaceGrubArg("GRUB_TIMEOUT", QString::number(ui->spinBoxTimeout->value()));
         replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->button_filename->text() + "\"");
         if (ui->cb_enable_flatmenus->isChecked()) { // for simple menu index number is sufficient
-            replaceGrubArg("GRUB_DEFAULT", QString::number(ui->combo_menu_entry->currentIndex()));
+            if (ui->combo_menu_entry->currentText().contains("memtest")) {
+                ui->spinBoxTimeout->setValue(5);
+                cmd->run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
+            } else {
+                replaceGrubArg("GRUB_DEFAULT", QString::number(ui->combo_menu_entry->currentIndex()));
+            }
         } else {  // if submenus exists then use menuentry_id
             if (!ui->combo_menu_entry->currentData().isNull()) {
                 replaceGrubArg("GRUB_DEFAULT", ui->combo_menu_entry->currentData().toString());
             } else if (ui->combo_menu_entry->currentText().contains("memtest")) { // if menuentry_id is empty most likely memtest
-                replaceGrubArg("GRUB_DEFAULT", "\"" + ui->combo_menu_entry->currentText() + "\"");
+                ui->spinBoxTimeout->setValue(5);
+                cmd->run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
             }
         }
         if (ui->cb_save_default->isChecked()) {
@@ -534,6 +539,7 @@ void MainWindow::on_buttonApply_clicked()
         } else {
             disableGrubLine("GRUB_SAVEDEFAULT=true");
         }
+        replaceGrubArg("GRUB_TIMEOUT", QString::number(ui->spinBoxTimeout->value()));
     }
     if (splash_changed) {
         if (ui->cb_bootsplash->isChecked()) {

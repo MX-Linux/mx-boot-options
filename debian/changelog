@@ -1,3 +1,9 @@
+mx-boot-options (0.18.8.3) mx; urgency=medium
+
+  * add timeout 5 sec for memtest to avoid locking bootloader
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 12 Aug 2018 12:53:46 -0400
+
 mx-boot-options (0.18.8.2) mx; urgency=medium
 
   * fix icon other themes

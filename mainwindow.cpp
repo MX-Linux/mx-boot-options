@@ -516,6 +516,7 @@ void MainWindow::on_buttonApply_clicked()
     setConnections();
 
     if (options_changed) {
+        cmd->run("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
         replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->button_filename->text() + "\"");
         if (ui->cb_enable_flatmenus->isChecked()) { // for simple menu index number is sufficient
             if (ui->combo_menu_entry->currentText().contains("memtest")) {

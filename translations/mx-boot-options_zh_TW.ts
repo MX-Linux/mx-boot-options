@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_TW" version="2.1">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -10,12 +10,12 @@
     <message>
         <location filename="dialog.cpp" line="22"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>確定</translation>
     </message>
     <message>
         <location filename="dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -23,7 +23,7 @@
     <message>
         <location filename="mainwindow.ui" line="29"/>
         <source>Options</source>
-        <translation>オプション</translation>
+        <translation>選項</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="45"/>
@@ -58,7 +58,7 @@
     <message>
         <location filename="mainwindow.ui" line="123"/>
         <source>seconds</source>
-        <translation>秒</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="mainwindow.ui" line="130"/>
@@ -78,17 +78,17 @@
     <message>
         <location filename="mainwindow.ui" line="161"/>
         <source>Enable</source>
-        <translation type="unfinished"/>
+        <translation>使用</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="184"/>
         <source>Theme</source>
-        <translation>テーマ</translation>
+        <translation>佈景</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="197"/>
         <source>Preview</source>
-        <translation type="unfinished"/>
+        <translation>預覽</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="220"/>
@@ -118,12 +118,12 @@
     <message>
         <location filename="mainwindow.ui" line="312"/>
         <source>Display help </source>
-        <translation>ヘルプ表示</translation>
+        <translation>顯示說明</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="315"/>
         <source>Help</source>
-        <translation>ヘルプ</translation>
+        <translation>說明</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="322"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="mainwindow.ui" line="354"/>
         <source>About this application</source>
-        <translation>このアプリケーションについて</translation>
+        <translation>關於本程式</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="357"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation>關於……</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="364"/>
@@ -148,13 +148,13 @@
     <message>
         <location filename="mainwindow.ui" line="399"/>
         <source>Quit application</source>
-        <translation>アプリケーションの終了</translation>
+        <translation>退出程式</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="402"/>
         <location filename="mainwindow.cpp" line="614"/>
         <source>Close</source>
-        <translation>閉じる</translation>
+        <translation>關閉</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="409"/>
@@ -164,7 +164,7 @@
     <message>
         <location filename="mainwindow.ui" line="450"/>
         <source>Apply</source>
-        <translation>適用</translation>
+        <translation>使用</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="70"/>
@@ -189,7 +189,7 @@
     <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="169"/>
@@ -232,7 +232,7 @@
     <message>
         <location filename="mainwindow.cpp" line="571"/>
         <source>Done</source>
-        <translation>完了</translation>
+        <translation>完成</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="571"/>
@@ -242,12 +242,12 @@
     <message>
         <location filename="mainwindow.cpp" line="584"/>
         <source>About</source>
-        <translation>About</translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="585"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>版本：</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="586"/>
@@ -257,13 +257,13 @@
     <message>
         <location filename="mainwindow.cpp" line="588"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>版權所有 (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="589"/>
         <location filename="mainwindow.cpp" line="601"/>
         <source>License</source>
-        <translation>ライセンス</translation>
+        <translation>授權條款</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="590"/>
@@ -273,7 +273,7 @@
     <message>
         <location filename="mainwindow.cpp" line="591"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="633"/>
@@ -310,7 +310,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="mainwindow.cpp" line="744"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"/>
+        <translation>請按任一鍵來關閉本視窗</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="746"/>
@@ -338,7 +338,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="main.cpp" line="58"/>
         <source>You must run this program as root.</source>
-        <translation>このプログラムは root で実行する必要があります。</translation>
+        <translation>本程式必須以 root 身份來執行。</translation>
     </message>
 </context>
 <context>

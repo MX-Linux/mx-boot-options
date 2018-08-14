@@ -37,16 +37,32 @@ HEADERS  += \
 FORMS    += \
     mainwindow.ui
 
-TRANSLATIONS += translations/mx-boot-options_ca.ts \
+TRANSLATIONS += translations/mx-boot-options_am.ts \
+                translations/mx-boot-options_ca.ts \
+                translations/mx-boot-options_cs.ts \
                 translations/mx-boot-options_de.ts \
                 translations/mx-boot-options_el.ts \
                 translations/mx-boot-options_es.ts \
+                translations/mx-boot-options_fi.ts \
                 translations/mx-boot-options_fr.ts \
+                translations/mx-boot-options_hi.ts \
+                translations/mx-boot-options_hr.ts \
+                translations/mx-boot-options_hu.ts \
                 translations/mx-boot-options_it.ts \
                 translations/mx-boot-options_ja.ts \
+                translations/mx-boot-options_kk.ts \
+                translations/mx-boot-options_lt.ts \
                 translations/mx-boot-options_nl.ts \
+                translations/mx-boot-options_pl.ts \
+                translations/mx-boot-options_pt.ts \
+                translations/mx-boot-options_pt_BR.ts \
                 translations/mx-boot-options_ro.ts \
-                translations/mx-boot-options_sv.ts
+                translations/mx-boot-options_ru.ts \
+                translations/mx-boot-options_sk.ts \
+                translations/mx-boot-options_sv.ts \
+                translations/mx-boot-options_tr.ts \
+                translations/mx-boot-options_uk.ts \
+                translations/mx-boot-options_zh_TW.ts
 
 RESOURCES += \
     images.qrc

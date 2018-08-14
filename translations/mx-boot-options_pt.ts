@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.1">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -10,12 +10,12 @@
     <message>
         <location filename="dialog.cpp" line="22"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Aceitar</translation>
     </message>
     <message>
         <location filename="dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -23,107 +23,107 @@
     <message>
         <location filename="mainwindow.ui" line="29"/>
         <source>Options</source>
-        <translation>オプション</translation>
+        <translation>Opções</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="45"/>
         <source>Background</source>
-        <translation type="unfinished"/>
+        <translation>Imagem de fundo</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="52"/>
         <source>Set to &apos;0&apos; to boot immediately without displaying the menu, or to &apos;-1&apos; to wait indefinitely</source>
-        <translation type="unfinished"/>
+        <translation>Escolher &apos;0&apos; para carregar de imediato a escolha pré-definida, sem exibir o menu de opções de arranque, ou &apos;-1&apos; para manter o menu em espera</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="55"/>
         <source>Menu timeout</source>
-        <translation type="unfinished"/>
+        <translation>Tempo de espera</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="68"/>
         <source>Boot to</source>
-        <translation type="unfinished"/>
+        <translation>Arrancar com</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="75"/>
         <source>Use simplified menu structure without submenus</source>
-        <translation type="unfinished"/>
+        <translation>Usa uma estructura de menu simplificada, sem sub-menus</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="78"/>
         <source>Use flat menus (no submenus)</source>
-        <translation type="unfinished"/>
+        <translation>Usar menu simples (sem sub-menus)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="123"/>
         <source>seconds</source>
-        <translation>秒</translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="130"/>
         <source>With this option enabled whatever entry you select from the grub boot menu will be saved as the new default for future boots</source>
-        <translation type="unfinished"/>
+        <translation>Com esta opção activada, a escolha de opção de arranque que for feita no GRUB (carregador do arranque) será guardada como a nova pré-definição para os arranques futuros</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="133"/>
         <source>Enable saving last boot choice</source>
-        <translation type="unfinished"/>
+        <translation>Guardar a última escolha de arranque</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="149"/>
         <source>Splash</source>
-        <translation type="unfinished"/>
+        <translation>Estampa</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="161"/>
         <source>Enable</source>
-        <translation type="unfinished"/>
+        <translation>Activar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="184"/>
         <source>Theme</source>
-        <translation>テーマ</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="197"/>
         <source>Preview</source>
-        <translation type="unfinished"/>
+        <translation>Pré-visualização</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="220"/>
         <source>Messages</source>
-        <translation type="unfinished"/>
+        <translation>Mensagens</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="226"/>
         <source>Very detailed</source>
-        <translation type="unfinished"/>
+        <translation>Apresentação completa</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="233"/>
         <source>Detailed (default setting)</source>
-        <translation type="unfinished"/>
+        <translation>Apresentação normal (pré-definição)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="243"/>
         <source>Limited</source>
-        <translation type="unfinished"/>
+        <translation>Apresentação mínima</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="259"/>
         <source>Display log</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar o registo</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="312"/>
         <source>Display help </source>
-        <translation>ヘルプ表示</translation>
+        <translation>Exibir a ajuda</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="315"/>
         <source>Help</source>
-        <translation>ヘルプ</translation>
+        <translation>Ajuda</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="322"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="mainwindow.ui" line="354"/>
         <source>About this application</source>
-        <translation>このアプリケーションについて</translation>
+        <translation>Sobre esta aplicação</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="357"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation>Sobre...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="364"/>
@@ -148,13 +148,13 @@
     <message>
         <location filename="mainwindow.ui" line="399"/>
         <source>Quit application</source>
-        <translation>アプリケーションの終了</translation>
+        <translation>Sair da aplicação</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="402"/>
         <location filename="mainwindow.cpp" line="614"/>
         <source>Close</source>
-        <translation>閉じる</translation>
+        <translation>Fechar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="409"/>
@@ -164,43 +164,43 @@
     <message>
         <location filename="mainwindow.ui" line="450"/>
         <source>Apply</source>
-        <translation>適用</translation>
+        <translation>Aplicar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="70"/>
         <source>Still running</source>
-        <translation type="unfinished"/>
+        <translation>Ainda em execução</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="155"/>
         <source>Installing bootsplash, please wait</source>
-        <translation type="unfinished"/>
+        <translation>A instalar estampa. Aguardar. </translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="162"/>
         <source>Updating sources</source>
-        <translation type="unfinished"/>
+        <translation>A actualizar as origens</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="164"/>
         <source>Installing</source>
-        <translation type="unfinished"/>
+        <translation>A instalar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>Could not install the bootsplash.</source>
-        <translation type="unfinished"/>
+        <translation>Estampa não instalada.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="272"/>
         <location filename="mainwindow.cpp" line="313"/>
         <source>Cannot continue</source>
-        <translation type="unfinished"/>
+        <translation>Impossível continuar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="272"/>
@@ -216,74 +216,74 @@
         <location filename="mainwindow.cpp" line="511"/>
         <location filename="mainwindow.cpp" line="781"/>
         <source>Updating configuration, please wait</source>
-        <translation type="unfinished"/>
+        <translation>A actualizar a configuração. Aguardar.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="549"/>
         <source>Updating initramfs...</source>
-        <translation type="unfinished"/>
+        <translation>A actualizar o initramfs...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="568"/>
         <location filename="mainwindow.cpp" line="794"/>
         <source>Updating grub...</source>
-        <translation type="unfinished"/>
+        <translation>A actualizar o GRUB...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="571"/>
         <source>Done</source>
-        <translation>完了</translation>
+        <translation>Concluído</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="571"/>
         <source>Changes have been successfully applied.</source>
-        <translation type="unfinished"/>
+        <translation>Alterações aplicadas com êxito.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="584"/>
         <source>About</source>
-        <translation>About</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="585"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>Versão:</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="586"/>
         <source>Program for selecting common start-up choices</source>
-        <translation type="unfinished"/>
+        <translation>Programa para escolher as definições mais comuns para o arranque</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="588"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>Direitos de Autor (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="589"/>
         <location filename="mainwindow.cpp" line="601"/>
         <source>License</source>
-        <translation>ライセンス</translation>
+        <translation>Licença</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="590"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>Registo de alterações</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="591"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="633"/>
         <source>MX Boot Options</source>
-        <translation type="unfinished"/>
+        <translation>MX-Opções de Arranque</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="647"/>
         <source>Running in a Virtual Machine</source>
-        <translation type="unfinished"/>
+        <translation>Em execução numa máquina virtual</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="648"/>
@@ -305,22 +305,22 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="mainwindow.cpp" line="674"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
-        <translation type="unfinished"/>
+        <translation>Imagens (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="744"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"/>
+        <translation>Premir qualquer tecla para fechar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="746"/>
         <source>Log not found</source>
-        <translation type="unfinished"/>
+        <translation>Registo não encontrado</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="746"/>
         <source>Could not find log at </source>
-        <translation type="unfinished"/>
+        <translation>Não foi encontrado registo em</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="760"/>
@@ -338,7 +338,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="main.cpp" line="58"/>
         <source>You must run this program as root.</source>
-        <translation>このプログラムは root で実行する必要があります。</translation>
+        <translation>Este programa tem que ser executado como root (administrador/superutilizador).</translation>
     </message>
 </context>
 <context>
@@ -346,7 +346,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="mainwindow.cpp" line="673"/>
         <source>Select image to display in bootloader</source>
-        <translation type="unfinished"/>
+        <translation>Seleccionar a imagem de fundo do carregador do arranque</translation>
     </message>
 </context>
 </TS>

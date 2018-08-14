@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_BR" version="2.1">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -10,12 +10,12 @@
     <message>
         <location filename="dialog.cpp" line="22"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Aceitar</translation>
     </message>
     <message>
         <location filename="dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -23,7 +23,7 @@
     <message>
         <location filename="mainwindow.ui" line="29"/>
         <source>Options</source>
-        <translation>オプション</translation>
+        <translation>Opções</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="45"/>
@@ -58,7 +58,7 @@
     <message>
         <location filename="mainwindow.ui" line="123"/>
         <source>seconds</source>
-        <translation>秒</translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="130"/>
@@ -78,17 +78,17 @@
     <message>
         <location filename="mainwindow.ui" line="161"/>
         <source>Enable</source>
-        <translation type="unfinished"/>
+        <translation>Activar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="184"/>
         <source>Theme</source>
-        <translation>テーマ</translation>
+        <translation>Tema</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="197"/>
         <source>Preview</source>
-        <translation type="unfinished"/>
+        <translation>Pré-visualização</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="220"/>
@@ -118,12 +118,12 @@
     <message>
         <location filename="mainwindow.ui" line="312"/>
         <source>Display help </source>
-        <translation>ヘルプ表示</translation>
+        <translation>Exibir a ajuda</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="315"/>
         <source>Help</source>
-        <translation>ヘルプ</translation>
+        <translation>Ajuda</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="322"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="mainwindow.ui" line="354"/>
         <source>About this application</source>
-        <translation>このアプリケーションについて</translation>
+        <translation>Sobre esta aplicação</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="357"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation>Sobre...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="364"/>
@@ -148,13 +148,13 @@
     <message>
         <location filename="mainwindow.ui" line="399"/>
         <source>Quit application</source>
-        <translation>アプリケーションの終了</translation>
+        <translation>Sair da aplicação</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="402"/>
         <location filename="mainwindow.cpp" line="614"/>
         <source>Close</source>
-        <translation>閉じる</translation>
+        <translation>Fechar</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="409"/>
@@ -164,7 +164,7 @@
     <message>
         <location filename="mainwindow.ui" line="450"/>
         <source>Apply</source>
-        <translation>適用</translation>
+        <translation>Aplicar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="70"/>
@@ -189,7 +189,7 @@
     <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="169"/>
@@ -232,7 +232,7 @@
     <message>
         <location filename="mainwindow.cpp" line="571"/>
         <source>Done</source>
-        <translation>完了</translation>
+        <translation>Feito</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="571"/>
@@ -242,12 +242,12 @@
     <message>
         <location filename="mainwindow.cpp" line="584"/>
         <source>About</source>
-        <translation>About</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="585"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>Versão: </translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="586"/>
@@ -257,13 +257,13 @@
     <message>
         <location filename="mainwindow.cpp" line="588"/>
         <source>Copyright (c) MX Linux</source>
-        <translation>Copyright (c) MX Linux</translation>
+        <translation>Direitos de Autor (c) MX Linux</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="589"/>
         <location filename="mainwindow.cpp" line="601"/>
         <source>License</source>
-        <translation>ライセンス</translation>
+        <translation>Licença</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="590"/>
@@ -273,7 +273,7 @@
     <message>
         <location filename="mainwindow.cpp" line="591"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="633"/>
@@ -310,7 +310,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="mainwindow.cpp" line="744"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"/>
+        <translation>Pressione qualquer tecla para fechar</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="746"/>
@@ -338,7 +338,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="main.cpp" line="58"/>
         <source>You must run this program as root.</source>
-        <translation>このプログラムは root で実行する必要があります。</translation>
+        <translation>Você deve executar este programa como root.</translation>
     </message>
 </context>
 <context>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ja" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -10,12 +10,12 @@
     <message>
         <location filename="dialog.cpp" line="22"/>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation>Да</translation>
     </message>
     <message>
         <location filename="dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Отменить</translation>
     </message>
 </context>
 <context>
@@ -23,12 +23,12 @@
     <message>
         <location filename="mainwindow.ui" line="29"/>
         <source>Options</source>
-        <translation>オプション</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="45"/>
         <source>Background</source>
-        <translation type="unfinished"/>
+        <translation>Фон</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="52"/>
@@ -38,27 +38,27 @@
     <message>
         <location filename="mainwindow.ui" line="55"/>
         <source>Menu timeout</source>
-        <translation type="unfinished"/>
+        <translation>Таймаут меню</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="68"/>
         <source>Boot to</source>
-        <translation type="unfinished"/>
+        <translation>Загрузить</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="75"/>
         <source>Use simplified menu structure without submenus</source>
-        <translation type="unfinished"/>
+        <translation>Использовать упрощённое меню, без подменю</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="78"/>
         <source>Use flat menus (no submenus)</source>
-        <translation type="unfinished"/>
+        <translation>Использовать плоское меню (без подменю)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="123"/>
         <source>seconds</source>
-        <translation>秒</translation>
+        <translation>секунд</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="130"/>
@@ -68,62 +68,62 @@
     <message>
         <location filename="mainwindow.ui" line="133"/>
         <source>Enable saving last boot choice</source>
-        <translation type="unfinished"/>
+        <translation>Вкл. сохранение последнего варианта загрузки</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="149"/>
         <source>Splash</source>
-        <translation type="unfinished"/>
+        <translation>Splash</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="161"/>
         <source>Enable</source>
-        <translation type="unfinished"/>
+        <translation>Включить</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="184"/>
         <source>Theme</source>
-        <translation>テーマ</translation>
+        <translation>Тема</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="197"/>
         <source>Preview</source>
-        <translation type="unfinished"/>
+        <translation>Предпросмотр</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="220"/>
         <source>Messages</source>
-        <translation type="unfinished"/>
+        <translation>Сообщения</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="226"/>
         <source>Very detailed</source>
-        <translation type="unfinished"/>
+        <translation>Очень подробно</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="233"/>
         <source>Detailed (default setting)</source>
-        <translation type="unfinished"/>
+        <translation>Подробно (настройка по умолчанию)</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="243"/>
         <source>Limited</source>
-        <translation type="unfinished"/>
+        <translation>Кратко</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="259"/>
         <source>Display log</source>
-        <translation type="unfinished"/>
+        <translation>Просмотр журнала</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="312"/>
         <source>Display help </source>
-        <translation>ヘルプ表示</translation>
+        <translation>Показать справку</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="315"/>
         <source>Help</source>
-        <translation>ヘルプ</translation>
+        <translation>Справка</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="322"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="mainwindow.ui" line="354"/>
         <source>About this application</source>
-        <translation>このアプリケーションについて</translation>
+        <translation>Об этом приложении</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="357"/>
         <source>About...</source>
-        <translation>About...</translation>
+        <translation>O...</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="364"/>
@@ -148,13 +148,13 @@
     <message>
         <location filename="mainwindow.ui" line="399"/>
         <source>Quit application</source>
-        <translation>アプリケーションの終了</translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="402"/>
         <location filename="mainwindow.cpp" line="614"/>
         <source>Close</source>
-        <translation>閉じる</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="409"/>
@@ -164,48 +164,48 @@
     <message>
         <location filename="mainwindow.ui" line="450"/>
         <source>Apply</source>
-        <translation>適用</translation>
+        <translation>Применить</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="70"/>
         <source>Still running</source>
-        <translation type="unfinished"/>
+        <translation>Все еще работает</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="155"/>
         <source>Installing bootsplash, please wait</source>
-        <translation type="unfinished"/>
+        <translation>Установка bootsplash, подождите</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="162"/>
         <source>Updating sources</source>
-        <translation type="unfinished"/>
+        <translation>Обновление источников</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="164"/>
         <source>Installing</source>
-        <translation type="unfinished"/>
+        <translation>Установка</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="169"/>
         <source>Could not install the bootsplash.</source>
-        <translation type="unfinished"/>
+        <translation>Не удалось установить bootsplash</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="272"/>
         <location filename="mainwindow.cpp" line="313"/>
         <source>Cannot continue</source>
-        <translation type="unfinished"/>
+        <translation>Невозможно продолжить</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="272"/>
         <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="unfinished"/>
+        <translation>Ничего не выбрано, невозможно изменить параметры загрузки. Выход...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="313"/>
@@ -216,43 +216,43 @@
         <location filename="mainwindow.cpp" line="511"/>
         <location filename="mainwindow.cpp" line="781"/>
         <source>Updating configuration, please wait</source>
-        <translation type="unfinished"/>
+        <translation>Обновление конфигурации, пожалуйста, подождите</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="549"/>
         <source>Updating initramfs...</source>
-        <translation type="unfinished"/>
+        <translation>Обновление initramfs...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="568"/>
         <location filename="mainwindow.cpp" line="794"/>
         <source>Updating grub...</source>
-        <translation type="unfinished"/>
+        <translation>Обновление grub...</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="571"/>
         <source>Done</source>
-        <translation>完了</translation>
+        <translation>Готово</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="571"/>
         <source>Changes have been successfully applied.</source>
-        <translation type="unfinished"/>
+        <translation>Изменения были успешно применены.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="584"/>
         <source>About</source>
-        <translation>About</translation>
+        <translation>О приложении</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="585"/>
         <source>Version: </source>
-        <translation>Version: </translation>
+        <translation>Версия: </translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="586"/>
         <source>Program for selecting common start-up choices</source>
-        <translation type="unfinished"/>
+        <translation>Программа для выбора общих вариантов запуска</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="588"/>
@@ -263,17 +263,17 @@
         <location filename="mainwindow.cpp" line="589"/>
         <location filename="mainwindow.cpp" line="601"/>
         <source>License</source>
-        <translation>ライセンス</translation>
+        <translation>Лицензия</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="590"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>Список изменений</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="591"/>
         <source>Cancel</source>
-        <translation>キャンセル</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="633"/>
@@ -283,7 +283,7 @@
     <message>
         <location filename="mainwindow.cpp" line="647"/>
         <source>Running in a Virtual Machine</source>
-        <translation type="unfinished"/>
+        <translation>Запуск в виртуальной машине</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="648"/>
@@ -294,7 +294,7 @@ Plymouth bootsplash will work in a limited way, you also won&apos;t be able to p
     <message>
         <location filename="mainwindow.cpp" line="653"/>
         <source>Plymouth packages not installed</source>
-        <translation type="unfinished"/>
+        <translation>Plymouth пакет не установлен</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="653"/>
@@ -305,27 +305,27 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="mainwindow.cpp" line="674"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
-        <translation type="unfinished"/>
+        <translation>Изображения (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="744"/>
         <source>Press any key to close</source>
-        <translation type="unfinished"/>
+        <translation>Для закрытия нажмите любую клавишу</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="746"/>
         <source>Log not found</source>
-        <translation type="unfinished"/>
+        <translation>Лог не найден</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="746"/>
         <source>Could not find log at </source>
-        <translation type="unfinished"/>
+        <translation>Не удалось найти журнал</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="760"/>
         <source>Needs reboot</source>
-        <translation type="unfinished"/>
+        <translation>Требуется перезагрузка</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="760"/>
@@ -338,7 +338,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="main.cpp" line="58"/>
         <source>You must run this program as root.</source>
-        <translation>このプログラムは root で実行する必要があります。</translation>
+        <translation>Вы должны запустить программу от имени суперпользователя.</translation>
     </message>
 </context>
 <context>
@@ -346,7 +346,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="mainwindow.cpp" line="673"/>
         <source>Select image to display in bootloader</source>
-        <translation type="unfinished"/>
+        <translation>Выберите изображение для загрузчика</translation>
     </message>
 </context>
 </TS>

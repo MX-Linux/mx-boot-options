@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Tue, 28 Aug 2018 16:11:38 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 18.8.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (18.8.1) mx; urgency=medium
+ .
+   * read GRUB_DEFAULT ignoring quotes or single quotes
+Checksums-Sha1:
+ 85cd21c9144d0da72ff02af3744032c29c6d3ba8 1155 mx-boot-options_18.8.1.dsc
+ 6b13d11de3e3dc4eaea63e03a14966a93bac1faf 35496 mx-boot-options_18.8.1.tar.xz
+ ac8702d35faa0a28780f24d38ebbdf761eb321d0 11244 mx-boot-options_18.8.1_amd64.buildinfo
+ 66a02678f8e00854f3539c7f706b90dbfc243b83 67016 mx-boot-options_18.8.1_amd64.deb
+Checksums-Sha256:
+ 2e74c0352ebc0615552ba36aa52f7d911a36cec4fbc7afc5652438a332e0a296 1155 mx-boot-options_18.8.1.dsc
+ 25eab69f069448cc9dc725af084e51622bf9f74d58c1352c50ee1ec3dcbf4596 35496 mx-boot-options_18.8.1.tar.xz
+ a470e6f08fbc7adb3c2198661b59c605b083faac585af85fe44896cf04ffdadd 11244 mx-boot-options_18.8.1_amd64.buildinfo
+ a303b592060865d1771eb19d3fe03817f64a70085d7b983d22940d27dae3e0a4 67016 mx-boot-options_18.8.1_amd64.deb
+Files:
+ 67a6e5d6a4d583ee42e80b23b91aa449 1155 admin optional mx-boot-options_18.8.1.dsc
+ 361d36750bdca0619e5e7780ab0b8104 35496 admin optional mx-boot-options_18.8.1.tar.xz
+ dd3e0598ef8c6d590223ac062b681983 11244 admin optional mx-boot-options_18.8.1_amd64.buildinfo
+ c7d10a398208a593d090a9c89197ea21 67016 admin optional mx-boot-options_18.8.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAluFrn8THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumJClB/9+Pk5Q7P8r4xH7HIcO6enewJ243Z35
+mieTUthkI5p0BH27O/f6Q22m0fxy+kSBJFajAQbo8cviym+70BhPSmXGgM7mKPAO
+rLxiBBFLQX+cOWfrHORjTmwZYp2NYNHj4KjKfnPwUhD80bAn5LXgxVEQi96MnADU
+4iab/C397fw7qawFHp30blW2ei+99SzQieURs6m/MHs/Rg/q6Dg5M+ZwWEuYvze3
+oR6s9bF18fCOwaZeAtxL2fVV7gKG0ODjX1cmbspMUKcCn+GmfZVSv2EjWh+zlL3V
+zMicHNnYW4OZV1bsu1tdCaYArGNjkCyMJc1C2HTN22lhHlTbjODHfDx0
+=noDo
+-----END PGP SIGNATURE-----

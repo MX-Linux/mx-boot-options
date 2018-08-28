@@ -1,3 +1,9 @@
+mx-boot-options (18.8.1) mx; urgency=medium
+
+  * read GRUB_DEFAULT ignoring quotes or single quotes
+
+ -- Adrian <adrian@mxlinux.org>  Tue, 28 Aug 2018 16:11:38 -0400
+
 mx-boot-options (18.8) mx; urgency=medium
 
   * add translations

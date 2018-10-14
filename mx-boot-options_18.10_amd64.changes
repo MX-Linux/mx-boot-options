@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 14 Oct 2018 18:15:57 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 18.10
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (18.10) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ 1b2a7462faf074e2fe4a19b2f8ab07e3ffcc7564 1151 mx-boot-options_18.10.dsc
+ 75bbdc542fef0c404f17c49217ddab261aff5884 36996 mx-boot-options_18.10.tar.xz
+ 62c4474d9ff3a39d7ed455acaa0e721e175249c3 69260 mx-boot-options_18.10_amd64.deb
+Checksums-Sha256:
+ 167abfdb7de2c9b6ca31f00c2cb296ef5810f0b742e1791430af9d18f34a941c 1151 mx-boot-options_18.10.dsc
+ 7e7f8b33b9333843066e14be3c9555be5d304111875592f81d594324ec827fdd 36996 mx-boot-options_18.10.tar.xz
+ 0135ad39b69c70c7e2fc47cab818278e7fc822e01842b1042e3e72dd3b01ab00 69260 mx-boot-options_18.10_amd64.deb
+Files:
+ 8752f81c14f2c71092fc30a1f3bbdad3 1151 admin optional mx-boot-options_18.10.dsc
+ 146a8a3f6746d76299122850845e088a 36996 admin optional mx-boot-options_18.10.tar.xz
+ ffe74652d46041b9b163a60599ee12d8 69260 admin optional mx-boot-options_18.10_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlvDwZgTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDahCACY1I/bK0cNUzhzNwsuBgBLjihujBwT
+yb0C4g5ZUrKE3Fo2QcqFI5MhCg0bSLPGtUB8BSJKOHTpyw1PdAhIbFOtrGBp0ILh
+JQwqu4uUi5uMoUu4jHN82z9cfeWyHktAVeBUGv4yTFb4nGF92vFRliWkyce0T31Q
+hiwYbY+0shNP1/h219JEuqCf2q8lP9bkYt1vCUttraoyJ64T1v/j5FnF9UphdEVP
+i7JOqMLg9I676eeRHqcAfyaCGNfaihpvm8pRS6Z6v+XVaoO+jiIFcQjHHFY9gP1L
+j+27X/dQqSYzV5BY4trKgPgKUtsgDdM+ZEOTueFPsb920dWNfNV/PxdM
+=H3T6
+-----END PGP SIGNATURE-----

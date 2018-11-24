@@ -40,6 +40,7 @@ FORMS    += \
 TRANSLATIONS += translations/mx-boot-options_am.ts \
                 translations/mx-boot-options_ca.ts \
                 translations/mx-boot-options_cs.ts \
+                translations/mx-boot-options_da.ts \
                 translations/mx-boot-options_de.ts \
                 translations/mx-boot-options_el.ts \
                 translations/mx-boot-options_es.ts \
@@ -48,6 +49,7 @@ TRANSLATIONS += translations/mx-boot-options_am.ts \
                 translations/mx-boot-options_hi.ts \
                 translations/mx-boot-options_hr.ts \
                 translations/mx-boot-options_hu.ts \
+                translations/mx-boot-options_is.ts \
                 translations/mx-boot-options_it.ts \
                 translations/mx-boot-options_ja.ts \
                 translations/mx-boot-options_kk.ts \
@@ -59,6 +61,7 @@ TRANSLATIONS += translations/mx-boot-options_am.ts \
                 translations/mx-boot-options_ro.ts \
                 translations/mx-boot-options_ru.ts \
                 translations/mx-boot-options_sk.ts \
+                translations/mx-boot-options_sq.ts \
                 translations/mx-boot-options_sv.ts \
                 translations/mx-boot-options_tr.ts \
                 translations/mx-boot-options_uk.ts \

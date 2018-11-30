@@ -122,7 +122,7 @@ void MainWindow::sendMouseEvents()
 // Checks if package is installed
 bool MainWindow::checkInstalled(const QString &package) const
 {
-    //qDebug() << "+++ Enter Function:" << __PRETTY_FUNCTION__ << "+++";
+    //qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString cmdstr = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
     if (cmd->getOutput(cmdstr) == "Status: install ok installed") {
         return true;

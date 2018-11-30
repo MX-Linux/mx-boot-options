@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 30 Nov 2018 11:33:44 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 18.11
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (18.11) mx; urgency=medium
+ .
+   * updated translations
+Checksums-Sha1:
+ ad7915ff60aad3088550d8ae4a477a5ef4c52604 589 mx-boot-options_18.11.dsc
+ d9ce82b203e0438b5f3a48738907c4673e1cd382 40232 mx-boot-options_18.11.tar.xz
+ 9f378065a7c0603a6e0c1158fa34bea184822652 10671 mx-boot-options_18.11_amd64.buildinfo
+ d8e66168a7f8f117d6b7087762f614efb0ad7663 72174 mx-boot-options_18.11_amd64.deb
+Checksums-Sha256:
+ 10732c79dbf8a2decc8ef6afd94936f11336ca12332fd0cb4e9884c2f2789de9 589 mx-boot-options_18.11.dsc
+ deb2cc1664461714a80269ff8132413eb027866519cdde5b14eda63a63e253e2 40232 mx-boot-options_18.11.tar.xz
+ fc566c22155045ba8d36452de6199efd5a45cf6e6d0bb029a76fd97bcb07ddc9 10671 mx-boot-options_18.11_amd64.buildinfo
+ 872c066da2ca29b8b5d6c70fe1a38fa0686fd6308e8d3f0d1a79fd1d5a048c32 72174 mx-boot-options_18.11_amd64.deb
+Files:
+ 358f7b5a6df79660dc3e9c4c304b8576 589 admin optional mx-boot-options_18.11.dsc
+ cd91f4866c96617a068279c3c5627ce8 40232 admin optional mx-boot-options_18.11.tar.xz
+ f48db0faab8a8a2cdda1c74131d655e2 10671 admin optional mx-boot-options_18.11_amd64.buildinfo
+ e288af3a7b127a08dc67aa43960c76f3 72174 admin optional mx-boot-options_18.11_amd64.deb

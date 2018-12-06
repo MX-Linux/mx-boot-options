@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Thu, 06 Dec 2018 13:06:24 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 18.12
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (18.12) mx; urgency=medium
+ .
+   * add GRUB theme selection
+Checksums-Sha1:
+ 881ebe6489c466737b0002a53cff3ba6fff834f8 589 mx-boot-options_18.12.dsc
+ 14f6767dc5d5d58e6fa85732f542bada71ff2e71 40960 mx-boot-options_18.12.tar.xz
+ 5a62332cc86e7f768dfca42056e8b3e8765edf86 10671 mx-boot-options_18.12_amd64.buildinfo
+ d60e83bbfba3d7cd9d8ddf898d38410fc9b878f2 74550 mx-boot-options_18.12_amd64.deb
+Checksums-Sha256:
+ 49dab168a4af9404e33504909d30ef54a5aebf22bcb7449d68dfb75891d14d8b 589 mx-boot-options_18.12.dsc
+ 1c0ef5c123d054fe489ea3d1a3662cf01890551433ff3560d5d556ee67d87b44 40960 mx-boot-options_18.12.tar.xz
+ 006b8cb07f1118d7d0a18fa9f2f26ef339273c1ed1ed1fbb0088070ac44ac47d 10671 mx-boot-options_18.12_amd64.buildinfo
+ 191eabf18142934b44f4c03a8914db19d255fc51b6224b40874f65adb006ff31 74550 mx-boot-options_18.12_amd64.deb
+Files:
+ db42531f0e4eb2f99f27dbc01313e81e 589 admin optional mx-boot-options_18.12.dsc
+ cccc9f67051b45f3f7978ce02b572a0d 40960 admin optional mx-boot-options_18.12.tar.xz
+ 2a9c37c9370926d3ea851ac138a26338 10671 admin optional mx-boot-options_18.12_amd64.buildinfo
+ e1f0810115565fd67480980d37cca6ad 74550 admin optional mx-boot-options_18.12_amd64.deb

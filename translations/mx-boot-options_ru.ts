@@ -28,7 +28,7 @@
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="45"/>
+        <location filename="../mainwindow.ui" line="130"/>
         <source>Background</source>
         <translation>Фон</translation>
     </message>
@@ -36,6 +36,11 @@
         <location filename="../mainwindow.ui" line="52"/>
         <source>Set to &apos;0&apos; to boot immediately without displaying the menu, or to &apos;-1&apos; to wait indefinitely</source>
         <translation>Установите «0» для немедленной загрузки без отображения меню или «-1», чтобы ждать бесконечно</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="35"/>
+        <source>Kernel parameters</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
@@ -58,118 +63,123 @@
         <translation>Использовать плоское меню (без подменю)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="123"/>
+        <location filename="../mainwindow.ui" line="107"/>
         <source>seconds</source>
         <translation>секунд</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="130"/>
+        <location filename="../mainwindow.ui" line="114"/>
         <source>With this option enabled whatever entry you select from the grub boot menu will be saved as the new default for future boots</source>
         <translation>Если этот параметр включен, то любая запись, которую вы выбираете из меню загрузки grub, будет сохранена в качестве нового значения по умолчанию для будущих загрузок</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="133"/>
+        <location filename="../mainwindow.ui" line="117"/>
         <source>Enable saving last boot choice</source>
         <translation>Вкл. сохранение последнего варианта загрузки</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="150"/>
+        <location filename="../mainwindow.ui" line="142"/>
+        <source>Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="155"/>
         <source>Enable theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="166"/>
+        <location filename="../mainwindow.ui" line="197"/>
         <source>Splash</source>
         <translation>Splash</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="178"/>
+        <location filename="../mainwindow.ui" line="209"/>
         <source>Enable</source>
         <translation>Включить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="201"/>
+        <location filename="../mainwindow.ui" line="232"/>
         <source>Theme</source>
         <translation>Тема</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="214"/>
+        <location filename="../mainwindow.ui" line="245"/>
         <source>Preview</source>
         <translation>Предпросмотр</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="237"/>
+        <location filename="../mainwindow.ui" line="268"/>
         <source>Messages</source>
         <translation>Сообщения</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="243"/>
+        <location filename="../mainwindow.ui" line="274"/>
         <source>Very detailed</source>
         <translation>Очень подробно</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="250"/>
+        <location filename="../mainwindow.ui" line="281"/>
         <source>Detailed (default setting)</source>
         <translation>Подробно (настройка по умолчанию)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="260"/>
+        <location filename="../mainwindow.ui" line="291"/>
         <source>Limited</source>
         <translation>Кратко</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="276"/>
+        <location filename="../mainwindow.ui" line="307"/>
         <source>Display log</source>
         <translation>Просмотр журнала</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="329"/>
+        <location filename="../mainwindow.ui" line="360"/>
         <source>Display help </source>
         <translation>Показать справку</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="332"/>
+        <location filename="../mainwindow.ui" line="363"/>
         <source>Help</source>
         <translation>Справка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="339"/>
+        <location filename="../mainwindow.ui" line="370"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="371"/>
+        <location filename="../mainwindow.ui" line="402"/>
         <source>About this application</source>
         <translation>Об этом приложении</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="374"/>
+        <location filename="../mainwindow.ui" line="405"/>
         <source>About...</source>
         <translation>O...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="381"/>
+        <location filename="../mainwindow.ui" line="412"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="416"/>
+        <location filename="../mainwindow.ui" line="447"/>
         <source>Quit application</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="419"/>
-        <location filename="../mainwindow.cpp" line="658"/>
+        <location filename="../mainwindow.ui" line="450"/>
+        <location filename="../mainwindow.cpp" line="663"/>
         <source>Close</source>
         <translation>Закрыть</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="426"/>
+        <location filename="../mainwindow.ui" line="457"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="467"/>
+        <location filename="../mainwindow.ui" line="498"/>
         <source>Apply</source>
         <translation>Применить</translation>
     </message>
@@ -220,129 +230,129 @@
         <translation>Невозможно создать среду chroot, изменить параметры загрузки. Выход ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="825"/>
+        <location filename="../mainwindow.cpp" line="540"/>
+        <location filename="../mainwindow.cpp" line="830"/>
         <source>Updating configuration, please wait</source>
         <translation>Обновление конфигурации, пожалуйста, подождите</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="593"/>
+        <location filename="../mainwindow.cpp" line="598"/>
         <source>Updating initramfs...</source>
         <translation>Обновление initramfs...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="612"/>
-        <location filename="../mainwindow.cpp" line="838"/>
+        <location filename="../mainwindow.cpp" line="617"/>
+        <location filename="../mainwindow.cpp" line="843"/>
         <source>Updating grub...</source>
         <translation>Обновление grub...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="615"/>
+        <location filename="../mainwindow.cpp" line="620"/>
         <source>Done</source>
         <translation>Готово</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="615"/>
+        <location filename="../mainwindow.cpp" line="620"/>
         <source>Changes have been successfully applied.</source>
         <translation>Изменения были успешно применены.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="628"/>
+        <location filename="../mainwindow.cpp" line="633"/>
         <source>About</source>
         <translation>О приложении</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="629"/>
+        <location filename="../mainwindow.cpp" line="634"/>
         <source>Version: </source>
         <translation>Версия: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="630"/>
+        <location filename="../mainwindow.cpp" line="635"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Программа для выбора общих вариантов запуска</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="637"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="633"/>
-        <location filename="../mainwindow.cpp" line="645"/>
+        <location filename="../mainwindow.cpp" line="638"/>
+        <location filename="../mainwindow.cpp" line="650"/>
         <source>License</source>
         <translation>Лицензия</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="634"/>
+        <location filename="../mainwindow.cpp" line="639"/>
         <source>Changelog</source>
         <translation>Список изменений</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="635"/>
+        <location filename="../mainwindow.cpp" line="640"/>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="677"/>
+        <location filename="../mainwindow.cpp" line="682"/>
         <source>MX Boot Options</source>
         <translation>MX Опции загрузчика</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="691"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>Running in a Virtual Machine</source>
         <translation>Запуск в виртуальной машине</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="692"/>
+        <location filename="../mainwindow.cpp" line="697"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Текущая система работает на виртуальной машине,
 Plymouth bootsplash будет работать ограниченным образом, вы также не сможете просмотреть тему</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="697"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>Plymouth packages not installed</source>
         <translation>Plymouth пакет не установлен</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="697"/>
+        <location filename="../mainwindow.cpp" line="702"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>Пакеты Plymouth в настоящее время не установлены.
 ОК, чтобы продолжить и установить их?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="718"/>
+        <location filename="../mainwindow.cpp" line="723"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Изображения (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="788"/>
+        <location filename="../mainwindow.cpp" line="793"/>
         <source>Press any key to close</source>
         <translation>Для закрытия нажмите любую клавишу</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="790"/>
+        <location filename="../mainwindow.cpp" line="795"/>
         <source>Log not found</source>
         <translation>Лог не найден</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="790"/>
+        <location filename="../mainwindow.cpp" line="795"/>
         <source>Could not find log at </source>
         <translation>Не удалось найти журнал</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="804"/>
+        <location filename="../mainwindow.cpp" line="809"/>
         <source>Needs reboot</source>
         <translation>Требуется перезагрузка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="804"/>
+        <location filename="../mainwindow.cpp" line="809"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Plymouth только что был установлен, вам может потребоваться перезагрузка, прежде чем вы сможете отображать превью</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="860"/>
+        <location filename="../mainwindow.cpp" line="865"/>
         <source>Click to select theme</source>
         <translation type="unfinished"></translation>
     </message>
@@ -358,12 +368,12 @@ OK to go ahead and install them?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../mainwindow.cpp" line="717"/>
+        <location filename="../mainwindow.cpp" line="722"/>
         <source>Select image to display in bootloader</source>
         <translation>Выберите изображение для загрузчика</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="869"/>
+        <location filename="../mainwindow.cpp" line="874"/>
         <source>Select GRUB theme</source>
         <translation type="unfinished"></translation>
     </message>

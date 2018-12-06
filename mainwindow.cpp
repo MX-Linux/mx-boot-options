@@ -91,7 +91,6 @@ void MainWindow::setup()
     this->setWindowTitle("MX Boot Options");
     ui->buttonCancel->setEnabled(true);
     ui->buttonApply->setEnabled(true);
-    ui->label_theme->setDisabled(true);
     ui->combo_theme->setDisabled(true);
     ui->button_preview->setDisabled(true);
     ui->cb_enable_flatmenus->setEnabled(true);
@@ -773,7 +772,6 @@ void MainWindow::on_combo_menu_entry_currentIndexChanged(int)
 void MainWindow::on_cb_bootsplash_toggled(bool checked)
 {
     ui->combo_theme->setEnabled(checked);
-    ui->label_theme->setEnabled(checked);
     ui->button_preview->setEnabled(checked);
     loadPlymouthThemes();
 }

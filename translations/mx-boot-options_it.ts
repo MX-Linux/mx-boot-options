@@ -85,6 +85,7 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
     </message>
     <message>
         <location filename="../mainwindow.ui" line="155"/>
+        <location filename="../mainwindow.ui" line="219"/>
         <source>Enable theme</source>
         <translation type="unfinished"></translation>
     </message>
@@ -94,93 +95,91 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="209"/>
         <source>Enable</source>
-        <translation>Abilita</translation>
+        <translation type="vanished">Abilita</translation>
+    </message>
+    <message>
+        <source>Theme</source>
+        <translation type="vanished">Tema</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="232"/>
-        <source>Theme</source>
-        <translation>Tema</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="245"/>
         <source>Preview</source>
         <translation>Anteprima</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="268"/>
+        <location filename="../mainwindow.ui" line="255"/>
         <source>Messages</source>
         <translation>Messaggi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="274"/>
+        <location filename="../mainwindow.ui" line="261"/>
         <source>Very detailed</source>
         <translation>Molto dettagliato</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="281"/>
+        <location filename="../mainwindow.ui" line="268"/>
         <source>Detailed (default setting)</source>
         <translation>Dettagliato (impostazione predefinita) </translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="291"/>
+        <location filename="../mainwindow.ui" line="278"/>
         <source>Limited</source>
         <translation>Limitato</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="307"/>
+        <location filename="../mainwindow.ui" line="294"/>
         <source>Display log</source>
         <translation>Visualizza log</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="360"/>
+        <location filename="../mainwindow.ui" line="347"/>
         <source>Display help </source>
         <translation>Visualizza la guida</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="363"/>
+        <location filename="../mainwindow.ui" line="350"/>
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="370"/>
+        <location filename="../mainwindow.ui" line="357"/>
         <source>Alt+H</source>
         <translation>Alt+H</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="402"/>
+        <location filename="../mainwindow.ui" line="389"/>
         <source>About this application</source>
         <translation>Informazioni su questa applicazione</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="405"/>
+        <location filename="../mainwindow.ui" line="392"/>
         <source>About...</source>
         <translation>Info...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="412"/>
+        <location filename="../mainwindow.ui" line="399"/>
         <source>Alt+B</source>
         <translation>Alt+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="447"/>
+        <location filename="../mainwindow.ui" line="434"/>
         <source>Quit application</source>
         <translation>Esci dall&apos;applicazione</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="450"/>
-        <location filename="../mainwindow.cpp" line="663"/>
+        <location filename="../mainwindow.ui" line="437"/>
+        <location filename="../mainwindow.cpp" line="662"/>
         <source>Close</source>
         <translation>Chiudi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="457"/>
+        <location filename="../mainwindow.ui" line="444"/>
         <source>Alt+N</source>
         <translation>Alt+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="498"/>
+        <location filename="../mainwindow.ui" line="485"/>
         <source>Apply</source>
         <translation>Applica</translation>
     </message>
@@ -190,170 +189,170 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
         <translation>in esecuzione</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="164"/>
+        <location filename="../mainwindow.cpp" line="163"/>
         <source>Installing bootsplash, please wait</source>
         <translation>Installazione del boot-splash, attendere...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="171"/>
+        <location filename="../mainwindow.cpp" line="170"/>
         <source>Updating sources</source>
         <translation>Aggiornamento delle fonti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="173"/>
+        <location filename="../mainwindow.cpp" line="172"/>
         <source>Installing</source>
         <translation>Installazione in corso</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="178"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>Error</source>
         <translation>Errore</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="178"/>
+        <location filename="../mainwindow.cpp" line="177"/>
         <source>Could not install the bootsplash.</source>
         <translation>Non si riesce ad installare il bootsplash.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="281"/>
-        <location filename="../mainwindow.cpp" line="327"/>
+        <location filename="../mainwindow.cpp" line="280"/>
+        <location filename="../mainwindow.cpp" line="326"/>
         <source>Cannot continue</source>
         <translation>Non è possibile continuare</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="281"/>
+        <location filename="../mainwindow.cpp" line="280"/>
         <source>Nothing was selected, cannot change boot options. Exiting...</source>
         <translation>Non è stato selezionato niente, non è possibile modificare le opzioni di avvio. Chiusura in corso ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="327"/>
+        <location filename="../mainwindow.cpp" line="326"/>
         <source>Cannot create chroot environment, cannot change boot options. Exiting...</source>
         <translation>Impossibile creare l&apos;ambiente chroot, non è possibile modificare le opzioni di avvio. Chiusura in corso ...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="540"/>
-        <location filename="../mainwindow.cpp" line="830"/>
+        <location filename="../mainwindow.cpp" line="539"/>
+        <location filename="../mainwindow.cpp" line="828"/>
         <source>Updating configuration, please wait</source>
         <translation>Aggiornamento della configurazione, attendere...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="598"/>
+        <location filename="../mainwindow.cpp" line="597"/>
         <source>Updating initramfs...</source>
         <translation> Aggiornamento di initramfs... </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="617"/>
-        <location filename="../mainwindow.cpp" line="843"/>
+        <location filename="../mainwindow.cpp" line="616"/>
+        <location filename="../mainwindow.cpp" line="841"/>
         <source>Updating grub...</source>
         <translation>Aggiornamento di grub...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="620"/>
+        <location filename="../mainwindow.cpp" line="619"/>
         <source>Done</source>
         <translation>Fatto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="620"/>
+        <location filename="../mainwindow.cpp" line="619"/>
         <source>Changes have been successfully applied.</source>
         <translation>I cambiamenti sono stati applicati con successo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="633"/>
+        <location filename="../mainwindow.cpp" line="632"/>
         <source>About</source>
         <translation>Informazioni</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="634"/>
+        <location filename="../mainwindow.cpp" line="633"/>
         <source>Version: </source>
         <translation>Versione: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="635"/>
+        <location filename="../mainwindow.cpp" line="634"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Programma per selezionare le scelte di avvio</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="637"/>
+        <location filename="../mainwindow.cpp" line="636"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="638"/>
-        <location filename="../mainwindow.cpp" line="650"/>
+        <location filename="../mainwindow.cpp" line="637"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>License</source>
         <translation>Licenza</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="639"/>
+        <location filename="../mainwindow.cpp" line="638"/>
         <source>Changelog</source>
         <translation>Changelog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="640"/>
+        <location filename="../mainwindow.cpp" line="639"/>
         <source>Cancel</source>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="682"/>
+        <location filename="../mainwindow.cpp" line="681"/>
         <source>MX Boot Options</source>
         <translation>MX Opzioni di Boot</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="696"/>
+        <location filename="../mainwindow.cpp" line="695"/>
         <source>Running in a Virtual Machine</source>
         <translation>Esecuzione in una Macchina Virtuale</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="697"/>
+        <location filename="../mainwindow.cpp" line="696"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Il tuo attuale sistema è in esecuzione su una Macchina Virtuale.
 Plymouth bootsplash funzionerà in modo limitato, inoltre non sarà possibile visualizzare l&apos;anteprima del tema</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="701"/>
         <source>Plymouth packages not installed</source>
         <translation>I pacchetti di Plymouth non sono installati</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="702"/>
+        <location filename="../mainwindow.cpp" line="701"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>I pacchetti di Plymouth attualmente non sono installati.
 OK per andare avanti ed installarli?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="723"/>
+        <location filename="../mainwindow.cpp" line="722"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Immagini (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="793"/>
+        <location filename="../mainwindow.cpp" line="791"/>
         <source>Press any key to close</source>
         <translation>Premi un tasto qualsiasi per chiudere</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="795"/>
+        <location filename="../mainwindow.cpp" line="793"/>
         <source>Log not found</source>
         <translation>File log non trovato</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="795"/>
+        <location filename="../mainwindow.cpp" line="793"/>
         <source>Could not find log at </source>
         <translation>Non si riesce a trovare un file log in </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="809"/>
+        <location filename="../mainwindow.cpp" line="807"/>
         <source>Needs reboot</source>
         <translation>E&apos; necessario fare il re-boot</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="809"/>
+        <location filename="../mainwindow.cpp" line="807"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Plymouth è stato appena installato, potrebbe essere necessario riavviare il sistema prima di poter visualizzare le anteprime</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="865"/>
+        <location filename="../mainwindow.cpp" line="863"/>
         <source>Click to select theme</source>
         <translation type="unfinished"></translation>
     </message>
@@ -369,12 +368,12 @@ OK per andare avanti ed installarli?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../mainwindow.cpp" line="722"/>
+        <location filename="../mainwindow.cpp" line="721"/>
         <source>Select image to display in bootloader</source>
         <translation>Seleziona un&apos;immagine da visualizzare nel bootloader</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="874"/>
+        <location filename="../mainwindow.cpp" line="872"/>
         <source>Select GRUB theme</source>
         <translation type="unfinished"></translation>
     </message>

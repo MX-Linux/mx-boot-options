@@ -1,3 +1,9 @@
+mx-boot-options (18.12) mx; urgency=medium
+
+  * add GRUB theme selection
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 06 Dec 2018 13:06:24 -0500
+
 mx-boot-options (18.11) mx; urgency=medium
 
   * updated translations

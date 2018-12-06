@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>703</width>
-    <height>511</height>
+    <height>549</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -29,7 +29,7 @@
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="1" column="1" colspan="6">
+      <item row="1" column="2" colspan="4">
        <widget class="QComboBox" name="combo_menu_entry">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -69,7 +69,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="5">
+      <item row="2" column="4">
        <widget class="QCheckBox" name="cb_enable_flatmenus">
         <property name="toolTip">
          <string>Use simplified menu structure without submenus</string>
@@ -79,8 +79,8 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1" colspan="6">
-       <widget class="QPushButton" name="button_filename">
+      <item row="3" column="2" colspan="4">
+       <widget class="QPushButton" name="btn_bg_file">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -95,7 +95,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="0" column="2">
        <widget class="QSpinBox" name="spinBoxTimeout">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -111,7 +111,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
+      <item row="0" column="3">
        <widget class="QLabel" name="label_seconds">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -124,13 +124,30 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
+      <item row="2" column="3">
        <widget class="QCheckBox" name="cb_save_default">
         <property name="toolTip">
          <string>With this option enabled whatever entry you select from the grub boot menu will be saved as the new default for future boots</string>
         </property>
         <property name="text">
          <string>Enable saving last boot choice</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2" colspan="4">
+       <widget class="QPushButton" name="btn_theme_file">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QCheckBox" name="cb_grub_theme">
+        <property name="text">
+         <string>Enable theme</string>
         </property>
        </widget>
       </item>
@@ -517,6 +534,38 @@
     <hint type="destinationlabel">
      <x>171</x>
      <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cb_grub_theme</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>btn_bg_file</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>418</x>
+     <y>150</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cb_grub_theme</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>btn_theme_file</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>418</x>
+     <y>184</y>
     </hint>
    </hints>
   </connection>

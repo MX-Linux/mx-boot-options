@@ -49,11 +49,11 @@ public:
     QStringList getLinuxPartitions();
 
     void addGrubArg(const QString &key, const QString &item);
+    void addGrubLine(const QString &item);
     void createChrootEnv(QString root);
     void enableGrubLine(const QString &item);
     void disableGrubLine(const QString &item);
     void remGrubArg(const QString &key, const QString &item);
-    void replaceGrubArg(const QString &key, const QString &item);
     void loadPlymouthThemes() const;
     void readGrubCfg();
     void readDefaultGrub();
@@ -66,6 +66,7 @@ public:
     bool checkInstalled(const QStringList &packages) const;
     bool installSplash();
     bool inVirtualMachine();
+    bool replaceGrubArg(const QString &key, const QString &item);
 
     int findMenuEntryById(const QString &id) const;
 
@@ -81,7 +82,7 @@ private slots:
     void on_buttonAbout_clicked();
     void on_buttonHelp_clicked();
     void on_cb_bootsplash_clicked(bool checked);
-    void on_button_filename_clicked();
+    void on_btn_bg_file_clicked();
     void on_rb_detailed_msg_toggled(bool checked);
     void on_rb_very_detailed_msg_toggled(bool checked);
     void on_rb_limited_msg_toggled(bool checked);
@@ -93,8 +94,10 @@ private slots:
     void on_button_preview_clicked();
     void on_cb_enable_flatmenus_clicked(bool checked);
     void on_cb_save_default_clicked();
-
     void on_combo_theme_currentIndexChanged(const QString &arg1);
+    void on_cb_grub_theme_toggled(bool checked);
+
+    void on_btn_theme_file_clicked();
 
 protected:
     void keyPressEvent(QKeyEvent* event);

@@ -96,6 +96,15 @@ void MainWindow::setup()
     ui->button_preview->setDisabled(true);
     ui->cb_enable_flatmenus->setEnabled(true);
 
+    if (QFile::exists("/boot/grub/themes")) {
+        ui->cb_grub_theme->setVisible(true);
+        ui->btn_theme_file->setVisible(true);
+    } else {
+        ui->cb_grub_theme->setVisible(false);
+        ui->btn_theme_file->setVisible(false);
+    }
+    ui->btn_theme_file->setDisabled(true);
+
     // if running live read linux partitions and set chroot on the selected one
     if (system("mountpoint -q /live/aufs") == 0) {
         QString part = selectPartiton(getLinuxPartitions());
@@ -305,6 +314,11 @@ void MainWindow::addGrubArg(const QString &key, const QString &item)
     default_grub = new_list;
 }
 
+void MainWindow::addGrubLine(const QString &item)
+{
+    default_grub << item;
+}
+
 void MainWindow::createChrootEnv(QString root)
 {
     QString path = cmd->getOutput("mktemp -d --tmpdir -p /tmp");
@@ -338,13 +352,13 @@ void MainWindow::enableGrubLine(const QString &item)
     }
 }
 
-// comment out line in /etc/default/grub
+// comment out line in /etc/default/grub that starts with passed item
 void MainWindow::disableGrubLine(const QString &item)
 {
     QStringList new_list;
     foreach (QString line, default_grub) {
-        if (line == item) {
-            line = "#" + item;
+        if (line.startsWith(item)) {
+            line = "#" + line;
         }
         new_list << line;
     }
@@ -364,17 +378,20 @@ void MainWindow::remGrubArg(const QString &key, const QString &item)
     default_grub = new_list;
 }
 
-// Replace the argument in /etc/default/grub
-void MainWindow::replaceGrubArg(const QString &key, const QString &item)
+// Replace the argument in /etc/default/grub return false if nothing was replaced
+bool MainWindow::replaceGrubArg(const QString &key, const QString &item)
 {
+    bool replaced = false;
     QStringList new_list;
     foreach (QString line, default_grub) {
         if (line.contains(key)) { // find key
             line = key + "=" + item;
+            replaced = true;
         }
         new_list << line;
     }
     default_grub = new_list;
+    return replaced;
 }
 
 // Read and parse grub.cfg file
@@ -431,7 +448,18 @@ void MainWindow::readDefaultGrub()
         } else if (line.startsWith("GRUB_TIMEOUT=")) {
             ui->spinBoxTimeout->setValue(line.section("=", 1, 1).remove("\"").remove("'").toInt());
         } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
-            ui->button_filename->setText(line.section("=", 1, 1).remove("\""));
+            ui->btn_bg_file->setText(line.section("=", 1, 1).remove("\""));
+        } else if (line.startsWith("GRUB_THEME=")) {
+            ui->btn_theme_file->setText(line.section("=", 1, 1).remove("\""));
+            if (QFile::exists(ui->btn_theme_file->text())) {
+                ui->btn_theme_file->setEnabled(true);
+                ui->cb_grub_theme->setChecked(true);
+                ui->btn_bg_file->setDisabled(true);
+            } else {
+                ui->btn_theme_file->setDisabled(true);
+                ui->btn_bg_file->setEnabled(true);
+                ui->btn_theme_file->setText("");
+            }
         } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
             QString entry = line.section("=", 1, -1);
             if (entry.contains("hush")) {
@@ -517,7 +545,16 @@ void MainWindow::on_buttonApply_clicked()
 
     if (options_changed) {
         cmd->run("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
-        replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->button_filename->text() + "\"");
+        if (ui->btn_bg_file->isEnabled() && QFile::exists(ui->btn_bg_file->text())) {
+            replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->btn_bg_file->text() + "\"");
+        } else if (ui->cb_grub_theme->isChecked() && QFile::exists(ui->btn_theme_file->text())) {
+            if (!replaceGrubArg("GRUB_THEME", "\"" + ui->btn_theme_file->text() + "\"")) {
+                addGrubLine("GRUB_THEME=\"" + ui->btn_theme_file->text() + "\"");
+            }
+        }
+        if (ui->cb_grub_theme->isVisible() && !ui->cb_grub_theme->isChecked()) {
+            disableGrubLine("GRUB_THEME=");
+        }
         if (ui->cb_enable_flatmenus->isChecked()) { // for simple menu index number is sufficient
             if (ui->combo_menu_entry->currentText().contains("memtest")) {
                 ui->spinBoxTimeout->setValue(5);
@@ -675,7 +712,7 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
     ui->buttonApply->setEnabled(true);
 }
 
-void MainWindow::on_button_filename_clicked()
+void MainWindow::on_btn_bg_file_clicked()
 {
     QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
                                               chroot.section(" ", 1, 1) + "/usr/share/backgrounds/MXLinux/grub", tr("Images (*.png *.jpg *.jpeg *.tga)"));
@@ -683,7 +720,7 @@ void MainWindow::on_button_filename_clicked()
         if (!chroot.isEmpty()) {
             selected.remove(chroot.section(" ", 1, 1));
         }
-        ui->button_filename->setText(selected);
+        ui->btn_bg_file->setText(selected);
         options_changed = true;
         ui->buttonApply->setEnabled(true);
     }
@@ -815,4 +852,28 @@ void MainWindow::on_cb_save_default_clicked()
 void MainWindow::on_combo_theme_currentIndexChanged(const QString &arg1)
 {
     ui->button_preview->setDisabled(arg1 == "details");
+}
+
+void MainWindow::on_cb_grub_theme_toggled(bool checked)
+{
+    if (checked && ui->btn_theme_file->text().isEmpty()) {
+        ui->btn_theme_file->setText(tr("Click to select theme"));
+    } else {
+        options_changed = true;
+        ui->buttonApply->setEnabled(true);
+    }
+}
+
+void MainWindow::on_btn_theme_file_clicked()
+{
+    QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select GRUB theme"),
+                                              chroot.section(" ", 1, 1) + "/boot/grub/themes", "*.txt;; *.*");
+    if (!selected.isEmpty()) {
+        if (!chroot.isEmpty()) {
+            selected.remove(chroot.section(" ", 1, 1));
+        }
+        ui->btn_theme_file->setText(selected);
+        options_changed = true;
+        ui->buttonApply->setEnabled(true);
+    }
 }

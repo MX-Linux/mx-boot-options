@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>703</width>
-    <height>549</height>
+    <height>593</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -29,6 +29,13 @@
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_kernel">
+        <property name="text">
+         <string>Kernel parameters</string>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="2" colspan="4">
        <widget class="QComboBox" name="combo_menu_entry">
         <property name="sizePolicy">
@@ -36,13 +43,6 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_bg_image">
-        <property name="text">
-         <string>Background</string>
         </property>
        </widget>
       </item>
@@ -76,22 +76,6 @@
         </property>
         <property name="text">
          <string>Use flat menus (no submenus)</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2" colspan="4">
-       <widget class="QPushButton" name="btn_bg_file">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="autoDefault">
-         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -134,7 +118,45 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="2" colspan="4">
+      <item row="3" column="2" colspan="3">
+       <widget class="QLineEdit" name="lineEdit_kernel"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxBackground">
+     <property name="title">
+      <string>Background</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_bg_image">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Image</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="cb_grub_theme">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Enable theme</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
        <widget class="QPushButton" name="btn_theme_file">
         <property name="text">
          <string/>
@@ -144,10 +166,19 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="0" colspan="2">
-       <widget class="QCheckBox" name="cb_grub_theme">
+      <item row="0" column="1" colspan="2">
+       <widget class="QPushButton" name="btn_bg_file">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>Enable theme</string>
+         <string/>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
         </property>
        </widget>
       </item>

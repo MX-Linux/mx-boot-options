@@ -461,6 +461,7 @@ void MainWindow::readDefaultGrub()
                 ui->btn_theme_file->setText("");
             }
         } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
+            ui->lineEdit_kernel->setText(line.section("=", 1, 1).remove("\""));
             QString entry = line.section("=", 1, -1);
             if (entry.contains("hush")) {
                 ui->rb_limited_msg->setChecked(true);
@@ -542,6 +543,10 @@ void MainWindow::on_buttonApply_clicked()
     progress->resize(500, progress->height());
     progress->show();
     setConnections();
+
+    if (kernel_options_changed) {
+        replaceGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "\"" + ui->lineEdit_kernel->text() + "\"");
+    }
 
     if (options_changed) {
         cmd->run("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
@@ -877,3 +882,12 @@ void MainWindow::on_btn_theme_file_clicked()
         ui->buttonApply->setEnabled(true);
     }
 }
+
+void MainWindow::on_lineEdit_kernel_textEdited()
+{
+    kernel_options_changed = true;
+    options_changed = true;
+    ui->buttonApply->setEnabled(true);
+}
+
+

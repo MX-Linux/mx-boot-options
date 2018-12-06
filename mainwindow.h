@@ -96,8 +96,8 @@ private slots:
     void on_cb_save_default_clicked();
     void on_combo_theme_currentIndexChanged(const QString &arg1);
     void on_cb_grub_theme_toggled(bool checked);
-
     void on_btn_theme_file_clicked();
+    void on_lineEdit_kernel_textEdited();
 
 protected:
     void keyPressEvent(QKeyEvent* event);
@@ -108,6 +108,7 @@ private:
     Cmd *cmd;
 
     bool just_installed;
+    bool kernel_options_changed;
     bool messages_changed;
     bool options_changed;
     bool splash_changed;

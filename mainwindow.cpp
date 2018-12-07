@@ -460,7 +460,7 @@ void MainWindow::readDefaultGrub()
                 ui->btn_theme_file->setText("");
             }
         } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
-            ui->lineEdit_kernel->setText(line.section("=", 1, 1).remove("\""));
+            ui->lineEdit_kernel->setText(line.section("=", 1, 1).remove("\"").remove("'"));
             QString entry = line.section("=", 1, -1);
             if (entry.contains("hush")) {
                 ui->rb_limited_msg->setChecked(true);
@@ -552,6 +552,7 @@ void MainWindow::on_buttonApply_clicked()
         if (ui->btn_bg_file->isEnabled() && QFile::exists(ui->btn_bg_file->text())) {
             replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->btn_bg_file->text() + "\"");
         } else if (ui->cb_grub_theme->isChecked() && QFile::exists(ui->btn_theme_file->text())) {
+            disableGrubLine("export GRUB_MENU_PICTURE");
             if (!replaceGrubArg("GRUB_THEME", "\"" + ui->btn_theme_file->text() + "\"")) {
                 addGrubLine("GRUB_THEME=\"" + ui->btn_theme_file->text() + "\"");
             }
@@ -585,31 +586,19 @@ void MainWindow::on_buttonApply_clicked()
     }
     if (splash_changed) {
         if (ui->cb_bootsplash->isChecked()) {
-            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
             if (!ui->combo_theme->currentText().isEmpty()) {
                 cmd->run(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
             }
             cmd->run(chroot + "update-rc.d bootlogd disable");
         } else {
-            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "splash");
             cmd->run(chroot + "update-rc.d bootlogd enable");
         }
         progress->setLabelText(tr("Updating initramfs..."));
         cmd->run(chroot + "update-initramfs -u -k all");
     }
-    if (messages_changed) {
-        if (ui->rb_detailed_msg->isChecked()) { // remove "hush", add "quiet" if not present
-            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
-            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
-        } else if (ui->rb_limited_msg->isChecked()) { // add "quiet" and "hush" to /boot/default/grub
-            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
-            addGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
-            system(chroot.toUtf8() + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
-       "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
-        } else if (ui->rb_very_detailed_msg->isChecked()) { // remove "hush" and/or "quiet"
-            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "quiet");
-            remGrubArg("GRUB_CMDLINE_LINUX_DEFAULT", "hush");
-        }
+    if (messages_changed && ui->rb_limited_msg->isChecked()) {
+        system(chroot.toUtf8() + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
+                                 "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
     }
     if (options_changed || splash_changed || messages_changed) {
         writeDefaultGrub();
@@ -736,6 +725,15 @@ void MainWindow::on_rb_detailed_msg_toggled(bool checked)
     if (checked) {
         messages_changed = true;
         ui->buttonApply->setEnabled(true);
+        QString line = ui->lineEdit_kernel->text();
+        if (!line.contains("quiet")) {
+            if (!line.isEmpty()) {
+                line.append(" ");
+            }
+            line.append("quiet");
+        }
+        line.remove(QRegularExpression("\\s*hush"));
+        ui->lineEdit_kernel->setText(line.trimmed());
     }
 }
 
@@ -744,6 +742,10 @@ void MainWindow::on_rb_very_detailed_msg_toggled(bool checked)
     if (checked) {
         messages_changed = true;
         ui->buttonApply->setEnabled(true);
+        QString line = ui->lineEdit_kernel->text();
+        line.remove(QRegularExpression("\\s*quiet"));
+        line.remove(QRegularExpression("\\s*hush"));
+        ui->lineEdit_kernel->setText(line.trimmed());
     }
 }
 
@@ -752,6 +754,20 @@ void MainWindow::on_rb_limited_msg_toggled(bool checked)
     if (checked) {
         messages_changed = true;
         ui->buttonApply->setEnabled(true);
+        QString line = ui->lineEdit_kernel->text();
+        if (!line.contains("quiet")) {
+            if (!line.isEmpty()) {
+                line.append(" ");
+            }
+            line.append("quiet");
+        }
+        if (!line.contains("hush")) {
+            if (!line.endsWith(" ")) {
+                line.append(" ");
+            }
+            line.append("hush");
+        }
+        ui->lineEdit_kernel->setText(line);
     }
 }
 
@@ -774,6 +790,18 @@ void MainWindow::on_cb_bootsplash_toggled(bool checked)
     ui->combo_theme->setEnabled(checked);
     ui->button_preview->setEnabled(checked);
     loadPlymouthThemes();
+    QString line = ui->lineEdit_kernel->text();
+    if (checked) {
+        if (!line.contains("splash")) {
+            if (!line.isEmpty()) {
+                line.append(" ");
+            }
+            line.append("splash");
+        }
+    } else {
+        line.remove(QRegularExpression("\\s*splash"));
+    }
+    ui->lineEdit_kernel->setText(line.trimmed());
 }
 
 void MainWindow::on_buttonLog_clicked()

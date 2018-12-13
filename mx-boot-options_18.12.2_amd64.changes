@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Thu, 13 Dec 2018 10:50:37 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 18.12.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (18.12.2) mx; urgency=medium
+ .
+   * fix reading kernel options
+Checksums-Sha1:
+ eed67b1b95b737c82dfe9460557ab7d1948e7610 1159 mx-boot-options_18.12.2.dsc
+ b6bfbfe80ce2007e3a92287eab410e907e19e446 41996 mx-boot-options_18.12.2.tar.xz
+ 3aa9cfb57bc75a1061984e10a73ff2a2e8eab5bc 11252 mx-boot-options_18.12.2_amd64.buildinfo
+ 1c7b2c09b44d6a3438f75fef57918995dade4c6c 76402 mx-boot-options_18.12.2_amd64.deb
+Checksums-Sha256:
+ dfa17df86fd3f286a6bf73b55eefb9948ae2552734f28b8369f432b6f4990f08 1159 mx-boot-options_18.12.2.dsc
+ 99899779b133e7026cd06f07619e350b3106d2424397a94366e5432e84d64bc3 41996 mx-boot-options_18.12.2.tar.xz
+ 22f21887ade8159a31f71abb179e7c5a99357aa6580cb507bb44064ebc110e82 11252 mx-boot-options_18.12.2_amd64.buildinfo
+ a63cb6116bd2744690ab2778386a17f56bbb6fde6df8800ddc0d9e0d60e67468 76402 mx-boot-options_18.12.2_amd64.deb
+Files:
+ 58b106acd8298ab2b1c445ecc61c6615 1159 admin optional mx-boot-options_18.12.2.dsc
+ c47dae5f8f62010687c68d2bb7149d40 41996 admin optional mx-boot-options_18.12.2.tar.xz
+ 20a374b268ede57ec0b20ccf6f6cb966 11252 admin optional mx-boot-options_18.12.2_amd64.buildinfo
+ 773481d722d4c8f6a3b232146373fa58 76402 admin optional mx-boot-options_18.12.2_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlwSgFMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEq4CACvRR2zvRx+XKIODFv64QlbD0MTIWud
+N2di8Fuhar6GOfwWTbolNF/m5+jD1NbEg/3e9RwElH1vYnT9W5sEuFPVHJzriINJ
+0AR8JIigweEltFPKjymPWNzu5GKd1Ard6H4eSsPx/8szh6B7+U6qx3hZ5L4VhbPE
+I0epzh7fbJqqOxDW2T5CRlszJw0Ld/0oD/gu7WURkesBjNUDC/yhU2Nyqr+Gxro2
+DwtBwsKTlCpuszw9RlBhawf9KkeC08if/sUHZnWnzu0E+jC9ZiRbFnfjEz4Hb+A1
+Iaa6DKx3CzqqN8GxjAJ6d/pEQDiZHoCuX8+VloQuGuUyaDqHSUZJhmbP
+=EZBp
+-----END PGP SIGNATURE-----

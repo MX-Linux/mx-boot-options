@@ -460,8 +460,8 @@ void MainWindow::readDefaultGrub()
                 ui->btn_theme_file->setText("");
             }
         } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
-            ui->lineEdit_kernel->setText(line.section("=", 1, 1).remove("\"").remove("'"));
-            QString entry = line.section("=", 1, -1);
+            ui->lineEdit_kernel->setText(line.remove("GRUB_CMDLINE_LINUX_DEFAULT=").remove("\"").remove("'"));
+            QString entry = line.section("=", 1);
             if (entry.contains("hush")) {
                 ui->rb_limited_msg->setChecked(true);
             } else if (entry.contains("quiet")) {

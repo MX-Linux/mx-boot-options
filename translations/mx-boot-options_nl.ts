@@ -161,7 +161,7 @@ systeem dat u wilt wijzigen (alleen Linux partities worden weergegeven)</transla
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
-        <location filename="../mainwindow.cpp" line="651"/>
+        <location filename="../mainwindow.cpp" line="650"/>
         <source>Close</source>
         <translation>Sluiten</translation>
     </message>
@@ -222,129 +222,129 @@ systeem dat u wilt wijzigen (alleen Linux partities worden weergegeven)</transla
         <translation>Kan geen chroot omgeving creëeren, kan geen opstart opties wijzigen. Stoppen...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="539"/>
-        <location filename="../mainwindow.cpp" line="856"/>
+        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="855"/>
         <source>Updating configuration, please wait</source>
         <translation>Configuratie opwaarderen, wachten a.u.b.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="596"/>
+        <location filename="../mainwindow.cpp" line="595"/>
         <source>Updating initramfs...</source>
         <translation>initramfs opwaarderen...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="605"/>
-        <location filename="../mainwindow.cpp" line="869"/>
+        <location filename="../mainwindow.cpp" line="604"/>
+        <location filename="../mainwindow.cpp" line="868"/>
         <source>Updating grub...</source>
         <translation>Grub opwaarderen...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="607"/>
         <source>Done</source>
         <translation>Klaar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="607"/>
         <source>Changes have been successfully applied.</source>
         <translation>Veranderingen zijn succesvol toegepast.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="620"/>
         <source>About</source>
         <translation>Over</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="622"/>
+        <location filename="../mainwindow.cpp" line="621"/>
         <source>Version: </source>
         <translation>Versie:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="623"/>
+        <location filename="../mainwindow.cpp" line="622"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Programma voor het selecteren van veel voorkomende opstart keuzes</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="625"/>
+        <location filename="../mainwindow.cpp" line="624"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="626"/>
-        <location filename="../mainwindow.cpp" line="638"/>
+        <location filename="../mainwindow.cpp" line="625"/>
+        <location filename="../mainwindow.cpp" line="637"/>
         <source>License</source>
         <translation>Licentie</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="627"/>
+        <location filename="../mainwindow.cpp" line="626"/>
         <source>Changelog</source>
         <translation>Changelog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="628"/>
+        <location filename="../mainwindow.cpp" line="627"/>
         <source>Cancel</source>
         <translation>Ongedaan maken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="670"/>
+        <location filename="../mainwindow.cpp" line="669"/>
         <source>MX Boot Options</source>
         <translation>MX Opstart Opties</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="684"/>
+        <location filename="../mainwindow.cpp" line="683"/>
         <source>Running in a Virtual Machine</source>
         <translation>Lopend in een Virtuele Machine</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="685"/>
+        <location filename="../mainwindow.cpp" line="684"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Uw huidige systeem draait in een Virtuele Machine,
 Plymouth opstart splash werkt in een beperkte mate, u zult ook niet in staat zijn om het thema van tevoor te bekijken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="690"/>
+        <location filename="../mainwindow.cpp" line="689"/>
         <source>Plymouth packages not installed</source>
         <translation>Plymouth pakketten niet geïnstalleerd</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="690"/>
+        <location filename="../mainwindow.cpp" line="689"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>Plymouth pakketten zijn momenteel niet geïnstalleerd.
 OK om door te gaan en te installeren?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="711"/>
+        <location filename="../mainwindow.cpp" line="710"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Afbeeldingen (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="819"/>
+        <location filename="../mainwindow.cpp" line="818"/>
         <source>Press any key to close</source>
         <translation>Druk een toets om te sluiten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="821"/>
+        <location filename="../mainwindow.cpp" line="820"/>
         <source>Log not found</source>
         <translation>Log niet gevonden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="821"/>
+        <location filename="../mainwindow.cpp" line="820"/>
         <source>Could not find log at </source>
         <translation>Kon log niet vinden bij</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="835"/>
+        <location filename="../mainwindow.cpp" line="834"/>
         <source>Needs reboot</source>
         <translation>Opnieuw opstarten vereist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="835"/>
+        <location filename="../mainwindow.cpp" line="834"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Plymouth was net geïnstalleerd, misschien moet u herstarten voordat u voorafbeeldingen kunt weergeven</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="891"/>
+        <location filename="../mainwindow.cpp" line="890"/>
         <source>Click to select theme</source>
         <translation>Klik om thema te selecteren</translation>
     </message>
@@ -360,12 +360,12 @@ OK om door te gaan en te installeren?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="../mainwindow.cpp" line="709"/>
         <source>Select image to display in bootloader</source>
         <translation>Select afbeelding om weer te geven in de opstartlader</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="900"/>
+        <location filename="../mainwindow.cpp" line="899"/>
         <source>Select GRUB theme</source>
         <translation>Selecteer GRUB thema</translation>
     </message>

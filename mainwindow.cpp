@@ -461,15 +461,14 @@ void MainWindow::readDefaultGrub()
             }
         } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
             ui->lineEdit_kernel->setText(line.remove("GRUB_CMDLINE_LINUX_DEFAULT=").remove("\"").remove("'"));
-            QString entry = line.section("=", 1);
-            if (entry.contains("hush")) {
+            if (line.contains("hush")) {
                 ui->rb_limited_msg->setChecked(true);
-            } else if (entry.contains("quiet")) {
+            } else if (line.contains("quiet")) {
                 ui->rb_detailed_msg->setChecked(true);
             } else {
                 ui->rb_very_detailed_msg->setChecked(true);
             }
-            ui->cb_bootsplash->setChecked(entry.contains("splash"));
+            ui->cb_bootsplash->setChecked(line.contains("splash"));
             if (!checkInstalled(QStringList() << "plymouth" << "plymouth-x11" << "plymouth-themes" << "plymouth-themes-mx")) {
                 ui->cb_bootsplash->setChecked(false);
             }

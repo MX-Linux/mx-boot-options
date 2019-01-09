@@ -161,7 +161,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="484"/>
-        <location filename="../mainwindow.cpp" line="650"/>
+        <location filename="../mainwindow.cpp" line="678"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
@@ -222,128 +222,128 @@
         <translation>Chroot-Umgebung konnte nicht erzeugt und Bootoptionen nicht geändert werden. Abbruch...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
-        <location filename="../mainwindow.cpp" line="855"/>
+        <location filename="../mainwindow.cpp" line="572"/>
+        <location filename="../mainwindow.cpp" line="883"/>
         <source>Updating configuration, please wait</source>
         <translation>Konfiguration wird aktualisiert, bitte warten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="595"/>
+        <location filename="../mainwindow.cpp" line="623"/>
         <source>Updating initramfs...</source>
         <translation>initramfs wird aktualisiert...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="604"/>
-        <location filename="../mainwindow.cpp" line="868"/>
+        <location filename="../mainwindow.cpp" line="632"/>
+        <location filename="../mainwindow.cpp" line="896"/>
         <source>Updating grub...</source>
         <translation>Grub wird aktualisiert...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="607"/>
+        <location filename="../mainwindow.cpp" line="635"/>
         <source>Done</source>
         <translation>Fertig</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="607"/>
+        <location filename="../mainwindow.cpp" line="635"/>
         <source>Changes have been successfully applied.</source>
         <translation>Änderungen erfolgreich durchgeführt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="620"/>
+        <location filename="../mainwindow.cpp" line="648"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="621"/>
+        <location filename="../mainwindow.cpp" line="649"/>
         <source>Version: </source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="622"/>
+        <location filename="../mainwindow.cpp" line="650"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Ein Programm zur Auswahl üblicher Start-Up Optionen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="624"/>
+        <location filename="../mainwindow.cpp" line="652"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="625"/>
-        <location filename="../mainwindow.cpp" line="637"/>
+        <location filename="../mainwindow.cpp" line="653"/>
+        <location filename="../mainwindow.cpp" line="665"/>
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="626"/>
+        <location filename="../mainwindow.cpp" line="654"/>
         <source>Changelog</source>
         <translation>Changelog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="627"/>
+        <location filename="../mainwindow.cpp" line="655"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="669"/>
+        <location filename="../mainwindow.cpp" line="697"/>
         <source>MX Boot Options</source>
         <translation>MX Boot Optionen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="683"/>
+        <location filename="../mainwindow.cpp" line="711"/>
         <source>Running in a Virtual Machine</source>
         <translation>Ausführung in einer Oracle VM VirtualBox</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="684"/>
+        <location filename="../mainwindow.cpp" line="712"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Das aktuelle System läuft in einer Oracle VM VirtualBox, wodurch Plymouth-Bootsplash nur eingeschränkt funktioniert. Es ist auch keine Splash-Vorschau möglich.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="689"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Plymouth packages not installed</source>
         <translation>Pakete für Plymouth sind nicht installiert</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="689"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>Plymouth packages sind derzeit nicht installiert.
 OK für das Weitermachen und der Installierung dieser Pakete ?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="710"/>
+        <location filename="../mainwindow.cpp" line="738"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Bilddateien (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="818"/>
+        <location filename="../mainwindow.cpp" line="846"/>
         <source>Press any key to close</source>
         <translation>Schließen mit beliebiger Taste</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="820"/>
+        <location filename="../mainwindow.cpp" line="848"/>
         <source>Log not found</source>
         <translation>Kein Log gefunden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="820"/>
+        <location filename="../mainwindow.cpp" line="848"/>
         <source>Could not find log at </source>
         <translation>Log konnte nicht gefunden werden unter</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="862"/>
         <source>Needs reboot</source>
         <translation>Neustart erforderlich</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="862"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Da Plymouth gerade installiert wurde, ist möglicherweise ein Neustart erforderlich, bevor die Vorschau angezeigt werden kann.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="890"/>
+        <location filename="../mainwindow.cpp" line="918"/>
         <source>Click to select theme</source>
         <translation>Klicken, um ein Thema auszuwählen</translation>
     </message>
@@ -359,12 +359,12 @@ OK für das Weitermachen und der Installierung dieser Pakete ?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../mainwindow.cpp" line="709"/>
+        <location filename="../mainwindow.cpp" line="737"/>
         <source>Select image to display in bootloader</source>
         <translation>Auswahl des Bildes, das im Bootlader angezeigt wird.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="899"/>
+        <location filename="../mainwindow.cpp" line="927"/>
         <source>Select GRUB theme</source>
         <translation>GRUB-Thema auswählen</translation>
     </message>

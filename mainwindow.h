@@ -70,6 +70,7 @@ public:
 
     int findMenuEntryById(const QString &id) const;
 
+
 public slots:
 
 private slots:

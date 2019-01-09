@@ -205,7 +205,7 @@ void MainWindow::writeDefaultGrub() const
     file.close();
 }
 
-// find menuentry by id
+// find menuentry by id (flat menu)
 int MainWindow::findMenuEntryById(const QString &id) const
 {
     int count = 0;
@@ -217,7 +217,7 @@ int MainWindow::findMenuEntryById(const QString &id) const
             ++count;
         }
     }
-    return 0;
+    return -1;
 }
 
 // get the list of partitions
@@ -403,6 +403,9 @@ void MainWindow::readGrubCfg()
     }
     ui->combo_menu_entry->clear();
 
+    int menu_level = 0;
+    int menu_count = 0;
+    int submenu_count = 0;
     QString menu_id;
     QString line;
     while (!file.atEnd()) {
@@ -410,7 +413,27 @@ void MainWindow::readGrubCfg()
         grub_cfg << line;
         if (line.startsWith("menuentry ") || line.startsWith("submenu ")) {
             menu_id = line.section("$menuentry_id_option", 1, -1).section(" ", 1, 1);
-            ui->combo_menu_entry->addItem(line.section(QRegularExpression("['\"]"), 1, 1), menu_id);
+            QString info;
+            QString item = line.section(QRegularExpression("['\"]"), 1, 1);
+            if (menu_level > 0) {
+                info = menu_id + " " + QString::number(menu_count - 1) + "<" + QString::number(submenu_count);
+                item = "    " + item;
+                ++submenu_count;
+            } else if (menu_level == 0) {
+                info = menu_id + " " + QString::number(menu_count);
+                ++menu_count;
+            }
+            ui->combo_menu_entry->addItem(item, info);
+        }
+        if (line.contains("{")) { // assuming one "{" per line, this might not work in all cases and with custom made grub.cfg
+            ++menu_level;
+        }
+        if (line.contains("}")) {
+            --menu_level;
+        }
+        // reset submenu count
+        if (menu_level == 0) {
+            submenu_count = 0;
         }
     }
     file.close();
@@ -429,19 +452,30 @@ void MainWindow::readDefaultGrub()
         line = file.readLine().trimmed();
         default_grub << line;
         if (line.startsWith("GRUB_DEFAULT=")) {
-            QString entry = line.section("=", 1, -1);
+            QString entry = line.section("=", 1, -1).remove("\"").remove("'");
             bool ok;
             int number = entry.toInt(&ok);
             if (ok) {
-                ui->combo_menu_entry->setCurrentIndex(number);
+                if (ui->cb_enable_flatmenus->isChecked()) {
+                    ui->combo_menu_entry->setCurrentIndex(number);
+                } else {
+                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findData(" " + entry, Qt::UserRole, Qt::MatchEndsWith));
+                }
             } else if (entry == "saved") {
                 ui->cb_save_default->setChecked(true);
-            } else if (entry.size() > 1) {  // if not saved but still long word assume it's a menuendtry_id or menuentry_name
-                int index = ui->combo_menu_entry->findData(entry);
+            } else if (entry.length() > 3) {  // if not saved but still long word assume it's a menuendtry_id or menuentry_name
+                int index = ui->combo_menu_entry->findData(entry, Qt::UserRole, Qt::MatchContains);
                 if (index != -1) { // menuentry_id
                     ui->combo_menu_entry->setCurrentIndex(index);
                 } else {           // menuentry_name most likely
-                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findText(entry.remove("'").remove("\"")));
+                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findText(entry));
+                }
+            } else { // if 1<2 format
+                int index = ui->combo_menu_entry->findData(entry, Qt::UserRole, Qt::MatchEndsWith);
+                if (index != -1) {
+                    ui->combo_menu_entry->setCurrentIndex(index);
+                } else {           // menuentry_name most likely
+                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findText(entry));
                 }
             }
         } else if (line.startsWith("GRUB_TIMEOUT=")) {
@@ -559,25 +593,19 @@ void MainWindow::on_buttonApply_clicked()
         if (ui->cb_grub_theme->isVisible() && !ui->cb_grub_theme->isChecked()) {
             disableGrubLine("GRUB_THEME=");
         }
-        if (ui->cb_enable_flatmenus->isChecked()) { // for simple menu index number is sufficient
-            if (ui->combo_menu_entry->currentText().contains("memtest")) {
-                ui->spinBoxTimeout->setValue(5);
-                cmd->run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
-            } else {
-                replaceGrubArg("GRUB_DEFAULT", QString::number(ui->combo_menu_entry->currentIndex()));
-            }
-        } else {  // if submenus exists then use menuentry_id
-            if (!ui->combo_menu_entry->currentData().isNull()) {
-                replaceGrubArg("GRUB_DEFAULT", ui->combo_menu_entry->currentData().toString());
-            } else if (ui->combo_menu_entry->currentText().contains("memtest")) { // if menuentry_id is empty most likely memtest
-                ui->spinBoxTimeout->setValue(5);
-                cmd->run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
-            }
+
+        // for simple menu index number is sufficient, if submenus exists use "1<1" format
+        QString grub_entry = ui->cb_enable_flatmenus->isChecked() ? QString::number(ui->combo_menu_entry->currentIndex()) : ui->combo_menu_entry->currentData().toString().section(" ", 1, 1);
+        if (ui->combo_menu_entry->currentText().contains("memtest")) {
+            ui->spinBoxTimeout->setValue(5);
+            cmd->run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
+        } else {
+            replaceGrubArg("GRUB_DEFAULT", "\"" + grub_entry + "\"");
         }
         if (ui->cb_save_default->isChecked()) {
             replaceGrubArg("GRUB_DEFAULT", "saved");
             enableGrubLine("GRUB_SAVEDEFAULT=true");
-            cmd->run(chroot + "grub-set-default " + ui->combo_menu_entry->currentData().toString());
+            cmd->run(chroot + "grub-set-default \"" + grub_entry + "\"");
         } else {
             disableGrubLine("GRUB_SAVEDEFAULT=true");
         }

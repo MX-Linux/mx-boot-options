@@ -1,3 +1,9 @@
+mx-boot-options (19.1) mx; urgency=medium
+
+  * save default grub entry when using submenus
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 09 Jan 2019 01:21:54 -0500
+
 mx-boot-options (18.12.3) mx; urgency=medium
 
   * fix reading kernel options

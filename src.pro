@@ -38,22 +38,33 @@ FORMS    += \
     mainwindow.ui
 
 TRANSLATIONS += translations/mx-boot-options_am.ts \
+                translations/mx-boot-options_ar.ts \
+                translations/mx-boot-options_bg.ts \
                 translations/mx-boot-options_ca.ts \
                 translations/mx-boot-options_cs.ts \
                 translations/mx-boot-options_da.ts \
                 translations/mx-boot-options_de.ts \
                 translations/mx-boot-options_el.ts \
                 translations/mx-boot-options_es.ts \
+                translations/mx-boot-options_et.ts \
+                translations/mx-boot-options_eu.ts \
+                translations/mx-boot-options_fa.ts \
                 translations/mx-boot-options_fi.ts \
                 translations/mx-boot-options_fr.ts \
+                translations/mx-boot-options_he_IL.ts \
                 translations/mx-boot-options_hi.ts \
                 translations/mx-boot-options_hr.ts \
                 translations/mx-boot-options_hu.ts \
+                translations/mx-boot-options_id.ts \
                 translations/mx-boot-options_is.ts \
                 translations/mx-boot-options_it.ts \
                 translations/mx-boot-options_ja.ts \
+                translations/mx-boot-options_ja_JP.ts \
                 translations/mx-boot-options_kk.ts \
+                translations/mx-boot-options_ko.ts \
                 translations/mx-boot-options_lt.ts \
+                translations/mx-boot-options_mk.ts \
+                translations/mx-boot-options_nb.ts \
                 translations/mx-boot-options_nl.ts \
                 translations/mx-boot-options_pl.ts \
                 translations/mx-boot-options_pt.ts \
@@ -61,10 +72,13 @@ TRANSLATIONS += translations/mx-boot-options_am.ts \
                 translations/mx-boot-options_ro.ts \
                 translations/mx-boot-options_ru.ts \
                 translations/mx-boot-options_sk.ts \
+                translations/mx-boot-options_sl.ts \
                 translations/mx-boot-options_sq.ts \
+                translations/mx-boot-options_sr.ts \
                 translations/mx-boot-options_sv.ts \
                 translations/mx-boot-options_tr.ts \
                 translations/mx-boot-options_uk.ts \
+                translations/mx-boot-options_zh_CN.ts \
                 translations/mx-boot-options_zh_TW.ts
 
 RESOURCES += \

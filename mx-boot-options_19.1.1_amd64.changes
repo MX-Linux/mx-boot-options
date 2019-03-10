@@ -18,32 +18,26 @@ Changes:
  .
    * updated translations
 Checksums-Sha1:
- d186a6e257619ce53eec24ff729b955a704f82e7 1155 mx-boot-options_19.1.1.dsc
- 63b45e46f796082e04b29fafd0c73a73f13bd805 45204 mx-boot-options_19.1.1.tar.xz
- 4428835eb89ecfc6c0f8a58896a0517494329e10 519728 mx-boot-options-dbgsym_19.1.1_amd64.deb
- d4b13a8588cfac95123f09ad8c10225018eee401 11677 mx-boot-options_19.1.1_amd64.buildinfo
- e1b282499666adfeb4c47be8ba0a5da485eeb42a 80734 mx-boot-options_19.1.1_amd64.deb
+ 997d0ab96ba97441d5fe545c853a697c03e56a4d 1155 mx-boot-options_19.1.1.dsc
+ e65a0bea7dc42367e1f7c49fef1ee96e7e7ec4c3 45500 mx-boot-options_19.1.1.tar.xz
+ ede0fe99cc5db37b97aeadd99b0b525d54926eec 76782 mx-boot-options_19.1.1_amd64.deb
 Checksums-Sha256:
- c226072fb9dd89c198ac377f99d5fcb5793c45a45b7e3b60fef3d51a8f197c3c 1155 mx-boot-options_19.1.1.dsc
- ff7cc4df57b595266ab9b6f60c63a0ea7f259e6e5510b634a1227b983b138976 45204 mx-boot-options_19.1.1.tar.xz
- ce2daba1f64279d82d4a7e6796fc6761dfc553688aedc1cc9ec4f0677585ad35 519728 mx-boot-options-dbgsym_19.1.1_amd64.deb
- 61984e0cf6114b05ee663407f15c484c5cfe51ea0c31f5205c8faf371b4dccd8 11677 mx-boot-options_19.1.1_amd64.buildinfo
- a21ea99fa1b6a5a30c3a67b198b01671bea86b5171839d0764130219900f44af 80734 mx-boot-options_19.1.1_amd64.deb
+ d6ebbbf0e28154eeb9d34fea8bbbfa2efcf8450c5572e14d72d9ebcc15d1a046 1155 mx-boot-options_19.1.1.dsc
+ f1c6e838139bc3de43c1e9bc63ebf41db68ec2719574dbfbb58187ec2e39929c 45500 mx-boot-options_19.1.1.tar.xz
+ 109e88de2589e5df1cf19129bf510d9d4257c3748a88bab42ba92aa0c642003c 76782 mx-boot-options_19.1.1_amd64.deb
 Files:
- 1988af5579757f7ec29b6de6a636af07 1155 admin optional mx-boot-options_19.1.1.dsc
- de0b9190162148a34b2cd7ad156204f6 45204 admin optional mx-boot-options_19.1.1.tar.xz
- f36ddfe2a60e1d702c4159c2aaa923bd 519728 debug optional mx-boot-options-dbgsym_19.1.1_amd64.deb
- 36a3986feacbf4cb0f0cc23a00b0db9a 11677 admin optional mx-boot-options_19.1.1_amd64.buildinfo
- c276d642a6652352a79f10eedb974f9c 80734 admin optional mx-boot-options_19.1.1_amd64.deb
+ 872e4713015913ffca83950c9e7e222e 1155 admin optional mx-boot-options_19.1.1.dsc
+ f6eb9c2bebffb137a5deb812b03665e9 45500 admin optional mx-boot-options_19.1.1.tar.xz
+ c92bae8cddd0442e75a0c6aa6692474a 76782 admin optional mx-boot-options_19.1.1_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlxIe78THGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumA7JB/9tDz0E3v8LKmbOQRSfuPBzo1nZdZRG
-vBfUiU6U5POwcOiYIEXrVlB8abgng8ARiRw7uWeKSAJ/zRSfDIAyYMBG8l/oomBo
-Ua87QxP73FDaPMGO3wnFCJX2tgw73BUMU+/zrUVoETc6bScbtNwCEeCCEPw+3D84
-QF3oEyfniDvldU7WzH6DXf6gosnXanIvZdlQImgE5HxvrNL8/KsDspkwlyZs2w9o
-/T1GVJJCJ16fTReI0X+8QAy0EevWDdUiPMEMfkb6TyZaUME8gnHdxfQhzvqpWasw
-W1n224e5ov5AJYvkAw1idJOsiuMUxBwUTYTyXEAz9atOwLEvZ7XXjMFC
-=A3c6
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlyEsikTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMH1B/0bEcDcl4kWJ1J/VWHkiaCB89WSD7+f
+KoKkxhTSUbB56X5xpDuR6UFnOnf5Lt7FzLg6H0uO4tfLUX9FmS+Rs66DYrc58ZqL
+lhONTzMQofh/6I8a0SrVuCcuO8MtV2/Z07QqVutS+e5Cn6Ks2CX+L/tOvfEf2S/V
+akZnC4uPyZYAg0AT0mTVjCaX6qd5QqY8Nmae8LTUMSTbI+5HUa+Xk7h2K6ZOzJJ+
+cz/Si6fuOIrfXkaAvzx2gRR2NoCi5UDNsFcVhgqFfH5TCEM65RnEeHTstikp/1EB
+KP2Sj+MvNIVLgvooK3lBkofE0GDWBFKpQPE2A06gtJPZX3g7YPH3zV5t
+=Vkq5
 -----END PGP SIGNATURE-----

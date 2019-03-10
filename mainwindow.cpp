@@ -141,7 +141,7 @@ bool MainWindow::checkInstalled(const QString &package) const
 // checks if a list of packages is installed, return false if one of them is not
 bool MainWindow::checkInstalled(const QStringList &packages) const
 {
-    foreach (QString package, packages) {
+    for (const QString &package : packages) {
         if (!checkInstalled(package)) {
             return false;
         }
@@ -199,7 +199,7 @@ void MainWindow::writeDefaultGrub() const
         return;
     }
     QTextStream stream(&file);
-    foreach (const QString &line, default_grub) {
+    for (const QString &line : default_grub) {
         stream << line << "\n";
     }
     file.close();
@@ -209,9 +209,9 @@ void MainWindow::writeDefaultGrub() const
 int MainWindow::findMenuEntryById(const QString &id) const
 {
     int count = 0;
-    foreach (QString line, grub_cfg) {
+    for (const QString &line : grub_cfg) {
         if (line.startsWith("menuentry ")) {
-            if(line.contains("--id " + id)) {
+            if (line.contains("--id " + id)) {
                 return count;
             }
             ++count;
@@ -228,7 +228,7 @@ QStringList MainWindow::getLinuxPartitions()
 
     QString part;
     QStringList new_list;
-    foreach (QString part_info, partitions) {
+    for (const QString &part_info : partitions) {
         part = part_info.section(" ", 0, 0);
         if (system("lsblk -ln -o PARTTYPE /dev/" + part.toUtf8() +
                    "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'") == 0) {
@@ -266,7 +266,7 @@ QString MainWindow::selectPartiton(QStringList list)
     CustomDialog *dialog = new CustomDialog(list);
 
     // Guess MX install, find first partition with rootMX* label
-    foreach (QString part_info, list) {
+    for (const QString &part_info : list) {
         if (system("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0).toUtf8() + "| grep -q rootMX") == 0) {
             dialog->comboBox()->setCurrentIndex(dialog->comboBox()->findText(part_info));
             break;
@@ -286,7 +286,7 @@ QString MainWindow::selectPartiton(QStringList list)
 void MainWindow::addGrubArg(const QString &key, const QString &item)
 {
     QStringList new_list;
-    foreach (QString line, default_grub) {
+    for (QString line : default_grub) {
         if (line.contains(key)) {               // find key
             if (line.contains(item)) {          // return if already has the item
                 return;
@@ -335,14 +335,14 @@ void MainWindow::enableGrubLine(const QString &item)
 {
     bool found = false;
     QStringList new_list;
-    foreach (QString line, default_grub) {
+    for (const QString &line : default_grub) {
         if (line == item) {
             found = true;
+            new_list << line;
         } else if (line.contains(QRegularExpression("^#.*" + item))) { // if commented out
             found = true;
-            line = item;
+            new_list << item;
         }
-        new_list << line;
     }
     if (found) {
         default_grub = new_list;
@@ -355,11 +355,12 @@ void MainWindow::enableGrubLine(const QString &item)
 void MainWindow::disableGrubLine(const QString &item)
 {
     QStringList new_list;
-    foreach (QString line, default_grub) {
+    for (const QString &line : default_grub) {
         if (line.startsWith(item)) {
-            line = "#" + line;
+            new_list << "#" + line;
+        } else {
+            new_list << line;
         }
-        new_list << line;
     }
     default_grub = new_list;
 }
@@ -368,7 +369,7 @@ void MainWindow::disableGrubLine(const QString &item)
 void MainWindow::remGrubArg(const QString &key, const QString &item)
 {
     QStringList new_list;
-    foreach (QString line, default_grub) {
+    for (QString line : default_grub) {
         if (line.contains(key)) { // find key
             line.remove(QRegularExpression("\\s*" + item));
         }
@@ -382,12 +383,13 @@ bool MainWindow::replaceGrubArg(const QString &key, const QString &item)
 {
     bool replaced = false;
     QStringList new_list;
-    foreach (QString line, default_grub) {
+    for (const QString &line : default_grub) {
         if (line.contains(key)) { // find key
-            line = key + "=" + item;
+            new_list <<  key + "=" + item;
             replaced = true;
+        } else {
+            new_list << line;
         }
-        new_list << line;
     }
     default_grub = new_list;
     return replaced;

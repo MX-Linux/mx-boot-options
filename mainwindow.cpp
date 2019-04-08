@@ -418,7 +418,7 @@ void MainWindow::readGrubCfg()
             QString info;
             QString item = line.section(QRegularExpression("['\"]"), 1, 1);
             if (menu_level > 0) {
-                info = menu_id + " " + QString::number(menu_count - 1) + "<" + QString::number(submenu_count);
+                info = menu_id + " " + QString::number(menu_count - 1) + ">" + QString::number(submenu_count);
                 item = "    " + item;
                 ++submenu_count;
             } else if (menu_level == 0) {
@@ -472,7 +472,7 @@ void MainWindow::readDefaultGrub()
                 } else {           // menuentry_name most likely
                     ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findText(entry));
                 }
-            } else { // if 1<2 format
+            } else { // if 1>2 format
                 int index = ui->combo_menu_entry->findData(entry, Qt::UserRole, Qt::MatchEndsWith);
                 if (index != -1) {
                     ui->combo_menu_entry->setCurrentIndex(index);
@@ -596,7 +596,7 @@ void MainWindow::on_buttonApply_clicked()
             disableGrubLine("GRUB_THEME=");
         }
 
-        // for simple menu index number is sufficient, if submenus exists use "1<1" format
+        // for simple menu index number is sufficient, if submenus exists use "1>1" format
         QString grub_entry = ui->cb_enable_flatmenus->isChecked() ? QString::number(ui->combo_menu_entry->currentIndex()) : ui->combo_menu_entry->currentData().toString().section(" ", 1, 1);
         if (ui->combo_menu_entry->currentText().contains("memtest")) {
             ui->spinBoxTimeout->setValue(5);

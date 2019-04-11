@@ -199,7 +199,7 @@ void MainWindow::writeDefaultGrub() const
         return;
     }
     QTextStream stream(&file);
-    for (const QString &line : default_grub) {
+    for (const QString &line : qAsConst(default_grub)) {
         stream << line << "\n";
     }
     file.close();
@@ -209,7 +209,7 @@ void MainWindow::writeDefaultGrub() const
 int MainWindow::findMenuEntryById(const QString &id) const
 {
     int count = 0;
-    for (const QString &line : grub_cfg) {
+    for (const QString &line : qAsConst(grub_cfg)) {
         if (line.startsWith("menuentry ")) {
             if (line.contains("--id " + id)) {
                 return count;
@@ -223,7 +223,7 @@ int MainWindow::findMenuEntryById(const QString &id) const
 // get the list of partitions
 QStringList MainWindow::getLinuxPartitions()
 {
-    QStringList partitions = cmd->getOutput("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 | "
+    const QStringList partitions = cmd->getOutput("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 | "
                                             "grep '^[h,s,v].[a-z][0-9]\\|mmcblk[0-9]*p\\|nvme[0-9]*p' | sort").split("\n", QString::SkipEmptyParts);
 
     QString part;
@@ -255,13 +255,13 @@ void MainWindow::cleanup()
 }
 
 // Get version of the program
-QString MainWindow::getVersion(QString name) const
+QString MainWindow::getVersion(const QString &name) const
 {
     Cmd cmd;
     return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
 }
 
-QString MainWindow::selectPartiton(QStringList list)
+QString MainWindow::selectPartiton(const QStringList &list)
 {
     CustomDialog *dialog = new CustomDialog(list);
 

@@ -44,8 +44,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    QString getVersion(QString name) const;
-    QString selectPartiton(QStringList list);
+    QString getVersion(const QString &name) const;
+    QString selectPartiton(const QStringList &list);
     QStringList getLinuxPartitions();
 
     void addGrubArg(const QString &key, const QString &item);

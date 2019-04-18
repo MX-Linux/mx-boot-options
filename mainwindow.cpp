@@ -199,7 +199,7 @@ void MainWindow::writeDefaultGrub() const
         return;
     }
     QTextStream stream(&file);
-    for (const QString &line : qAsConst(default_grub)) {
+    for (const QString &line : default_grub) {
         stream << line << "\n";
     }
     file.close();
@@ -209,7 +209,7 @@ void MainWindow::writeDefaultGrub() const
 int MainWindow::findMenuEntryById(const QString &id) const
 {
     int count = 0;
-    for (const QString &line : qAsConst(grub_cfg)) {
+    for (const QString &line : grub_cfg) {
         if (line.startsWith("menuentry ")) {
             if (line.contains("--id " + id)) {
                 return count;

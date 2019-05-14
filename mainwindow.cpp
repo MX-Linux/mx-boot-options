@@ -198,6 +198,7 @@ void MainWindow::writeDefaultGrub() const
     QFile file(chr + "/etc/default/grub");
 
     // create a new backup file
+    QFile::copy(chr + "/etc/default/grub.bak",  chr + "/etc/default/grub.bak.0");
     QFile::remove(chr + "/etc/default/grub.bak");
     file.copy(chr + "/etc/default/grub.bak");
 

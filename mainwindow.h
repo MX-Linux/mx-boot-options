@@ -30,6 +30,7 @@
 
 #include <cmd.h>
 #include <dialog.h>
+#include <version.h>
 
 
 namespace Ui {
@@ -44,7 +45,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    QString getVersion(const QString &name) const;
     QString selectPartiton(const QStringList &list);
     QStringList getLinuxPartitions();
 

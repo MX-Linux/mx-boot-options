@@ -38,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainWindow)
 {
+    qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
     setup();
 }
@@ -252,13 +253,6 @@ void MainWindow::cleanup()
         QString cmd_str = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
         system(cmd_str.toUtf8());
     }
-}
-
-// Get version of the program
-QString MainWindow::getVersion(const QString &name) const
-{
-    Cmd cmd;
-    return cmd.getOutput("dpkg-query -f '${Version}' -W " + name);
 }
 
 QString MainWindow::selectPartiton(const QStringList &list)
@@ -648,7 +642,7 @@ void MainWindow::on_buttonAbout_clicked()
 {
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About") + " MX Boot Options", "<p align=\"center\"><b><h2>MX Boot Options</h2></b></p><p align=\"center\">" +
-                       tr("Version: ") + getVersion("mx-boot-options") + "</p><p align=\"center\"><h3>" +
+                       tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
                        tr("Program for selecting common start-up choices") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>");

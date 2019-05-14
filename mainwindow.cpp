@@ -336,12 +336,11 @@ void MainWindow::enableGrubLine(const QString &item)
     bool found = false;
     QStringList new_list;
     for (const QString &line : default_grub) {
-        if (line == item) {
-            found = true;
-            new_list << line;
-        } else if (line.contains(QRegularExpression("^#.*" + item))) { // if commented out
+        if (line == item || line.contains(QRegularExpression("^#.*" + item))) { // mark found and add item if found disabled or enabled
             found = true;
             new_list << item;
+        } else {
+            new_list << line;
         }
     }
     if (found) {

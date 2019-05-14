@@ -1,0 +1,44 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Mon, 13 May 2019 23:35:59 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 19.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (19.5) mx; urgency=medium
+ .
+   * bug fix: enabling grub line doesn't kill /etc/debian/grub
+   * create backup /etc/debian/grub.bak and bak.0 that doesn't get overwritten
+Checksums-Sha1:
+ 1c749a36147c7f3bc6ba2b4b0bd42d07b0673b87 1147 mx-boot-options_19.5.dsc
+ 25e5e65670581d4dd91c2a1710499637690a7243 46100 mx-boot-options_19.5.tar.xz
+ f380881586767b1bc5d59a4292aad4e13dee3777 77116 mx-boot-options_19.5_amd64.deb
+Checksums-Sha256:
+ 60b9ea8b04f24e762fafe3f82ea2a6ffd73f6f79adb3f124323d7e936f8c326c 1147 mx-boot-options_19.5.dsc
+ 3a847fafee81add515086e3c206cd7bef2362d8d2527831616a61f2f0e1f514b 46100 mx-boot-options_19.5.tar.xz
+ a2aa72468891c36d6ff52e6893c83bde58711e8b7374ec5ad6d8d5bcd2777523 77116 mx-boot-options_19.5_amd64.deb
+Files:
+ 28f32ffe82b96bd5fd1d9bc7dc118d3a 1147 admin optional mx-boot-options_19.5.dsc
+ 6ad455468b517638ccd8a804d5ca9ccc 46100 admin optional mx-boot-options_19.5.tar.xz
+ 3d5b583178f9ffeb13b3b7f0493e1277 77116 admin optional mx-boot-options_19.5_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzaOGMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHgzB/9ScMO6RwNg2BKQohLSdOi7FL90Jk4n
+48tK1LyC41e1fRYMMz9If9+CJ8XCVNlhzx+xtWoNM409RWqfH/XVeSHNfSThkHRH
+SEzQszS1ggUZA2J5XuH/R4MvJsmuhD9wIrc0p1U7hJWS3742hD8117AwZ6+LnDwp
+okDFxmlbQYtY7/YSj7JJqEi4UsPMsJLkdGG0V1pVJz0j+ATK12ouXx2U8uj9Njnd
+lsRNGesEFCJoxQ4QQh4WVmTE7X4QrJPYExYidjW8J2QhS8BDHsZqBjWqrw8mcXFG
+T3dJa1b++LJcRJavO8PuJw3fCl9vQOtlEzi+dm3FiWUOERgYV9xamMYG
+=ZVqv
+-----END PGP SIGNATURE-----

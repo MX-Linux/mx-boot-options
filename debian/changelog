@@ -1,3 +1,10 @@
+mx-boot-options (19.5) mx; urgency=medium
+
+  * bug fix: enabling grub line doesn't kill /etc/debian/grub
+  * create backup /etc/debian/grub.bak and bak.0 that doesn't get overwritten
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 13 May 2019 23:35:59 -0400
+
 mx-boot-options (19.4.1) mx; urgency=medium
 
   * fix default grub when using submenus

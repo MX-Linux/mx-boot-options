@@ -194,7 +194,13 @@ bool MainWindow::inVirtualMachine()
 // Write new config in /etc/default/grup
 void MainWindow::writeDefaultGrub() const
 {
-    QFile file(chroot.section(" ", 1, 1) + "/etc/default/grub");
+    QString chr = chroot.section(" ", 1, 1);
+    QFile file(chr + "/etc/default/grub");
+
+    // create a new backup file
+    QFile::remove(chr + "/etc/default/grub.bak");
+    file.copy(chr + "/etc/default/grub.bak");
+
     if(!file.open(QIODevice::WriteOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
@@ -506,6 +512,7 @@ void MainWindow::readDefaultGrub()
             ui->cb_enable_flatmenus->setChecked(true);
         }
     }
+    file.close();
 }
 
 // Read kernel line and options from /proc/cmdline

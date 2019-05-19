@@ -1,3 +1,9 @@
+mx-boot-options (19.5.1) mx; urgency=medium
+
+  * add support for paravirtualized (Xen) drives and partitions
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 18 May 2019 22:04:40 -0400
+
 mx-boot-options (19.5) mx; urgency=medium
 
   * bug fix: enabling grub line doesn't kill /etc/debian/grub

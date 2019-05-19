@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sat, 18 May 2019 22:04:40 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 19.5.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (19.5.1) mx; urgency=medium
+ .
+   * add support for paravirtualized (Xen) drives and partitions
+Checksums-Sha1:
+ a5f821667440b98593811015119579544b8ccffe 1155 mx-boot-options_19.5.1.dsc
+ fa4ba3bdc5b1b4ba726cee2c090a2f582c08a813 46012 mx-boot-options_19.5.1.tar.xz
+ ed15ca9d8b11a0ef633d4bdd81da2905aa89d851 77120 mx-boot-options_19.5.1_amd64.deb
+Checksums-Sha256:
+ 637229f7709ec7b16eab8c9f11f7a68b8f681613b878a6a26edd0a381782289c 1155 mx-boot-options_19.5.1.dsc
+ 4847b39ae7d8196e9c4c34d3103f18746671d8da1e1e0702c6f20acf204481e6 46012 mx-boot-options_19.5.1.tar.xz
+ e6ecdd6cabde07770c4abb6c824108ad304a5e7c6285b24c524e9378cf864cff 77120 mx-boot-options_19.5.1_amd64.deb
+Files:
+ cd57595cbcceac24c0920de4c317cf0e 1155 admin optional mx-boot-options_19.5.1.dsc
+ 0a974d6a657c114e50bb05ab0e0b8705 46012 admin optional mx-boot-options_19.5.1.tar.xz
+ 6ee22a9c6c850080c7f5632aa9ceac2d 77120 admin optional mx-boot-options_19.5.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAlzguzITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBDLCADKec6ICjdJTHUK77LoyT0dfS7xhH2Z
+X2TTYIPX0FJkXNn0TC0JNumuTI0q8VA6HLWf2QHb0lfUkH7n//GReihMEvcNT0cc
+MqyMP0V7Q1nOJQoEkKMa8TVjIrHUyEKmmGMwZj/f24fJkXA+knCV/gvpTYcNMvDk
+JCsauF2S9JBvTKtsU5dHo+LUjriVeo7RxXpExVecGC+0LaajPcG2vyPEQAqHbQXX
+LMr5pHkr8FSd2ox1T7ZjrjZ9i+V7ZRshHbJJYUqAiEP/X1+OpwEewmiydKSiL4Vd
+VOpjk0pLVyCmp7vw+qXZm4xvlCTzcfxF6BJ5e/7s9uxm01UCaZ5vxOuS
+=PClk
+-----END PGP SIGNATURE-----

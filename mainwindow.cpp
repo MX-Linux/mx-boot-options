@@ -198,7 +198,7 @@ void MainWindow::writeDefaultGrub() const
     QFile file(chr + "/etc/default/grub");
 
     // create a new backup file
-    QFile::copy(chr + "/etc/default/grub.bak",  chr + "/etc/default/grub.bak.0");
+    QFile::copy(chr + "/etc/default/grub.bak", chr + "/etc/default/grub.bak.0");
     QFile::remove(chr + "/etc/default/grub.bak");
     file.copy(chr + "/etc/default/grub.bak");
 
@@ -231,9 +231,8 @@ int MainWindow::findMenuEntryById(const QString &id) const
 // get the list of partitions
 QStringList MainWindow::getLinuxPartitions()
 {
-    const QStringList partitions = cmd->getOutput("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 | "
-                                            "grep '^[h,s,v].[a-z][0-9]\\|mmcblk[0-9]*p\\|nvme[0-9]*p' | sort").split("\n", QString::SkipEmptyParts);
-
+    const QStringList partitions = cmd->getOutput("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 -x NAME | "
+                                            "grep -E '^x?[h,s,v].[a-z][0-9]|^mmcblk[0-9]+p|^nvme[0-9]+n[0-9]+p'").split("\n", QString::SkipEmptyParts);
     QString part;
     QStringList new_list;
     for (const QString &part_info : partitions) {

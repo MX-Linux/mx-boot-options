@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Format: 1.8
+Date: Sun, 07 Jul 2019 13:18:49 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 19.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (19.7) mx; urgency=medium
+ .
+   * fix windows buttons for Buster
+Checksums-Sha1:
+ a9f7cca31065df7ccbd8c3f55b89063a2d4bafdd 1147 mx-boot-options_19.7.dsc
+ 1b2f12e8246fc70723413212d707c450867fe300 46100 mx-boot-options_19.7.tar.xz
+ 4f62221791d47745cdf0f4c1da244a2508cb5b98 77252 mx-boot-options_19.7_amd64.deb
+Checksums-Sha256:
+ dc5e4bf63114cfd7388163ff4fff61084face27aeadad5c991558bf152356811 1147 mx-boot-options_19.7.dsc
+ 15ddd4bcd895e6f73e9f68b6ad4acb32cd45a8361885e5baadcb484c6c9989b9 46100 mx-boot-options_19.7.tar.xz
+ 5df704ebbdd49b5d54f99e680f5b3d9c62a17bc157463cbd596fc2a43576bf8c 77252 mx-boot-options_19.7_amd64.deb
+Files:
+ 5581d8044717d6c2a7b27b971a0ba726 1147 admin optional mx-boot-options_19.7.dsc
+ 8537f173b30da31d03d6f2206c289921 46100 admin optional mx-boot-options_19.7.tar.xz
+ 7cd3e0287b93c7f3ac8b68f8bec6d47b 77252 admin optional mx-boot-options_19.7_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCAAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAl0iKhITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDHmB/9n2+xXW9foFJ7g0kaVZVlXXXgn7tQl
+zzYI+T4+PrD1NOvweoGVj+La86EIRzGiaKTkb2BqSixRZvRkdHRys4VZx0H0VkL6
+UjVhhFISckWqa9HR2FZ2ounhnTPnAwtMOPT4HQLvPGz8lnrHx+nH3cVGI79mSXf/
+VvwogAaZZj4OL+zGc2VvbRMPs/JhWhdctWCv+elT+hMQe2ySHyrmLvoVkXdTtk9x
+nvgGtHQ1C+0RTeaCpMKcVqcOmplghNGDM2/dbhyVY0eR0HBrEEHnfktnvW0CBW9S
+bWoIflteOvCGzYUaooRXjVaaU3jNuUvYocA9BH3YN+OjlPZZ/pNnMaYG
+=ch0U
+-----END PGP SIGNATURE-----

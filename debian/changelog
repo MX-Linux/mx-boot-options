@@ -1,3 +1,9 @@
+mx-boot-options (19.7) mx; urgency=medium
+
+  * fix windows buttons for Buster
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 07 Jul 2019 13:18:49 -0400
+
 mx-boot-options (19.5.1) mx; urgency=medium
 
   * add support for paravirtualized (Xen) drives and partitions

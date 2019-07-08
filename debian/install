@@ -1,4 +1,5 @@
 images/mx-boot-options.svg	usr/share/icons/hicolor/scalable/apps
+images/mx-boot-options.png	usr/share/icons/hicolor/1024x1024/apps
 license.html		        usr/share/doc/mx-boot-options
 mx-boot-options			usr/bin
 mx-boot-options.conf		etc

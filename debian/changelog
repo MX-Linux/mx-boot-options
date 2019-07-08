@@ -1,3 +1,9 @@
+mx-boot-options (19.7.1) mx; urgency=medium
+
+  * updated icon
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 08 Jul 2019 10:50:00 -0400
+
 mx-boot-options (19.7) mx; urgency=medium
 
   * fix windows buttons for Buster

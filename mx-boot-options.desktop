@@ -91,6 +91,6 @@ Comment[zh_TW]=Common start-up choices
 Exec=su-to-root -X -c mx-boot-options
 Terminal=false
 Type=Application
-Icon=gnome-system
+Icon=mx-boot-options
 Categories=GNOME;GTK;System;MX-Maintenance
 NoDisplay=false

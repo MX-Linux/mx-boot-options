@@ -32,7 +32,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    a.setWindowIcon(QIcon::fromTheme("gnome-system", QIcon("/usr/share/pixmaps/gnome-system.svg")));
+    a.setWindowIcon(QIcon::fromTheme("mx-boot-options"));
 
     QTranslator qtTran;
     qtTran.load(QString("qt_") + QLocale::system().name());

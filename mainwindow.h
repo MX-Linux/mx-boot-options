@@ -27,9 +27,10 @@
 
 #include <QMessageBox>
 #include <QProgressBar>
+#include <QTimer>
 
-#include <cmd.h>
 #include <dialog.h>
+#include <mprocess.h>
 #include <version.h>
 
 
@@ -54,7 +55,7 @@ public:
     void enableGrubLine(const QString &item);
     void disableGrubLine(const QString &item);
     void remGrubArg(const QString &key, const QString &item);
-    void loadPlymouthThemes() const;
+    void loadPlymouthThemes();
     void readGrubCfg();
     void readDefaultGrub();
     void readKernelOpts();
@@ -62,8 +63,8 @@ public:
     void sendMouseEvents();
     void writeDefaultGrub() const;
 
-    bool checkInstalled(const QString &package) const;
-    bool checkInstalled(const QStringList &packages) const;
+    bool checkInstalled(const QString &package);
+    bool checkInstalled(const QStringList &packages);
     bool installSplash();
     bool inVirtualMachine();
     bool replaceGrubArg(const QString &key, const QString &item);
@@ -77,7 +78,7 @@ private slots:
     void cleanup();
     void cmdStart();
     void cmdDone();
-    void procTime(int counter, int);
+    void procTime();
     void setConnections();
     void on_buttonApply_clicked();
     void on_buttonAbout_clicked();
@@ -106,7 +107,8 @@ protected:
 
 private:
     Ui::MainWindow *ui;
-    Cmd *cmd;
+    MProcess proc;
+    QTimer timer;
 
     bool just_installed;
     bool kernel_options_changed;

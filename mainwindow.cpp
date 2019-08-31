@@ -25,18 +25,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QDesktopWidget>
 #include <QFileDialog>
 #include <QKeyEvent>
-#include <QTextEdit>
 #include <QProgressDialog>
-#include <QDesktopWidget>
+#include <QTextEdit>
+#include <QTimer>
 
 #include <QDebug>
 
 
 MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    proc(this)
 {
     qDebug() << "Program Version:" << VERSION;
     ui->setupUi(this);
@@ -50,14 +52,14 @@ MainWindow::~MainWindow()
 }
 
 // Return the name of the defualt theme
-void MainWindow::loadPlymouthThemes() const
+void MainWindow::loadPlymouthThemes()
 {
     // load combobox
-    ui->combo_theme->clear();;
-    ui->combo_theme->addItems(cmd->getOutput(chroot + "plymouth-set-default-theme -l").split("\n"));
+    ui->combo_theme->clear();
+    ui->combo_theme->addItems(proc.execOut(chroot + "plymouth-set-default-theme -l").split("\n"));
 
     // get current theme
-    QString current_theme = cmd->getOutput(chroot + "plymouth-set-default-theme");
+    QString current_theme = proc.execOut(chroot + "plymouth-set-default-theme");
     if (!current_theme.isEmpty()) {
         ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
     }
@@ -66,7 +68,7 @@ void MainWindow::loadPlymouthThemes() const
 // Process keystrokes
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
-        if (!cmd->isRunning()) {
+        if (!proc.Running) {
             return qApp->quit();
         } else {
             int ans = QMessageBox::question(this, tr("Still running") , "Process still running. Are you sure you want to quit?");
@@ -80,7 +82,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 // Setup versious items first time program runs
 void MainWindow::setup()
 {
-    cmd = new Cmd(this);
     chroot = "";
     bar = 0;
     options_changed = false;
@@ -107,7 +108,7 @@ void MainWindow::setup()
     ui->btn_theme_file->setDisabled(true);
 
     // if running live read linux partitions and set chroot on the selected one
-    if (system("mountpoint -q /live/aufs") == 0) {
+    if (proc.exec("mountpoint -q /live/aufs")) {
         QString part = selectPartiton(getLinuxPartitions());
         createChrootEnv(part);
     }
@@ -130,18 +131,18 @@ void MainWindow::sendMouseEvents()
 }
 
 // Checks if package is installed
-bool MainWindow::checkInstalled(const QString &package) const
+bool MainWindow::checkInstalled(const QString &package)
 {
     //qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString cmdstr = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
-    if (cmd->getOutput(cmdstr) == "Status: install ok installed") {
+    if (proc.execOut(cmdstr) == "Status: install ok installed") {
         return true;
     }
     return false;
 }
 
 // checks if a list of packages is installed, return false if one of them is not
-bool MainWindow::checkInstalled(const QStringList &packages) const
+bool MainWindow::checkInstalled(const QStringList &packages)
 {
     for (const QString &package : packages) {
         if (!checkInstalled(package)) {
@@ -170,11 +171,10 @@ bool MainWindow::installSplash()
 
     setConnections();
     progress->setLabelText(tr("Updating sources"));
-    cmd->run(chroot + "apt-get update");
+    proc.exec(chroot + "apt-get update");
     progress->setLabelText(tr("Installing") + " " + packages);
-    cmd->run(chroot + "apt-get install -y " + packages);
 
-    if (cmd->getExitCode() != 0) {
+    if (!proc.exec(chroot + "apt-get install -y " + packages)) {
         progress->close();
         QMessageBox::critical(this, tr("Error"), tr("Could not install the bootsplash."));
         ui->cb_bootsplash->setChecked(false);
@@ -188,7 +188,7 @@ bool MainWindow::installSplash()
 // detect Virtual Machine to let user know Plymouth is not fully functional
 bool MainWindow::inVirtualMachine()
 {
-    return (system("test -z \"$(lspci -d 80ee:beef)\"") != 0);
+    return (!proc.exec("test -z \"$(lspci -d 80ee:beef)\""));
 }
 
 
@@ -232,14 +232,14 @@ int MainWindow::findMenuEntryById(const QString &id) const
 // get the list of partitions
 QStringList MainWindow::getLinuxPartitions()
 {
-    const QStringList partitions = cmd->getOutput("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 -x NAME | "
+    const QStringList partitions = proc.execOut("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 -x NAME | "
                                             "grep -E '^x?[h,s,v].[a-z][0-9]|^mmcblk[0-9]+p|^nvme[0-9]+n[0-9]+p'").split("\n", QString::SkipEmptyParts);
     QString part;
     QStringList new_list;
     for (const QString &part_info : partitions) {
         part = part_info.section(" ", 0, 0);
-        if (system("lsblk -ln -o PARTTYPE /dev/" + part.toUtf8() +
-                   "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'") == 0) {
+        if (proc.exec("lsblk -ln -o PARTTYPE /dev/" + part.toUtf8() +
+                   "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'")) {
             new_list << part_info;
         }
     }
@@ -256,9 +256,9 @@ void MainWindow::cleanup()
             return;
         }
         // umount and clean temp folder
-        system("mountpoint -q " + path.toUtf8() + "/boot/efi && umount " + path.toUtf8() + "/boot/efi");
+        proc.exec("mountpoint -q " + path.toUtf8() + "/boot/efi && umount " + path.toUtf8() + "/boot/efi");
         QString cmd_str = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
-        system(cmd_str.toUtf8());
+        proc.exec(cmd_str.toUtf8());
     }
 }
 
@@ -268,7 +268,7 @@ QString MainWindow::selectPartiton(const QStringList &list)
 
     // Guess MX install, find first partition with rootMX* label
     for (const QString &part_info : list) {
-        if (system("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0).toUtf8() + "| grep -q rootMX") == 0) {
+        if (proc.exec("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0).toUtf8() + "| grep -q rootMX")) {
             dialog->comboBox()->setCurrentIndex(dialog->comboBox()->findText(part_info));
             break;
         }
@@ -321,9 +321,9 @@ void MainWindow::addGrubLine(const QString &item)
 
 void MainWindow::createChrootEnv(QString root)
 {
-    QString path = cmd->getOutput("mktemp -d --tmpdir -p /tmp");
+    QString path = proc.execOut("mktemp -d --tmpdir -p /tmp");
     QString cmd_str = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(path);
-    if (cmd->run(cmd_str) != 0) {
+    if (!proc.exec(cmd_str.toUtf8())) {
         QMessageBox::critical(this, tr("Cannot continue"), tr("Cannot create chroot environment, cannot change boot options. Exiting..."));
         exit(1);
     }
@@ -529,35 +529,34 @@ void MainWindow::readKernelOpts()
 void MainWindow::cmdStart()
 {
     setCursor(QCursor(Qt::BusyCursor));
+    bar->setValue(0);
+    timer.start(100);
 }
 
 
 void MainWindow::cmdDone()
 {
     setCursor(QCursor(Qt::ArrowCursor));
-    if (bar) {
-        bar->setValue(100);
-    }
+    bar->setValue(100);
+    timer.stop();
 }
 
-void MainWindow::procTime(int counter, int)
+void MainWindow::procTime()
 {
-    if (bar != 0) {
-        if (bar->value() == 100) {
-            bar->reset();
-        }
-        bar->setValue(counter);
-        qApp->processEvents();
-    }
+    bar->setValue((bar->value() + 10) % 110);
 }
 
 // set proc and timer connections
 void MainWindow::setConnections()
 {
-    cmd->disconnect();
-    connect(cmd, &Cmd::started, this, &MainWindow::cmdStart);
-    connect(cmd, &Cmd::finished, this, &MainWindow::cmdDone);
-    connect(cmd, &Cmd::runTime, this, &MainWindow::procTime);
+    // reset connection if colling a couple of times in a row
+    proc.disconnect();
+    timer.disconnect();
+    timer.stop();
+
+    connect(&timer, &QTimer::timeout, this, &MainWindow::procTime);
+    connect(&proc, &QProcess::started, this, &MainWindow::cmdStart);
+    connect(&proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 
@@ -584,7 +583,7 @@ void MainWindow::on_buttonApply_clicked()
     }
 
     if (options_changed) {
-        cmd->run("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
+        proc.exec("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
         if (ui->btn_bg_file->isEnabled() && QFile::exists(ui->btn_bg_file->text())) {
             replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->btn_bg_file->text() + "\"");
         } else if (ui->cb_grub_theme->isChecked() && QFile::exists(ui->btn_theme_file->text())) {
@@ -601,14 +600,14 @@ void MainWindow::on_buttonApply_clicked()
         QString grub_entry = ui->cb_enable_flatmenus->isChecked() ? QString::number(ui->combo_menu_entry->currentIndex()) : ui->combo_menu_entry->currentData().toString().section(" ", 1, 1);
         if (ui->combo_menu_entry->currentText().contains("memtest")) {
             ui->spinBoxTimeout->setValue(5);
-            cmd->run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
+            proc.exec(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
         } else {
             replaceGrubArg("GRUB_DEFAULT", "\"" + grub_entry + "\"");
         }
         if (ui->cb_save_default->isChecked()) {
             replaceGrubArg("GRUB_DEFAULT", "saved");
             enableGrubLine("GRUB_SAVEDEFAULT=true");
-            cmd->run(chroot + "grub-set-default \"" + grub_entry + "\"");
+            proc.exec(chroot + "grub-set-default \"" + grub_entry + "\"");
         } else {
             disableGrubLine("GRUB_SAVEDEFAULT=true");
         }
@@ -617,23 +616,23 @@ void MainWindow::on_buttonApply_clicked()
     if (splash_changed) {
         if (ui->cb_bootsplash->isChecked()) {
             if (!ui->combo_theme->currentText().isEmpty()) {
-                cmd->run(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
+                proc.exec(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
             }
-            cmd->run(chroot + "update-rc.d bootlogd disable");
+            proc.exec(chroot + "update-rc.d bootlogd disable");
         } else {
-            cmd->run(chroot + "update-rc.d bootlogd enable");
+            proc.exec(chroot + "update-rc.d bootlogd enable");
         }
         progress->setLabelText(tr("Updating initramfs..."));
-        cmd->run(chroot + "update-initramfs -u -k all");
+        proc.execOut(chroot + "update-initramfs -u -k all");
     }
     if (messages_changed && ui->rb_limited_msg->isChecked()) {
-        system(chroot.toUtf8() + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
+        proc.exec(chroot.toUtf8() + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
                                  "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
     }
     if (options_changed || splash_changed || messages_changed) {
         writeDefaultGrub();
         progress->setLabelText(tr("Updating grub..."));
-        cmd->run(chroot.toUtf8() + "update-grub");
+        proc.execOut(chroot.toUtf8() + "update-grub");
         progress->close();
         QMessageBox::information(this, tr("Done") , tr("Changes have been successfully applied."));
     }
@@ -662,12 +661,11 @@ void MainWindow::on_buttonAbout_clicked()
 
     if (msgBox.clickedButton() == btnLicense) {
         QString url = "file:///usr/share/doc/mx-boot-options/license.html";
-        Cmd c;
-        QString user = c.getOutput("logname");
-        if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
-            system("su " + user.toUtf8() + " -c \"mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "\"&");
+        QString user = proc.execOut("logname");
+        if (proc.exec("command -v mx-viewer >/dev/null")) {
+            proc.exec("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
         } else {
-            system("su " + user.toUtf8() + " -c \"xdg-open " + url.toUtf8() + "\"&");
+            proc.exec("su " + user.toUtf8() + " -c \"xdg-open " + url.toUtf8() + "\"&");
         }
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog *changelog = new QDialog(this);
@@ -675,8 +673,7 @@ void MainWindow::on_buttonAbout_clicked()
 
         QTextEdit *text = new QTextEdit;
         text->setReadOnly(true);
-        Cmd cmd;
-        text->setText(cmd.getOutput("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
+        text->setText(proc.execOut("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
 
         QPushButton *btnClose = new QPushButton(tr("Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));
@@ -695,14 +692,13 @@ void MainWindow::on_buttonHelp_clicked()
 {
     QString url = "/usr/share/doc/mx-boot-options/help/mx-boot-options.html";
     QString exec = "xdg-open";
-    if (system("command -v mx-viewer") == 0) { // use mx-viewer if available
+    if (proc.exec("command -v mx-viewer >/dev/null")) { // use mx-viewer if available
         exec = "mx-viewer";
         url += " " + tr("MX Boot Options");
     }
-    Cmd c;
-    QString user = c.getOutput("logname");
+    QString user = proc.execOut("logname");
     QString cmd = QString("su " + user + " -c \"" + exec + " " + url + "\"&");
-    system(cmd.toUtf8());
+    proc.exec(cmd.toUtf8());
 }
 
 
@@ -846,7 +842,7 @@ void MainWindow::on_buttonLog_clicked()
     }
 
     if (QFile::exists(location)) {
-        system("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press any key to close").toUtf8() + "'\"&");
+        proc.exec("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press any key to close").toUtf8() + "'\"&");
     } else {
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
     }
@@ -864,15 +860,15 @@ void MainWindow::on_button_preview_clicked()
     if (just_installed) {
         QMessageBox::warning(this, tr("Needs reboot"), tr("Plymouth was just installed, you might need to reboot before being able to display previews"));
     }
-    QString current_theme = cmd->getOutput("plymouth-set-default-theme");
+    QString current_theme = proc.execOut("plymouth-set-default-theme");
     if (ui->combo_theme->currentText() == "details") {
         return;
     }
-    cmd->run("plymouth-set-default-theme " + ui->combo_theme->currentText());
-    connect(cmd, &Cmd::runTime, this, &MainWindow::sendMouseEvents);
-    cmd->run("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
-    cmd->run("plymouth-set-default-theme " + current_theme); // return to current theme
-    cmd->disconnect();
+    proc.execOut("plymouth-set-default-theme " + ui->combo_theme->currentText());
+    ////connect(cmd, &Cmd::runTime, this, &MainWindow::sendMouseEvents);
+    proc.execOut("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
+    proc.execOut("plymouth-set-default-theme " + current_theme); // return to current theme
+    proc.disconnect();
 }
 
 void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
@@ -898,7 +894,7 @@ void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
     writeDefaultGrub();
     progress->setLabelText(tr("Updating grub..."));
     setConnections();
-    cmd->run(chroot + "update-grub");
+    proc.execOut(chroot + "update-grub");
     readGrubCfg();
     progress->close();
 }
@@ -945,5 +941,4 @@ void MainWindow::on_lineEdit_kernel_textEdited()
     options_changed = true;
     ui->buttonApply->setEnabled(true);
 }
-
 

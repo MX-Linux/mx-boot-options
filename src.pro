@@ -29,12 +29,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     mainwindow.cpp \
-    dialog.cpp
+    dialog.cpp \
+    mprocess.cpp
 
 HEADERS  += \
     mainwindow.h \
     dialog.h \
-    version.h
+    version.h \
+    mprocess.h
 
 FORMS    += \
     mainwindow.ui
@@ -86,4 +88,3 @@ TRANSLATIONS += translations/mx-boot-options_am.ts \
 RESOURCES += \
     images.qrc
 
-unix:!macx: LIBS += -lcmd

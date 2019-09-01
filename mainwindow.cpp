@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
     proc(this)
 {
-    qDebug() << "Program Version:" << VERSION;
+    qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setup();
@@ -56,7 +56,7 @@ void MainWindow::loadPlymouthThemes()
 {
     // load combobox
     ui->combo_theme->clear();
-    ui->combo_theme->addItems(proc.execOut(chroot + "plymouth-set-default-theme -l").split("\n"));
+    ui->combo_theme->addItems(proc.execOutLines(chroot + "plymouth-set-default-theme -l"));
 
     // get current theme
     QString current_theme = proc.execOut(chroot + "plymouth-set-default-theme");
@@ -68,7 +68,7 @@ void MainWindow::loadPlymouthThemes()
 // Process keystrokes
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
-        if (!proc.Running) {
+        if (proc.state() == QProcess::NotRunning) {
             return qApp->quit();
         } else {
             int ans = QMessageBox::question(this, tr("Still running") , "Process still running. Are you sure you want to quit?");
@@ -88,6 +88,8 @@ void MainWindow::setup()
     splash_changed = false;
     messages_changed = false;
     just_installed = false;
+
+    user = proc.execOut("logname");
 
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
 
@@ -661,19 +663,23 @@ void MainWindow::on_buttonAbout_clicked()
 
     if (msgBox.clickedButton() == btnLicense) {
         QString url = "file:///usr/share/doc/mx-boot-options/license.html";
-        QString user = proc.execOut("logname");
-        if (proc.exec("command -v mx-viewer >/dev/null")) {
-            proc.exec("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
+        if (system("command -v mx-viewer >/dev/null") == 0) {
+            system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
         } else {
-            proc.exec("su " + user.toUtf8() + " -c \"xdg-open " + url.toUtf8() + "\"&");
+            system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
         }
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog *changelog = new QDialog(this);
+        changelog->setWindowTitle(tr("Changelog"));
         changelog->resize(600, 500);
 
         QTextEdit *text = new QTextEdit;
         text->setReadOnly(true);
-        text->setText(proc.execOut("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz"));
+
+        QProcess proc;
+        proc.start("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz");
+        proc.waitForFinished();
+        text->setText(proc.readAllStandardOutput());
 
         QPushButton *btnClose = new QPushButton(tr("Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));
@@ -691,14 +697,13 @@ void MainWindow::on_buttonAbout_clicked()
 void MainWindow::on_buttonHelp_clicked()
 {
     QString url = "/usr/share/doc/mx-boot-options/help/mx-boot-options.html";
+
     QString exec = "xdg-open";
-    if (proc.exec("command -v mx-viewer >/dev/null")) { // use mx-viewer if available
-        exec = "mx-viewer";
-        url += " " + tr("MX Boot Options");
+    if (system("command -v mx-viewer >/dev/null") == 0) {
+        system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
+    } else {
+        system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
     }
-    QString user = proc.execOut("logname");
-    QString cmd = QString("su " + user + " -c \"" + exec + " " + url + "\"&");
-    proc.exec(cmd.toUtf8());
 }
 
 

@@ -120,6 +120,7 @@ private:
     QStringList default_grub;
     QString kernel_options;
     QString chroot;
+    QString user;
 };
 
 

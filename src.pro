@@ -68,6 +68,7 @@ TRANSLATIONS += translations/mx-boot-options_am.ts \
                 translations/mx-boot-options_ko.ts \
                 translations/mx-boot-options_lt.ts \
                 translations/mx-boot-options_mk.ts \
+                translations/mx-boot-options_mr.ts \
                 translations/mx-boot-options_nb.ts \
                 translations/mx-boot-options_nl.ts \
                 translations/mx-boot-options_pl.ts \

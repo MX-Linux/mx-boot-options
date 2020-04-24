@@ -666,7 +666,7 @@ void MainWindow::on_buttonAbout_clicked()
         if (system("command -v mx-viewer >/dev/null") == 0) {
             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
         } else {
-            system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+            system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
         }
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog *changelog = new QDialog(this);
@@ -702,7 +702,7 @@ void MainWindow::on_buttonHelp_clicked()
     if (system("command -v mx-viewer >/dev/null") == 0) {
         system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
     } else {
-        system("su " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+        system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
     }
 }
 

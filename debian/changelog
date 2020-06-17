@@ -1,3 +1,9 @@
+mx-boot-options (20.6) mx; urgency=medium
+
+  * fix potential KDE issue with buttons passing & accelerator to text
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 17 Jun 2020 00:38:10 -0400
+
 mx-boot-options (19.9) mx; urgency=medium
 
   * new translations

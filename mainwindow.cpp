@@ -83,7 +83,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 void MainWindow::setup()
 {
     chroot = "";
-    bar = 0;
+    bar = nullptr;
     options_changed = false;
     splash_changed = false;
     messages_changed = false;
@@ -164,7 +164,7 @@ bool MainWindow::installSplash()
     QString packages = "plymouth plymouth-x11 plymouth-themes plymouth-themes-mx";
     progress->setWindowModality(Qt::WindowModal);
     progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
-    progress->setCancelButton(0);
+    progress->setCancelButton(nullptr);
     progress->setWindowTitle(tr("Installing bootsplash, please wait"));
     progress->setBar(bar);
     bar->setTextVisible(false);
@@ -486,9 +486,11 @@ void MainWindow::readDefaultGrub()
             ui->spinBoxTimeout->setValue(line.section("=", 1, 1).remove("\"").remove("'").toInt());
         } else if (line.startsWith("export GRUB_MENU_PICTURE=")) {
             ui->btn_bg_file->setText(line.section("=", 1, 1).remove("\""));
+            ui->btn_bg_file->setProperty("file", line.section("=", 1, 1).remove("\""));
         } else if (line.startsWith("GRUB_THEME=")) {
             ui->btn_theme_file->setText(line.section("=", 1, 1).remove("\""));
-            if (QFile::exists(ui->btn_theme_file->text())) {
+            ui->btn_theme_file->setProperty("file", line.section("=", 1, 1).remove("\""));
+            if (QFile::exists(ui->btn_theme_file->property("file").toString())) {
                 ui->btn_theme_file->setEnabled(true);
                 ui->cb_grub_theme->setChecked(true);
                 ui->btn_bg_file->setDisabled(true);
@@ -496,6 +498,7 @@ void MainWindow::readDefaultGrub()
                 ui->btn_theme_file->setDisabled(true);
                 ui->btn_bg_file->setEnabled(true);
                 ui->btn_theme_file->setText("");
+                ui->btn_theme_file->setProperty("file", "");
             }
         } else if (line.startsWith("GRUB_CMDLINE_LINUX_DEFAULT=")) {
             ui->lineEdit_kernel->setText(line.remove("GRUB_CMDLINE_LINUX_DEFAULT=").remove("\"").remove("'"));
@@ -572,7 +575,7 @@ void MainWindow::on_buttonApply_clicked()
 
     progress->setWindowModality(Qt::WindowModal);
     progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
-    progress->setCancelButton(0);
+    progress->setCancelButton(nullptr);
     progress->setWindowTitle(tr("Updating configuration, please wait"));
     progress->setBar(bar);
     bar->setTextVisible(false);
@@ -586,12 +589,12 @@ void MainWindow::on_buttonApply_clicked()
 
     if (options_changed) {
         proc.exec("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
-        if (ui->btn_bg_file->isEnabled() && QFile::exists(ui->btn_bg_file->text())) {
-            replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->btn_bg_file->text() + "\"");
-        } else if (ui->cb_grub_theme->isChecked() && QFile::exists(ui->btn_theme_file->text())) {
+        if (ui->btn_bg_file->isEnabled() && QFile::exists(ui->btn_bg_file->property("file").toString())) {
+            replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->btn_bg_file->property("file").toString() + "\"");
+        } else if (ui->cb_grub_theme->isChecked() && QFile::exists(ui->btn_theme_file->property("file").toString())) {
             disableGrubLine("export GRUB_MENU_PICTURE");
-            if (!replaceGrubArg("GRUB_THEME", "\"" + ui->btn_theme_file->text() + "\"")) {
-                addGrubLine("GRUB_THEME=\"" + ui->btn_theme_file->text() + "\"");
+            if (!replaceGrubArg("GRUB_THEME", "\"" + ui->btn_theme_file->property("file").toString() + "\"")) {
+                addGrubLine("GRUB_THEME=\"" + ui->btn_theme_file->property("file").toString() + "\"");
             }
         }
         if (ui->cb_grub_theme->isVisible() && !ui->cb_grub_theme->isChecked()) {
@@ -745,6 +748,7 @@ void MainWindow::on_btn_bg_file_clicked()
             selected.remove(chroot.section(" ", 1, 1));
         }
         ui->btn_bg_file->setText(selected);
+        ui->btn_bg_file->setProperty("file", selected);
         options_changed = true;
         ui->buttonApply->setEnabled(true);
     }
@@ -883,7 +887,7 @@ void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
 
     progress->setWindowModality(Qt::WindowModal);
     progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
-    progress->setCancelButton(0);
+    progress->setCancelButton(nullptr);
     progress->setWindowTitle(tr("Updating configuration, please wait"));
     progress->setBar(bar);
     bar->setTextVisible(false);
@@ -918,8 +922,9 @@ void MainWindow::on_combo_theme_currentIndexChanged(const QString &arg1)
 
 void MainWindow::on_cb_grub_theme_toggled(bool checked)
 {
-    if (checked && ui->btn_theme_file->text().isEmpty()) {
+    if (checked && ui->btn_theme_file->property("file").toString().isEmpty()) {
         ui->btn_theme_file->setText(tr("Click to select theme"));
+        ui->btn_theme_file->setProperty("file", "");
     } else {
         options_changed = true;
         ui->buttonApply->setEnabled(true);
@@ -935,6 +940,7 @@ void MainWindow::on_btn_theme_file_clicked()
             selected.remove(chroot.section(" ", 1, 1));
         }
         ui->btn_theme_file->setText(selected);
+        ui->btn_theme_file->setProperty("file", selected);
         options_changed = true;
         ui->buttonApply->setEnabled(true);
     }

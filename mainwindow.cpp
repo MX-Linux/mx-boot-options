@@ -699,7 +699,7 @@ void MainWindow::on_buttonAbout_clicked()
 // Help button clicked
 void MainWindow::on_buttonHelp_clicked()
 {
-    QString url = "/usr/share/doc/mx-boot-options/help/mx-boot-options.html";
+    QString url = "/usr/share/doc/mx-boot-options/mx-boot-options.html";
 
     QString exec = "xdg-open";
     if (system("command -v mx-viewer >/dev/null") == 0) {

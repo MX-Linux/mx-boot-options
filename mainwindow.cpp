@@ -20,11 +20,7 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-
-
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
-
+#include <QDebug>
 #include <QDesktopWidget>
 #include <QFileDialog>
 #include <QKeyEvent>
@@ -32,15 +28,15 @@
 #include <QTextEdit>
 #include <QTimer>
 
-#include <QDebug>
-
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainWindow),
     proc(this)
 {
-    qDebug().noquote() << QCoreApplication::applicationName() << "version:" << VERSION;
+    qDebug().noquote() << qApp->applicationName() << "version:" << qApp->applicationVersion();
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setup();
@@ -68,14 +64,11 @@ void MainWindow::loadPlymouthThemes()
 // Process keystrokes
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
-        if (proc.state() == QProcess::NotRunning) {
-            return qApp->quit();
-        } else {
-            int ans = QMessageBox::question(this, tr("Still running") , "Process still running. Are you sure you want to quit?");
-            if (ans == QMessageBox::Yes) {
-                return qApp->quit();
-            }
+        if (proc.state() == QProcess::Running || proc.state() == QProcess::Starting) {
+            if (QMessageBox::Yes != QMessageBox::question(this, tr("Still running") , tr("Process still running. Are you sure you want to quit?")))
+                return;
         }
+        qApp->quit();
     }
 }
 
@@ -119,7 +112,7 @@ void MainWindow::setup()
     readDefaultGrub();
     readKernelOpts();
     ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
-    if(inVirtualMachine()) {
+    if (inVirtualMachine()) {
         ui->button_preview->setDisabled(true);
     }
     ui->buttonApply->setDisabled(true);
@@ -136,8 +129,8 @@ void MainWindow::sendMouseEvents()
 bool MainWindow::checkInstalled(const QString &package)
 {
     //qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    QString cmdstr = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
-    if (proc.execOut(cmdstr) == "Status: install ok installed") {
+    QString cmd = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
+    if (proc.execOut(cmd) == "Status: install ok installed") {
         return true;
     }
     return false;
@@ -205,7 +198,7 @@ void MainWindow::writeDefaultGrub() const
     QFile::remove(chr + "/etc/default/grub.bak");
     file.copy(chr + "/etc/default/grub.bak");
 
-    if(!file.open(QIODevice::WriteOnly)) {
+    if (!file.open(QIODevice::WriteOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
     }
@@ -240,7 +233,7 @@ QStringList MainWindow::getLinuxPartitions()
     QStringList new_list;
     for (const QString &part_info : partitions) {
         part = part_info.section(" ", 0, 0);
-        if (proc.exec("lsblk -ln -o PARTTYPE /dev/" + part.toUtf8() +
+        if (proc.exec("lsblk -ln -o PARTTYPE /dev/" + part +
                    "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'")) {
             new_list << part_info;
         }
@@ -258,9 +251,9 @@ void MainWindow::cleanup()
             return;
         }
         // umount and clean temp folder
-        proc.exec("mountpoint -q " + path.toUtf8() + "/boot/efi && umount " + path.toUtf8() + "/boot/efi");
-        QString cmd_str = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
-        proc.exec(cmd_str.toUtf8());
+        proc.exec("mountpoint -q " + path + "/boot/efi && umount " + path + "/boot/efi");
+        QString cmd = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
+        proc.exec(cmd);
     }
 }
 
@@ -270,7 +263,7 @@ QString MainWindow::selectPartiton(const QStringList &list)
 
     // Guess MX install, find first partition with rootMX* label
     for (const QString &part_info : list) {
-        if (proc.exec("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0).toUtf8() + "| grep -q rootMX")) {
+        if (proc.exec("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0) + "| grep -q rootMX")) {
             dialog->comboBox()->setCurrentIndex(dialog->comboBox()->findText(part_info));
             break;
         }
@@ -324,10 +317,10 @@ void MainWindow::addGrubLine(const QString &item)
 void MainWindow::createChrootEnv(QString root)
 {
     QString path = proc.execOut("mktemp -d --tmpdir -p /tmp");
-    QString cmd_str = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(path);
-    if (!proc.exec(cmd_str.toUtf8())) {
+    QString cmd = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(path);
+    if (!proc.exec(cmd)) {
         QMessageBox::critical(this, tr("Cannot continue"), tr("Cannot create chroot environment, cannot change boot options. Exiting..."));
-        exit(1);
+        exit(EXIT_FAILURE);
     }
     chroot = "chroot " + path + " ";
     ui->button_preview->setDisabled(true); // no preview when running chroot.
@@ -401,7 +394,7 @@ bool MainWindow::replaceGrubArg(const QString &key, const QString &item)
 void MainWindow::readGrubCfg()
 {
     QFile file(chroot.section(" ", 1, 1) + "/boot/grub/grub.cfg");
-    if(!file.open(QIODevice::ReadOnly)) {
+    if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
     }
@@ -447,7 +440,7 @@ void MainWindow::readGrubCfg()
 void MainWindow::readDefaultGrub()
 {
     QFile file(chroot.section(" ", 1, 1) + "/etc/default/grub");
-    if(!file.open(QIODevice::ReadOnly)) {
+    if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
     }
@@ -524,7 +517,7 @@ void MainWindow::readDefaultGrub()
 void MainWindow::readKernelOpts()
 {
     QFile file("/proc/cmdline");
-    if(!file.open(QIODevice::ReadOnly)) {
+    if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << "Could not open file:" << file.fileName();
         return;
     }
@@ -561,7 +554,7 @@ void MainWindow::setConnections()
 
     connect(&timer, &QTimer::timeout, this, &MainWindow::procTime);
     connect(&proc, &QProcess::started, this, &MainWindow::cmdStart);
-    connect(&proc, static_cast<void (QProcess::*)(int)>(&QProcess::finished), this, &MainWindow::cmdDone);
+    connect(&proc, QOverload<int>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 
@@ -631,13 +624,13 @@ void MainWindow::on_buttonApply_clicked()
         proc.execOut(chroot + "update-initramfs -u -k all");
     }
     if (messages_changed && ui->rb_limited_msg->isChecked()) {
-        proc.exec(chroot.toUtf8() + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
+        proc.exec(chroot + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
                                  "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
     }
     if (options_changed || splash_changed || messages_changed) {
         writeDefaultGrub();
         progress->setLabelText(tr("Updating grub..."));
-        proc.execOut(chroot.toUtf8() + "update-grub");
+        proc.execOut(chroot + "update-grub");
         progress->close();
         QMessageBox::information(this, tr("Done") , tr("Changes have been successfully applied."));
     }
@@ -653,7 +646,7 @@ void MainWindow::on_buttonAbout_clicked()
 {
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About") + " MX Boot Options", "<p align=\"center\"><b><h2>MX Boot Options</h2></b></p><p align=\"center\">" +
-                       tr("Version: ") + VERSION + "</p><p align=\"center\"><h3>" +
+                       tr("Version: ") + qApp->applicationVersion() + "</p><p align=\"center\"><h3>" +
                        tr("Program for selecting common start-up choices") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>");
@@ -851,7 +844,7 @@ void MainWindow::on_buttonLog_clicked()
     }
 
     if (QFile::exists(location)) {
-        proc.exec("x-terminal-emulator -e bash -c \"" + sed.toUtf8() + " " + location.toUtf8() + "; read -n1 -srp '"+ tr("Press any key to close").toUtf8() + "'\"&");
+        proc.exec("x-terminal-emulator -e bash -c \"" + sed + " " + location + "; read -n1 -srp '"+ tr("Press any key to close") + "'\"&");
     } else {
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
     }

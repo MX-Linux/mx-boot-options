@@ -20,27 +20,42 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QIcon>
+#include <QLibraryInfo>
+#include <QLocale>
+#include <QTranslator>
 
 #include "mainwindow.h"
 #include <unistd.h>
-#include <QApplication>
-#include <QTranslator>
-#include <QLocale>
-#include <QIcon>
+#include "version.h"
 
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    a.setWindowIcon(QIcon::fromTheme("mx-boot-options"));
+    QApplication app(argc, argv);
+    app.setApplicationVersion(VERSION);
+    app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
+
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QApplication::tr("Program for selecting common start-up choices"));
+    parser.addHelpOption();
+    parser.addVersionOption();
+    parser.process(app);
 
     QTranslator qtTran;
-    qtTran.load(QString("qt_") + QLocale::system().name());
-    a.installTranslator(&qtTran);
+    if (qtTran.load(QLocale::system(), "qt", "_", QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtTran);
+
+    QTranslator qtBaseTran;
+    if (qtBaseTran.load("qtbase_" + QLocale::system().name(), QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+        app.installTranslator(&qtBaseTran);
 
     QTranslator appTran;
-    appTran.load(QString("mx-boot-options_") + QLocale::system().name(), "/usr/share/mx-boot-options/locale");
-    a.installTranslator(&appTran);
+    if (appTran.load(app.applicationName() + "_" + QLocale::system().name(), "/usr/share/" + app.applicationName() + "/locale"))
+        app.installTranslator(&appTran);
+
 
     if (getuid() == 0) {
 //        if (system("mountpoint -q /live/aufs") == 0) {
@@ -51,12 +66,8 @@ int main(int argc, char *argv[])
 //        }
         MainWindow w;
         w.show();
-        return a.exec();
+        return app.exec();
     } else {
         system("su-to-root -X -c " + QCoreApplication::applicationFilePath().toUtf8() + "&");
-//        QApplication::beep();
-//        QMessageBox::critical(nullptr, QString::null,
-//                              QApplication::tr("You must run this program as root."));
-//        return 1;
     }
 }

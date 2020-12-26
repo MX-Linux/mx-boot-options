@@ -52,15 +52,15 @@ public:
     void addGrubArg(const QString &key, const QString &item);
     void addGrubLine(const QString &item);
     void createChrootEnv(QString root);
-    void enableGrubLine(const QString &item);
     void disableGrubLine(const QString &item);
-    void remGrubArg(const QString &key, const QString &item);
+    void enableGrubLine(const QString &item);
     void loadPlymouthThemes();
-    void readGrubCfg();
     void readDefaultGrub();
+    void readGrubCfg();
     void readKernelOpts();
-    void setup();
+    void remGrubArg(const QString &key, const QString &item);
     void sendMouseEvents();
+    void setup();
     void writeDefaultGrub() const;
 
     bool checkInstalled(const QString &package);
@@ -76,30 +76,32 @@ public slots:
 
 private slots:
     void cleanup();
-    void cmdStart();
     void cmdDone();
+    void cmdStart();
     void procTime();
     void setConnections();
-    void on_buttonApply_clicked();
-    void on_buttonAbout_clicked();
-    void on_buttonHelp_clicked();
-    void on_cb_bootsplash_clicked(bool checked);
+
     void on_btn_bg_file_clicked();
-    void on_rb_detailed_msg_toggled(bool checked);
-    void on_rb_very_detailed_msg_toggled(bool checked);
-    void on_rb_limited_msg_toggled(bool checked);
-    void on_spinBoxTimeout_valueChanged(int val);
-    void on_combo_menu_entry_currentIndexChanged(int index);
-    void on_cb_bootsplash_toggled(bool checked);
-    void on_buttonLog_clicked();
-    void on_combo_theme_activated(int);
-    void on_button_preview_clicked();
-    void on_cb_enable_flatmenus_clicked(bool checked);
-    void on_cb_save_default_clicked();
-    void on_combo_theme_currentIndexChanged(const QString &arg1);
-    void on_cb_grub_theme_toggled(bool checked);
     void on_btn_theme_file_clicked();
+    void on_buttonAbout_clicked();
+    void on_buttonApply_clicked();
+    void on_buttonHelp_clicked();
+    void on_buttonLog_clicked();
+    void on_button_preview_clicked();
+    void on_cb_bootsplash_clicked(bool checked);
+    void on_cb_bootsplash_toggled(bool checked);
+    void on_cb_enable_flatmenus_clicked(bool checked);
+    void on_cb_grub_theme_toggled(bool checked);
+    void on_cb_save_default_clicked();
+    void on_combo_menu_entry_currentIndexChanged(int index);
+    void on_combo_theme_activated(int);
+    void on_combo_theme_currentIndexChanged(const QString &arg1);
     void on_lineEdit_kernel_textEdited();
+    void on_rb_detailed_msg_toggled(bool checked);
+    void on_rb_limited_msg_toggled(bool checked);
+    void on_rb_very_detailed_msg_toggled(bool checked);
+    void on_spinBoxTimeout_valueChanged(int val);
+
 
 protected:
     void keyPressEvent(QKeyEvent* event);

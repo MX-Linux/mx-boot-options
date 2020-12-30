@@ -33,8 +33,7 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::MainWindow),
-    proc(this)
+    ui(new Ui::MainWindow)
 {
     qDebug().noquote() << qApp->applicationName() << "version:" << qApp->applicationVersion();
     ui->setupUi(this);
@@ -52,10 +51,10 @@ void MainWindow::loadPlymouthThemes()
 {
     // load combobox
     ui->combo_theme->clear();
-    ui->combo_theme->addItems(proc.execOutLines(chroot + "plymouth-set-default-theme -l"));
+    ui->combo_theme->addItems(cmd.getCmdOut(chroot + "plymouth-set-default-theme -l").split("\n"));
 
     // get current theme
-    QString current_theme = proc.execOut(chroot + "plymouth-set-default-theme");
+    QString current_theme = cmd.getCmdOut(chroot + "plymouth-set-default-theme");
     if (!current_theme.isEmpty()) {
         ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
     }
@@ -64,7 +63,7 @@ void MainWindow::loadPlymouthThemes()
 // Process keystrokes
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
-        if (proc.state() == QProcess::Running || proc.state() == QProcess::Starting) {
+        if (cmd.state() == QProcess::Running || cmd.state() == QProcess::Starting) {
             if (QMessageBox::Yes != QMessageBox::question(this, tr("Still running") , tr("Process still running. Are you sure you want to quit?")))
                 return;
         }
@@ -75,14 +74,14 @@ void MainWindow::keyPressEvent(QKeyEvent *event) {
 // Setup versious items first time program runs
 void MainWindow::setup()
 {
-    chroot = "";
+    chroot = QString();
     bar = nullptr;
     options_changed = false;
     splash_changed = false;
     messages_changed = false;
     just_installed = false;
 
-    user = proc.execOut("logname");
+    user = cmd.getCmdOut("logname");
 
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
 
@@ -103,7 +102,7 @@ void MainWindow::setup()
     ui->btn_theme_file->setDisabled(true);
 
     // if running live read linux partitions and set chroot on the selected one
-    if (proc.exec("mountpoint -q /live/aufs")) {
+    if (cmd.run("mountpoint -q /live/aufs")) {
         QString part = selectPartiton(getLinuxPartitions());
         createChrootEnv(part);
     }
@@ -129,8 +128,8 @@ void MainWindow::sendMouseEvents()
 bool MainWindow::checkInstalled(const QString &package)
 {
     //qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
-    QString cmd = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
-    if (proc.execOut(cmd) == "Status: install ok installed") {
+    QString cmd_str = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
+    if (cmd.getCmdOut(cmd_str) == "Status: install ok installed") {
         return true;
     }
     return false;
@@ -166,10 +165,10 @@ bool MainWindow::installSplash()
 
     setConnections();
     progress->setLabelText(tr("Updating sources"));
-    proc.exec(chroot + "apt-get update");
+    cmd.run(chroot + "apt-get update");
     progress->setLabelText(tr("Installing") + " " + packages);
 
-    if (!proc.exec(chroot + "apt-get install -y " + packages)) {
+    if (!cmd.run(chroot + "apt-get install -y " + packages)) {
         progress->close();
         QMessageBox::critical(this, tr("Error"), tr("Could not install the bootsplash."));
         ui->cb_bootsplash->setChecked(false);
@@ -183,7 +182,7 @@ bool MainWindow::installSplash()
 // detect Virtual Machine to let user know Plymouth is not fully functional
 bool MainWindow::inVirtualMachine()
 {
-    return (!proc.exec("test -z \"$(lspci -d 80ee:beef)\""));
+    return (!cmd.run("test -z \"$(lspci -d 80ee:beef)\""));
 }
 
 
@@ -227,13 +226,13 @@ int MainWindow::findMenuEntryById(const QString &id) const
 // get the list of partitions
 QStringList MainWindow::getLinuxPartitions()
 {
-    const QStringList partitions = proc.execOut("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 -x NAME | "
+    const QStringList partitions = cmd.getCmdOut("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 -x NAME | "
                                             "grep -E '^x?[h,s,v].[a-z][0-9]|^mmcblk[0-9]+p|^nvme[0-9]+n[0-9]+p'").split("\n", QString::SkipEmptyParts);
     QString part;
     QStringList new_list;
     for (const QString &part_info : partitions) {
         part = part_info.section(" ", 0, 0);
-        if (proc.exec("lsblk -ln -o PARTTYPE /dev/" + part +
+        if (cmd.run("lsblk -ln -o PARTTYPE /dev/" + part +
                    "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'")) {
             new_list << part_info;
         }
@@ -251,9 +250,9 @@ void MainWindow::cleanup()
             return;
         }
         // umount and clean temp folder
-        proc.exec("mountpoint -q " + path + "/boot/efi && umount " + path + "/boot/efi");
-        QString cmd = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
-        proc.exec(cmd);
+        cmd.run("mountpoint -q " + path + "/boot/efi && umount " + path + "/boot/efi");
+        QString cmd_str = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
+        cmd.run(cmd_str);
     }
 }
 
@@ -263,7 +262,7 @@ QString MainWindow::selectPartiton(const QStringList &list)
 
     // Guess MX install, find first partition with rootMX* label
     for (const QString &part_info : list) {
-        if (proc.exec("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0) + "| grep -q rootMX")) {
+        if (cmd.run("lsblk -ln -o LABEL /dev/" + part_info.section(" ", 0 ,0) + "| grep -q rootMX")) {
             dialog->comboBox()->setCurrentIndex(dialog->comboBox()->findText(part_info));
             break;
         }
@@ -316,13 +315,17 @@ void MainWindow::addGrubLine(const QString &item)
 
 void MainWindow::createChrootEnv(QString root)
 {
-    QString path = proc.execOut("mktemp -d --tmpdir -p /tmp");
-    QString cmd = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(path);
-    if (!proc.exec(cmd)) {
+    if (!tmpdir.isValid()) {
+        QMessageBox::critical(this, tr("Error"),
+                              tr("Could not create a temporary folder"));
+        exit(EXIT_FAILURE);
+    }
+    QString cmd_str = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(tmpdir.path());
+    if (!cmd.run(cmd_str)) {
         QMessageBox::critical(this, tr("Cannot continue"), tr("Cannot create chroot environment, cannot change boot options. Exiting..."));
         exit(EXIT_FAILURE);
     }
-    chroot = "chroot " + path + " ";
+    chroot = "chroot " + tmpdir.path() + " ";
     ui->button_preview->setDisabled(true); // no preview when running chroot.
 }
 
@@ -548,13 +551,12 @@ void MainWindow::procTime()
 void MainWindow::setConnections()
 {
     // reset connection if colling a couple of times in a row
-    proc.disconnect();
     timer.disconnect();
     timer.stop();
 
     connect(&timer, &QTimer::timeout, this, &MainWindow::procTime);
-    connect(&proc, &QProcess::started, this, &MainWindow::cmdStart);
-    connect(&proc, QOverload<int>::of(&QProcess::finished), this, &MainWindow::cmdDone);
+    connect(&cmd, &QProcess::started, this, &MainWindow::cmdStart);
+    connect(&cmd, QOverload<int>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 
@@ -581,7 +583,7 @@ void MainWindow::on_buttonApply_clicked()
     }
 
     if (options_changed) {
-        proc.exec("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
+        cmd.run("grub-editenv /boot/grub/grubenv unset next_entry"); // uset the saved entry from grubenv
         if (ui->btn_bg_file->isEnabled() && QFile::exists(ui->btn_bg_file->property("file").toString())) {
             replaceGrubArg("export GRUB_MENU_PICTURE", "\"" + ui->btn_bg_file->property("file").toString() + "\"");
         } else if (ui->cb_grub_theme->isChecked() && QFile::exists(ui->btn_theme_file->property("file").toString())) {
@@ -598,14 +600,14 @@ void MainWindow::on_buttonApply_clicked()
         QString grub_entry = ui->cb_enable_flatmenus->isChecked() ? QString::number(ui->combo_menu_entry->currentIndex()) : ui->combo_menu_entry->currentData().toString().section(" ", 1, 1);
         if (ui->combo_menu_entry->currentText().contains("memtest")) {
             ui->spinBoxTimeout->setValue(5);
-            proc.exec(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
+            cmd.run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
         } else {
             replaceGrubArg("GRUB_DEFAULT", "\"" + grub_entry + "\"");
         }
         if (ui->cb_save_default->isChecked()) {
             replaceGrubArg("GRUB_DEFAULT", "saved");
             enableGrubLine("GRUB_SAVEDEFAULT=true");
-            proc.exec(chroot + "grub-set-default \"" + grub_entry + "\"");
+            cmd.run(chroot + "grub-set-default \"" + grub_entry + "\"");
         } else {
             disableGrubLine("GRUB_SAVEDEFAULT=true");
         }
@@ -614,23 +616,23 @@ void MainWindow::on_buttonApply_clicked()
     if (splash_changed) {
         if (ui->cb_bootsplash->isChecked()) {
             if (!ui->combo_theme->currentText().isEmpty()) {
-                proc.exec(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
+                cmd.run(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
             }
-            proc.exec(chroot + "update-rc.d bootlogd disable");
+            cmd.run(chroot + "update-rc.d bootlogd disable");
         } else {
-            proc.exec(chroot + "update-rc.d bootlogd enable");
+            cmd.run(chroot + "update-rc.d bootlogd enable");
         }
         progress->setLabelText(tr("Updating initramfs..."));
-        proc.execOut(chroot + "update-initramfs -u -k all");
+        cmd.getCmdOut(chroot + "update-initramfs -u -k all");
     }
     if (messages_changed && ui->rb_limited_msg->isChecked()) {
-        proc.exec(chroot + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
+        cmd.run(chroot + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
                                  "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
     }
     if (options_changed || splash_changed || messages_changed) {
         writeDefaultGrub();
         progress->setLabelText(tr("Updating grub..."));
-        proc.execOut(chroot + "update-grub");
+        cmd.getCmdOut(chroot + "update-grub");
         progress->close();
         QMessageBox::information(this, tr("Done") , tr("Changes have been successfully applied."));
     }
@@ -844,7 +846,7 @@ void MainWindow::on_buttonLog_clicked()
     }
 
     if (QFile::exists(location)) {
-        proc.exec("x-terminal-emulator -e bash -c \"" + sed + " " + location + "; read -n1 -srp '"+ tr("Press any key to close") + "'\"&");
+        cmd.run("x-terminal-emulator -e bash -c \"" + sed + " " + location + "; read -n1 -srp '"+ tr("Press any key to close") + "'\"&");
     } else {
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
     }
@@ -862,15 +864,15 @@ void MainWindow::on_button_preview_clicked()
     if (just_installed) {
         QMessageBox::warning(this, tr("Needs reboot"), tr("Plymouth was just installed, you might need to reboot before being able to display previews"));
     }
-    QString current_theme = proc.execOut("plymouth-set-default-theme");
+    QString current_theme = cmd.getCmdOut("plymouth-set-default-theme");
     if (ui->combo_theme->currentText() == "details") {
         return;
     }
-    proc.execOut("plymouth-set-default-theme " + ui->combo_theme->currentText());
+    cmd.getCmdOut("plymouth-set-default-theme " + ui->combo_theme->currentText());
     ////connect(cmd, &Cmd::runTime, this, &MainWindow::sendMouseEvents);
-    proc.execOut("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
-    proc.execOut("plymouth-set-default-theme " + current_theme); // return to current theme
-    proc.disconnect();
+    cmd.getCmdOut("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'");
+    cmd.getCmdOut("plymouth-set-default-theme " + current_theme); // return to current theme
+    cmd.disconnect();
 }
 
 void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
@@ -896,7 +898,7 @@ void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
     writeDefaultGrub();
     progress->setLabelText(tr("Updating grub..."));
     setConnections();
-    proc.execOut(chroot + "update-grub");
+    cmd.getCmdOut(chroot + "update-grub");
     readGrubCfg();
     progress->close();
 }

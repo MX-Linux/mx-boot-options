@@ -1,8 +1,8 @@
-#include "dialog.h"
-
 #include <QPushButton>
 #include <QLayout>
 #include <QLabel>
+
+#include "dialog.h"
 
 CustomDialog::CustomDialog(const QStringList& items)
 {

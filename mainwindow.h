@@ -20,18 +20,17 @@
  * along with this package. If not, see <http://www.gnu.org/licenses/>.
  **********************************************************************/
 
-
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMessageBox>
 #include <QProgressBar>
+#include <QTemporaryDir>
 #include <QTimer>
 
 #include <dialog.h>
-#include <mprocess.h>
 #include <version.h>
+#include <cmd.h>
 
 
 namespace Ui {
@@ -109,7 +108,7 @@ protected:
 
 private:
     Ui::MainWindow *ui;
-    MProcess proc;
+    Cmd cmd;
     QTimer timer;
 
     bool just_installed;
@@ -123,6 +122,7 @@ private:
     QString kernel_options;
     QString chroot;
     QString user;
+    QTemporaryDir tmpdir;
 };
 
 

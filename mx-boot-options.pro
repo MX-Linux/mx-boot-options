@@ -30,13 +30,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
     mainwindow.cpp \
     dialog.cpp \
-    mprocess.cpp
+    cmd.cpp
 
 HEADERS  += \
     mainwindow.h \
     dialog.h \
     version.h \
-    mprocess.h
+    cmd.h
 
 FORMS    += \
     mainwindow.ui

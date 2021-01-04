@@ -1,4 +1,4 @@
-help				usr/share/doc/mx-boot-options
+help/*				usr/share/doc/mx-boot-options
 images/mx-boot-options.svg	usr/share/icons/hicolor/scalable/apps
 images/mx-boot-options.png	usr/share/icons/hicolor/1024x1024/apps
 mx-boot-options			usr/bin

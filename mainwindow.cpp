@@ -107,8 +107,16 @@ void MainWindow::setup()
         createChrootEnv(part);
     }
 
-    readGrubCfg();
-    readDefaultGrub();
+    if (cmd.run("dpkg -s grub-common | grep -q 'Status: install ok installed'" ) != 0) {
+        grub_installed = false;
+        ui->groupBoxOptions->setHidden(true);
+        ui->groupBoxBackground->setHidden(true);
+    } else {
+        grub_installed = true;
+        readGrubCfg();
+        readDefaultGrub();
+    }
+
     readKernelOpts();
     ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
     if (inVirtualMachine()) {
@@ -630,9 +638,11 @@ void MainWindow::on_buttonApply_clicked()
                                  "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
     }
     if (options_changed || splash_changed || messages_changed) {
-        writeDefaultGrub();
-        progress->setLabelText(tr("Updating grub..."));
-        cmd.getCmdOut(chroot + "update-grub");
+        if (grub_installed) {
+            writeDefaultGrub();
+            progress->setLabelText(tr("Updating grub..."));
+            cmd.getCmdOut(chroot + "update-grub");
+        }
         progress->close();
         QMessageBox::information(this, tr("Done") , tr("Changes have been successfully applied."));
     }

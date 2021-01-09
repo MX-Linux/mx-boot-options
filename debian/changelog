@@ -1,3 +1,9 @@
+mx-boot-options (21.1) mx; urgency=medium
+
+  * show grub options only if grub is installed
+
+ -- Adrian <adrian@mxlinux.org>  Sat, 09 Jan 2021 15:22:06 -0500
+
 mx-boot-options (20.6) mx; urgency=medium
 
   * fix potential KDE issue with buttons passing & accelerator to text

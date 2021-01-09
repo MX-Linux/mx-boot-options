@@ -161,7 +161,7 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="487"/>
-        <location filename="../mainwindow.cpp" line="687"/>
+        <location filename="../mainwindow.cpp" line="692"/>
         <source>Close</source>
         <translation>Luk</translation>
     </message>
@@ -176,9 +176,14 @@
         <translation>Anvend</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="74"/>
+        <location filename="../mainwindow.cpp" line="67"/>
         <source>Still running</source>
         <translation>Kører stadig</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="67"/>
+        <source>Process still running. Are you sure you want to quit?</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="168"/>
@@ -197,6 +202,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="181"/>
+        <location filename="../mainwindow.cpp" line="327"/>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
@@ -207,7 +213,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="283"/>
-        <location filename="../mainwindow.cpp" line="329"/>
+        <location filename="../mainwindow.cpp" line="333"/>
         <source>Cannot continue</source>
         <translation>Kan ikke fortsætte</translation>
     </message>
@@ -217,135 +223,140 @@
         <translation>Intet blev valgt, kan ikke ændre opstartsvalgmuligheder. Afslutter...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="329"/>
+        <location filename="../mainwindow.cpp" line="328"/>
+        <source>Could not create a temporary folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="333"/>
         <source>Cannot create chroot environment, cannot change boot options. Exiting...</source>
         <translation>Kan ikke oprette chroot-miljø, kan ikke ændre opstartsvalgmuligheder. Afslutter...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="579"/>
-        <location filename="../mainwindow.cpp" line="891"/>
+        <location filename="../mainwindow.cpp" line="582"/>
+        <location filename="../mainwindow.cpp" line="896"/>
         <source>Updating configuration, please wait</source>
         <translation>Opdaterer konfiguration, vent venligst</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="630"/>
+        <location filename="../mainwindow.cpp" line="633"/>
         <source>Updating initramfs...</source>
         <translation>Opdaterer initramfs...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="639"/>
-        <location filename="../mainwindow.cpp" line="904"/>
+        <location filename="../mainwindow.cpp" line="643"/>
+        <location filename="../mainwindow.cpp" line="909"/>
         <source>Updating grub...</source>
         <translation>Opdaterer grub...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="642"/>
+        <location filename="../mainwindow.cpp" line="647"/>
         <source>Done</source>
         <translation>Færdig</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="642"/>
+        <location filename="../mainwindow.cpp" line="647"/>
         <source>Changes have been successfully applied.</source>
         <translation>Ændringerne er blevet anvendt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="655"/>
+        <location filename="../mainwindow.cpp" line="660"/>
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="656"/>
+        <location filename="../mainwindow.cpp" line="661"/>
         <source>Version: </source>
         <translation>Version: </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="657"/>
+        <location filename="../mainwindow.cpp" line="662"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Program til at være almindelige opstartsvalg</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="659"/>
+        <location filename="../mainwindow.cpp" line="664"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Ophavsret (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="660"/>
-        <location filename="../mainwindow.cpp" line="670"/>
+        <location filename="../mainwindow.cpp" line="665"/>
+        <location filename="../mainwindow.cpp" line="675"/>
         <source>License</source>
         <translation>Licens</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="661"/>
-        <location filename="../mainwindow.cpp" line="676"/>
+        <location filename="../mainwindow.cpp" line="666"/>
+        <location filename="../mainwindow.cpp" line="681"/>
         <source>Changelog</source>
         <translation>Ændringlog</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="662"/>
+        <location filename="../mainwindow.cpp" line="667"/>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="706"/>
+        <location filename="../mainwindow.cpp" line="711"/>
         <source>MX Boot Options</source>
         <translation>MX Opstartsvalgmuligheder</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="718"/>
+        <location filename="../mainwindow.cpp" line="723"/>
         <source>Running in a Virtual Machine</source>
         <translation>Kører i en virtuel maskine</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="719"/>
+        <location filename="../mainwindow.cpp" line="724"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Dit nuværende system kører i en virtuel maskine,
 Plymouth-opstartsbillede virker på en begrænset måde og du vil heller ikke være i stand til at forhåndsvise temaet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="724"/>
+        <location filename="../mainwindow.cpp" line="729"/>
         <source>Plymouth packages not installed</source>
         <translation>Plymouth-pakker ikke installeret</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="724"/>
+        <location filename="../mainwindow.cpp" line="729"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>Plymouth-pakker er ikke installeret.
 Er det OK at fortsætte og installere dem?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="745"/>
+        <location filename="../mainwindow.cpp" line="750"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Billeder (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="854"/>
+        <location filename="../mainwindow.cpp" line="859"/>
         <source>Press any key to close</source>
         <translation>Tryk på en tast for at lukke</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="856"/>
+        <location filename="../mainwindow.cpp" line="861"/>
         <source>Log not found</source>
         <translation>Log ikke fundet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="856"/>
+        <location filename="../mainwindow.cpp" line="861"/>
         <source>Could not find log at </source>
         <translation>Kunne ikke finde log i</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="870"/>
+        <location filename="../mainwindow.cpp" line="875"/>
         <source>Needs reboot</source>
         <translation>Behøver genstart</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="870"/>
+        <location filename="../mainwindow.cpp" line="875"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Plymouth blev lige installeret, det kan være nødvendigt at genstarte inden du kan vise forhåndsvisninger</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="926"/>
+        <location filename="../mainwindow.cpp" line="931"/>
         <source>Click to select theme</source>
         <translation>Klik for at vælge tema</translation>
     </message>
@@ -353,20 +364,24 @@ Er det OK at fortsætte og installere dem?</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="58"/>
         <source>You must run this program as root.</source>
-        <translation>Du skal køre programmet som root.</translation>
+        <translation type="vanished">Du skal køre programmet som root.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="42"/>
+        <source>Program for selecting common start-up choices</source>
+        <translation type="unfinished">Program til at være almindelige opstartsvalg</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../mainwindow.cpp" line="744"/>
+        <location filename="../mainwindow.cpp" line="749"/>
         <source>Select image to display in bootloader</source>
         <translation>Vælg billede som skal vises i opstartsindlæser</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="936"/>
+        <location filename="../mainwindow.cpp" line="941"/>
         <source>Select GRUB theme</source>
         <translation>Vælg GRUB-tema</translation>
     </message>

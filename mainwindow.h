@@ -64,8 +64,8 @@ public:
 
     bool checkInstalled(const QString &package);
     bool checkInstalled(const QStringList &packages);
-    bool installSplash();
     bool inVirtualMachine();
+    bool installSplash();
     bool replaceGrubArg(const QString &key, const QString &item);
 
     int findMenuEntryById(const QString &id) const;
@@ -111,17 +111,18 @@ private:
     Cmd cmd;
     QTimer timer;
 
+    bool grub_installed;
     bool just_installed;
     bool kernel_options_changed;
     bool messages_changed;
     bool options_changed;
     bool splash_changed;
 
-    QStringList grub_cfg;
-    QStringList default_grub;
-    QString kernel_options;
     QString chroot;
+    QString kernel_options;
     QString user;
+    QStringList default_grub;
+    QStringList grub_cfg;
     QTemporaryDir tmpdir;
 };
 

@@ -27,8 +27,8 @@
 #include <QLocale>
 #include <QTranslator>
 
-#include "mainwindow.h"
 #include <unistd.h>
+#include "mainwindow.h"
 #include "version.h"
 
 

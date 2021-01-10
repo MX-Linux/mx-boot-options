@@ -107,7 +107,7 @@ void MainWindow::setup()
         createChrootEnv(part);
     }
 
-    if (cmd.run("dpkg -s grub-common | grep -q 'Status: install ok installed'" ) != 0) {
+    if (!cmd.run("dpkg -s grub-common | grep -q 'Status: install ok installed'")) {
         grub_installed = false;
         ui->groupBoxOptions->setHidden(true);
         ui->groupBoxBackground->setHidden(true);

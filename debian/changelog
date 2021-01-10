@@ -1,3 +1,9 @@
+mx-boot-options (21.1.01) mx; urgency=medium
+
+  * bug fix: detection grub present 
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 10 Jan 2021 12:16:12 -0500
+
 mx-boot-options (21.1) mx; urgency=medium
 
   * show grub options only if grub is installed

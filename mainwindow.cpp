@@ -55,9 +55,8 @@ void MainWindow::loadPlymouthThemes()
 
     // get current theme
     QString current_theme = cmd.getCmdOut(chroot + "plymouth-set-default-theme");
-    if (!current_theme.isEmpty()) {
+    if (!current_theme.isEmpty())
         ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
-    }
 }
 
 // Process keystrokes
@@ -646,11 +645,10 @@ void MainWindow::on_buttonAbout_clicked()
 
     if (msgBox.clickedButton() == btnLicense) {
         QString url = "file:///usr/share/doc/mx-boot-options/license.html";
-        if (system("command -v mx-viewer >/dev/null") == 0) {
+        if (system("command -v mx-viewer >/dev/null") == 0)
             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
-        } else {
+        else
             system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
-        }
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog *changelog = new QDialog(this);
         changelog->setWindowTitle(tr("Changelog"));

@@ -21,10 +21,10 @@
  **********************************************************************/
 
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QFileDialog>
 #include <QKeyEvent>
 #include <QProgressDialog>
+#include <QScreen>
 #include <QTextEdit>
 #include <QTimer>
 
@@ -63,7 +63,8 @@ void MainWindow::loadPlymouthThemes()
 void MainWindow::keyPressEvent(QKeyEvent *event) {
     if (event->key() == Qt::Key_Escape) {
         if (cmd.state() == QProcess::Running || cmd.state() == QProcess::Starting) {
-            if (QMessageBox::Yes != QMessageBox::question(this, tr("Still running") , tr("Process still running. Are you sure you want to quit?")))
+            if (QMessageBox::Yes != QMessageBox::question(this, tr("Still running"),
+                    tr("Process still running. Are you sure you want to quit?")))
                 return;
         }
         qApp->quit();
@@ -127,7 +128,7 @@ void MainWindow::setup()
 // set mouse in the corner and move it to advance splash preview
 void MainWindow::sendMouseEvents()
 {
-    QCursor::setPos(QApplication::desktop()->screenGeometry().width(), QApplication::desktop()->screenGeometry().height() + 1);
+    QCursor::setPos(qApp->screens().first()->geometry().width(), qApp->screens().first()->geometry().height() + 1);
 }
 
 // Checks if package is installed
@@ -158,7 +159,7 @@ bool MainWindow::installSplash()
 
     QString packages = "plymouth plymouth-x11 plymouth-themes plymouth-themes-mx";
     progress->setWindowModality(Qt::WindowModal);
-    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
+    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
     progress->setCancelButton(nullptr);
     progress->setWindowTitle(tr("Installing bootsplash, please wait"));
     progress->setBar(bar);
@@ -228,13 +229,13 @@ int MainWindow::findMenuEntryById(const QString &id) const
 QStringList MainWindow::getLinuxPartitions()
 {
     const QStringList partitions = cmd.getCmdOut("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 -x NAME | "
-                                            "grep -E '^x?[h,s,v].[a-z][0-9]|^mmcblk[0-9]+p|^nvme[0-9]+n[0-9]+p'").split("\n", QString::SkipEmptyParts);
+        "grep -E '^x?[h,s,v].[a-z][0-9]|^mmcblk[0-9]+p|^nvme[0-9]+n[0-9]+p'").split("\n", Qt::SkipEmptyParts);
     QString part;
     QStringList new_list;
     for (const QString &part_info : partitions) {
         part = part_info.section(" ", 0, 0);
         if (cmd.run("lsblk -ln -o PARTTYPE /dev/" + part +
-                    "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'"))
+                "| grep -qEi '0x83|0fc63daf-8483-4772-8e79-3d69d8477de4|44479540-F297-41B2-9AF7-D131D5F0458A|4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709'"))
             new_list << part_info;
     }
     return new_list;
@@ -321,7 +322,8 @@ void MainWindow::createChrootEnv(QString root)
     }
     QString cmd_str = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(tmpdir.path());
     if (!cmd.run(cmd_str)) {
-        QMessageBox::critical(this, tr("Cannot continue"), tr("Cannot create chroot environment, cannot change boot options. Exiting..."));
+        QMessageBox::critical(this, tr("Cannot continue"),
+            tr("Cannot create chroot environment, cannot change boot options. Exiting..."));
         exit(EXIT_FAILURE);
     }
     chroot = "chroot " + tmpdir.path() + " ";
@@ -543,7 +545,7 @@ void MainWindow::setConnections()
 
     connect(&timer, &QTimer::timeout, this, &MainWindow::procTime);
     connect(&cmd, &QProcess::started, this, &MainWindow::cmdStart);
-    connect(&cmd, QOverload<int>::of(&QProcess::finished), this, &MainWindow::cmdDone);
+    connect(&cmd, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
 
@@ -581,7 +583,9 @@ void MainWindow::on_buttonApply_clicked()
             disableGrubLine("GRUB_THEME=");
 
         // for simple menu index number is sufficient, if submenus exists use "1>1" format
-        QString grub_entry = ui->cb_enable_flatmenus->isChecked() ? QString::number(ui->combo_menu_entry->currentIndex()) : ui->combo_menu_entry->currentData().toString().section(" ", 1, 1);
+        QString grub_entry = ui->cb_enable_flatmenus->isChecked()
+                ? QString::number(ui->combo_menu_entry->currentIndex())
+                : ui->combo_menu_entry->currentData().toString().section(" ", 1, 1);
         if (ui->combo_menu_entry->currentText().contains("memtest")) {
             ui->spinBoxTimeout->setValue(5);
             cmd.run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
@@ -648,7 +652,8 @@ void MainWindow::on_buttonAbout_clicked()
         if (system("command -v mx-viewer >/dev/null") == 0)
             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
         else
-            system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+            system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+                   user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
     } else if (msgBox.clickedButton() == btnChangelog) {
         QDialog *changelog = new QDialog(this);
         changelog->setWindowTitle(tr("Changelog"));
@@ -658,7 +663,8 @@ void MainWindow::on_buttonAbout_clicked()
         text->setReadOnly(true);
 
         QProcess proc;
-        proc.start("zless /usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName()  + "/changelog.gz");
+        proc.start("zless", QStringList{"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName() +
+                                        "/changelog.gz"}, QIODevice::ReadOnly);
         proc.waitForFinished();
         text->setText(proc.readAllStandardOutput());
 
@@ -683,7 +689,8 @@ void MainWindow::on_buttonHelp_clicked()
     if (system("command -v mx-viewer >/dev/null") == 0)
         system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
     else
-        system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " + user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+        system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+               user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
 }
 
 
@@ -718,7 +725,8 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
 void MainWindow::on_btn_bg_file_clicked()
 {
     QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
-                                              chroot.section(" ", 1, 1) + "/usr/share/backgrounds/MXLinux/grub", tr("Images (*.png *.jpg *.jpeg *.tga)"));
+                                                    chroot.section(" ", 1, 1) + "/usr/share/backgrounds/MXLinux/grub",
+                                                    tr("Images (*.png *.jpg *.jpeg *.tga)"));
     if (!selected.isEmpty()) {
         if (!chroot.isEmpty())
             selected.remove(chroot.section(" ", 1, 1));
@@ -916,4 +924,3 @@ void MainWindow::on_lineEdit_kernel_textEdited()
     options_changed = true;
     ui->buttonApply->setEnabled(true);
 }
-

@@ -251,7 +251,6 @@ void MainWindow::cleanup()
             return;
         // umount and clean temp folder
         cmd.run("mountpoint -q " + path + "/boot/efi && umount " + path + "/boot/efi");
-        //QString cmd_str = QString("umount %1/proc %1/sys %1/dev; umount %1; rmdir %1").arg(path);
         QString cmd_str = QString("/bin/umount -R %1/run && /bin/umount -R %1/proc && /bin/umount -R %1/sys && /bin/umount -R %1/dev && umount %1 && rmdir %1").arg(path);
         cmd.run(cmd_str);
     }
@@ -321,10 +320,7 @@ void MainWindow::createChrootEnv(QString root)
                               tr("Could not create a temporary folder"));
         exit(EXIT_FAILURE);
     }
-
-    //QString cmd_str = QString("mount /dev/%1 %2 && mount -o bind /dev %2/dev && mount -o bind /sys %2/sys && mount -o bind /proc %2/proc").arg(root).arg(tmpdir.path());
     QString cmd_str = QString("/bin/mount /dev/%1 %2 && /bin/mount --rbind --make-rslave /dev %2/dev && /bin/mount --rbind --make-rslave /sys %2/sys && /bin/mount --rbind /proc %2/proc && /bin/mount -t tmpfs -o size=100m,nodev,mode=755 tmpfs %2/run && /bin/mkdir %2/run/udev && /bin/mount --rbind /run/udev %2/run/udev").arg(root).arg(tmpdir.path());
-   
     if (!cmd.run(cmd_str)) {
         QMessageBox::critical(this, tr("Cannot continue"),
             tr("Cannot create chroot environment, cannot change boot options. Exiting..."));

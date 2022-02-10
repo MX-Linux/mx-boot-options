@@ -1,3 +1,9 @@
+mx-boot-options (21.1.02) mx; urgency=medium
+
+  * adjust chroot
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 10 Feb 2022 07:36:02 -0500
+
 mx-boot-options (21.1.01) mx; urgency=medium
 
   * bug fix: detection grub present 

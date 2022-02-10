@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 10 Feb 2022 07:36:02 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 21.1.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (21.1.02) mx; urgency=medium
+ .
+   * adjust chroot
+Checksums-Sha1:
+ 3bd754424d0b32745d2fc62dd2fc71c5b2209a93 1503 mx-boot-options_21.1.02.dsc
+ 60343431e0a8b4626bd07bab1c307b9a4b0417f9 607644 mx-boot-options_21.1.02.tar.xz
+ 2b247b751c26339f9b0efeba2e403e0c8257fd65 11099 mx-boot-options_21.1.02_amd64.buildinfo
+ fd5b9c698edc96b55b2bab02ff99c564c4e4f4bc 167668 mx-boot-options_21.1.02_amd64.deb
+Checksums-Sha256:
+ e51db5f67c61733a2737146a4dbd52f32be8abaaa8088668f028519dd21c0617 1503 mx-boot-options_21.1.02.dsc
+ 9261f188ed99f68961c300ac7aef9ec70c4fa8cbf64c17d20d5992838ee3a35d 607644 mx-boot-options_21.1.02.tar.xz
+ a019d62eb12f33a00665aa5da9ed38d4a9f972cb85f37a9a2f0c14917e904e5e 11099 mx-boot-options_21.1.02_amd64.buildinfo
+ f2c52bba7b2fca07da0865e77c12c924afbdd890c568f906699495983cd729c1 167668 mx-boot-options_21.1.02_amd64.deb
+Files:
+ 5b9faef7b456a84ae63aa23cc4f823fe 1503 admin optional mx-boot-options_21.1.02.dsc
+ a606ab57c0601a3e7c5b15d63df1c229 607644 admin optional mx-boot-options_21.1.02.tar.xz
+ e72bdb5abe1e859c64da41d9def16bb7 11099 admin optional mx-boot-options_21.1.02_amd64.buildinfo
+ c04093ee88f586451b847d82396c619a 167668 admin optional mx-boot-options_21.1.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmIFCOUTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6XaGD/wMQrlKFzkoesCDkd0p1aPOjK/4x8Au
+aN16Ica0VTBzX1BM0Nx81EtEKn/yNN0CQtKQVZh44IaP58Q2PecS+JWA1Q6nvWK6
+ZdAhDL/dg4zKUdeNrFHwHTU5bImB7RRHMiIvRqkMskOxdL0o3k4IE/DIk0jl3fVw
+yGF8ikauLd5NW0MrYeRTCdnAUYgq8iTYnz8QgsXCeTr1z4f4rW/G3oNpDNIoHMDX
+QJ8fKUeTLbEjO7Zf+QhEMQulTWvPIjSKxQ0u1m8tjMRPZktBLs55z06QcEolPBAP
+Rfs2SPCI1lY7Ila4gpc8gW2g+cVDk0OqVHw4vRMn8GAB4EA+zOiGgOfBcaMJ0gnb
+pLbhy5oBs+56zwbQqO0V/kfwVKSEniOd+o6k1kDaRRLMewFOXYynu7KZthN9ihnx
+iM05q69sU3mVTpF8QeT5pjdyEbkv4s/7Fw7WusgNqgbv3OFenqQ60ZeCXJhkQgKR
+LepE1sAWAtRaj2C/2s3kniruBZkMQSuIHhqutX+3bsleomZgDlztzrb/H7MHnCRL
+NokcWktnLS3p/r29WVcHXJ95OsDgWxhJjgwMVyv/sIVNpmecifrDPbKS3CGpBOon
+OJqvuFspSXmZb4NEWfVI7dw7Wwjv3aZt59eIYPr3k5EqmiY1NnJzKEQM3SlF+TBY
+p8HiJPvpMWlZCA==
+=0yuZ
+-----END PGP SIGNATURE-----

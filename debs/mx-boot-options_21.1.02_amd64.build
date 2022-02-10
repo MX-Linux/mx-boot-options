@@ -10,6 +10,18 @@ dh clean --no-automatic-dbgsym --parallel
    debian/rules override_dh_auto_clean
 make[1]: Entering directory '/tmpdir/build/mx-boot-options'
 dh_auto_clean
+	make -j4 distclean
+make[2]: Entering directory '/tmpdir/build/mx-boot-options'
+rm -f qrc_images.cpp
+rm -f moc_predefs.h
+rm -f moc_mainwindow.cpp moc_dialog.cpp moc_cmd.cpp
+rm -f ui_mainwindow.h
+rm -f main.o mainwindow.o dialog.o cmd.o qrc_images.o moc_mainwindow.o moc_dialog.o moc_cmd.o
+rm -f *~ core *.core
+rm -f mx-boot-options 
+rm -f .qmake.stash
+rm -f Makefile
+make[2]: Leaving directory '/tmpdir/build/mx-boot-options'
 rm -f src/translations/*.qm
 make[1]: Leaving directory '/tmpdir/build/mx-boot-options'
    dh_autoreconf_clean -O--no-automatic-dbgsym -O--parallel
@@ -177,8 +189,8 @@ main.cpp:77:15: warning: ignoring return value of ‘int system(const char*)’ 
 /usr/lib/qt5/bin/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /tmpdir/build/mx-boot-options/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/tmpdir/build/mx-boot-options -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include dialog.h -o moc_dialog.cpp
 /usr/lib/qt5/bin/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /tmpdir/build/mx-boot-options/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/tmpdir/build/mx-boot-options -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include cmd.h -o moc_cmd.cpp
 g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_mainwindow.o moc_mainwindow.cpp
-g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_dialog.o moc_dialog.cpp
 g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_cmd.o moc_cmd.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_dialog.o moc_dialog.cpp
 mainwindow.cpp: In member function ‘void MainWindow::on_buttonAbout_clicked()’:
 mainwindow.cpp:653:19: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
   653 |             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");

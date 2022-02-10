@@ -12,26 +12,26 @@ Build-Depends: debhelper (>= 10), qtbase5-dev, qttools5-dev-tools
 Package-List:
  mx-boot-options deb admin optional arch=any
 Checksums-Sha1:
- 4a8689e210ff4a8caeb4fefe04fa2962191a988d 929076 mx-boot-options_21.1.02.tar.xz
+ 5cfcfbf5414545e88694e273c4a8319298b2ea73 179928 mx-boot-options_21.1.02.tar.xz
 Checksums-Sha256:
- 0d94b0cbcb538a8344578d8cca01674cd7bfe629d68bc36bda26c40b72f62196 929076 mx-boot-options_21.1.02.tar.xz
+ 7afe79ef5e9d333f7c8b8f003cc58cfa54759be7360ced6d1203542928c73956 179928 mx-boot-options_21.1.02.tar.xz
 Files:
- f69862de4856017e1c268c730ad533f1 929076 mx-boot-options_21.1.02.tar.xz
+ 810a0f7e09808a72d2413f1fe37f971d 179928 mx-boot-options_21.1.02.tar.xz
 
 -----BEGIN PGP SIGNATURE-----
 
-iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmIFDlATHGZlaGxpeEBt
-eGxpbnV4Lm9yZwAKCRAvV48brJ2b6XliEACCGNTw2CxIYpufpiajlvsXK+9tDUIC
-Ba8DUJqJhr6Ry41NP5ElubVFd8D4bRsgQDy+Az8cgT84Cg4rjyvbCmVBtv7eixX7
-o2dRYRc0/y3LtNlYgENiVCmQ6lrZZLoCisFJfwlqdMfGSwack6p7g+xnvpeeMJ/J
-FWV4g00tHk9iMpRCnD/2Go5KSJ17el8kTqgCBagHrk1zmisjEKiWOMCuNGqCQFPB
-5e02r//RBGLu5sj8paLyTuNbcA5Y7jytZn+zmVG+jOtsIWWZwp3k9xIQTqKvueM2
-6AtQpkdq8knm+5lbnHwMry5oXHMsPqsDmZ8AK28RlOuUvmNi9rKaUVTgBQ6FOITd
-Dopi6yhJltduMiaGDSqdJBu29gnq6oKfuCYDZVPq+dY8Q+gRMZaOzCZLDvzHDQHp
-JGFoC8SN9PQRy0Cs5GISq+9EEq++1QrLf2SvGJYx+xXN1bS0t7k7mRcJx04MTmj+
-FvVSI+vjIf/smqFToz7pFHZOjjtkHhkSQdCGDaEyKvDGszqyEza+B0+XkvtaK2I7
-dJfAJau4cb/8RgWhxrC5mKcUqAMo0kmnLB2fU2ljTwInyHih4bjWQ+GQw61lz2Op
-WsL43ckPwDoIZE+4LfhSR/0O8w0d2mhsVmQnB4kOKO3J3wvFlgeaYcs9YYGYZvWD
-1I0G7SOBF3fRzw==
-=k/QN
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmIFD8QTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6du4D/4toaC8qeoeuGY+3fLf1VYl/J8o+nCj
+ZXbiopmKfLJzctVJIEoBINiR4kzmkZhY3WKZ67/q3uExpvxNw3dB6WJMYxBJtko8
+krinw19T/OHqk/qCfOEZc7EM+z/Bj589akSLHA0MFKwDybRvkO/hvE984P6Qw+nL
+2SXxOXVJC8tMjswzNiJmeGvNbdy0j71fKWrD4Y1mhnmX1ndL7jGXuk/p5oDGVCd2
+QBp9T9l6R6oERdALioeiUKWYaAQsD1TmhSZtYqm9FCh/kaHS2AFJJ3Zx4Os5bibL
+pMaDZ0l/ZO3vmYCWBollDN5c/mSvP7rSJzV0wlMuhIhQBzfreLvsZtKk/TfEDfdF
+/TQXmoO1kiQl+CtzoNe78/zUnSydbC8NoFEEvkGT1IinhCkxBDlSYi7tw3poq0VI
+dEBOMn/kYf5sJMiwLZdfspcJJiiWrg2Ph6VJlrguZAdL9PZXk0MfAQnQQQNYo+kO
+rsF1uE22QKBdpjwBMiqGWgaC/md0fERm5SIHHJFMMSQK2omiOQyl3Ge7ZBbPxjj8
+Y9wO8Uoofz4vnkxw/lK5UwTfYrbD2G9BWRFd/YAiv0AgmvThzWHi9aUC6cnSZfmT
+CzuQjI36C3JE82OGm9sLveqIzgeCLN7q+OacQAycjHUqj0bXyvsRlGMgmqsbSfWe
+WQmhmnLPK/TPQw==
+=9bab
 -----END PGP SIGNATURE-----

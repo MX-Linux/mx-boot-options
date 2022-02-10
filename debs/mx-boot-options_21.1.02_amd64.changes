@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 10 Feb 2022 07:36:02 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 21.1.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (21.1.02) mx; urgency=medium
+ .
+   * adjust chroot
+Checksums-Sha1:
+ 7a1a4b01e626e6e7f86f51078dd68d1093287216 1503 mx-boot-options_21.1.02.dsc
+ 5cfcfbf5414545e88694e273c4a8319298b2ea73 179928 mx-boot-options_21.1.02.tar.xz
+ 3210209b24fa79d22a3b55276b417f259c5cb167 11099 mx-boot-options_21.1.02_amd64.buildinfo
+ 5ec87bd26a4e78f1d6fad9051db4620dfc76cc77 167652 mx-boot-options_21.1.02_amd64.deb
+Checksums-Sha256:
+ 260632f7d9d8c1e2e765d1cbcdca653a044659e72495b028592d73fdf9be7822 1503 mx-boot-options_21.1.02.dsc
+ 7afe79ef5e9d333f7c8b8f003cc58cfa54759be7360ced6d1203542928c73956 179928 mx-boot-options_21.1.02.tar.xz
+ 40ab7c9d586b7e04fa7b15dc10b0a9e3c606884c5b92cc9d865a8e258b9a177f 11099 mx-boot-options_21.1.02_amd64.buildinfo
+ 6b10aa586b514f6e69eb0efb29187d9847a12f18f654e705a4cdc90105db1119 167652 mx-boot-options_21.1.02_amd64.deb
+Files:
+ 402aa2efceb709cfe0a2bc290c48236f 1503 admin optional mx-boot-options_21.1.02.dsc
+ 810a0f7e09808a72d2413f1fe37f971d 179928 admin optional mx-boot-options_21.1.02.tar.xz
+ 50b64087066931f6a0ea1e82961d2b6c 11099 admin optional mx-boot-options_21.1.02_amd64.buildinfo
+ 5a4a96474d32ddb2991ac78bad374821 167652 admin optional mx-boot-options_21.1.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJHBAEBCgAxFiEEgRnC8/wKXRM2S0xLL1ePG6ydm+kFAmIFD8UTHGZlaGxpeEBt
+eGxpbnV4Lm9yZwAKCRAvV48brJ2b6WzXD/wMdZ8NFbDRZnpZDOHtYCOAyI13a/Kb
+j1YAlfAYa/ezr/pYQpAjAst0M3j34zDwofrp6o+VWCJobIAcUCxoc48Gf3n9YUkl
+jjlWVYJv8qcMosHDwsq+suGYAcGurwZvEBbsu68OGKw2L2nvYBVkWH+SzfkUlQYm
+dXfTW20TIm3KzirQ6UqhX0Xm4m25ZKFWRfSSH5o8lovZO9dSK0x5Eqw89l1DEAP9
+pEAPSLvScAeo/GXvfjJ+QvKsQcA0oRidLuLUm8PF/4I5gSPMsiIs4PlBWmfbb0j+
+pXfSfiM08nt0Lzmh6OenbObzgt+xbqk/KZWHf/+7oSLE14BVYXlZf+67aJSFzZJ/
+71SYcZF5zh1U1PQNRZam6AK1S3iE0fl9QtW+S0PT3vYckTB0/k1B6W7xhwCQDYJb
+waBcDW5mRuNwWXbhc6/VHP6szBqgSfQcFViTCp+EEu8ZUTVoyqe4CP2SFJUWSEoG
+hgXgAz6dF4rtATD87LkL/KptQxo8nvZL8QYn98Vc7u0bMN+D0IxdwkSSEt+lf8aR
+fFHIVmucJwABZaeG8NEY7ojsDUw/M07ATII2fpURxZyig/PibvudPSZx8W/4FBX1
+40U5E2FeXsVCFGBcV/gNAkOWUZhjaPR4v/FSSlU4x403z0OJvH8BoNfqBb7/BDg4
+tZbL0Uh0lU9l7A==
+=PIDu
+-----END PGP SIGNATURE-----

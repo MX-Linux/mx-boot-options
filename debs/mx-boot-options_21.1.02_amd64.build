@@ -1,0 +1,264 @@
+ dpkg-buildpackage -us -uc -ui -sa
+dpkg-buildpackage: info: source package mx-boot-options
+dpkg-buildpackage: info: source version 21.1.02
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by fehlix <fehlix@mxlinux.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --no-automatic-dbgsym --parallel 
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/tmpdir/build/mx-boot-options'
+dh_auto_clean
+	make -j4 distclean
+make[2]: Entering directory '/tmpdir/build/mx-boot-options'
+rm -f qrc_images.cpp
+rm -f moc_predefs.h
+rm -f moc_mainwindow.cpp moc_dialog.cpp moc_cmd.cpp
+rm -f ui_mainwindow.h
+rm -f main.o mainwindow.o dialog.o cmd.o qrc_images.o moc_mainwindow.o moc_dialog.o moc_cmd.o
+rm -f *~ core *.core
+rm -f mx-boot-options 
+rm -f .qmake.stash
+rm -f Makefile
+make[2]: Leaving directory '/tmpdir/build/mx-boot-options'
+rm -f src/translations/*.qm
+make[1]: Leaving directory '/tmpdir/build/mx-boot-options'
+   dh_autoreconf_clean -O--no-automatic-dbgsym -O--parallel
+   dh_clean -O--no-automatic-dbgsym -O--parallel
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building mx-boot-options in mx-boot-options_21.1.02.tar.xz
+dpkg-source: info: building mx-boot-options in mx-boot-options_21.1.02.dsc
+ debian/rules build
+dh build --no-automatic-dbgsym --parallel 
+   dh_update_autotools_config -O--no-automatic-dbgsym -O--parallel
+   dh_autoreconf -O--no-automatic-dbgsym -O--parallel
+   dh_auto_configure -O--no-automatic-dbgsym -O--parallel
+	qmake -makefile "QMAKE_CFLAGS_RELEASE=-g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" "QMAKE_CFLAGS_DEBUG=-g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" "QMAKE_CXXFLAGS_RELEASE=-g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" "QMAKE_CXXFLAGS_DEBUG=-g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" QMAKE_LFLAGS_RELEASE=-Wl,-z,relro QMAKE_LFLAGS_DEBUG=-Wl,-z,relro QMAKE_STRIP=: PREFIX=/usr
+Info: creating stash file /tmpdir/build/mx-boot-options/.qmake.stash
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/tmpdir/build/mx-boot-options'
+lrelease *.pro
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_am.qm'...
+    Generated 24 translation(s) (24 finished and 0 unfinished)
+    Ignored 49 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_ar.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 54 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_bg.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 54 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_ca.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_cs.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 48 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_da.qm'...
+    Generated 70 translation(s) (70 finished and 0 unfinished)
+    Ignored 3 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_de.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_el.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_es.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_et.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+    Ignored 68 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_eu.qm'...
+    Generated 2 translation(s) (2 finished and 0 unfinished)
+    Ignored 71 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_fa.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 54 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_fi.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_fr.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_he_IL.qm'...
+    Generated 28 translation(s) (28 finished and 0 unfinished)
+    Ignored 45 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_hi.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_hr.qm'...
+    Generated 35 translation(s) (35 finished and 0 unfinished)
+    Ignored 38 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_hu.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 54 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_id.qm'...
+    Generated 19 translation(s) (19 finished and 0 unfinished)
+    Ignored 54 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_is.qm'...
+    Generated 23 translation(s) (23 finished and 0 unfinished)
+    Ignored 50 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_it.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_ja.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_kk.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 53 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_ko.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+    Ignored 68 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_lt.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 48 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_mk.qm'...
+    Generated 2 translation(s) (2 finished and 0 unfinished)
+    Ignored 71 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_mr.qm'...
+    Generated 16 translation(s) (16 finished and 0 unfinished)
+    Ignored 57 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_nb.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_nl.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_pl.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_pt.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_pt_BR.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_ro.qm'...
+    Generated 22 translation(s) (22 finished and 0 unfinished)
+    Ignored 51 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_ru.qm'...
+    Generated 70 translation(s) (70 finished and 0 unfinished)
+    Ignored 3 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_sk.qm'...
+    Generated 65 translation(s) (65 finished and 0 unfinished)
+    Ignored 8 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_sl.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_sq.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 53 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_sr.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+    Ignored 65 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_sv.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_tr.qm'...
+    Generated 72 translation(s) (72 finished and 0 unfinished)
+    Ignored 1 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_uk.qm'...
+    Generated 21 translation(s) (21 finished and 0 unfinished)
+    Ignored 52 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_zh_CN.qm'...
+    Generated 23 translation(s) (23 finished and 0 unfinished)
+    Ignored 50 untranslated source text(s)
+Updating '/tmpdir/build/mx-boot-options/translations/mx-boot-options_zh_TW.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 48 untranslated source text(s)
+head -n1 debian/changelog | sed -e "s/.*(\([^(]*\)).*/#define VERSION \"\1\"/" > version.h
+dh_auto_build -- QMAKE=qmake-qt5 LRELEASE=lrelease-qt5 QMAKE_OPTS="DEFINES+=NO_DEBUG_ON_CONSOLE"
+	make -j4 QMAKE=qmake-qt5 LRELEASE=lrelease-qt5 QMAKE_OPTS=DEFINES\+=NO_DEBUG_ON_CONSOLE
+make[2]: Entering directory '/tmpdir/build/mx-boot-options'
+/usr/lib/qt5/bin/uic mainwindow.ui -o ui_mainwindow.h
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o main.o main.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o dialog.o dialog.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o cmd.o cmd.cpp
+/usr/lib/qt5/bin/rcc -name images images.qrc -o qrc_images.cpp
+g++ -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o mainwindow.o mainwindow.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o qrc_images.o qrc_images.cpp
+/usr/lib/qt5/bin/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /tmpdir/build/mx-boot-options/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/tmpdir/build/mx-boot-options -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:77:15: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   77 |         system("su-to-root -X -c " + QCoreApplication::applicationFilePath().toUtf8() + "&");
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/qt5/bin/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /tmpdir/build/mx-boot-options/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/tmpdir/build/mx-boot-options -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include dialog.h -o moc_dialog.cpp
+/usr/lib/qt5/bin/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /tmpdir/build/mx-boot-options/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/tmpdir/build/mx-boot-options -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/10 -I/usr/include/x86_64-linux-gnu/c++/10 -I/usr/include/c++/10/backward -I/usr/lib/gcc/x86_64-linux-gnu/10/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include cmd.h -o moc_cmd.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_mainwindow.o moc_mainwindow.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_cmd.o moc_cmd.cpp
+g++ -c -pipe -g -O2 -ffile-prefix-map=/tmpdir/build/mx-boot-options=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_dialog.o moc_dialog.cpp
+mainwindow.cpp: In member function ‘void MainWindow::on_buttonAbout_clicked()’:
+mainwindow.cpp:653:19: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  653 |             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
+      |             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mainwindow.cpp:655:19: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  655 |             system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+      |             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  656 |                    user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mainwindow.cpp: In member function ‘void MainWindow::on_buttonHelp_clicked()’:
+mainwindow.cpp:690:15: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  690 |         system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mainwindow.cpp:692:15: warning: ignoring return value of ‘int system(const char*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+  692 |         system("runuser -l " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+      |         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  693 |                user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+      |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+g++ -Wl,-z,relro -o mx-boot-options main.o mainwindow.o dialog.o cmd.o qrc_images.o moc_mainwindow.o moc_dialog.o moc_cmd.o   /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so -lGL -lpthread   
+make[2]: Leaving directory '/tmpdir/build/mx-boot-options'
+make[1]: Leaving directory '/tmpdir/build/mx-boot-options'
+   dh_auto_test -O--no-automatic-dbgsym -O--parallel
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary --no-automatic-dbgsym --parallel 
+   dh_testroot -O--no-automatic-dbgsym -O--parallel
+   dh_prep -O--no-automatic-dbgsym -O--parallel
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/tmpdir/build/mx-boot-options'
+dh_auto_install -- QMAKE=qmake-qt5 LRELEASE=lrelease-qt5 QMAKE_OPTS="DEFINES+=NO_DEBUG_ON_CONSOLE"
+make[1]: Leaving directory '/tmpdir/build/mx-boot-options'
+   dh_install -O--no-automatic-dbgsym -O--parallel
+   dh_installdocs -O--no-automatic-dbgsym -O--parallel
+   dh_installchangelogs -O--no-automatic-dbgsym -O--parallel
+   dh_systemd_enable -O--no-automatic-dbgsym -O--parallel
+   dh_installinit -O--no-automatic-dbgsym -O--parallel
+   dh_systemd_start -O--no-automatic-dbgsym -O--parallel
+   dh_icons -O--no-automatic-dbgsym -O--parallel
+   dh_perl -O--no-automatic-dbgsym -O--parallel
+   dh_link -O--no-automatic-dbgsym -O--parallel
+   dh_strip_nondeterminism -O--no-automatic-dbgsym -O--parallel
+   dh_compress -O--no-automatic-dbgsym -O--parallel
+   dh_fixperms -O--no-automatic-dbgsym -O--parallel
+   dh_missing -O--no-automatic-dbgsym -O--parallel
+   dh_strip -O--no-automatic-dbgsym -O--parallel
+   dh_makeshlibs -O--no-automatic-dbgsym -O--parallel
+   debian/rules override_dh_shlibdeps
+make[1]: Entering directory '/tmpdir/build/mx-boot-options'
+dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+make[1]: Leaving directory '/tmpdir/build/mx-boot-options'
+   dh_installdeb -O--no-automatic-dbgsym -O--parallel
+   dh_gencontrol -O--no-automatic-dbgsym -O--parallel
+   dh_md5sums -O--no-automatic-dbgsym -O--parallel
+   dh_builddeb -O--no-automatic-dbgsym -O--parallel
+dpkg-deb: building package 'mx-boot-options' in '../mx-boot-options_21.1.02_amd64.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges -sa >../mx-boot-options_21.1.02_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
+Now signing changes and any dsc files...
+ signfile dsc mx-boot-options_21.1.02.dsc fehlix <fehlix@mxlinux.org>
+
+ fixup_buildinfo mx-boot-options_21.1.02.dsc mx-boot-options_21.1.02_amd64.buildinfo
+ signfile buildinfo mx-boot-options_21.1.02_amd64.buildinfo fehlix <fehlix@mxlinux.org>
+
+ fixup_changes dsc mx-boot-options_21.1.02.dsc mx-boot-options_21.1.02_amd64.changes
+ fixup_changes buildinfo mx-boot-options_21.1.02_amd64.buildinfo mx-boot-options_21.1.02_amd64.changes
+ signfile changes mx-boot-options_21.1.02_amd64.changes fehlix <fehlix@mxlinux.org>
+
+Successfully signed dsc, buildinfo, changes files

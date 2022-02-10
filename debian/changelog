@@ -1,3 +1,9 @@
+mx-boot-options (22.2) mx; urgency=medium
+
+  * New build
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 10 Feb 2022 08:59:27 -0500
+
 mx-boot-options (21.1.02) mx; urgency=medium
 
   * adjust chroot

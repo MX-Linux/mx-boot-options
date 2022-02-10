@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Thu, 10 Feb 2022 08:59:27 -0500
+Source: mx-boot-options
+Architecture: source
+Version: 22.2
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-boot-options (22.2) mx; urgency=medium
+ .
+   * New build
+Checksums-Sha1:
+ 262fa4f7479d153077cf902415441068b846c915 579 mx-boot-options_22.2.dsc
+ 537a7cc11561ad07088157d00acc4dca42983baa 144500 mx-boot-options_22.2.tar.xz
+ 75060ae0c8711f35bbf0243a55923ba393be424f 9273 mx-boot-options_22.2_i386.buildinfo
+Checksums-Sha256:
+ df7eaf02860c4161e0c18a7621d246d6e672c7fff8b1e2d444aae1e867d7f0db 579 mx-boot-options_22.2.dsc
+ 08d5facf71ff89e4e5e0df76e7c505d40bd86cd3e93bf7adfd1a14eb0d204aea 144500 mx-boot-options_22.2.tar.xz
+ e2bc04a584058930cf5a9e5b497a295669d357a3a5396755c32717bdb9ddaba9 9273 mx-boot-options_22.2_i386.buildinfo
+Files:
+ 854be3369af7b4a9acd080223778aafa 579 admin optional mx-boot-options_22.2.dsc
+ 73b36ce02f41f0126bcb54a914fcd830 144500 admin optional mx-boot-options_22.2.tar.xz
+ cd76075422d6e56ea32bf58ff3cb1ab6 9273 admin optional mx-boot-options_22.2_i386.buildinfo

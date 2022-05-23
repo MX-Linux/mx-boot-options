@@ -281,7 +281,7 @@ QString MainWindow::selectPartiton(const QStringList &list)
 void MainWindow::addGrubArg(const QString &key, const QString &item)
 {
     QStringList new_list;
-    for (QString line : default_grub) {
+    for (QString line : qAsConst(default_grub)) {
         if (line.contains(key)) {               // find key
             if (line.contains(item)) {          // return if already has the item
                 return;
@@ -320,7 +320,7 @@ void MainWindow::createChrootEnv(QString root)
                               tr("Could not create a temporary folder"));
         exit(EXIT_FAILURE);
     }
-    QString cmd_str = QString("/bin/mount /dev/%1 %2 && /bin/mount --rbind --make-rslave /dev %2/dev && /bin/mount --rbind --make-rslave /sys %2/sys && /bin/mount --rbind /proc %2/proc && /bin/mount -t tmpfs -o size=100m,nodev,mode=755 tmpfs %2/run && /bin/mkdir %2/run/udev && /bin/mount --rbind /run/udev %2/run/udev").arg(root).arg(tmpdir.path());
+    QString cmd_str = QString("/bin/mount /dev/%1 %2 && /bin/mount --rbind --make-rslave /dev %2/dev && /bin/mount --rbind --make-rslave /sys %2/sys && /bin/mount --rbind /proc %2/proc && /bin/mount -t tmpfs -o size=100m,nodev,mode=755 tmpfs %2/run && /bin/mkdir %2/run/udev && /bin/mount --rbind /run/udev %2/run/udev").arg(root, tmpdir.path());
     if (!cmd.run(cmd_str)) {
         QMessageBox::critical(this, tr("Cannot continue"),
             tr("Cannot create chroot environment, cannot change boot options. Exiting..."));
@@ -335,7 +335,7 @@ void MainWindow::enableGrubLine(const QString &item)
 {
     bool found = false;
     QStringList new_list;
-    for (const QString &line : default_grub) {
+    for (const QString &line : qAsConst(default_grub)) {
         if (line == item || line.contains(QRegularExpression("^#.*" + item))) { // mark found and add item if found disabled or enabled
             found = true;
             new_list << item;
@@ -353,7 +353,7 @@ void MainWindow::enableGrubLine(const QString &item)
 void MainWindow::disableGrubLine(const QString &item)
 {
     QStringList new_list;
-    for (const QString &line : default_grub)
+    for (const QString &line : qAsConst(default_grub))
         if (line.startsWith(item))
             new_list << "#" + line;
         else
@@ -365,7 +365,7 @@ void MainWindow::disableGrubLine(const QString &item)
 void MainWindow::remGrubArg(const QString &key, const QString &item)
 {
     QStringList new_list;
-    for (QString line : default_grub) {
+    for (QString line : qAsConst(default_grub)) {
         if (line.contains(key))  // find key
             line.remove(QRegularExpression("\\s*" + item));
         new_list << line;
@@ -378,7 +378,7 @@ bool MainWindow::replaceGrubArg(const QString &key, const QString &item)
 {
     bool replaced = false;
     QStringList new_list;
-    for (const QString &line : default_grub) {
+    for (const QString &line : qAsConst(default_grub)) {
         if (line.contains(key)) { // find key
             new_list <<  key + "=" + item;
             replaced = true;
@@ -685,7 +685,6 @@ void MainWindow::on_buttonHelp_clicked()
 {
     QString url = "/usr/share/doc/mx-boot-options/mx-boot-options.html";
 
-    QString exec = "xdg-open";
     if (system("command -v mx-viewer >/dev/null") == 0)
         system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
     else

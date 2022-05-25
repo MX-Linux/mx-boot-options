@@ -59,6 +59,7 @@ public:
     void readKernelOpts();
     void remGrubArg(const QString &key, const QString &item);
     void sendMouseEvents();
+    void setGeneralConnections();
     void setup();
     void writeDefaultGrub() const;
 
@@ -80,30 +81,30 @@ private slots:
     void procTime();
     void setConnections();
 
-    void on_btn_bg_file_clicked();
-    void on_btn_theme_file_clicked();
-    void on_buttonAbout_clicked();
-    void on_buttonApply_clicked();
-    void on_buttonHelp_clicked();
-    void on_buttonLog_clicked();
-    void on_button_preview_clicked();
-    void on_cb_bootsplash_clicked(bool checked);
-    void on_cb_bootsplash_toggled(bool checked);
-    void on_cb_enable_flatmenus_clicked(bool checked);
-    void on_cb_grub_theme_toggled(bool checked);
-    void on_cb_save_default_clicked();
-    void on_combo_menu_entry_currentIndexChanged(int index);
-    void on_combo_theme_activated(int);
-    void on_combo_theme_currentIndexChanged(const QString &arg1);
-    void on_lineEdit_kernel_textEdited();
-    void on_rb_detailed_msg_toggled(bool checked);
-    void on_rb_limited_msg_toggled(bool checked);
-    void on_rb_very_detailed_msg_toggled(bool checked);
-    void on_spinBoxTimeout_valueChanged(int val);
+    void btn_bg_file_clicked();
+    void btn_theme_file_clicked();
+    void buttonAbout_clicked();
+    void buttonApply_clicked();
+    void buttonHelp_clicked();
+    void buttonLog_clicked();
+    void button_preview_clicked();
+    void cb_bootsplash_clicked(bool checked);
+    void cb_bootsplash_toggled(bool checked);
+    void cb_enable_flatmenus_clicked(bool checked);
+    void cb_grub_theme_toggled(bool checked);
+    void cb_save_default_clicked();
+    void combo_menu_entry_currentIndexChanged(int index);
+    void combo_theme_activated(int);
+    void combo_theme_currentIndexChanged(const QString &arg1);
+    void lineEdit_kernel_textEdited();
+    void rb_detailed_msg_toggled(bool checked);
+    void rb_limited_msg_toggled(bool checked);
+    void rb_very_detailed_msg_toggled(bool checked);
+    void spinBoxTimeout_valueChanged(int val);
 
 
 protected:
-    void keyPressEvent(QKeyEvent* event);
+    void keyPressEvent(QKeyEvent *event);
     QProgressBar *bar;
 
 private:

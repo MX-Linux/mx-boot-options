@@ -38,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent) :
     qDebug().noquote() << qApp->applicationName() << "version:" << qApp->applicationVersion();
     ui->setupUi(this);
     setWindowFlags(Qt::Window); // for the close, min and max buttons
+    setGeneralConnections();
     setup();
 }
 
@@ -128,13 +129,20 @@ void MainWindow::setup()
 // set mouse in the corner and move it to advance splash preview
 void MainWindow::sendMouseEvents()
 {
-    QCursor::setPos(qApp->screens().first()->geometry().width(), qApp->screens().first()->geometry().height() + 1);
+    QCursor::setPos(qApp->primaryScreen()->geometry().width(), qApp->primaryScreen()->geometry().height() + 1);
+}
+
+void MainWindow::setGeneralConnections()
+{
+    connect(ui->buttonAbout, &QPushButton::clicked, this, &MainWindow::buttonAbout_clicked);
+    connect(ui->buttonApply, &QPushButton::clicked, this, &MainWindow::buttonApply_clicked);
+    connect(ui->buttonHelp, &QPushButton::clicked, this, &MainWindow::buttonHelp_clicked);
+    connect(ui->buttonLog, &QPushButton::clicked, this, &MainWindow::buttonLog_clicked);
 }
 
 // Checks if package is installed
 bool MainWindow::checkInstalled(const QString &package)
 {
-    //qDebug() << "+++" << __PRETTY_FUNCTION__ << "+++";
     QString cmd_str = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
     if (cmd.getCmdOut(cmd_str) == "Status: install ok installed")
         return true;
@@ -157,7 +165,7 @@ bool MainWindow::installSplash()
     QProgressDialog *progress = new QProgressDialog(this);
     bar = new QProgressBar(progress);
 
-    QString packages = "plymouth plymouth-x11 plymouth-themes plymouth-themes-mx";
+    const QString packages = "plymouth plymouth-x11 plymouth-themes plymouth-themes-mx";
     progress->setWindowModality(Qt::WindowModal);
     progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
     progress->setCancelButton(nullptr);
@@ -539,7 +547,7 @@ void MainWindow::procTime()
 // set proc and timer connections
 void MainWindow::setConnections()
 {
-    // reset connection if colling a couple of times in a row
+    // reset connection if calling a couple of times in a row
     timer.disconnect();
     timer.stop();
 
@@ -550,7 +558,7 @@ void MainWindow::setConnections()
 
 
 // Next button clicked
-void MainWindow::on_buttonApply_clicked()
+void MainWindow::buttonApply_clicked()
 {
     ui->buttonCancel->setDisabled(true);
     ui->buttonApply->setDisabled(true);
@@ -632,7 +640,7 @@ void MainWindow::on_buttonApply_clicked()
 
 
 // About button clicked
-void MainWindow::on_buttonAbout_clicked()
+void MainWindow::buttonAbout_clicked()
 {
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About") + " MX Boot Options", "<p align=\"center\"><b><h2>MX Boot Options</h2></b></p><p align=\"center\">" +
@@ -640,26 +648,26 @@ void MainWindow::on_buttonAbout_clicked()
                        tr("Program for selecting common start-up choices") +
                        "</h3></p><p align=\"center\"><a href=\"http://mxlinux.org\">http://mxlinux.org</a><br /></p><p align=\"center\">" +
                        tr("Copyright (c) MX Linux") + "<br /><br /></p>");
-    QPushButton *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
-    QPushButton *btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
-    QPushButton *btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
+    auto btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
+    auto btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
+    auto btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
     btnCancel->setIcon(QIcon::fromTheme("window-close"));
 
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
-        QString url = "file:///usr/share/doc/mx-boot-options/license.html";
+        const QString url = "file:///usr/share/doc/mx-boot-options/license.html";
         if (system("command -v mx-viewer >/dev/null") == 0)
             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
         else
             system("runuser " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
                    user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
     } else if (msgBox.clickedButton() == btnChangelog) {
-        QDialog *changelog = new QDialog(this);
+        auto changelog = new QDialog(this);
         changelog->setWindowTitle(tr("Changelog"));
         changelog->resize(600, 500);
 
-        QTextEdit *text = new QTextEdit;
+        auto text = new QTextEdit;
         text->setReadOnly(true);
 
         QProcess proc;
@@ -668,11 +676,11 @@ void MainWindow::on_buttonAbout_clicked()
         proc.waitForFinished();
         text->setText(proc.readAllStandardOutput());
 
-        QPushButton *btnClose = new QPushButton(tr("Close"));
+        auto btnClose = new QPushButton(tr("Close"));
         btnClose->setIcon(QIcon::fromTheme("window-close"));
         connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
 
-        QVBoxLayout *layout = new QVBoxLayout;
+        auto layout = new QVBoxLayout;
         layout->addWidget(text);
         layout->addWidget(btnClose);
         changelog->setLayout(layout);
@@ -681,9 +689,9 @@ void MainWindow::on_buttonAbout_clicked()
 }
 
 // Help button clicked
-void MainWindow::on_buttonHelp_clicked()
+void MainWindow::buttonHelp_clicked()
 {
-    QString url = "/usr/share/doc/mx-boot-options/mx-boot-options.html";
+    const QString url = "/usr/share/doc/mx-boot-options/mx-boot-options.html";
 
     if (system("command -v mx-viewer >/dev/null") == 0)
         system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
@@ -693,7 +701,7 @@ void MainWindow::on_buttonHelp_clicked()
 }
 
 
-void MainWindow::on_cb_bootsplash_clicked(bool checked)
+void MainWindow::cb_bootsplash_clicked(bool checked)
 {
     ui->rb_limited_msg->setVisible(!checked);
     if (checked) {
@@ -721,7 +729,7 @@ void MainWindow::on_cb_bootsplash_clicked(bool checked)
     ui->buttonApply->setEnabled(true);
 }
 
-void MainWindow::on_btn_bg_file_clicked()
+void MainWindow::btn_bg_file_clicked()
 {
     QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select image to display in bootloader"),
                                                     chroot.section(" ", 1, 1) + "/usr/share/backgrounds/MXLinux/grub",
@@ -737,7 +745,7 @@ void MainWindow::on_btn_bg_file_clicked()
 }
 
 
-void MainWindow::on_rb_detailed_msg_toggled(bool checked)
+void MainWindow::rb_detailed_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
@@ -753,7 +761,7 @@ void MainWindow::on_rb_detailed_msg_toggled(bool checked)
     }
 }
 
-void MainWindow::on_rb_very_detailed_msg_toggled(bool checked)
+void MainWindow::rb_very_detailed_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
@@ -765,7 +773,7 @@ void MainWindow::on_rb_very_detailed_msg_toggled(bool checked)
     }
 }
 
-void MainWindow::on_rb_limited_msg_toggled(bool checked)
+void MainWindow::rb_limited_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
@@ -785,13 +793,13 @@ void MainWindow::on_rb_limited_msg_toggled(bool checked)
     }
 }
 
-void MainWindow::on_spinBoxTimeout_valueChanged(int)
+void MainWindow::spinBoxTimeout_valueChanged(int)
 {
     options_changed = true;
     ui->buttonApply->setEnabled(true);
 }
 
-void MainWindow::on_combo_menu_entry_currentIndexChanged(int)
+void MainWindow::combo_menu_entry_currentIndexChanged(int)
 {
     options_changed = true;
     ui->buttonApply->setEnabled(true);
@@ -799,7 +807,7 @@ void MainWindow::on_combo_menu_entry_currentIndexChanged(int)
 
 
 // Toggled either by user or when reading the status of bootsplash
-void MainWindow::on_cb_bootsplash_toggled(bool checked)
+void MainWindow::cb_bootsplash_toggled(bool checked)
 {
     ui->combo_theme->setEnabled(checked);
     ui->button_preview->setEnabled(checked);
@@ -817,7 +825,7 @@ void MainWindow::on_cb_bootsplash_toggled(bool checked)
     ui->lineEdit_kernel->setText(line.trimmed());
 }
 
-void MainWindow::on_buttonLog_clicked()
+void MainWindow::buttonLog_clicked()
 {
     QString location = "/var/log/boot.log";
     if (kernel_options.contains("hush"))
@@ -833,13 +841,13 @@ void MainWindow::on_buttonLog_clicked()
 }
 
 
-void MainWindow::on_combo_theme_activated(int)
+void MainWindow::combo_theme_activated(int)
 {
     splash_changed = true;
     ui->buttonApply->setEnabled(true);
 }
 
-void MainWindow::on_button_preview_clicked()
+void MainWindow::button_preview_clicked()
 {
     if (just_installed)
         QMessageBox::warning(this, tr("Needs reboot"), tr("Plymouth was just installed, you might need to reboot before being able to display previews"));
@@ -853,7 +861,7 @@ void MainWindow::on_button_preview_clicked()
     cmd.disconnect();
 }
 
-void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
+void MainWindow::cb_enable_flatmenus_clicked(bool checked)
 {
     QProgressDialog *progress = new QProgressDialog(this);
     bar = new QProgressBar(progress);
@@ -880,19 +888,19 @@ void MainWindow::on_cb_enable_flatmenus_clicked(bool checked)
     progress->close();
 }
 
-void MainWindow::on_cb_save_default_clicked()
+void MainWindow::cb_save_default_clicked()
 {
     options_changed = true;
     ui->buttonApply->setEnabled(true);
 }
 
 
-void MainWindow::on_combo_theme_currentIndexChanged(const QString &arg1)
+void MainWindow::combo_theme_currentIndexChanged(const QString &arg1)
 {
     ui->button_preview->setDisabled(arg1 == "details");
 }
 
-void MainWindow::on_cb_grub_theme_toggled(bool checked)
+void MainWindow::cb_grub_theme_toggled(bool checked)
 {
     if (checked && ui->btn_theme_file->property("file").toString().isEmpty()) {
         ui->btn_theme_file->setText(tr("Click to select theme"));
@@ -903,7 +911,7 @@ void MainWindow::on_cb_grub_theme_toggled(bool checked)
     }
 }
 
-void MainWindow::on_btn_theme_file_clicked()
+void MainWindow::btn_theme_file_clicked()
 {
     QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select GRUB theme"),
                                               chroot.section(" ", 1, 1) + "/boot/grub/themes", "*.txt;; *.*");
@@ -917,7 +925,7 @@ void MainWindow::on_btn_theme_file_clicked()
     }
 }
 
-void MainWindow::on_lineEdit_kernel_textEdited()
+void MainWindow::lineEdit_kernel_textEdited()
 {
     kernel_options_changed = true;
     options_changed = true;

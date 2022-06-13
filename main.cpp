@@ -34,6 +34,7 @@
 
 int main(int argc, char *argv[])
 {
+    qputenv("XDG_RUNTIME_DIR", "/run/user/0");
     QApplication app(argc, argv);
     app.setApplicationVersion(VERSION);
     app.setWindowIcon(QIcon::fromTheme(app.applicationName()));
@@ -64,12 +65,7 @@ int main(int argc, char *argv[])
     }
 
     if (getuid() == 0) {
-//        if (system("mountpoint -q /live/aufs") == 0) {
-//            QApplication::beep();
-//            QMessageBox::critical(0, QString::null,
-//                                  QApplication::tr("This programs is not meant to run in a live environment."));
-//            return 1;
-//        }
+        qputenv("HOME", "/root");
         MainWindow w;
         w.show();
         return app.exec();

@@ -47,10 +47,16 @@ public:
 
     QString selectPartiton(const QStringList &list);
     QStringList getLinuxPartitions();
-
+    bool isInstalled(const QString &package);
+    bool isInstalled(const QStringList &packages);
+    bool inVirtualMachine();
+    bool installSplash();
+    bool replaceGrubArg(const QString &key, const QString &item);
+    int findMenuEntryById(const QString &id) const;
+    static void sendMouseEvents();
     void addGrubArg(const QString &key, const QString &item);
     void addGrubLine(const QString &item);
-    void createChrootEnv(QString root);
+    void createChrootEnv(const QString& root);
     void disableGrubLine(const QString &item);
     void enableGrubLine(const QString &item);
     void loadPlymouthThemes();
@@ -58,18 +64,9 @@ public:
     void readGrubCfg();
     void readKernelOpts();
     void remGrubArg(const QString &key, const QString &item);
-    void sendMouseEvents();
     void setGeneralConnections();
     void setup();
     void writeDefaultGrub() const;
-
-    bool checkInstalled(const QString &package);
-    bool checkInstalled(const QStringList &packages);
-    bool inVirtualMachine();
-    bool installSplash();
-    bool replaceGrubArg(const QString &key, const QString &item);
-
-    int findMenuEntryById(const QString &id) const;
 
 
 public slots:
@@ -105,19 +102,19 @@ private slots:
 
 protected:
     void keyPressEvent(QKeyEvent *event);
-    QProgressBar *bar;
+    QProgressBar *bar{};
 
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
     QTimer timer;
 
-    bool grub_installed;
-    bool just_installed;
-    bool kernel_options_changed;
-    bool messages_changed;
-    bool options_changed;
-    bool splash_changed;
+    bool grub_installed{};
+    bool just_installed{};
+    bool kernel_options_changed{};
+    bool messages_changed{};
+    bool options_changed{};
+    bool splash_changed{};
 
     QString chroot;
     QString kernel_options;

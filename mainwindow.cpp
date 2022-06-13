@@ -863,10 +863,12 @@ void MainWindow::push_preview_clicked()
         return;
     qputenv("HOME", starting_home.toUtf8());
     cmd.getCmdOut("plymouth-set-default-theme " + ui->comboTheme->currentText());
-    ////connect(cmd, &Cmd::runTime, this, &MainWindow::sendMouseEvents);
+    QTimer timer;
+    timer.start(100ms);
+    connect(&timer, &QTimer::timeout, this, &MainWindow::sendMouseEvents);
     cmd.getCmdOut(QStringLiteral("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'"));
     cmd.getCmdOut("plymouth-set-default-theme " + current_theme); // return to current theme
-    cmd.disconnect();
+    timer.disconnect();
     qputenv("HOME", "/root");
 }
 

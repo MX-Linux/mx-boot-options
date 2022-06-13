@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Mon, 13 Jun 2022 13:50:52 -0400
+Source: mx-boot-options
+Architecture: source
+Version: 22.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-boot-options (22.6) mx; urgency=medium
+ .
+   * Preserve user theme when launching program as root
+   * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
+Checksums-Sha1:
+ 08621506762e483a0b857ba3b582eab00e1fe348 579 mx-boot-options_22.6.dsc
+ 185b2a9f3c45de46feb331fe47f3e18d5a6e8004 145780 mx-boot-options_22.6.tar.xz
+ 014df8d9ff45aa6381146cd4b273ed81224d5a3a 10057 mx-boot-options_22.6_i386.buildinfo
+Checksums-Sha256:
+ 496f9b693ebf818774b503845bed29045ecdbf01f83e2f6a4ac2ed9a91a2bd1d 579 mx-boot-options_22.6.dsc
+ 326b533594f9b641d21bc9980af11af55c32ea285e3f580385a2767f1c44a8e2 145780 mx-boot-options_22.6.tar.xz
+ ed6a79541a5de306df2ea14d74efce2b7e247fce45680c693acb18d8e620ddf3 10057 mx-boot-options_22.6_i386.buildinfo
+Files:
+ e5d1775cf39257520d14af6152b2b077 579 admin optional mx-boot-options_22.6.dsc
+ 6b215fc376304dc72064694222fd25c7 145780 admin optional mx-boot-options_22.6.tar.xz
+ 43a1a6558df9f2da66d5f41b4e03f2c1 10057 admin optional mx-boot-options_22.6_i386.buildinfo

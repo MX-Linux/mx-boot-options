@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 13 Jun 2022 13:50:52 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 22.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.6) mx; urgency=medium
+ .
+   * Preserve user theme when launching program as root
+   * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
+Checksums-Sha1:
+ a0c4a57bb1204a676723915038240f8822b04e87 1141 mx-boot-options_22.6.dsc
+ 3260888b21abbaabf11f598dcde254e7eaa39a13 145824 mx-boot-options_22.6.tar.xz
+ 2de83837ddf5e896141f40c88b5c1a65535b0277 10767 mx-boot-options_22.6_amd64.buildinfo
+ a991b320f3b72188915a48529e9e2b69a3785367 169404 mx-boot-options_22.6_amd64.deb
+Checksums-Sha256:
+ 0de9be3a6f1eb14f7748e44626fb50c9750543cf09584968dbf090f9700cdacb 1141 mx-boot-options_22.6.dsc
+ c9729bbc856c909e7fbd1974fd14ccbb42b56d5b8e556bb37560bed0277d73b3 145824 mx-boot-options_22.6.tar.xz
+ 0cde9aaebbf1007d7d1daef0d8fddcefda4ce716eeb3c15ab40402cd30d75b70 10767 mx-boot-options_22.6_amd64.buildinfo
+ 79e175e4e1fe42dbd78ecceee046b7e890d1cf397bfb9564bd3b3868c457daa5 169404 mx-boot-options_22.6_amd64.deb
+Files:
+ 04d9d0b6660f4289b14797feecabada4 1141 admin optional mx-boot-options_22.6.dsc
+ d0879a19577fb97e2485f9becb3aad62 145824 admin optional mx-boot-options_22.6.tar.xz
+ 3a36283a331f1e3e0622f5a317d2d505 10767 admin optional mx-boot-options_22.6_amd64.buildinfo
+ 24423b768a269ee0325b56e04fbd9f31 169404 admin optional mx-boot-options_22.6_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmKnfiYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBl2CACHCiOKzJOWFyrNGiwVW3Zcn1ndHn4v
+buoWtTes9D2rgch0wrWNXUWNamfZlGlRZgK/7pvTmlpIoHcwc6F6nwf/207RM2bO
+w0qsjKB73MjjayX+ybjkSn3V63xuOgVlGk8lx6bZ5KQEg+wMEsz6UAmTojHn/0wE
++QkfTzX0CJdEiiKRD0/0/0Rk38Gz8KDy+W162tWa8CPduLqHsFpdwFgKh8CEPgyS
+1p2avmgoBu53fEdwISiB4p6paukfAB46gF7NfGp6FmeiHkqmJ1yg9dvV6IczeSvU
+snb1oW/ND/WvQxD6jfK5zCejb9I7fdSWQFI3fkHiLOWHKsCqKCUm0YsI
+=Ik18
+-----END PGP SIGNATURE-----

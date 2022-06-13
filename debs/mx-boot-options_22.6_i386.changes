@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Mon, 13 Jun 2022 13:50:52 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: i386
+Version: 22.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.6) mx; urgency=medium
+ .
+   * Preserve user theme when launching program as root
+   * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
+Checksums-Sha1:
+ 014df8d9ff45aa6381146cd4b273ed81224d5a3a 10057 mx-boot-options_22.6_i386.buildinfo
+ 6d7e9fc855bdb1d03a889ba6c6377819ea36bab1 172260 mx-boot-options_22.6_i386.deb
+Checksums-Sha256:
+ ed6a79541a5de306df2ea14d74efce2b7e247fce45680c693acb18d8e620ddf3 10057 mx-boot-options_22.6_i386.buildinfo
+ 8c507aadd6f64dadaf37b6c21b218027ae22589ef9aa6b1308d211d1fb4ebc12 172260 mx-boot-options_22.6_i386.deb
+Files:
+ 43a1a6558df9f2da66d5f41b4e03f2c1 10057 admin optional mx-boot-options_22.6_i386.buildinfo
+ fd04b023fc0f712eca88c1e76e02ff81 172260 admin optional mx-boot-options_22.6_i386.deb

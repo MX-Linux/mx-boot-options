@@ -137,25 +137,25 @@ void MainWindow::sendMouseEvents()
 
 void MainWindow::setGeneralConnections()
 {
-    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::buttonAbout_clicked);
-    connect(ui->pushApply, &QPushButton::clicked, this, &MainWindow::buttonApply_clicked);
-    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::buttonHelp_clicked);
-    connect(ui->buttonLog, &QPushButton::clicked, this, &MainWindow::buttonLog_clicked);
+    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::pushAbout_clicked);
+    connect(ui->pushApply, &QPushButton::clicked, this, &MainWindow::pushApply_clicked);
+    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::pushHelp_clicked);
+    connect(ui->pushLog, &QPushButton::clicked, this, &MainWindow::pushLog_clicked);
     connect(ui->pushBgFile, &QPushButton::clicked, this, &MainWindow::btn_bg_file_clicked);
     connect(ui->pushThemeFile, &QPushButton::clicked, this, &MainWindow::btn_theme_file_clicked);
-    connect(ui->pushPreview, &QPushButton::clicked, this, &MainWindow::button_preview_clicked);
-    connect(ui->checkBootsplash, &QCheckBox::clicked, this, &MainWindow::cb_bootsplash_clicked);
-    connect(ui->checkBootsplash, &QCheckBox::toggled, this, &MainWindow::cb_bootsplash_toggled);
-    connect(ui->checkEnableFlatmenus, &QCheckBox::clicked, this, &MainWindow::cb_bootsplash_clicked);
-    connect(ui->checkGrubTheme, &QCheckBox::clicked, this, &MainWindow::cb_grub_theme_toggled);
-    connect(ui->checkSaveDefault, &QCheckBox::clicked, this, &MainWindow::cb_save_default_clicked);
+    connect(ui->pushPreview, &QPushButton::clicked, this, &MainWindow::push_preview_clicked);
+    connect(ui->checkBootsplash, &QCheckBox::clicked, this, &MainWindow::combo_bootsplash_clicked);
+    connect(ui->checkBootsplash, &QCheckBox::toggled, this, &MainWindow::combo_bootsplash_toggled);
+    connect(ui->checkEnableFlatmenus, &QCheckBox::clicked, this, &MainWindow::combo_bootsplash_clicked);
+    connect(ui->checkGrubTheme, &QCheckBox::clicked, this, &MainWindow::combo_grub_theme_toggled);
+    connect(ui->checkSaveDefault, &QCheckBox::clicked, this, &MainWindow::combo_save_default_clicked);
     connect(ui->comboMenuEntry, qOverload<int>(&QComboBox::currentIndexChanged), this, &MainWindow::combo_menu_entry_currentIndexChanged);
     connect(ui->comboTheme, qOverload<int>(&QComboBox::activated), this, &MainWindow::combo_theme_activated);
     connect(ui->comboTheme, qOverload<int>(&QComboBox::currentIndexChanged), this, &MainWindow::combo_theme_currentIndexChanged);
     connect(ui->textKernel, &QLineEdit::textEdited, this, &MainWindow::lineEdit_kernel_textEdited);
-    connect(ui->radioDetailedMsg, &QRadioButton::toggled, this, &MainWindow::rb_detailed_msg_toggled);
-    connect(ui->radioLimitedMsg, &QRadioButton::toggled, this, &MainWindow::rb_limited_msg_toggled);
-    connect(ui->radioVeryDetailedMsg, &QRadioButton::toggled, this, &MainWindow::rb_very_detailed_msg_toggled);
+    connect(ui->radioDetailedMsg, &QRadioButton::toggled, this, &MainWindow::radio_detailed_msg_toggled);
+    connect(ui->radioLimitedMsg, &QRadioButton::toggled, this, &MainWindow::radio_limited_msg_toggled);
+    connect(ui->radioVeryDetailedMsg, &QRadioButton::toggled, this, &MainWindow::radio_very_detailed_msg_toggled);
     connect(ui->spinBoxTimeout, qOverload<int>(&QSpinBox::valueChanged), this, &MainWindow::spinBoxTimeout_valueChanged);
 }
 
@@ -564,7 +564,7 @@ void MainWindow::setConnections()
     connect(&cmd, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::cmdDone);
 }
 
-void MainWindow::buttonApply_clicked()
+void MainWindow::pushApply_clicked()
 {
     ui->pushCancel->setDisabled(true);
     ui->pushApply->setDisabled(true);
@@ -644,7 +644,7 @@ void MainWindow::buttonApply_clicked()
     ui->pushCancel->setEnabled(true);
 }
 
-void MainWindow::buttonAbout_clicked()
+void MainWindow::pushAbout_clicked()
 {
     QMessageBox msgBox(QMessageBox::NoIcon,
                        tr("About") + " MX Boot Options",
@@ -695,7 +695,7 @@ void MainWindow::buttonAbout_clicked()
     }
 }
 
-void MainWindow::buttonHelp_clicked()
+void MainWindow::pushHelp_clicked()
 {
     const QString url = QStringLiteral("/usr/share/doc/mx-boot-options/mx-boot-options.html");
 
@@ -708,7 +708,7 @@ void MainWindow::buttonHelp_clicked()
     qputenv("HOME", "/root");
 }
 
-void MainWindow::cb_bootsplash_clicked(bool checked)
+void MainWindow::combo_bootsplash_clicked(bool checked)
 {
     ui->radioLimitedMsg->setVisible(!checked);
     if (checked) {
@@ -751,7 +751,7 @@ void MainWindow::btn_bg_file_clicked()
     }
 }
 
-void MainWindow::rb_detailed_msg_toggled(bool checked)
+void MainWindow::radio_detailed_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
@@ -767,7 +767,7 @@ void MainWindow::rb_detailed_msg_toggled(bool checked)
     }
 }
 
-void MainWindow::rb_very_detailed_msg_toggled(bool checked)
+void MainWindow::radio_very_detailed_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
@@ -779,7 +779,7 @@ void MainWindow::rb_very_detailed_msg_toggled(bool checked)
     }
 }
 
-void MainWindow::rb_limited_msg_toggled(bool checked)
+void MainWindow::radio_limited_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
@@ -812,7 +812,7 @@ void MainWindow::combo_menu_entry_currentIndexChanged()
 }
 
 // Toggled either by user or when reading the status of bootsplash
-void MainWindow::cb_bootsplash_toggled(bool checked)
+void MainWindow::combo_bootsplash_toggled(bool checked)
 {
     ui->comboTheme->setEnabled(checked);
     ui->pushPreview->setEnabled(checked);
@@ -830,7 +830,7 @@ void MainWindow::cb_bootsplash_toggled(bool checked)
     ui->textKernel->setText(line.trimmed());
 }
 
-void MainWindow::buttonLog_clicked()
+void MainWindow::pushLog_clicked()
 {
     QString location = QStringLiteral("/var/log/boot.log");
     if (kernel_options.contains(QLatin1String("hush")))
@@ -854,21 +854,23 @@ void MainWindow::combo_theme_activated(int /*unused*/)
     ui->pushApply->setEnabled(true);
 }
 
-void MainWindow::button_preview_clicked()
+void MainWindow::push_preview_clicked()
 {
     if (just_installed)
         QMessageBox::warning(this, tr("Needs reboot"), tr("Plymouth was just installed, you might need to reboot before being able to display previews"));
     QString current_theme = cmd.getCmdOut(QStringLiteral("plymouth-set-default-theme"));
     if (ui->comboTheme->currentText() == QLatin1String("details"))
         return;
+    qputenv("HOME", starting_home.toUtf8());
     cmd.getCmdOut("plymouth-set-default-theme " + ui->comboTheme->currentText());
     ////connect(cmd, &Cmd::runTime, this, &MainWindow::sendMouseEvents);
     cmd.getCmdOut(QStringLiteral("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'"));
     cmd.getCmdOut("plymouth-set-default-theme " + current_theme); // return to current theme
     cmd.disconnect();
+    qputenv("HOME", "/root");
 }
 
-void MainWindow::cb_enable_flatmenus_clicked(bool checked)
+void MainWindow::combo_enable_flatmenus_clicked(bool checked)
 {
     auto *progress = new QProgressDialog(this);
     bar = new QProgressBar(progress);
@@ -895,7 +897,7 @@ void MainWindow::cb_enable_flatmenus_clicked(bool checked)
     progress->close();
 }
 
-void MainWindow::cb_save_default_clicked()
+void MainWindow::combo_save_default_clicked()
 {
     options_changed = true;
     ui->pushApply->setEnabled(true);
@@ -906,7 +908,7 @@ void MainWindow::combo_theme_currentIndexChanged(int index)
     ui->pushPreview->setDisabled(ui->comboTheme->itemText(index) == QLatin1String("details"));
 }
 
-void MainWindow::cb_grub_theme_toggled(bool checked)
+void MainWindow::combo_grub_theme_toggled(bool checked)
 {
     if (checked && ui->pushThemeFile->property("file").toString().isEmpty()) {
         ui->pushThemeFile->setText(tr("Click to select theme"));

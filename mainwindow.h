@@ -80,23 +80,23 @@ private slots:
 
     void btn_bg_file_clicked();
     void btn_theme_file_clicked();
-    void buttonAbout_clicked();
-    void buttonApply_clicked();
-    void buttonHelp_clicked();
-    void buttonLog_clicked();
-    void button_preview_clicked();
-    void cb_bootsplash_clicked(bool checked);
-    void cb_bootsplash_toggled(bool checked);
-    void cb_enable_flatmenus_clicked(bool checked);
-    void cb_grub_theme_toggled(bool checked);
-    void cb_save_default_clicked();
+    void pushAbout_clicked();
+    void pushApply_clicked();
+    void pushHelp_clicked();
+    void pushLog_clicked();
+    void push_preview_clicked();
+    void combo_bootsplash_clicked(bool checked);
+    void combo_bootsplash_toggled(bool checked);
+    void combo_enable_flatmenus_clicked(bool checked);
+    void combo_grub_theme_toggled(bool checked);
+    void combo_save_default_clicked();
     void combo_menu_entry_currentIndexChanged();
     void combo_theme_activated(int);
     void combo_theme_currentIndexChanged(int index1);
     void lineEdit_kernel_textEdited();
-    void rb_detailed_msg_toggled(bool checked);
-    void rb_limited_msg_toggled(bool checked);
-    void rb_very_detailed_msg_toggled(bool checked);
+    void radio_detailed_msg_toggled(bool checked);
+    void radio_limited_msg_toggled(bool checked);
+    void radio_very_detailed_msg_toggled(bool checked);
     void spinBoxTimeout_valueChanged(int val);
 
 

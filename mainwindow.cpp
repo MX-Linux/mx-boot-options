@@ -33,6 +33,7 @@
 #include <chrono>
 
 using namespace std::chrono_literals;
+extern const QString starting_home;
 
 MainWindow::MainWindow(QWidget *parent) :
     QDialog(parent),
@@ -660,12 +661,14 @@ void MainWindow::buttonAbout_clicked()
     msgBox.exec();
 
     if (msgBox.clickedButton() == btnLicense) {
+        qputenv("HOME", starting_home.toUtf8());
         const QString url = QStringLiteral("file:///usr/share/doc/mx-boot-options/license.html");
         if (system("command -v mx-viewer >/dev/null") == 0)
             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
         else
             system("runuser " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
                    user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+        qputenv("HOME", "/root");
     } else if (msgBox.clickedButton() == btnChangelog) {
         auto *changelog = new QDialog(this);
         changelog->setWindowTitle(tr("Changelog"));
@@ -696,11 +699,13 @@ void MainWindow::buttonHelp_clicked()
 {
     const QString url = QStringLiteral("/usr/share/doc/mx-boot-options/mx-boot-options.html");
 
+    qputenv("HOME", starting_home.toUtf8());
     if (system("command -v mx-viewer >/dev/null") == 0)
         system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
     else
         system("runuser " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
                user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+    qputenv("HOME", "/root");
 }
 
 void MainWindow::cb_bootsplash_clicked(bool checked)
@@ -834,10 +839,12 @@ void MainWindow::buttonLog_clicked()
     if (!QFile::exists(location)) // try aternate location
         location = QStringLiteral("/var/log/boot");
 
+    qputenv("HOME", starting_home.toUtf8());
     if (QFile::exists(location))
         cmd.run("x-terminal-emulator -e bash -c \"" + sed + " " + location + "; read -n1 -srp '"+ tr("Press any key to close") + "'\"&");
     else
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
+    qputenv("HOME", "/root");
 }
 
 

@@ -17,7 +17,8 @@
    </sizepolicy>
   </property>
   <property name="windowIcon">
-   <iconset theme="mx-boot-options"/>
+   <iconset theme="mx-boot-options">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -33,14 +34,14 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <item row="3" column="0">
-       <widget class="QLabel" name="label_kernel">
+       <widget class="QLabel" name="lableKernel">
         <property name="text">
          <string>Kernel parameters</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1" colspan="4">
-       <widget class="QComboBox" name="combo_menu_entry">
+       <widget class="QComboBox" name="comboMenuEntry">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -53,7 +54,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_timeout">
+       <widget class="QLabel" name="lableTimeout">
         <property name="toolTip">
          <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
         </property>
@@ -63,7 +64,7 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_default_entry">
+       <widget class="QLabel" name="labelDefaultEntry">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -76,7 +77,7 @@
        </widget>
       </item>
       <item row="2" column="3">
-       <widget class="QCheckBox" name="cb_enable_flatmenus">
+       <widget class="QCheckBox" name="checkEnableFlatmenus">
         <property name="toolTip">
          <string>Use simplified menu structure without submenus</string>
         </property>
@@ -102,7 +103,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QLabel" name="label_seconds">
+       <widget class="QLabel" name="labelSeconds">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -115,7 +116,7 @@
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QCheckBox" name="cb_save_default">
+       <widget class="QCheckBox" name="checkSaveDefault">
         <property name="toolTip">
          <string>With this option enabled whatever entry you select from the grub boot menu will be saved as the new default for future boots</string>
         </property>
@@ -125,7 +126,7 @@
        </widget>
       </item>
       <item row="3" column="1" colspan="3">
-       <widget class="QLineEdit" name="lineEdit_kernel"/>
+       <widget class="QLineEdit" name="textKernel"/>
       </item>
      </layout>
     </widget>
@@ -137,7 +138,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="0">
-       <widget class="QLabel" name="label_bg_image">
+       <widget class="QLabel" name="labelBgImage">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -156,7 +157,7 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QCheckBox" name="cb_grub_theme">
+       <widget class="QCheckBox" name="checkGrubTheme">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -169,7 +170,7 @@
        </widget>
       </item>
       <item row="0" column="1" colspan="2">
-       <widget class="QPushButton" name="btn_bg_file">
+       <widget class="QPushButton" name="pushBgFile">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -185,7 +186,7 @@
        </widget>
       </item>
       <item row="1" column="1" colspan="2">
-       <widget class="QPushButton" name="btn_theme_file">
+       <widget class="QPushButton" name="pushThemeFile">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -248,7 +249,7 @@
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="1">
-       <widget class="QComboBox" name="combo_theme">
+       <widget class="QComboBox" name="comboTheme">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -258,7 +259,7 @@
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QCheckBox" name="cb_bootsplash">
+       <widget class="QCheckBox" name="checkBootsplash">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -271,7 +272,7 @@
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QPushButton" name="button_preview">
+       <widget class="QPushButton" name="pushPreview">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -306,14 +307,14 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QRadioButton" name="rb_very_detailed_msg">
+       <widget class="QRadioButton" name="radioVeryDetailedMsg">
         <property name="text">
          <string>Very detailed</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="rb_detailed_msg">
+       <widget class="QRadioButton" name="radioDetailedMsg">
         <property name="text">
          <string>Detailed (default setting)</string>
         </property>
@@ -323,7 +324,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="rb_limited_msg">
+       <widget class="QRadioButton" name="radioLimitedMsg">
         <property name="text">
          <string>Limited</string>
         </property>
@@ -386,7 +387,7 @@
       <number>5</number>
      </property>
      <item row="0" column="1">
-      <widget class="QPushButton" name="buttonHelp">
+      <widget class="QPushButton" name="pushHelp">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -428,7 +429,7 @@
       </spacer>
      </item>
      <item row="0" column="0">
-      <widget class="QPushButton" name="buttonAbout">
+      <widget class="QPushButton" name="pushAbout">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -470,7 +471,7 @@
       </spacer>
      </item>
      <item row="0" column="9">
-      <widget class="QPushButton" name="buttonCancel">
+      <widget class="QPushButton" name="pushCancel">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -524,7 +525,7 @@
       </widget>
      </item>
      <item row="0" column="7">
-      <widget class="QPushButton" name="buttonApply">
+      <widget class="QPushButton" name="pushApply">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -558,7 +559,7 @@
  </resources>
  <connections>
   <connection>
-   <sender>buttonCancel</sender>
+   <sender>pushCancel</sender>
    <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
@@ -574,9 +575,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>cb_bootsplash</sender>
+   <sender>checkBootsplash</sender>
    <signal>clicked(bool)</signal>
-   <receiver>combo_theme</receiver>
+   <receiver>comboTheme</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -590,9 +591,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>cb_grub_theme</sender>
+   <sender>checkGrubTheme</sender>
    <signal>clicked(bool)</signal>
-   <receiver>btn_bg_file</receiver>
+   <receiver>pushBgFile</receiver>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -606,9 +607,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>cb_grub_theme</sender>
+   <sender>checkGrubTheme</sender>
    <signal>clicked(bool)</signal>
-   <receiver>btn_theme_file</receiver>
+   <receiver>pushThemeFile</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

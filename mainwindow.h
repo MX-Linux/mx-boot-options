@@ -90,9 +90,9 @@ private slots:
     void cb_enable_flatmenus_clicked(bool checked);
     void cb_grub_theme_toggled(bool checked);
     void cb_save_default_clicked();
-    void combo_menu_entry_currentIndexChanged(int index);
+    void combo_menu_entry_currentIndexChanged();
     void combo_theme_activated(int);
-    void combo_theme_currentIndexChanged(const QString &arg1);
+    void combo_theme_currentIndexChanged(int index1);
     void lineEdit_kernel_textEdited();
     void rb_detailed_msg_toggled(bool checked);
     void rb_limited_msg_toggled(bool checked);

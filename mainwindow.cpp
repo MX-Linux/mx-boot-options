@@ -53,13 +53,13 @@ MainWindow::~MainWindow()
 void MainWindow::loadPlymouthThemes()
 {
     // load combobox
-    ui->combo_theme->clear();
-    ui->combo_theme->addItems(cmd.getCmdOut(chroot + "plymouth-set-default-theme -l").split(QStringLiteral("\n")));
+    ui->comboTheme->clear();
+    ui->comboTheme->addItems(cmd.getCmdOut(chroot + "plymouth-set-default-theme -l").split(QStringLiteral("\n")));
 
     // get current theme
     QString current_theme = cmd.getCmdOut(chroot + "plymouth-set-default-theme");
     if (!current_theme.isEmpty())
-        ui->combo_theme->setCurrentIndex(ui->combo_theme->findText(current_theme));
+        ui->comboTheme->setCurrentIndex(ui->comboTheme->findText(current_theme));
 }
 
 // Process keystrokes
@@ -89,20 +89,20 @@ void MainWindow::setup()
     connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
 
     this->setWindowTitle(QStringLiteral("MX Boot Options"));
-    ui->buttonCancel->setEnabled(true);
-    ui->buttonApply->setEnabled(true);
-    ui->combo_theme->setDisabled(true);
-    ui->button_preview->setDisabled(true);
-    ui->cb_enable_flatmenus->setEnabled(true);
+    ui->pushCancel->setEnabled(true);
+    ui->pushApply->setEnabled(true);
+    ui->comboTheme->setDisabled(true);
+    ui->pushPreview->setDisabled(true);
+    ui->checkEnableFlatmenus->setEnabled(true);
 
     if (QFile::exists(QStringLiteral("/boot/grub/themes"))) {
-        ui->cb_grub_theme->setVisible(true);
-        ui->btn_theme_file->setVisible(true);
+        ui->checkGrubTheme->setVisible(true);
+        ui->pushThemeFile->setVisible(true);
     } else {
-        ui->cb_grub_theme->setVisible(false);
-        ui->btn_theme_file->setVisible(false);
+        ui->checkGrubTheme->setVisible(false);
+        ui->pushThemeFile->setVisible(false);
     }
-    ui->btn_theme_file->setDisabled(true);
+    ui->pushThemeFile->setDisabled(true);
 
     // if running live read linux partitions and set chroot on the selected one
     if (cmd.run(QStringLiteral("mountpoint -q /live/aufs"))) {
@@ -121,10 +121,10 @@ void MainWindow::setup()
     }
 
     readKernelOpts();
-    ui->rb_limited_msg->setVisible(!ui->cb_bootsplash->isChecked());
+    ui->radioLimitedMsg->setVisible(!ui->checkBootsplash->isChecked());
     if (inVirtualMachine())
-        ui->button_preview->setDisabled(true);
-    ui->buttonApply->setDisabled(true);
+        ui->pushPreview->setDisabled(true);
+    ui->pushApply->setDisabled(true);
     this->adjustSize();
 }
 
@@ -136,10 +136,26 @@ void MainWindow::sendMouseEvents()
 
 void MainWindow::setGeneralConnections()
 {
-    connect(ui->buttonAbout, &QPushButton::clicked, this, &MainWindow::buttonAbout_clicked);
-    connect(ui->buttonApply, &QPushButton::clicked, this, &MainWindow::buttonApply_clicked);
-    connect(ui->buttonHelp, &QPushButton::clicked, this, &MainWindow::buttonHelp_clicked);
+    connect(ui->pushAbout, &QPushButton::clicked, this, &MainWindow::buttonAbout_clicked);
+    connect(ui->pushApply, &QPushButton::clicked, this, &MainWindow::buttonApply_clicked);
+    connect(ui->pushHelp, &QPushButton::clicked, this, &MainWindow::buttonHelp_clicked);
     connect(ui->buttonLog, &QPushButton::clicked, this, &MainWindow::buttonLog_clicked);
+    connect(ui->pushBgFile, &QPushButton::clicked, this, &MainWindow::btn_bg_file_clicked);
+    connect(ui->pushThemeFile, &QPushButton::clicked, this, &MainWindow::btn_theme_file_clicked);
+    connect(ui->pushPreview, &QPushButton::clicked, this, &MainWindow::button_preview_clicked);
+    connect(ui->checkBootsplash, &QCheckBox::clicked, this, &MainWindow::cb_bootsplash_clicked);
+    connect(ui->checkBootsplash, &QCheckBox::toggled, this, &MainWindow::cb_bootsplash_toggled);
+    connect(ui->checkEnableFlatmenus, &QCheckBox::clicked, this, &MainWindow::cb_bootsplash_clicked);
+    connect(ui->checkGrubTheme, &QCheckBox::clicked, this, &MainWindow::cb_grub_theme_toggled);
+    connect(ui->checkSaveDefault, &QCheckBox::clicked, this, &MainWindow::cb_save_default_clicked);
+    connect(ui->comboMenuEntry, qOverload<int>(&QComboBox::currentIndexChanged), this, &MainWindow::combo_menu_entry_currentIndexChanged);
+    connect(ui->comboTheme, qOverload<int>(&QComboBox::activated), this, &MainWindow::combo_theme_activated);
+    connect(ui->comboTheme, qOverload<int>(&QComboBox::currentIndexChanged), this, &MainWindow::combo_theme_currentIndexChanged);
+    connect(ui->textKernel, &QLineEdit::textEdited, this, &MainWindow::lineEdit_kernel_textEdited);
+    connect(ui->radioDetailedMsg, &QRadioButton::toggled, this, &MainWindow::rb_detailed_msg_toggled);
+    connect(ui->radioLimitedMsg, &QRadioButton::toggled, this, &MainWindow::rb_limited_msg_toggled);
+    connect(ui->radioVeryDetailedMsg, &QRadioButton::toggled, this, &MainWindow::rb_very_detailed_msg_toggled);
+    connect(ui->spinBoxTimeout, qOverload<int>(&QSpinBox::valueChanged), this, &MainWindow::spinBoxTimeout_valueChanged);
 }
 
 bool MainWindow::isInstalled(const QString &package)
@@ -180,7 +196,7 @@ bool MainWindow::installSplash()
     if (!cmd.run(chroot + "apt-get install -y " + packages)) {
         progress->close();
         QMessageBox::critical(this, tr("Error"), tr("Could not install the bootsplash."));
-        ui->cb_bootsplash->setChecked(false);
+        ui->checkBootsplash->setChecked(false);
         return false;
     }
 
@@ -329,7 +345,7 @@ void MainWindow::createChrootEnv(const QString& root)
         exit(EXIT_FAILURE);
     }
     chroot = "chroot " + tmpdir.path() + " ";
-    ui->button_preview->setDisabled(true); // no preview when running chroot.
+    ui->pushPreview->setDisabled(true); // no preview when running chroot.
 }
 
 // Uncomment or add line in /etc/default/grub
@@ -400,7 +416,7 @@ void MainWindow::readGrubCfg()
         qDebug() << "Could not open file:" << file.fileName();
         return;
     }
-    ui->combo_menu_entry->clear();
+    ui->comboMenuEntry->clear();
 
     int menu_level = 0;
     int menu_count = 0;
@@ -422,7 +438,7 @@ void MainWindow::readGrubCfg()
                 info = menu_id + " " + QString::number(menu_count);
                 ++menu_count;
             }
-            ui->combo_menu_entry->addItem(item, info);
+            ui->comboMenuEntry->addItem(item, info);
         }
         if (line.contains(QLatin1String("{")))  // assuming one "{" per line, this might not work in all cases and with custom made grub.cfg
             ++menu_level;
@@ -451,56 +467,56 @@ void MainWindow::readDefaultGrub()
             bool ok {false};
             int number = entry.toInt(&ok);
             if (ok) {
-                if (ui->cb_enable_flatmenus->isChecked())
-                    ui->combo_menu_entry->setCurrentIndex(number);
+                if (ui->checkEnableFlatmenus->isChecked())
+                    ui->comboMenuEntry->setCurrentIndex(number);
                 else
-                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findData(" " + entry, Qt::UserRole, Qt::MatchEndsWith));
+                    ui->comboMenuEntry->setCurrentIndex(ui->comboMenuEntry->findData(" " + entry, Qt::UserRole, Qt::MatchEndsWith));
             } else if (entry == QLatin1String("saved")) {
-                ui->cb_save_default->setChecked(true);
+                ui->checkSaveDefault->setChecked(true);
             } else if (entry.length() > 3) {  // if not saved but still long word assume it's a menuendtry_id or menuentry_name
-                int index = ui->combo_menu_entry->findData(entry, Qt::UserRole, Qt::MatchContains);
+                int index = ui->comboMenuEntry->findData(entry, Qt::UserRole, Qt::MatchContains);
                 if (index != -1) // menuentry_id
-                    ui->combo_menu_entry->setCurrentIndex(index);
+                    ui->comboMenuEntry->setCurrentIndex(index);
                 else             // menuentry_name most likely
-                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findText(entry));
+                    ui->comboMenuEntry->setCurrentIndex(ui->comboMenuEntry->findText(entry));
             } else { // if 1>2 format
-                int index = ui->combo_menu_entry->findData(entry, Qt::UserRole, Qt::MatchEndsWith);
+                int index = ui->comboMenuEntry->findData(entry, Qt::UserRole, Qt::MatchEndsWith);
                 if (index != -1)
-                    ui->combo_menu_entry->setCurrentIndex(index);
+                    ui->comboMenuEntry->setCurrentIndex(index);
                 else           // menuentry_name most likely
-                    ui->combo_menu_entry->setCurrentIndex(ui->combo_menu_entry->findText(entry));
+                    ui->comboMenuEntry->setCurrentIndex(ui->comboMenuEntry->findText(entry));
             }
         } else if (line.startsWith(QLatin1String("GRUB_TIMEOUT="))) {
             ui->spinBoxTimeout->setValue(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'")).toInt());
         } else if (line.startsWith(QLatin1String("export GRUB_MENU_PICTURE="))) {
-            ui->btn_bg_file->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
-            ui->btn_bg_file->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            ui->pushBgFile->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            ui->pushBgFile->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
         } else if (line.startsWith(QLatin1String("GRUB_THEME="))) {
-            ui->btn_theme_file->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
-            ui->btn_theme_file->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
-            if (QFile::exists(ui->btn_theme_file->property("file").toString())) {
-                ui->btn_theme_file->setEnabled(true);
-                ui->cb_grub_theme->setChecked(true);
-                ui->btn_bg_file->setDisabled(true);
+            ui->pushThemeFile->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            ui->pushThemeFile->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            if (QFile::exists(ui->pushThemeFile->property("file").toString())) {
+                ui->pushThemeFile->setEnabled(true);
+                ui->checkGrubTheme->setChecked(true);
+                ui->pushBgFile->setDisabled(true);
             } else {
-                ui->btn_theme_file->setDisabled(true);
-                ui->btn_bg_file->setEnabled(true);
-                ui->btn_theme_file->setText(QLatin1String(""));
-                ui->btn_theme_file->setProperty("file", "");
+                ui->pushThemeFile->setDisabled(true);
+                ui->pushBgFile->setEnabled(true);
+                ui->pushThemeFile->setText(QLatin1String(""));
+                ui->pushThemeFile->setProperty("file", "");
             }
         } else if (line.startsWith(QLatin1String("GRUB_CMDLINE_LINUX_DEFAULT="))) {
-            ui->lineEdit_kernel->setText(line.remove(QStringLiteral("GRUB_CMDLINE_LINUX_DEFAULT=")).remove(QStringLiteral("\"")).remove(QStringLiteral("'")));
+            ui->textKernel->setText(line.remove(QStringLiteral("GRUB_CMDLINE_LINUX_DEFAULT=")).remove(QStringLiteral("\"")).remove(QStringLiteral("'")));
             if (line.contains(QLatin1String("hush")))
-                ui->rb_limited_msg->setChecked(true);
+                ui->radioLimitedMsg->setChecked(true);
             else if (line.contains(QLatin1String("quiet")))
-                ui->rb_detailed_msg->setChecked(true);
+                ui->radioDetailedMsg->setChecked(true);
             else
-                ui->rb_very_detailed_msg->setChecked(true);
-            ui->cb_bootsplash->setChecked(line.contains(QLatin1String("splash")));
+                ui->radioVeryDetailedMsg->setChecked(true);
+            ui->checkBootsplash->setChecked(line.contains(QLatin1String("splash")));
             if (!isInstalled(QStringList() << QStringLiteral("plymouth") << QStringLiteral("plymouth-x11") << QStringLiteral("plymouth-themes") << QStringLiteral("plymouth-themes-mx")))
-                ui->cb_bootsplash->setChecked(false);
+                ui->checkBootsplash->setChecked(false);
         } else if (line == QLatin1String("GRUB_DISABLE_SUBMENU=y")) {
-            ui->cb_enable_flatmenus->setChecked(true);
+            ui->checkEnableFlatmenus->setChecked(true);
         }
     }
     file.close();
@@ -549,8 +565,8 @@ void MainWindow::setConnections()
 
 void MainWindow::buttonApply_clicked()
 {
-    ui->buttonCancel->setDisabled(true);
-    ui->buttonApply->setDisabled(true);
+    ui->pushCancel->setDisabled(true);
+    ui->pushApply->setDisabled(true);
     auto *progress = new QProgressDialog(this);
     bar = new QProgressBar(progress);
 
@@ -565,31 +581,31 @@ void MainWindow::buttonApply_clicked()
     setConnections();
 
     if (kernel_options_changed)
-        replaceGrubArg(QStringLiteral("GRUB_CMDLINE_LINUX_DEFAULT"), "\"" + ui->lineEdit_kernel->text() + "\"");
+        replaceGrubArg(QStringLiteral("GRUB_CMDLINE_LINUX_DEFAULT"), "\"" + ui->textKernel->text() + "\"");
 
     if (options_changed) {
         cmd.run(QStringLiteral("grub-editenv /boot/grub/grubenv unset next_entry")); // uset the saved entry from grubenv
-        if (ui->btn_bg_file->isEnabled() && QFile::exists(ui->btn_bg_file->property("file").toString())) {
-            replaceGrubArg(QStringLiteral("export GRUB_MENU_PICTURE"), "\"" + ui->btn_bg_file->property("file").toString() + "\"");
-        } else if (ui->cb_grub_theme->isChecked() && QFile::exists(ui->btn_theme_file->property("file").toString())) {
+        if (ui->pushBgFile->isEnabled() && QFile::exists(ui->pushBgFile->property("file").toString())) {
+            replaceGrubArg(QStringLiteral("export GRUB_MENU_PICTURE"), "\"" + ui->pushBgFile->property("file").toString() + "\"");
+        } else if (ui->checkGrubTheme->isChecked() && QFile::exists(ui->pushThemeFile->property("file").toString())) {
             disableGrubLine(QStringLiteral("export GRUB_MENU_PICTURE"));
-            if (!replaceGrubArg(QStringLiteral("GRUB_THEME"), "\"" + ui->btn_theme_file->property("file").toString() + "\""))
-                addGrubLine("GRUB_THEME=\"" + ui->btn_theme_file->property("file").toString() + "\"");
+            if (!replaceGrubArg(QStringLiteral("GRUB_THEME"), "\"" + ui->pushThemeFile->property("file").toString() + "\""))
+                addGrubLine("GRUB_THEME=\"" + ui->pushThemeFile->property("file").toString() + "\"");
         }
-        if (ui->cb_grub_theme->isVisible() && !ui->cb_grub_theme->isChecked())
+        if (ui->checkGrubTheme->isVisible() && !ui->checkGrubTheme->isChecked())
             disableGrubLine(QStringLiteral("GRUB_THEME="));
 
         // for simple menu index number is sufficient, if submenus exists use "1>1" format
-        QString grub_entry = ui->cb_enable_flatmenus->isChecked()
-                ? QString::number(ui->combo_menu_entry->currentIndex())
-                : ui->combo_menu_entry->currentData().toString().section(QStringLiteral(" "), 1, 1);
-        if (ui->combo_menu_entry->currentText().contains(QLatin1String("memtest"))) {
+        QString grub_entry = ui->checkEnableFlatmenus->isChecked()
+                ? QString::number(ui->comboMenuEntry->currentIndex())
+                : ui->comboMenuEntry->currentData().toString().section(QStringLiteral(" "), 1, 1);
+        if (ui->comboMenuEntry->currentText().contains(QLatin1String("memtest"))) {
             ui->spinBoxTimeout->setValue(5);
-            cmd.run(chroot + "grub-reboot \"" + ui->combo_menu_entry->currentText() + "\"");
+            cmd.run(chroot + "grub-reboot \"" + ui->comboMenuEntry->currentText() + "\"");
         } else {
             replaceGrubArg(QStringLiteral("GRUB_DEFAULT"), "\"" + grub_entry + "\"");
         }
-        if (ui->cb_save_default->isChecked()) {
+        if (ui->checkSaveDefault->isChecked()) {
             replaceGrubArg(QStringLiteral("GRUB_DEFAULT"), QStringLiteral("saved"));
             enableGrubLine(QStringLiteral("GRUB_SAVEDEFAULT=true"));
             cmd.run(chroot + "grub-set-default \"" + grub_entry + "\"");
@@ -599,9 +615,9 @@ void MainWindow::buttonApply_clicked()
         replaceGrubArg(QStringLiteral("GRUB_TIMEOUT"), QString::number(ui->spinBoxTimeout->value()));
     }
     if (splash_changed) {
-        if (ui->cb_bootsplash->isChecked()) {
-            if (!ui->combo_theme->currentText().isEmpty())
-                cmd.run(chroot + "plymouth-set-default-theme " + ui->combo_theme->currentText());
+        if (ui->checkBootsplash->isChecked()) {
+            if (!ui->comboTheme->currentText().isEmpty())
+                cmd.run(chroot + "plymouth-set-default-theme " + ui->comboTheme->currentText());
             cmd.run(chroot + "update-rc.d bootlogd disable");
         } else {
             cmd.run(chroot + "update-rc.d bootlogd enable");
@@ -609,7 +625,7 @@ void MainWindow::buttonApply_clicked()
         progress->setLabelText(tr("Updating initramfs..."));
         cmd.getCmdOut(chroot + "update-initramfs -u -k all");
     }
-    if (messages_changed && ui->rb_limited_msg->isChecked())
+    if (messages_changed && ui->radioLimitedMsg->isChecked())
         cmd.run(chroot + "grep -q hush /etc/default/rcS || echo \"\n# hush boot-log into /run/rc.log\n"
                                  "[ \\\"\\$init\\\" ] && grep -qw hush /proc/cmdline && exec >> /run/rc.log 2>&1 || true \" >> /etc/default/rcS");
     if (options_changed || splash_changed || messages_changed) {
@@ -624,7 +640,7 @@ void MainWindow::buttonApply_clicked()
     options_changed = false;
     splash_changed = false;
     messages_changed = false;
-    ui->buttonCancel->setEnabled(true);
+    ui->pushCancel->setEnabled(true);
 }
 
 void MainWindow::buttonAbout_clicked()
@@ -689,30 +705,30 @@ void MainWindow::buttonHelp_clicked()
 
 void MainWindow::cb_bootsplash_clicked(bool checked)
 {
-    ui->rb_limited_msg->setVisible(!checked);
+    ui->radioLimitedMsg->setVisible(!checked);
     if (checked) {
         if (inVirtualMachine()) {
             QMessageBox::information(this, tr("Running in a Virtual Machine"),
                                      tr("You current system is running in a Virtual Machine,\n"
                                         "Plymouth bootsplash will work in a limited way, you also won't be able to preview the theme"));
-            ui->button_preview->setDisabled(true);
+            ui->pushPreview->setDisabled(true);
         }
         if (!isInstalled(QStringList() << QStringLiteral("plymouth") << QStringLiteral("plymouth-x11") << QStringLiteral("plymouth-themes") << QStringLiteral("plymouth-themes-mx"))) {
             int ans = QMessageBox::question(this, tr("Plymouth packages not installed"), tr("Plymouth packages are not currently installed.\nOK to go ahead and install them?"));
             if (ans == QMessageBox::No) {
-                ui->cb_bootsplash->setChecked(false);
-                ui->rb_limited_msg->setVisible(!checked);
+                ui->checkBootsplash->setChecked(false);
+                ui->radioLimitedMsg->setVisible(!checked);
                 return;
             }
             installSplash();
             just_installed = true;
         }
         loadPlymouthThemes();
-        if (ui->rb_limited_msg->isChecked())
-            ui->rb_detailed_msg->setChecked(true);
+        if (ui->radioLimitedMsg->isChecked())
+            ui->radioDetailedMsg->setChecked(true);
     }
     splash_changed = true;
-    ui->buttonApply->setEnabled(true);
+    ui->pushApply->setEnabled(true);
 }
 
 void MainWindow::btn_bg_file_clicked()
@@ -723,10 +739,10 @@ void MainWindow::btn_bg_file_clicked()
     if (!selected.isEmpty()) {
         if (!chroot.isEmpty())
             selected.remove(chroot.section(QStringLiteral(" "), 1, 1));
-        ui->btn_bg_file->setText(selected);
-        ui->btn_bg_file->setProperty("file", selected);
+        ui->pushBgFile->setText(selected);
+        ui->pushBgFile->setProperty("file", selected);
         options_changed = true;
-        ui->buttonApply->setEnabled(true);
+        ui->pushApply->setEnabled(true);
     }
 }
 
@@ -734,15 +750,15 @@ void MainWindow::rb_detailed_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
-        ui->buttonApply->setEnabled(true);
-        QString line = ui->lineEdit_kernel->text();
+        ui->pushApply->setEnabled(true);
+        QString line = ui->textKernel->text();
         if (!line.contains(QLatin1String("quiet"))) {
             if (!line.isEmpty())
                 line.append(" ");
             line.append("quiet");
         }
         line.remove(QRegularExpression(QStringLiteral("\\s*hush")));
-        ui->lineEdit_kernel->setText(line.trimmed());
+        ui->textKernel->setText(line.trimmed());
     }
 }
 
@@ -750,11 +766,11 @@ void MainWindow::rb_very_detailed_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
-        ui->buttonApply->setEnabled(true);
-        QString line = ui->lineEdit_kernel->text();
+        ui->pushApply->setEnabled(true);
+        QString line = ui->textKernel->text();
         line.remove(QRegularExpression(QStringLiteral("\\s*quiet")));
         line.remove(QRegularExpression(QStringLiteral("\\s*hush")));
-        ui->lineEdit_kernel->setText(line.trimmed());
+        ui->textKernel->setText(line.trimmed());
     }
 }
 
@@ -762,8 +778,8 @@ void MainWindow::rb_limited_msg_toggled(bool checked)
 {
     if (checked) {
         messages_changed = true;
-        ui->buttonApply->setEnabled(true);
-        QString line = ui->lineEdit_kernel->text();
+        ui->pushApply->setEnabled(true);
+        QString line = ui->textKernel->text();
         if (!line.contains(QLatin1String("quiet"))) {
             if (!line.isEmpty())
                 line.append(" ");
@@ -774,29 +790,29 @@ void MainWindow::rb_limited_msg_toggled(bool checked)
                 line.append(" ");
             line.append("hush");
         }
-        ui->lineEdit_kernel->setText(line);
+        ui->textKernel->setText(line);
     }
 }
 
 void MainWindow::spinBoxTimeout_valueChanged(int /*unused*/)
 {
     options_changed = true;
-    ui->buttonApply->setEnabled(true);
+    ui->pushApply->setEnabled(true);
 }
 
-void MainWindow::combo_menu_entry_currentIndexChanged(int /*unused*/)
+void MainWindow::combo_menu_entry_currentIndexChanged()
 {
     options_changed = true;
-    ui->buttonApply->setEnabled(true);
+    ui->pushApply->setEnabled(true);
 }
 
 // Toggled either by user or when reading the status of bootsplash
 void MainWindow::cb_bootsplash_toggled(bool checked)
 {
-    ui->combo_theme->setEnabled(checked);
-    ui->button_preview->setEnabled(checked);
+    ui->comboTheme->setEnabled(checked);
+    ui->pushPreview->setEnabled(checked);
     loadPlymouthThemes();
-    QString line = ui->lineEdit_kernel->text();
+    QString line = ui->textKernel->text();
     if (checked) {
         if (!line.contains(QLatin1String("splash"))) {
             if (!line.isEmpty())
@@ -806,7 +822,7 @@ void MainWindow::cb_bootsplash_toggled(bool checked)
     } else {
         line.remove(QRegularExpression(QStringLiteral("\\s*splash")));
     }
-    ui->lineEdit_kernel->setText(line.trimmed());
+    ui->textKernel->setText(line.trimmed());
 }
 
 void MainWindow::buttonLog_clicked()
@@ -828,7 +844,7 @@ void MainWindow::buttonLog_clicked()
 void MainWindow::combo_theme_activated(int /*unused*/)
 {
     splash_changed = true;
-    ui->buttonApply->setEnabled(true);
+    ui->pushApply->setEnabled(true);
 }
 
 void MainWindow::button_preview_clicked()
@@ -836,9 +852,9 @@ void MainWindow::button_preview_clicked()
     if (just_installed)
         QMessageBox::warning(this, tr("Needs reboot"), tr("Plymouth was just installed, you might need to reboot before being able to display previews"));
     QString current_theme = cmd.getCmdOut(QStringLiteral("plymouth-set-default-theme"));
-    if (ui->combo_theme->currentText() == QLatin1String("details"))
+    if (ui->comboTheme->currentText() == QLatin1String("details"))
         return;
-    cmd.getCmdOut("plymouth-set-default-theme " + ui->combo_theme->currentText());
+    cmd.getCmdOut("plymouth-set-default-theme " + ui->comboTheme->currentText());
     ////connect(cmd, &Cmd::runTime, this, &MainWindow::sendMouseEvents);
     cmd.getCmdOut(QStringLiteral("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'"));
     cmd.getCmdOut("plymouth-set-default-theme " + current_theme); // return to current theme
@@ -875,22 +891,22 @@ void MainWindow::cb_enable_flatmenus_clicked(bool checked)
 void MainWindow::cb_save_default_clicked()
 {
     options_changed = true;
-    ui->buttonApply->setEnabled(true);
+    ui->pushApply->setEnabled(true);
 }
 
-void MainWindow::combo_theme_currentIndexChanged(const QString &arg1)
+void MainWindow::combo_theme_currentIndexChanged(int index)
 {
-    ui->button_preview->setDisabled(arg1 == QLatin1String("details"));
+    ui->pushPreview->setDisabled(ui->comboTheme->itemText(index) == QLatin1String("details"));
 }
 
 void MainWindow::cb_grub_theme_toggled(bool checked)
 {
-    if (checked && ui->btn_theme_file->property("file").toString().isEmpty()) {
-        ui->btn_theme_file->setText(tr("Click to select theme"));
-        ui->btn_theme_file->setProperty("file", "");
+    if (checked && ui->pushThemeFile->property("file").toString().isEmpty()) {
+        ui->pushThemeFile->setText(tr("Click to select theme"));
+        ui->pushThemeFile->setProperty("file", "");
     } else {
         options_changed = true;
-        ui->buttonApply->setEnabled(true);
+        ui->pushApply->setEnabled(true);
     }
 }
 
@@ -901,10 +917,10 @@ void MainWindow::btn_theme_file_clicked()
     if (!selected.isEmpty()) {
         if (!chroot.isEmpty())
             selected.remove(chroot.section(QStringLiteral(" "), 1, 1));
-        ui->btn_theme_file->setText(selected);
-        ui->btn_theme_file->setProperty("file", selected);
+        ui->pushThemeFile->setText(selected);
+        ui->pushThemeFile->setProperty("file", selected);
         options_changed = true;
-        ui->buttonApply->setEnabled(true);
+        ui->pushApply->setEnabled(true);
     }
 }
 
@@ -912,5 +928,5 @@ void MainWindow::lineEdit_kernel_textEdited()
 {
     kernel_options_changed = true;
     options_changed = true;
-    ui->buttonApply->setEnabled(true);
+    ui->pushApply->setEnabled(true);
 }

@@ -16,11 +16,11 @@ Changes:
    * Preserve user theme when launching program as root
    * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
 Checksums-Sha1:
- 014df8d9ff45aa6381146cd4b273ed81224d5a3a 10057 mx-boot-options_22.6_i386.buildinfo
- 6d7e9fc855bdb1d03a889ba6c6377819ea36bab1 172260 mx-boot-options_22.6_i386.deb
+ bd6b8c67857112c7417e568e18922191aba1dfa1 10057 mx-boot-options_22.6_i386.buildinfo
+ eded4a31ac961653ebf6d602e719922c793d01f9 172252 mx-boot-options_22.6_i386.deb
 Checksums-Sha256:
- ed6a79541a5de306df2ea14d74efce2b7e247fce45680c693acb18d8e620ddf3 10057 mx-boot-options_22.6_i386.buildinfo
- 8c507aadd6f64dadaf37b6c21b218027ae22589ef9aa6b1308d211d1fb4ebc12 172260 mx-boot-options_22.6_i386.deb
+ 91e285d4b3de595138b195cb727553d26621f4fb958e942475c1ba7f1222ff82 10057 mx-boot-options_22.6_i386.buildinfo
+ d41a538227e5e118c9762163c9de9520f58efec7c71470a9e6ccddebff52682a 172252 mx-boot-options_22.6_i386.deb
 Files:
- 43a1a6558df9f2da66d5f41b4e03f2c1 10057 admin optional mx-boot-options_22.6_i386.buildinfo
- fd04b023fc0f712eca88c1e76e02ff81 172260 admin optional mx-boot-options_22.6_i386.deb
+ 6a72b282dd53d356dac24ed1ebdc7485 10057 admin optional mx-boot-options_22.6_i386.buildinfo
+ 8b0186120c41dc374b051e92426fbfbc 172252 admin optional mx-boot-options_22.6_i386.deb

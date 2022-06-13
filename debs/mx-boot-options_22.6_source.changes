@@ -13,14 +13,14 @@ Changes:
    * Preserve user theme when launching program as root
    * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
 Checksums-Sha1:
- 66494f2516d35c657262a93ca6c39e4a37c16006 579 mx-boot-options_22.6.dsc
- 80fe2569f86fe8b2ee9434985c9669b7a758cd26 145808 mx-boot-options_22.6.tar.xz
- bd6b8c67857112c7417e568e18922191aba1dfa1 10057 mx-boot-options_22.6_i386.buildinfo
+ 6c76eada65da005992cd5f3f457af246e7a2683b 579 mx-boot-options_22.6.dsc
+ 5d3944911c61c0924f67fa004ac43b08ad34131a 146036 mx-boot-options_22.6.tar.xz
+ 7b20d2e753e04758964010c9ff9e4393dd4ad17f 10057 mx-boot-options_22.6_i386.buildinfo
 Checksums-Sha256:
- d20e7c515a6e3cb690c250fb0cfa592cbc692f067139e97ff447678e27ee5a13 579 mx-boot-options_22.6.dsc
- 69f0750bcc925984401075fd02e66b3295e34a59616ac0a12ac819a48448834c 145808 mx-boot-options_22.6.tar.xz
- 91e285d4b3de595138b195cb727553d26621f4fb958e942475c1ba7f1222ff82 10057 mx-boot-options_22.6_i386.buildinfo
+ 071b22ec1672c7063128b1d44fcd983885a81105539fc0a44b512371f56ded04 579 mx-boot-options_22.6.dsc
+ e75e9029a02f3ab70acd91efaa09ac1f936161f5ef3fa6f8d9d591ef28647d66 146036 mx-boot-options_22.6.tar.xz
+ a3bd79e94ba154616297301ef88aaec1605a16e51c283e487e649ddfc37ca40a 10057 mx-boot-options_22.6_i386.buildinfo
 Files:
- aae7f7a4cf812cfd6c4aadb0e2104700 579 admin optional mx-boot-options_22.6.dsc
- d3d328353bbd3f34da71c53a6f672013 145808 admin optional mx-boot-options_22.6.tar.xz
- 6a72b282dd53d356dac24ed1ebdc7485 10057 admin optional mx-boot-options_22.6_i386.buildinfo
+ e09233cb70f0d45c5fec9c8906daeff9 579 admin optional mx-boot-options_22.6.dsc
+ 144d67c43eaad9c36bfe85325fac6000 146036 admin optional mx-boot-options_22.6.tar.xz
+ 5362c9d96335868592281ab111dcd8fd 10057 admin optional mx-boot-options_22.6_i386.buildinfo

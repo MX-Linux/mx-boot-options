@@ -232,7 +232,7 @@ int MainWindow::findMenuEntryById(const QString &id) const
 QStringList MainWindow::getLinuxPartitions()
 {
     const QStringList partitions = cmd.getCmdOut("lsblk -ln -o NAME,SIZE,FSTYPE,MOUNTPOINT,LABEL -e 2,11 -x NAME | "
-        "grep -E '^x?[h,s,v].[a-z][0-9]|^mmcblk[0-9]+p|^nvme[0-9]+n[0-9]+p'").split(QStringLiteral("\n"), Qt::SkipEmptyParts);
+        "grep -E '^x?[h,s,v].[a-z][0-9]|^mmcblk[0-9]+p|^nvme[0-9]+n[0-9]+p'").split(QStringLiteral("\n"), QString::SkipEmptyParts);
     QString part;
     QStringList new_list;
     for (const QString &part_info : partitions) {

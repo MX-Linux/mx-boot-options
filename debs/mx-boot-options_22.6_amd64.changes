@@ -20,29 +20,29 @@ Changes:
    * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
    * Advance animation when previewing plymouth theme
 Checksums-Sha1:
- f8e7aa33f28fbda1271bacd3a15733c6023a7df2 1141 mx-boot-options_22.6.dsc
- 5528d9a1009533f3d0d661da973dc65747596b0c 146096 mx-boot-options_22.6.tar.xz
- 3d00e93001839335a75ac6f3d07307e86e4467c5 10767 mx-boot-options_22.6_amd64.buildinfo
- 528b1860845b410bd94202c70b99748121bb8f7e 170480 mx-boot-options_22.6_amd64.deb
+ 05ad3762ee476a11233974f7bd1a86aded2bada6 1141 mx-boot-options_22.6.dsc
+ 5c403f4d180680700b82e4d9427adade45835916 146124 mx-boot-options_22.6.tar.xz
+ 2fefe1129ccf5392a69a3039d97fc772391e1f3c 10911 mx-boot-options_22.6_amd64.buildinfo
+ e99ef8b449d741c885f781de7a19cea5a0ecbf63 170288 mx-boot-options_22.6_amd64.deb
 Checksums-Sha256:
- 2a0338d28c3157db0faf0a7bae4077d466290110567e0e4ce69674475d47b792 1141 mx-boot-options_22.6.dsc
- b9f82832b4f1a6a9bb4a2da9bcde7347c03aa89884c5b0bcf727cf6612dca1b9 146096 mx-boot-options_22.6.tar.xz
- 61131c3dba6b460a5ed2d6d346efd89e93a23e31b8318f23fcef3f69870769ab 10767 mx-boot-options_22.6_amd64.buildinfo
- 843ab41f3fe0a3fdadde2acb8f7b3dd2a3898b8d56f2e9bfdd2f0ac336fe1b89 170480 mx-boot-options_22.6_amd64.deb
+ 58ee13693b0156661549f5e3becb9e0eba564410e42a74a480b181d3a2ea3b19 1141 mx-boot-options_22.6.dsc
+ f5d41251ed8617f785cecfb089ffb9c664bfc5e72df71da255e53d9cb3e2f077 146124 mx-boot-options_22.6.tar.xz
+ a535e14007da0af81db3cc5d7a303fff5773d74b356f04785c765cdbe73c0c64 10911 mx-boot-options_22.6_amd64.buildinfo
+ bb6f6dbb3fa1064019c12efdeb5de3b6adb577dca15ebd698625645c302c7049 170288 mx-boot-options_22.6_amd64.deb
 Files:
- 7580bb148b7550e7b601a4fe6e39bb3d 1141 admin optional mx-boot-options_22.6.dsc
- b9b770e21484df09f03b270809a22f52 146096 admin optional mx-boot-options_22.6.tar.xz
- 6f62904a3f5a6284adbf8a83e4438199 10767 admin optional mx-boot-options_22.6_amd64.buildinfo
- f491113e52b0fee2818a81b845919217 170480 admin optional mx-boot-options_22.6_amd64.deb
+ 491560b8f8d2abff0a26e13c369f53ea 1141 admin optional mx-boot-options_22.6.dsc
+ 421486ae21dbb0d4d84793e5a84cf2b4 146124 admin optional mx-boot-options_22.6.tar.xz
+ af3c446af697c79f479e72f982df577b 10911 admin optional mx-boot-options_22.6_amd64.buildinfo
+ 3c982e13489097de7bf51122e2aa0b8e 170288 admin optional mx-boot-options_22.6_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmKntjgTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDfUCADA/VNUlqe9NWH8wPYw9a6rKTd9qrGW
-E+bqVFlWB+d3rOnyQewSQOAcgSPzuTs70eegNI912A/xoWW5ghzzcwrs7f57O34u
-9CBByX30lmm8HGeGtpDmeS/+kyR5bUsqrrTRHip9PnykP7GoydX9/Of0YbyEozWG
-OZeYlzQ/BlIvInHyBH0B9NdcgI/O+oF7+KOfHx5JlIoSoYUJfz/YpMSo12C8jOBk
-NQIjgupy3Paq1EnSUpQ/9Ce59RHiAa7R+sN9BensH99DXLbe99O7fJqBDrhdVjf3
-vHowf5I5K6WagpAGrT1z81FzJx8lBDMvAv9RXAuZEJ2hGe4Nl8qRuYZk
-=XM1Y
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmKn+nITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumEMpCACAICIUgHjqP7nNsu3gatg7wrlJjiKU
+UsleQy6uFAIXlB8g4LMlAE0hoO5Em6IXf+dqD/HXW4xVAahsKq0tyda3SlRCblL8
+AHjGK/B2nTtcSJdyEqohNbXU0nYw0T7N8SO02UU9k9qYgf8qJ+/9L5cuAn0ZocKg
+Y6O6VCbh0FGLMxmytfU2cv7OkSTQdeoMWUNQxFPR69HbQH5Jhqi6n59lBSo1sjtf
+M9S+go4pCXH+TIeaOH1mehCIlfGIOYFZ9fJur8h+M+VqVxmdAtkqAHUhG01tHcvT
+0KU3YGFfjqUFA704w1D46EqXf1pw3MMphzYcbsjwHhJznbpgr5M9q8vP
+=ku3K
 -----END PGP SIGNATURE-----

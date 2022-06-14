@@ -17,11 +17,11 @@ Changes:
    * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
    * Advance animation when previewing plymouth theme
 Checksums-Sha1:
- 29f80e34dd9584318f18e30e6f66fe20c60ca7c7 10057 mx-boot-options_22.6_i386.buildinfo
- b17dc28cb2ef2cbbbf8119866ef0c9eedc290e39 174244 mx-boot-options_22.6_i386.deb
+ f1c91b6d25325558b480009fc2857e563739c662 10057 mx-boot-options_22.6_i386.buildinfo
+ 253137be57274ea76780b265f7957bd5035ba46a 173748 mx-boot-options_22.6_i386.deb
 Checksums-Sha256:
- acb7ded3a7f37a48323442d0cca25de9895f0c2fe35c1745c1c423c558537737 10057 mx-boot-options_22.6_i386.buildinfo
- 6aae30691599995164fc8f0d112c0c1b2515cd210ee0928d7f684f87127af2dc 174244 mx-boot-options_22.6_i386.deb
+ 613b6a5375367cb3bf9be37575064110f46fcbd271c81d8554ae898e935f3687 10057 mx-boot-options_22.6_i386.buildinfo
+ 7f77e04cf06036564b1c69efcd4a5b373ade4d9f79541927400b6f1d6beea1ee 173748 mx-boot-options_22.6_i386.deb
 Files:
- b62cb2f635dc3c377cf03ad5e58858d5 10057 admin optional mx-boot-options_22.6_i386.buildinfo
- a6ef720734ad1adec7b208470949ff29 174244 admin optional mx-boot-options_22.6_i386.deb
+ 6c31f2abeba66e1cb903ec81a8e6fcec 10057 admin optional mx-boot-options_22.6_i386.buildinfo
+ 47e16a5e14da2089df2ac3d723b11b30 173748 admin optional mx-boot-options_22.6_i386.deb

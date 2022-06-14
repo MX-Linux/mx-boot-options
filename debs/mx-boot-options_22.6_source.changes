@@ -14,14 +14,14 @@ Changes:
    * Make sure HOME and XDG_RUNTIME_DIR are correct when launching as root
    * Advance animation when previewing plymouth theme
 Checksums-Sha1:
- 276ad845990db3945388328094c792f9cb0d697e 579 mx-boot-options_22.6.dsc
- 727911351806c13d3e5b0dec347a5c8c3a9b5b38 146076 mx-boot-options_22.6.tar.xz
- 29f80e34dd9584318f18e30e6f66fe20c60ca7c7 10057 mx-boot-options_22.6_i386.buildinfo
+ 9fbc481cb431c384cfb93876e0d658657b2bc8d5 579 mx-boot-options_22.6.dsc
+ 2c83617e6b20008f06fca6746c697b14f240adba 146112 mx-boot-options_22.6.tar.xz
+ f1c91b6d25325558b480009fc2857e563739c662 10057 mx-boot-options_22.6_i386.buildinfo
 Checksums-Sha256:
- 53d920e07e95281fcb49c31db6181308758190fec9740c0b58668fcbc265083e 579 mx-boot-options_22.6.dsc
- a57848d74447ed9a4c7666561daec590e93f2954d238b867b7d8bac548091ab3 146076 mx-boot-options_22.6.tar.xz
- acb7ded3a7f37a48323442d0cca25de9895f0c2fe35c1745c1c423c558537737 10057 mx-boot-options_22.6_i386.buildinfo
+ a501c17f996cca55fabb0153696c1debbac453960b55025802144b38a1466342 579 mx-boot-options_22.6.dsc
+ 19c066a761be3ef6622e18b9fc26e03b6ce61ad8cd8da4b0bb1bdfd76b9239dc 146112 mx-boot-options_22.6.tar.xz
+ 613b6a5375367cb3bf9be37575064110f46fcbd271c81d8554ae898e935f3687 10057 mx-boot-options_22.6_i386.buildinfo
 Files:
- bf851144ac4b374ce5b831b4e0f9714e 579 admin optional mx-boot-options_22.6.dsc
- 0608b6517bf3d81cafd985f234c5d67e 146076 admin optional mx-boot-options_22.6.tar.xz
- b62cb2f635dc3c377cf03ad5e58858d5 10057 admin optional mx-boot-options_22.6_i386.buildinfo
+ de70a9e2473cace9774ce5c3c3099a1a 579 admin optional mx-boot-options_22.6.dsc
+ 2b373258c8be9616ae9bf067e3716298 146112 admin optional mx-boot-options_22.6.tar.xz
+ 6c31f2abeba66e1cb903ec81a8e6fcec 10057 admin optional mx-boot-options_22.6_i386.buildinfo

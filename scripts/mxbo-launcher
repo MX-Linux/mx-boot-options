@@ -5,7 +5,7 @@
 #        
 # based on mx-pkexec wrapper
 
-##launch boot-opptions 
+##launch boot-options 
 
 if [ "$EUID" != 0 ]; then
     # normal user

@@ -839,12 +839,10 @@ void MainWindow::pushLog_clicked()
     if (!QFile::exists(location)) // try aternate location
         location = QStringLiteral("/var/log/boot");
 
-    qputenv("HOME", starting_home.toUtf8());
     if (QFile::exists(location))
         cmd.run("x-terminal-emulator -e bash -c \"" + sed + " " + location + "; read -n1 -srp '"+ tr("Press any key to close") + "'\"&");
     else
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
-    qputenv("HOME", "/root");
 }
 
 
@@ -861,7 +859,6 @@ void MainWindow::push_preview_clicked()
     QString current_theme = cmd.getCmdOut(QStringLiteral("plymouth-set-default-theme"));
     if (ui->comboTheme->currentText() == QLatin1String("details"))
         return;
-    qputenv("HOME", starting_home.toUtf8());
     cmd.getCmdOut("plymouth-set-default-theme " + ui->comboTheme->currentText());
     QTimer timer;
     timer.start(100ms);
@@ -869,7 +866,6 @@ void MainWindow::push_preview_clicked()
     cmd.getCmdOut(QStringLiteral("x-terminal-emulator -e bash -c 'plymouthd; plymouth --show-splash; for ((i=0; i<4; i++)); do plymouth --update=test$i; sleep 1; done; plymouth quit'"));
     cmd.getCmdOut("plymouth-set-default-theme " + current_theme); // return to current theme
     timer.disconnect();
-    qputenv("HOME", "/root");
 }
 
 void MainWindow::combo_enable_flatmenus_clicked(bool checked)

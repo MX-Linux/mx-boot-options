@@ -33,33 +33,13 @@
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="3" column="0">
-       <widget class="QLabel" name="lableKernel">
-        <property name="text">
-         <string>Kernel parameters</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" colspan="4">
-       <widget class="QComboBox" name="comboMenuEntry">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="currentText">
-         <string notr="true"/>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="lableTimeout">
+      <item row="2" column="3">
+       <widget class="QCheckBox" name="checkEnableFlatmenus">
         <property name="toolTip">
-         <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
+         <string>Use simplified menu structure without submenus</string>
         </property>
         <property name="text">
-         <string>Menu timeout</string>
+         <string>Use flat menus (no submenus)</string>
         </property>
        </widget>
       </item>
@@ -73,16 +53,6 @@
         </property>
         <property name="text">
          <string>Boot to</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="QCheckBox" name="checkEnableFlatmenus">
-        <property name="toolTip">
-         <string>Use simplified menu structure without submenus</string>
-        </property>
-        <property name="text">
-         <string>Use flat menus (no submenus)</string>
         </property>
        </widget>
       </item>
@@ -102,6 +72,39 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lableTimeout">
+        <property name="toolTip">
+         <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
+        </property>
+        <property name="text">
+         <string>Menu timeout</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="3">
+       <widget class="QLineEdit" name="textKernel"/>
+      </item>
+      <item row="1" column="1" colspan="4">
+       <widget class="QComboBox" name="comboMenuEntry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentText">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lableKernel">
+        <property name="text">
+         <string>Kernel parameters</string>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="2">
        <widget class="QLabel" name="labelSeconds">
         <property name="sizePolicy">
@@ -115,6 +118,16 @@
         </property>
        </widget>
       </item>
+      <item row="4" column="1" colspan="3">
+       <widget class="QPushButton" name="pushUefi">
+        <property name="text">
+         <string>Manage UEFI Boot Options</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="2">
        <widget class="QCheckBox" name="checkSaveDefault">
         <property name="toolTip">
@@ -124,9 +137,6 @@
          <string>Enable saving last boot choice</string>
         </property>
        </widget>
-      </item>
-      <item row="3" column="1" colspan="3">
-       <widget class="QLineEdit" name="textKernel"/>
       </item>
      </layout>
     </widget>
@@ -554,73 +564,45 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>spinBoxTimeout</tabstop>
+  <tabstop>comboMenuEntry</tabstop>
+  <tabstop>checkSaveDefault</tabstop>
+  <tabstop>checkEnableFlatmenus</tabstop>
+  <tabstop>textKernel</tabstop>
+  <tabstop>pushUefi</tabstop>
+  <tabstop>pushBgFile</tabstop>
+  <tabstop>checkGrubTheme</tabstop>
+  <tabstop>pushThemeFile</tabstop>
+  <tabstop>checkBootsplash</tabstop>
+  <tabstop>comboTheme</tabstop>
+  <tabstop>pushPreview</tabstop>
+  <tabstop>radioVeryDetailedMsg</tabstop>
+  <tabstop>radioDetailedMsg</tabstop>
+  <tabstop>radioLimitedMsg</tabstop>
+  <tabstop>pushLog</tabstop>
+  <tabstop>pushHelp</tabstop>
+  <tabstop>pushAbout</tabstop>
+  <tabstop>pushApply</tabstop>
+  <tabstop>pushCancel</tabstop>
+  <tabstop>comboTheme</tabstop>
+  <tabstop>pushThemeFile</tabstop>
+  <tabstop>checkBootsplash</tabstop>
+  <tabstop>checkGrubTheme</tabstop>
+  <tabstop>pushPreview</tabstop>
+  <tabstop>checkEnableFlatmenus</tabstop>
+  <tabstop>spinBoxTimeout</tabstop>
+  <tabstop>textKernel</tabstop>
+  <tabstop>comboMenuEntry</tabstop>
+  <tabstop>checkSaveDefault</tabstop>
+  <tabstop>pushBgFile</tabstop>
+  <tabstop>radioVeryDetailedMsg</tabstop>
+  <tabstop>radioDetailedMsg</tabstop>
+  <tabstop>radioLimitedMsg</tabstop>
+  <tabstop>pushUefi</tabstop>
+ </tabstops>
  <resources>
   <include location="images.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>pushCancel</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>723</x>
-     <y>519</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>388</x>
-     <y>272</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBootsplash</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>comboTheme</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>128</x>
-     <y>214</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>433</x>
-     <y>247</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkGrubTheme</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>pushBgFile</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>184</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>418</x>
-     <y>150</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkGrubTheme</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>pushThemeFile</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>184</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>418</x>
-     <y>184</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -23,6 +23,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QListWidget>
 #include <QMessageBox>
 #include <QProgressBar>
 #include <QTemporaryDir>
@@ -47,23 +48,27 @@ public:
 
     QString selectPartiton(const QStringList &list);
     QStringList getLinuxPartitions();
-    bool isInstalled(const QString &package);
-    bool isInstalled(const QStringList &packages);
     bool inVirtualMachine();
     bool installSplash();
+    bool isInstalled(const QString &package);
+    bool isInstalled(const QStringList &packages);
+    bool isUefi();
     bool replaceGrubArg(const QString &key, const QString &item);
     int findMenuEntryById(const QString &id) const;
     static void sendMouseEvents();
+    static void sortBootOrder(const QStringList &order, QListWidget *list);
     void addGrubArg(const QString &key, const QString &item);
     void addGrubLine(const QString &item);
     void createChrootEnv(const QString& root);
     void disableGrubLine(const QString &item);
     void enableGrubLine(const QString &item);
     void loadPlymouthThemes();
+    void readBootEntries(QListWidget *list, QLabel *textTimeout, QLabel *textBootNext, QLabel *textBootCurrent, QStringList &bootorder);
     void readDefaultGrub();
     void readGrubCfg();
     void readKernelOpts();
     void remGrubArg(const QString &key, const QString &item);
+    void saveBootOrder(const QListWidget *list);
     void setGeneralConnections();
     void setup();
     void writeDefaultGrub() const;
@@ -84,6 +89,7 @@ private slots:
     void pushApply_clicked();
     void pushHelp_clicked();
     void pushLog_clicked();
+    void pushUefi_clicked();
     void push_preview_clicked();
     void combo_bootsplash_clicked(bool checked);
     void combo_bootsplash_toggled(bool checked);

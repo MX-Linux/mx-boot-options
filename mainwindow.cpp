@@ -263,6 +263,28 @@ bool MainWindow::isUefi()
     return QFile::exists(QStringLiteral("/sys/firmware/efi/efivars"));
 }
 
+void MainWindow::addUefiMXentry(QListWidget *listEntries, QDialog *dialogUefi)
+{
+    if (!QFile::exists(QStringLiteral("/boot/efi/EFI"))) {
+        QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find /boot/efi/EFI/ directory."));
+        return;
+    }
+    QString file_name = cmd.getCmdOut(QStringLiteral("find /boot/efi/EFI/MX* -iname \"grub*.efi\" -print -quit 2>/dev/null"));
+    if (!QFile::exists(file_name)) {
+        QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find a grub*.efi file in /boot/efi/EFI/MX*."));
+        return;
+    }
+    file_name.remove(QStringLiteral("/boot/efi"));
+    QString out = cmd.getCmdOut("efibootmgr -cL MX -l " + file_name);
+    if (cmd.exitCode() != 0) {
+        QMessageBox::critical(dialogUefi, tr("Error"), tr("Something went wrong, could not add entry."));
+        return;
+    }
+    QStringList out_list = out.split(QStringLiteral("\n"));
+    listEntries->insertItem(0, out_list.constLast());
+    emit listEntries->itemSelectionChanged();
+}
+
 bool MainWindow::installSplash()
 {
     auto *progress = new QProgressDialog(this);
@@ -507,7 +529,7 @@ void MainWindow::saveBootOrder(const QListWidget *list)
     QString item;
     QString order;
     for (int i = 0; i < list->count(); ++i) {
-        item = list->item(i)->text().section(" ", 0, 0);
+        item = list->item(i)->text().section(QStringLiteral(" "), 0, 0);
         item.remove(QRegularExpression(QStringLiteral("^Boot")));
         item.remove(QRegularExpression(QStringLiteral(R"(\*$)")));
         if (item.contains(QRegularExpression(QStringLiteral("^[0-9A-Z]{4}$")))) {
@@ -517,7 +539,7 @@ void MainWindow::saveBootOrder(const QListWidget *list)
                 order += "," + item;
         }
     }
-    if (QProcess::execute("efibootmgr", {"-o", order}) != 0) {
+    if (QProcess::execute(QStringLiteral("efibootmgr"), {"-o", order}) != 0) {
         qDebug() << "Order:" << order;
         QMessageBox::critical(this, tr("Error"), tr("Something went wrong, could not save boot order."));
     }
@@ -988,6 +1010,7 @@ void MainWindow::pushUefi_clicked()
                                     "- Grayed out lines are inactive.\n"
                                     "- Items are listed in the boot order."), uefiDialog);
     auto *pushActive = new QPushButton(tr("Set &active"), uefiDialog);
+    auto *pushAddMX = new QPushButton(tr("Add MX entry"), uefiDialog);
     auto *pushBootNext = new QPushButton(tr("Boot &next"), uefiDialog);
     auto *pushCancel = new QPushButton(tr("&Close"), uefiDialog);
     auto *pushDown = new QPushButton(tr("Move &down"), uefiDialog);
@@ -1012,6 +1035,7 @@ void MainWindow::pushUefi_clicked()
             textBootNext->setText(tr("Boot Next: %1").arg(tr("not set, will boot using list order")));
     });
     connect(pushTimeout, &QPushButton::clicked, this, [uefiDialog, textTimeout]() {setUefiTimeout(uefiDialog, textTimeout);});
+    connect(pushAddMX, &QPushButton::clicked, this, [this, uefiDialog, listEntries]() {addUefiMXentry(listEntries, uefiDialog);});
     connect(pushBootNext, &QPushButton::clicked, this, [listEntries, textBootNext]() {setUefiBootNext(listEntries, textBootNext);});
     connect(pushRemove, &QPushButton::clicked, this, [uefiDialog, listEntries]() {removeUefiEntry(listEntries, uefiDialog);});
     connect(pushActive, &QPushButton::clicked, uefiDialog, [listEntries]() {toggleUefiActive(listEntries);});
@@ -1040,10 +1064,11 @@ void MainWindow::pushUefi_clicked()
     });
 
     int row = 0;
-    const int rowspan = 6;
+    const int rowspan = 7;
     layout->addWidget(textIntro, row++, 0, 1, 2);
     layout->addWidget(listEntries, row, 0, rowspan, 1);
     layout->addWidget(pushRemove, row++, 1);
+    layout->addWidget(pushAddMX, row++, 1);
     layout->addWidget(pushUp, row++, 1);
     layout->addWidget(pushDown, row++, 1);
     layout->addWidget(pushActive, row++, 1);

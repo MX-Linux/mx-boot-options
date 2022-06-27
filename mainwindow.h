@@ -63,6 +63,7 @@ public:
     static void toggleUefiActive(QListWidget *listEntries);
     void addGrubArg(const QString &key, const QString &item);
     void addGrubLine(const QString &item);
+    void addUefiMXentry(QListWidget *listEntries, QDialog *dialogUefi);
     void createChrootEnv(const QString& root);
     void disableGrubLine(const QString &item);
     void enableGrubLine(const QString &item);

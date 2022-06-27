@@ -18,29 +18,29 @@ Changes:
  .
    * Add UEFI boot manager
 Checksums-Sha1:
- 06547c60d285a0c7b4a0f568e5989cfbdefddd31 1153 mx-boot-options_22.6.01.dsc
- 42585247bc4f19668dd7cc58e4ec09cb1ce70b3d 148060 mx-boot-options_22.6.01.tar.xz
- 8f3283d29bf8b80d9b444e2e6f5ebb5639b27980 10791 mx-boot-options_22.6.01_amd64.buildinfo
- 4dcca866b5af1c61794d40515158552de63ac8cf 179048 mx-boot-options_22.6.01_amd64.deb
+ 1f71c0bf01040375756574b4568afd811812e8e5 1153 mx-boot-options_22.6.01.dsc
+ a80fd83df737a866c7657f8a9d283c7ea1318e8f 148108 mx-boot-options_22.6.01.tar.xz
+ 99fbfba7682746fc972119c58faa7b7c513943fe 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ 40049cfd58cfda34566d5732a8ee5e6384ec5997 179140 mx-boot-options_22.6.01_amd64.deb
 Checksums-Sha256:
- ae86c8892dfba43abea1c589ac4cdb4aff99dd08bfb224f29de6ffb802eac739 1153 mx-boot-options_22.6.01.dsc
- 50a2cce33daf661903a000cc68319648cb1c33eafd1c12530323bf7e5c89d068 148060 mx-boot-options_22.6.01.tar.xz
- af7f780438e2bebcc2bc55d27f4dd34f3395bef22f91a50fc53988a073f189df 10791 mx-boot-options_22.6.01_amd64.buildinfo
- 347e0a7c6e9dedd37ece128bc66c6144a5ad6b8642f583aa5752deaa95e02aa2 179048 mx-boot-options_22.6.01_amd64.deb
+ 91663b5cc0de4642fded9bb76d6ecab439b28491fa17f73d720332665f7422c7 1153 mx-boot-options_22.6.01.dsc
+ 94ada2d8113e9d618e9d2c510de0121f4a6d3852bbecb06b8332aa26fd92a814 148108 mx-boot-options_22.6.01.tar.xz
+ 9986a1b8ddac57e578b123e0ffd784a3da4a1dd6d65b464485422c0309e8de6f 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ 01b94b8b6b693e09605408e2dc43cf843130f07e2ab139213429cc80e6316285 179140 mx-boot-options_22.6.01_amd64.deb
 Files:
- 98d74ce02dc2dc59d753d9286008c661 1153 admin optional mx-boot-options_22.6.01.dsc
- 30e8e64c26289cf3adf3c1c063b536ea 148060 admin optional mx-boot-options_22.6.01.tar.xz
- 3d373c53c16bef88057beeca30e8ecda 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
- d7f4b77f884ca12f99f5a5610c28a15e 179048 admin optional mx-boot-options_22.6.01_amd64.deb
+ 2202937c62bbca0afe38a3f4372535cb 1153 admin optional mx-boot-options_22.6.01.dsc
+ ca32c9c6a65378921d0379b7f4592e65 148108 admin optional mx-boot-options_22.6.01.tar.xz
+ 6174bfc8730d681331871c556a574ffd 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
+ fa9a87982dd1ba88f9a3e1cd96a69937 179140 admin optional mx-boot-options_22.6.01_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK50IATHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAQHCAC8FN6MAIQAcIbDjcvk58k78TOqvJg4
-IE1tgAwKTv4gUUNXpSubisL5fV1RCttfTvFrIHnnth2terrIuEccFBs9c7GurJzU
-QUPbdCAbv148X7UURX1E2UZO5LN6QIFulzRX/2DUmLRKZpYDPDOau4waamsaS3LQ
-kb0bcOkUGThnxpPUzvQg3iLM3mOmop4Brdxy9g7d5RySoW6FJWs2f8Q6ePQ4OUF6
-AwBMd7T0rqD6L/Vg9o4lbZApaY6Aor9r4uk6GCMS2MSDL0ApFY/xo2WZCwY/XUIV
-57lmrNuFqvRZ8WTDz6XPavCHKcsmfmvTvdCj7azwHq9wHgBf7tflgxK8
-=3HM3
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK52HYTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDk5CACvzMwvRP7rPI36dl5yVDZ67FOlA0kf
+dcpWhxcT/3Gvt+9z8wGj1gDMSNz3WOFb8Nxf9Qdf38arnwEPV8vNoAnfTZUcA6jx
+ABM5kdWbs9WZWnCfi6seO8/0YtfoeJIjgxcEWsGoP7KtmXMxaCUUDQiZGWUIwKxw
+B0TZRmTKxXP5ez2tGEnRvaI2g2cjSVaQ8NF1fDIZ9KZM65su0kBWxXsNwq+14mTV
+Ao9YLikOxx4791q3GtTxA18A5m+7KyJVrxkh7JBJZNbZn9iVV3WFuZZL0z+7g1uJ
+xVloM0TanxU3Aw9vTJLVdHjYrES78xs5A4Suwqkvpo5KclLY5l2foh9l
+=t93G
 -----END PGP SIGNATURE-----

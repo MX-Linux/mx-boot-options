@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Mon, 27 Jun 2022 03:07:23 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: i386
+Version: 22.6.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.6.01) mx; urgency=medium
+ .
+   * Add UEFI boot manager
+Checksums-Sha1:
+ 90a66bdd4454298b79c49a40938f0163227bf3f9 10072 mx-boot-options_22.6.01_i386.buildinfo
+ ffa6ffd3b377025452918513e326c2c4c8c0a63c 183092 mx-boot-options_22.6.01_i386.deb
+Checksums-Sha256:
+ 21fc62521e991b0c41cd37991c68a4ba2f8c9189f7e5d2dc4781a1df92b03363 10072 mx-boot-options_22.6.01_i386.buildinfo
+ 660895e97afad26c32f2dc8cc58792562dc3c9604c6c2af826c9c99d49dd0026 183092 mx-boot-options_22.6.01_i386.deb
+Files:
+ 6a806453cd71ab35064aae1dbe61afc2 10072 admin optional mx-boot-options_22.6.01_i386.buildinfo
+ ba55ff4d0bbdc0729ce98a4fa1ed4260 183092 admin optional mx-boot-options_22.6.01_i386.deb

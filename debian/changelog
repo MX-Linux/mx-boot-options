@@ -1,3 +1,9 @@
+mx-boot-options (22.6.01) mx; urgency=medium
+
+  * Add UEFI boot manager
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 27 Jun 2022 03:07:23 -0400
+
 mx-boot-options (22.6) mx; urgency=medium
 
   * Preserve user theme when launching program as root

@@ -1006,20 +1006,12 @@ void MainWindow::pushUefi_clicked()
     connect(pushUp, &QPushButton::clicked, uefiDialog, [uefiDialog, listEntries, &bootorder]() {
         int current = listEntries->currentRow();
         int new_row = listEntries->currentRow() - 1;
-        if (QProcess::execute(QStringLiteral("efibootmgr"), QStringList() << QStringLiteral("-o") << bootorder) == 0) {
-            listEntries->model()->moveRow(QModelIndex(), current, QModelIndex(), new_row);
-        } else {
-            QMessageBox::critical(uefiDialog, tr("Error"), tr("Something went wrong, could not reorder entries."));
-        }
+        listEntries->model()->moveRow(QModelIndex(), current, QModelIndex(), new_row);
     });
     connect(pushDown, &QPushButton::clicked, uefiDialog, [uefiDialog, listEntries, &bootorder]() {
-        int current = listEntries->currentRow();
-        int new_row = listEntries->currentRow() + 1;
-        if (QProcess::execute(QStringLiteral("efibootmgr"), QStringList() << QStringLiteral("-o") << bootorder) == 0) {
-            listEntries->model()->moveRow(QModelIndex(), new_row, QModelIndex(), current);
-        } else {
-            QMessageBox::critical(uefiDialog, tr("Error"), tr("Something went wrong, could not reorder entries."));
-        }
+        int current = listEntries->currentRow() + 1; // move next entry down
+        int new_row = listEntries->currentRow();
+        listEntries->model()->moveRow(QModelIndex(), current, QModelIndex(), new_row);
     });
     connect(listEntries, &QListWidget::itemSelectionChanged, uefiDialog, [listEntries, pushUp, pushDown, pushActive]() {
         pushUp->setEnabled(listEntries->currentRow() != 0);

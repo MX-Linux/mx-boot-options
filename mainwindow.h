@@ -52,11 +52,15 @@ public:
     bool installSplash();
     bool isInstalled(const QString &package);
     bool isInstalled(const QStringList &packages);
-    bool isUefi();
     bool replaceGrubArg(const QString &key, const QString &item);
     int findMenuEntryById(const QString &id) const;
+    static bool isUefi();
+    static void removeUefiEntry(QListWidget *listEntries, QDialog *uefiDialog);
     static void sendMouseEvents();
-    static void sortBootOrder(const QStringList &order, QListWidget *list);
+    static void setUefiBootNext(QListWidget *listEntries, QLabel *textBootNext);
+    static void setUefiTimeout(QDialog *uefiDialog, QLabel *textTimeout);
+    static void sortUefiBootOrder(const QStringList &order, QListWidget *list);
+    static void toggleUefiActive(QListWidget *listEntries);
     void addGrubArg(const QString &key, const QString &item);
     void addGrubLine(const QString &item);
     void createChrootEnv(const QString& root);
@@ -72,9 +76,6 @@ public:
     void setGeneralConnections();
     void setup();
     void writeDefaultGrub() const;
-
-
-public slots:
 
 private slots:
     void cleanup();
@@ -104,7 +105,6 @@ private slots:
     void radio_limited_msg_toggled(bool checked);
     void radio_very_detailed_msg_toggled(bool checked);
     void spinBoxTimeout_valueChanged(int val);
-
 
 protected:
     void keyPressEvent(QKeyEvent *event);

@@ -131,7 +131,7 @@ void MainWindow::setup()
     this->adjustSize();
 }
 
-void MainWindow::sortBootOrder(const QStringList &order, QListWidget *list)
+void MainWindow::sortUefiBootOrder(const QStringList &order, QListWidget *list)
 {
     if (!order.isEmpty()) {
         int index = 0;
@@ -183,6 +183,64 @@ void MainWindow::setGeneralConnections()
     connect(ui->radioVeryDetailedMsg, &QRadioButton::toggled, this, &MainWindow::radio_very_detailed_msg_toggled);
     connect(ui->spinBoxTimeout, qOverload<int>(&QSpinBox::valueChanged), this, &MainWindow::spinBoxTimeout_valueChanged);
     connect(ui->textKernel, &QLineEdit::textEdited, this, &MainWindow::lineEdit_kernel_textEdited);
+}
+
+void MainWindow::setUefiTimeout(QDialog *uefiDialog, QLabel *textTimeout)
+{
+    bool ok = false;
+    ushort init = textTimeout->text().section(QStringLiteral(" "), 1, 1).toUInt();
+    ushort timeout = QInputDialog::getInt(uefiDialog, tr("Set timeout"), tr("Timeout in seconds:"), init, 0, 65535, 1, &ok);
+    if (!ok)
+        return;
+    if (QProcess::execute(QStringLiteral("efibootmgr"), {"-t", QString::number(timeout)}) == 0)
+        textTimeout->setText(tr("Timeout: %1 seconds").arg(QString::number(timeout)));
+}
+
+void MainWindow::setUefiBootNext(QListWidget *listEntries, QLabel *textBootNext)
+{
+    QString item = listEntries->currentItem()->text().section(QStringLiteral(" "), 0, 0);
+    item.remove(QRegularExpression(QStringLiteral("^Boot")));
+    item.remove(QRegularExpression(QStringLiteral(R"(\*$)")));
+    if (!item.contains(QRegularExpression(QStringLiteral("^[0-9A-Z]{4}$"))))
+        return;
+    if (QProcess::execute(QStringLiteral("efibootmgr"), {"-n", item}) == 0)
+        textBootNext->setText(tr("Boot Next: %1").arg(item));
+}
+
+void MainWindow::removeUefiEntry(QListWidget *listEntries, QDialog *uefiDialog)
+{
+    QString item = listEntries->currentItem()->text();
+    if (QMessageBox::Yes != QMessageBox::question(uefiDialog, tr("Removal confirmation"),
+            tr("Are you sure you want to delete this boot entry?\n%1").arg(item)))
+        return;
+    item = item.section(QStringLiteral(" "), 0, 0);
+    item.remove(QRegularExpression(QStringLiteral("^Boot")));
+    item.remove(QRegularExpression(QStringLiteral(R"(\*$)")));
+    if (!item.contains(QRegularExpression(QStringLiteral("^[0-9A-Z]{4}$"))))
+        return;
+    if (QProcess::execute(QStringLiteral("efibootmgr"), {"-B", "-b", item}) == 0)
+        delete(listEntries->currentItem());
+    emit listEntries->itemSelectionChanged();
+}
+
+void MainWindow::toggleUefiActive(QListWidget *listEntries)
+{
+    QString item = listEntries->currentItem()->text().section(QStringLiteral(" "), 0, 0);
+    QString rest = listEntries->currentItem()->text().section(QStringLiteral(" "), 1, -1);
+    item.remove(QRegularExpression(QStringLiteral("^Boot")));
+    if (!item.contains(QRegularExpression(QStringLiteral(R"(^[0-9A-Z]{4}\*?$)"))))
+        return;
+    if (item.endsWith(QLatin1String("*"))) {
+        item.chop(1);
+        if (QProcess::execute(QStringLiteral("efibootmgr"), {"--inactive", "-b", item}) == 0) {
+            listEntries->currentItem()->setText("Boot" + item + " " + rest);
+            listEntries->currentItem()->setBackground(QBrush(Qt::gray));
+        }
+    } else if (QProcess::execute(QStringLiteral("efibootmgr"), {"--active", "-b", item}) == 0) {
+        listEntries->currentItem()->setText("Boot" + item + "* " + rest);
+        listEntries->currentItem()->setBackground(QBrush());
+    }
+    emit listEntries->itemSelectionChanged();
 }
 
 bool MainWindow::isInstalled(const QString &package)
@@ -953,65 +1011,15 @@ void MainWindow::pushUefi_clicked()
         if (QProcess::execute(QStringLiteral("efibootmgr"), {"-N"}) == 0)
             textBootNext->setText(tr("Boot Next: %1").arg(tr("not set, will boot using list order")));
     });
-    connect(pushTimeout, &QPushButton::clicked, uefiDialog, [uefiDialog, textTimeout]() {
-        bool ok = false;
-        ushort init = textTimeout->text().section(QStringLiteral(" "), 1, 1).toUInt();
-        ushort timeout = QInputDialog::getInt(uefiDialog, tr("Set timeout"), tr("Timeout in seconds:"), init, 0, 65535, 1, &ok);
-        if (!ok)
-            return;
-        if (QProcess::execute(QStringLiteral("efibootmgr"), {"-t", QString::number(timeout)}) == 0)
-            textTimeout->setText(tr("Timeout: %1 seconds").arg(QString::number(timeout)));
+    connect(pushTimeout, &QPushButton::clicked, this, [uefiDialog, textTimeout]() {setUefiTimeout(uefiDialog, textTimeout);});
+    connect(pushBootNext, &QPushButton::clicked, this, [listEntries, textBootNext]() {setUefiBootNext(listEntries, textBootNext);});
+    connect(pushRemove, &QPushButton::clicked, this, [uefiDialog, listEntries]() {removeUefiEntry(listEntries, uefiDialog);});
+    connect(pushActive, &QPushButton::clicked, uefiDialog, [listEntries]() {toggleUefiActive(listEntries);});
+    connect(pushUp, &QPushButton::clicked, uefiDialog, [listEntries]() {
+        listEntries->model()->moveRow(QModelIndex(), listEntries->currentRow(), QModelIndex(), listEntries->currentRow() - 1);
     });
-    connect(pushBootNext, &QPushButton::clicked, uefiDialog, [listEntries, textBootNext]() {
-        QString item = listEntries->currentItem()->text().section(QStringLiteral(" "), 0, 0);
-        item.remove(QRegularExpression(QStringLiteral("^Boot")));
-        item.remove(QRegularExpression(QStringLiteral(R"(\*$)")));
-        if (!item.contains(QRegularExpression(QStringLiteral("^[0-9A-Z]{4}$"))))
-            return;
-        if (QProcess::execute(QStringLiteral("efibootmgr"), {"-n", item}) == 0)
-            textBootNext->setText(tr("Boot Next: %1").arg(item));
-    });
-    connect(pushRemove, &QPushButton::clicked, uefiDialog, [uefiDialog, listEntries]() {
-        QString item = listEntries->currentItem()->text();
-        if (QMessageBox::Yes != QMessageBox::question(uefiDialog, tr("Removal confirmation"),
-                tr("Are you sure you want to delete this boot entry?\n%1").arg(item)))
-            return;
-        item = item.section(QStringLiteral(" "), 0, 0);
-        item.remove(QRegularExpression(QStringLiteral("^Boot")));
-        item.remove(QRegularExpression(QStringLiteral(R"(\*$)")));
-        if (!item.contains(QRegularExpression(QStringLiteral("^[0-9A-Z]{4}$"))))
-            return;
-        if (QProcess::execute(QStringLiteral("efibootmgr"), {"-B", "-b", item}) == 0)
-            delete(listEntries->currentItem());
-        emit listEntries->itemSelectionChanged();
-    });
-    connect(pushActive, &QPushButton::clicked, uefiDialog, [listEntries]() {
-        QString item = listEntries->currentItem()->text().section(QStringLiteral(" "), 0, 0);
-        QString rest = listEntries->currentItem()->text().section(QStringLiteral(" "), 1, -1);
-        item.remove(QRegularExpression(QStringLiteral("^Boot")));
-        if (!item.contains(QRegularExpression(QStringLiteral(R"(^[0-9A-Z]{4}\*?$)"))))
-            return;
-        if (item.endsWith(QLatin1String("*"))) {
-            item.chop(1);
-            if (QProcess::execute(QStringLiteral("efibootmgr"), {"--inactive", "-b", item}) == 0) {
-                listEntries->currentItem()->setText("Boot" + item + " " + rest);
-                listEntries->currentItem()->setBackground(QBrush(Qt::gray));
-            }
-        } else if (QProcess::execute(QStringLiteral("efibootmgr"), {"--active", "-b", item}) == 0) {
-            listEntries->currentItem()->setText("Boot" + item + "* " + rest);
-            listEntries->currentItem()->setBackground(QBrush());
-        }
-        emit listEntries->itemSelectionChanged();
-    });
-    connect(pushUp, &QPushButton::clicked, uefiDialog, [uefiDialog, listEntries, &bootorder]() {
-        int current = listEntries->currentRow();
-        int new_row = listEntries->currentRow() - 1;
-        listEntries->model()->moveRow(QModelIndex(), current, QModelIndex(), new_row);
-    });
-    connect(pushDown, &QPushButton::clicked, uefiDialog, [uefiDialog, listEntries, &bootorder]() {
-        int current = listEntries->currentRow() + 1; // move next entry down
-        int new_row = listEntries->currentRow();
-        listEntries->model()->moveRow(QModelIndex(), current, QModelIndex(), new_row);
+    connect(pushDown, &QPushButton::clicked, uefiDialog, [listEntries]() {
+        listEntries->model()->moveRow(QModelIndex(), listEntries->currentRow() + 1, QModelIndex(), listEntries->currentRow()); // move next entry down
     });
     connect(listEntries, &QListWidget::itemSelectionChanged, uefiDialog, [listEntries, pushUp, pushDown, pushActive]() {
         pushUp->setEnabled(listEntries->currentRow() != 0);
@@ -1023,7 +1031,7 @@ void MainWindow::pushUefi_clicked()
     });
 
     readBootEntries(listEntries, textTimeout, textBootNext, textBootCurrent, bootorder);
-    sortBootOrder(bootorder, listEntries);
+    sortUefiBootOrder(bootorder, listEntries);
 
     listEntries->setDragDropMode(QAbstractItemView::InternalMove);
     connect(listEntries->model(), &QAbstractItemModel::rowsMoved, this, [this, listEntries]() {

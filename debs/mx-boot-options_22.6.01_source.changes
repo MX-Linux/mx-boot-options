@@ -15,26 +15,26 @@ Changes:
  .
    * Add UEFI boot manager
 Checksums-Sha1:
- 298afa643078808012ef6e0066409ad2eda88efe 1153 mx-boot-options_22.6.01.dsc
- 6d9385084a21f12981b7c1c2db25ca818857a286 148004 mx-boot-options_22.6.01.tar.xz
- d7b20842ba71f67add501fb622c608910b29ec33 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ 06547c60d285a0c7b4a0f568e5989cfbdefddd31 1153 mx-boot-options_22.6.01.dsc
+ 42585247bc4f19668dd7cc58e4ec09cb1ce70b3d 148060 mx-boot-options_22.6.01.tar.xz
+ 8f3283d29bf8b80d9b444e2e6f5ebb5639b27980 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Checksums-Sha256:
- 04b271dbad256bc4171c561a8cfeabc95662c0ee6466f89c1dd948b78b3de794 1153 mx-boot-options_22.6.01.dsc
- ed15690d17417782192e5e03a39f44f2e4724249cb8f2108e95f99087c32b7af 148004 mx-boot-options_22.6.01.tar.xz
- c115a1d15fb32c4e255d2d9c505e6ba158602f40413957360aa7f49112e3b55f 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ ae86c8892dfba43abea1c589ac4cdb4aff99dd08bfb224f29de6ffb802eac739 1153 mx-boot-options_22.6.01.dsc
+ 50a2cce33daf661903a000cc68319648cb1c33eafd1c12530323bf7e5c89d068 148060 mx-boot-options_22.6.01.tar.xz
+ af7f780438e2bebcc2bc55d27f4dd34f3395bef22f91a50fc53988a073f189df 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Files:
- 69fdea6280f420ba8dabf294212a3727 1153 admin optional mx-boot-options_22.6.01.dsc
- e7d6d96260658392f64bfc6702b713c5 148004 admin optional mx-boot-options_22.6.01.tar.xz
- b55a7be4dd28200047eb507e34f4d264 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
+ 98d74ce02dc2dc59d753d9286008c661 1153 admin optional mx-boot-options_22.6.01.dsc
+ 30e8e64c26289cf3adf3c1c063b536ea 148060 admin optional mx-boot-options_22.6.01.tar.xz
+ 3d373c53c16bef88057beeca30e8ecda 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK5V3MTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBCXB/9NSaUR1WLGE3HO7/m3OCzEPFAq0ZQU
-mmK3QTkOwRwt+0nHDK57T6QhFC+KDnsNRiHe6pd7YuHkcwFUF7lJOHX4kyxJPnU+
-iBm5c12t1f9YDQzwLGBvP8VRC86PYVRr8in0AyKbg7+yHxTB8ai0iU6MBbbRFi4I
-KA0t2ZK7Tp483Kk40daSXGSHDre1Npu8lwKqb0JB20yZn2F6VbxWZNMSE5LdGTL0
-3LlFL3I88fD9O3YjKYSPYpu8dLdzLXyKs77j8zpyKOvNv5nBwZdBC1xCQkjHzKBU
-XzGx3xCxkxCIYevVtDcX4GO+IoW423B+QkQqTxWzHT99MYAmnrzbWN0k
-=WD36
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK50IATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFlDCACifVBLNdOGQlX4qGv0DdhZHIfpZB8q
+0JOMHejydiZ9nZFvrIK+fm9R9l3dNnzUeRSbbKRJTcH/MvdccbvfJruMDTqrMjpa
+AJhlK3WN/S1rbP87WkKKPJniO9S6YwWM5loL9hFVwf/TIl32ZPaYFE8KQD44xBsZ
+uOWPUVw2My163/gWEPmt7nv/wmXD/pyuFrTJOHwiF8ry7/KGWv4xuxH3Wg7hXxNE
+++h794fWdrV2zpk5iHQsn4doOVllPLFp2c3VjpYeZi+nmR8Srqp2L9FGxWXZKYai
+rWCAZPLWwSMrTCUZNd+UbqYNJP1xlUodOn4qAIeV1LdsdCjV811PNF3v
+=tcPn
 -----END PGP SIGNATURE-----

@@ -118,16 +118,6 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="1" colspan="3">
-       <widget class="QPushButton" name="pushUefi">
-        <property name="text">
-         <string>Manage UEFI Boot Options</string>
-        </property>
-        <property name="autoDefault">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
       <item row="2" column="2">
        <widget class="QCheckBox" name="checkSaveDefault">
         <property name="toolTip">
@@ -135,6 +125,16 @@
         </property>
         <property name="text">
          <string>Enable saving last boot choice</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="5">
+       <widget class="QPushButton" name="pushUefi">
+        <property name="text">
+         <string>Manage UEFI Boot Options</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
         </property>
        </widget>
       </item>

@@ -1,6 +1,6 @@
-#include <QPushButton>
-#include <QLayout>
 #include <QLabel>
+#include <QLayout>
+#include <QPushButton>
 
 #include "dialog.h"
 

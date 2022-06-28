@@ -28,9 +28,9 @@
 #include <QProcess>
 #include <QTranslator>
 
-#include <unistd.h>
 #include "mainwindow.h"
 #include "version.h"
+#include <unistd.h>
 
 const extern QString starting_home = qEnvironmentVariable("HOME");
 

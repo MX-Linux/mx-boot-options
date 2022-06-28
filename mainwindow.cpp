@@ -265,24 +265,43 @@ bool MainWindow::isUefi()
 
 void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
 {
-    if (!QFile::exists(QStringLiteral("/boot/efi/EFI"))) {
-        QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find /boot/efi/EFI/ directory."));
-        return;
+    QString file_name;
+    // mount all ESPs
+    QStringList mount_list = cmd.getCmdOut(QStringLiteral("lsblk -no PATH,PARTTYPE |grep -i c12a7328-f81f-11d2-ba4b-00a0c93ec93b |cut -d' ' -f1")).split(QStringLiteral("\n"));
+    for (const auto &mount_point : qAsConst(mount_list)) {
+        if (QProcess::execute(QStringLiteral("findmnt"), {"-n", mount_point}) == 0)
+            continue;
+        QString part_name = mount_point.section(QStringLiteral("/"), 2, 2);
+        QDir().mkpath("/boot/efi/" + part_name);
+        QProcess::execute(QStringLiteral("mount"), {mount_point, "/boot/efi/" + part_name});
     }
-    QString disk  = cmd.getCmdOut(QStringLiteral("df /boot/efi --output=source | sed 1d"));
-    if (cmd.exitCode() != 0) {
-        QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find the /boot/efi mountpoint."));
-        return;
+    if (QFile::exists(QStringLiteral("/boot/efi/EFI"))) {
+        file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"),
+                                                 QStringLiteral("/boot/efi/EFI"), tr("EFI files (*.efi *.EFI)"));
+    } else {
+        file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"),
+                                                 QStringLiteral("/boot/efi/"), tr("EFI files (*.efi *.EFI)"));
     }
-    QString file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"),
-                                                     QStringLiteral("/boot/efi/EFI"), tr("EFI files (*.efi *.EFI)"));
     if (!QFile::exists(file_name))
         return;
+    QString disk  = cmd.getCmdOut("df " + file_name + " --output=source | sed 1d");
+    if (cmd.exitCode() != 0) {
+        QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find the source mountpoint for %1").arg(file_name));
+        return;
+    }
     QString name = QInputDialog::getText(dialogUefi, tr("Set name"), tr("Enter the name for the UEFI menu item:"));
     if (name.isEmpty())
         name = QStringLiteral("New entry");
-    file_name.remove(QStringLiteral("/boot/efi"));
+    file_name =  "/EFI/" + file_name.section(QStringLiteral("/EFI/"), 1);
     QString out = cmd.getCmdOut("efibootmgr -cL \"" + name + "\" -d " +  disk  + " -l " + file_name);
+    // unmount and remove created folders
+    for (const auto &mount_point : qAsConst(mount_list)) {
+        if (QProcess::execute(QStringLiteral("findmnt"), {"-n", mount_point, "/boot/efi"}) == 0)
+            continue;
+        QString part_name = mount_point.section(QStringLiteral("/"), 2, 2);
+        if (QProcess::execute(QStringLiteral("umount"), {"/boot/efi/" + part_name}) == 0)
+            QDir().remove("/boot/efi/" + part_name);
+    }
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Something went wrong, could not add entry."));
         return;
@@ -1015,10 +1034,9 @@ void MainWindow::pushUefi_clicked()
     uefiDialog->setWindowTitle(tr("Edit UEFI Boot Entries"));
     auto *layout = new QGridLayout(uefiDialog);
     auto *listEntries = new QListWidget(uefiDialog);
-    auto *textIntro = new QLabel(tr("Boot entries listed by 'efibootmgr'. Please select the item to modify.\n "
-                                    "You can use the Up/Down buttons, or drag & drop items to change boot order.\n"
-                                    "- Grayed out lines are inactive.\n"
-                                    "- Items are listed in the boot order."), uefiDialog);
+    auto *textIntro = new QLabel(tr("You can use the Up/Down buttons, or drag & drop items to change boot order.\n"
+                                    "- Items are listed in the boot order.\n"
+                                    "- Grayed out lines are inactive."), uefiDialog);
     auto *pushActive = new QPushButton(tr("Set ac&tive"), uefiDialog);
     auto *pushAddEntry = new QPushButton(tr("&Add entry"), uefiDialog);
     auto *pushBootNext = new QPushButton(tr("Boot &next"), uefiDialog);

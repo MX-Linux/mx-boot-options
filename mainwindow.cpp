@@ -46,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setGeneralConnections();
     setup();
+    qApp->setQuitOnLastWindowClosed(false); // otherwise it might close when closing a dialog
 }
 
 MainWindow::~MainWindow()
@@ -269,12 +270,13 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find /boot/efi/EFI/ directory."));
         return;
     }
-    QString disk  = cmd.getCmdOut("df /boot/efi --output=source | sed 1d");
+    QString disk  = cmd.getCmdOut(QStringLiteral("df /boot/efi --output=source | sed 1d"));
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find the /boot/efi mountpoint."));
         return;
     }
-    QString file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"), QStringLiteral("/boot/efi/EFI"), tr("EFI files (*.efi *.EFI)"));
+    QString file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"),
+                                                     QStringLiteral("/boot/efi/EFI"), tr("EFI files (*.efi *.EFI)"));
     if (!QFile::exists(file_name))
         return;
     QString name = QInputDialog::getText(dialogUefi, tr("Set name"), tr("Enter the name for the UEFI menu item:"));
@@ -298,7 +300,8 @@ bool MainWindow::installSplash()
 
     const auto packages = QStringLiteral("plymouth plymouth-x11 plymouth-themes plymouth-themes-mx");
     progress->setWindowModality(Qt::WindowModal);
-    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
+    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |
+                             Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
     progress->setCancelButton(nullptr);
     progress->setWindowTitle(tr("Installing bootsplash, please wait"));
     progress->setBar(bar);
@@ -378,7 +381,8 @@ QStringList MainWindow::getLinuxPartitions()
     return new_list;
 }
 
-void MainWindow::readBootEntries(QListWidget *listEntries, QLabel *textTimeout, QLabel *textBootNext, QLabel *textBootCurrent, QStringList &bootorder)
+void MainWindow::readBootEntries(QListWidget *listEntries, QLabel *textTimeout,
+                                 QLabel *textBootNext, QLabel *textBootCurrent, QStringList &bootorder)
 {
     QStringList entries = cmd.getCmdOut(QStringLiteral("efibootmgr")).split(QStringLiteral("\n"));
     for (const auto &item : qAsConst(entries)) {
@@ -730,7 +734,8 @@ void MainWindow::pushApply_clicked()
     bar = new QProgressBar(progress);
 
     progress->setWindowModality(Qt::WindowModal);
-    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
+    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |
+                             Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
     progress->setCancelButton(nullptr);
     progress->setWindowTitle(tr("Updating configuration, please wait"));
     progress->setBar(bar);
@@ -1123,7 +1128,8 @@ void MainWindow::combo_enable_flatmenus_clicked(bool checked)
     bar = new QProgressBar(progress);
 
     progress->setWindowModality(Qt::WindowModal);
-    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
+    progress->setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |
+                             Qt::WindowSystemMenuHint | Qt::WindowStaysOnTopHint);
     progress->setCancelButton(nullptr);
     progress->setWindowTitle(tr("Updating configuration, please wait"));
     progress->setBar(bar);
@@ -1169,7 +1175,8 @@ void MainWindow::combo_grub_theme_toggled(bool checked)
 void MainWindow::btn_theme_file_clicked()
 {
     QString selected = QFileDialog::getOpenFileName(this, QObject::tr("Select GRUB theme"),
-                                              chroot.section(QStringLiteral(" "), 1, 1) + "/boot/grub/themes", QStringLiteral("*.txt;; *.*"));
+                                                    chroot.section(QStringLiteral(" "), 1, 1) +
+                                                    "/boot/grub/themes", QStringLiteral("*.txt;; *.*"));
     if (!selected.isEmpty()) {
         if (!chroot.isEmpty())
             selected.remove(chroot.section(QStringLiteral(" "), 1, 1));

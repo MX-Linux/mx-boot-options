@@ -76,6 +76,7 @@ public:
     void saveBootOrder(const QListWidget *list);
     void setGeneralConnections();
     void setup();
+    void unmountAndClean(const QStringList &mount_list);
     void writeDefaultGrub() const;
 
 private slots:

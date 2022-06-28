@@ -131,6 +131,17 @@ void MainWindow::setup()
     this->adjustSize();
 }
 
+void MainWindow::unmountAndClean(const QStringList &mount_list)
+{
+    for (const auto &mount_point : qAsConst(mount_list)) {
+        if (QProcess::execute(QStringLiteral("findmnt"), {"-n", mount_point, "/boot/efi"}) == 0)
+            continue;
+        QString part_name = mount_point.section(QStringLiteral("/"), 2, 2);
+        if (QProcess::execute(QStringLiteral("umount"), {"/boot/efi/" + part_name}) == 0)
+            QDir().rmdir("/boot/efi/" + part_name);
+    }
+}
+
 void MainWindow::sortUefiBootOrder(const QStringList &order, QListWidget *list)
 {
     if (!order.isEmpty()) {
@@ -282,11 +293,14 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
         file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"),
                                                  QStringLiteral("/boot/efi/"), tr("EFI files (*.efi *.EFI)"));
     }
-    if (!QFile::exists(file_name))
+    if (!QFile::exists(file_name)) {
+        unmountAndClean(mount_list);
         return;
+    }
     QString disk  = cmd.getCmdOut("df " + file_name + " --output=source | sed 1d");
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find the source mountpoint for %1").arg(file_name));
+        unmountAndClean(mount_list);
         return;
     }
     QString name = QInputDialog::getText(dialogUefi, tr("Set name"), tr("Enter the name for the UEFI menu item:"));
@@ -294,14 +308,7 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
         name = QStringLiteral("New entry");
     file_name =  "/EFI/" + file_name.section(QStringLiteral("/EFI/"), 1);
     QString out = cmd.getCmdOut("efibootmgr -cL \"" + name + "\" -d " +  disk  + " -l " + file_name);
-    // unmount and remove created folders
-    for (const auto &mount_point : qAsConst(mount_list)) {
-        if (QProcess::execute(QStringLiteral("findmnt"), {"-n", mount_point, "/boot/efi"}) == 0)
-            continue;
-        QString part_name = mount_point.section(QStringLiteral("/"), 2, 2);
-        if (QProcess::execute(QStringLiteral("umount"), {"/boot/efi/" + part_name}) == 0)
-            QDir().rmdir("/boot/efi/" + part_name);
-    }
+    unmountAndClean(mount_list);
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Something went wrong, could not add entry."));
         return;

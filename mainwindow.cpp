@@ -273,8 +273,11 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
     QString file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"), QStringLiteral("/boot/efi/EFI"), tr("EFI files (*.efi *.EFI)"));
     if (!QFile::exists(file_name))
         return;
+    QString name = QInputDialog::getText(dialogUefi, tr("Set name"), tr("Enter the name for the UEFI menu item:"));
+    if (name.isEmpty())
+        name = QStringLiteral("New entry");
     file_name.remove(QStringLiteral("/boot/efi"));
-    QString out = cmd.getCmdOut("efibootmgr -cL MX -l " + file_name);
+    QString out = cmd.getCmdOut("efibootmgr -cL \"" + name + "\" -l " + file_name);
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Something went wrong, could not add entry."));
         return;

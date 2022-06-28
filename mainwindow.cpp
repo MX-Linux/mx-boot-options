@@ -46,7 +46,6 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowFlags(Qt::Window); // for the close, min and max buttons
     setGeneralConnections();
     setup();
-    qApp->setQuitOnLastWindowClosed(false); // otherwise it might close when closing a dialog
 }
 
 MainWindow::~MainWindow()
@@ -1012,7 +1011,7 @@ void MainWindow::pushLog_clicked()
 
 void MainWindow::pushUefi_clicked()
 {
-    auto *uefiDialog = new QDialog(this);
+    auto *uefiDialog = new QDialog;
     uefiDialog->setWindowTitle(tr("Edit UEFI Boot Entries"));
     auto *layout = new QGridLayout(uefiDialog);
     auto *listEntries = new QListWidget(uefiDialog);

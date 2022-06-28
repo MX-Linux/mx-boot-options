@@ -15,26 +15,26 @@ Changes:
  .
    * Add UEFI boot manager
 Checksums-Sha1:
- dff0a2a90d1cb6359527fdf445673a3bc49d0446 1153 mx-boot-options_22.6.01.dsc
- 8369fc7f1d119148ee49c71cd771a63336bcc7cb 148604 mx-boot-options_22.6.01.tar.xz
- fb45fb5ec60a68373b4fabb79e11a7340bcb9e17 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ 72478cc51de39f52231bc91544f9f1bce6d2b138 1153 mx-boot-options_22.6.01.dsc
+ 027a4bda404c2f62b16f86acc4c35aa2f74ef892 148616 mx-boot-options_22.6.01.tar.xz
+ 69d0995c37222f6c7c9d3eecd25a9ba19f2a345b 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Checksums-Sha256:
- 09186895aebca606177cdd94503625d21c7aeb46ef9666cfa54a8206238b922e 1153 mx-boot-options_22.6.01.dsc
- c71f6060b06e164d6d31989efe0e66c6b88e1f598b52cd1b4b1c24e47b97379c 148604 mx-boot-options_22.6.01.tar.xz
- 3b6d2feb4a2f7b52e82e26b5d233a862913002876e0e98aa20ed455dd9c46568 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ aa5753053f17ce207f86b746047bda1563c7a2fb4c5855b1d776fc6f1e874876 1153 mx-boot-options_22.6.01.dsc
+ d8a39fe7ca888bd42fe2d88a4d062990c3ef56ea1bd8977c6b7b0c32e27ba6da 148616 mx-boot-options_22.6.01.tar.xz
+ 0ed1d9f6b4c8b7075f647e4c71971c4ace08a2b9b388b99dddc5b6e5b852da15 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Files:
- c0b3937dd555efdbb61c6b961d956b84 1153 admin optional mx-boot-options_22.6.01.dsc
- a6d91773c2efabcf8ce4acd9d4731f92 148604 admin optional mx-boot-options_22.6.01.tar.xz
- b293be8dfda8da6d024001a5015fd614 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
+ 7845e0cda1c2fed08be64f7dfbe86ca1 1153 admin optional mx-boot-options_22.6.01.dsc
+ 8bb7f8f2332aa2f8ef1df9f4c49c47ba 148616 admin optional mx-boot-options_22.6.01.tar.xz
+ 4fd0c0dffcc946344a5ea40201a6ec59 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK7cQQTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMTFB/kBJ1X3vNdxeyCkdcG+VlChkoRw0e2u
-FkZDEoH/iu+/SrJx416y5qG/wpZRbGzuLYWT+A2cophoXPTibj1Mj1XX6wIKrQBP
-aSHotHn6vFp43fEiGlc2r5FapdUIonSpgRJZxDvOT/p2Gaggl178mov95rAD+9VN
-EazrJm8Py0TYBt359tP7vzUWILI7TgN2spaA+mm7q57E6T57JkRtH7hBRL1D+QcX
-eSYIFGzrNzUGPU9n5a96S+6MZ+KewZuIETwvwarjDehOw2dEpQbKHvBxcy5EqvPH
-9kdSsFguaWhZHOMYDr8UuJXVOZa0Di1+kYhIqdDG6OBl3nX4IX64TiM7
-=Jb8e
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK7eEITHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumH2BCAC5kpnFCFsd6q+kyNQuEiRos3PcDx7l
+zBcv79+/5k4l7RQI9aa0hv1dYXaltKpev/mVtqFbYLzoHgqPqzQLWj3jn0+ueTDA
+e5YhE8dJzehFHCw5yoa1WvnUp9FeeCQrhKiiUrkwTOWe9BOrucwRd/5FaMYPNmMc
+OIOmRu0A5lNUCWR896OikCaYkB1DpNeAiyTZy/XIVhjwWNXssmHBR9rkBh3z6lwS
+L3/RfSRgdeyYRdDW1YlNloTiJlGUB6n/jRDAEh5F+WceT4cCx3Px0fyl9noG4uii
++qH0Wo7Uk1INlqn3qs8bj277k1PlFELBDF8EFKhD7VTKAzWzKZ0s1tPE
+=LE6N
 -----END PGP SIGNATURE-----

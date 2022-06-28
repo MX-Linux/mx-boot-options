@@ -15,26 +15,26 @@ Changes:
  .
    * Add UEFI boot manager
 Checksums-Sha1:
- 72478cc51de39f52231bc91544f9f1bce6d2b138 1153 mx-boot-options_22.6.01.dsc
- 027a4bda404c2f62b16f86acc4c35aa2f74ef892 148616 mx-boot-options_22.6.01.tar.xz
- 69d0995c37222f6c7c9d3eecd25a9ba19f2a345b 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ 4bd95f0d75ac57707cc017b32005a73dd18e4e75 1153 mx-boot-options_22.6.01.dsc
+ b2cde0d9c8a77b5bdfa3886d23fa6d4fb846f1cc 148632 mx-boot-options_22.6.01.tar.xz
+ 38e1f3db531885e585b3e159b6fddaef3068310f 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Checksums-Sha256:
- aa5753053f17ce207f86b746047bda1563c7a2fb4c5855b1d776fc6f1e874876 1153 mx-boot-options_22.6.01.dsc
- d8a39fe7ca888bd42fe2d88a4d062990c3ef56ea1bd8977c6b7b0c32e27ba6da 148616 mx-boot-options_22.6.01.tar.xz
- 0ed1d9f6b4c8b7075f647e4c71971c4ace08a2b9b388b99dddc5b6e5b852da15 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ f8e07bcded6ee3b4057c12488946b91d6278d842f8248fcb00c1f315079181cd 1153 mx-boot-options_22.6.01.dsc
+ b54357ae394303fb7f903edc8fdc19725dab96f9d3e8197c4ec6d45963a58d20 148632 mx-boot-options_22.6.01.tar.xz
+ 6a549d387a9abdd405fe639f4e5141c98643e6396259406162dba4c4847c59ae 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Files:
- 7845e0cda1c2fed08be64f7dfbe86ca1 1153 admin optional mx-boot-options_22.6.01.dsc
- 8bb7f8f2332aa2f8ef1df9f4c49c47ba 148616 admin optional mx-boot-options_22.6.01.tar.xz
- 4fd0c0dffcc946344a5ea40201a6ec59 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
+ c5a75faad3719b93cd8380dc6e11f1d8 1153 admin optional mx-boot-options_22.6.01.dsc
+ e36a10851be860d13a269437194f5989 148632 admin optional mx-boot-options_22.6.01.tar.xz
+ ed2cd340783d30dd5e097a45e07a61de 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK7eEITHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumH2BCAC5kpnFCFsd6q+kyNQuEiRos3PcDx7l
-zBcv79+/5k4l7RQI9aa0hv1dYXaltKpev/mVtqFbYLzoHgqPqzQLWj3jn0+ueTDA
-e5YhE8dJzehFHCw5yoa1WvnUp9FeeCQrhKiiUrkwTOWe9BOrucwRd/5FaMYPNmMc
-OIOmRu0A5lNUCWR896OikCaYkB1DpNeAiyTZy/XIVhjwWNXssmHBR9rkBh3z6lwS
-L3/RfSRgdeyYRdDW1YlNloTiJlGUB6n/jRDAEh5F+WceT4cCx3Px0fyl9noG4uii
-+qH0Wo7Uk1INlqn3qs8bj277k1PlFELBDF8EFKhD7VTKAzWzKZ0s1tPE
-=LE6N
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK7fJsTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAfxB/0X4hogdvZnIXRjyb32Nt+2uJG89GuL
+NObTWRaTwOoKR8r8EmZ+JF6/kNZK+oJdt28hfvAy7RTSz5xtnsTqgnJJFHxfhzLN
+1njlYE1TbZ7nxyN6rzWV2SJH3DL1zPVIs5dd+85ePxKIsaxMD53gyBd7e9IavVBP
+mv2jD9b+3ZPGSfeXh/GxuUWiK/fgEl0HGWbgXoSHaEXN0Ql6STCvx4y7MLfDreU1
+x73lB6b8lM8Bgn/MHBVYHxdLtU3ZlCjtt8dj+KsumcpajqJZ7bbepDDvcjMQvDRh
+65sciOJ8nz+CnszVa4N4Jcp34HSpSB+WB61Ks6j8KxRNqG93LI2a7m8r
+=6Ijz
 -----END PGP SIGNATURE-----

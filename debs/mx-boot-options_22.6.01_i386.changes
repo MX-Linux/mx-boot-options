@@ -15,11 +15,11 @@ Changes:
  .
    * Add UEFI boot manager
 Checksums-Sha1:
- 7329819b4332a3315ab47a6d64bdc8e8f4f3b6e4 10072 mx-boot-options_22.6.01_i386.buildinfo
- 6fc1f74795bd1f008816b6cb016f5447665b2003 183696 mx-boot-options_22.6.01_i386.deb
+ 68fa7b29130a2834dbc020e723d2111e17511cd0 10072 mx-boot-options_22.6.01_i386.buildinfo
+ 0e568760cf932fb40018d66329c7a05d64f5b77f 183892 mx-boot-options_22.6.01_i386.deb
 Checksums-Sha256:
- 0f484dba54a886b06cb773addbb8978d83182124f0aa0e928b075b60d7ce9ca7 10072 mx-boot-options_22.6.01_i386.buildinfo
- c2d5a75456657bf290a9ddfadbaff43aa0e84203a11bac77a0b0088646192382 183696 mx-boot-options_22.6.01_i386.deb
+ df8c8976176476646a402cb6804abab2ce7bbd92ed5ea11273ab7d4a072eb122 10072 mx-boot-options_22.6.01_i386.buildinfo
+ fb9e410f0a4eed0f78589505c57c048859a2a85af20beceac7dc4287116740cb 183892 mx-boot-options_22.6.01_i386.deb
 Files:
- db9b4a22f36fe62d931f3ef88922ae3e 10072 admin optional mx-boot-options_22.6.01_i386.buildinfo
- b846320bf0ecf3ed2833dc3cd61eecc8 183696 admin optional mx-boot-options_22.6.01_i386.deb
+ e14271e1e78cdfafb55a3eb6577c2515 10072 admin optional mx-boot-options_22.6.01_i386.buildinfo
+ 5dfd452176aa1f523a3d00cbf0bc5e4a 183892 admin optional mx-boot-options_22.6.01_i386.deb

@@ -269,7 +269,11 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find /boot/efi/EFI/ directory."));
         return;
     }
-    //QString file_name = cmd.getCmdOut(QStringLiteral("find /boot/efi/EFI/MX* -iname \"grub*.efi\" -print -quit 2>/dev/null"));
+    QString disk  = cmd.getCmdOut("df /boot/efi --output=source | sed 1d");
+    if (cmd.exitCode() != 0) {
+        QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find the /boot/efi mountpoint."));
+        return;
+    }
     QString file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"), QStringLiteral("/boot/efi/EFI"), tr("EFI files (*.efi *.EFI)"));
     if (!QFile::exists(file_name))
         return;
@@ -277,7 +281,7 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
     if (name.isEmpty())
         name = QStringLiteral("New entry");
     file_name.remove(QStringLiteral("/boot/efi"));
-    QString out = cmd.getCmdOut("efibootmgr -cL \"" + name + "\" -l " + file_name);
+    QString out = cmd.getCmdOut("efibootmgr -cL \"" + name + "\" -d " +  disk  + " -l " + file_name);
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Something went wrong, could not add entry."));
         return;

@@ -263,17 +263,16 @@ bool MainWindow::isUefi()
     return QFile::exists(QStringLiteral("/sys/firmware/efi/efivars"));
 }
 
-void MainWindow::addUefiMXentry(QListWidget *listEntries, QDialog *dialogUefi)
+void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
 {
     if (!QFile::exists(QStringLiteral("/boot/efi/EFI"))) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find /boot/efi/EFI/ directory."));
         return;
     }
-    QString file_name = cmd.getCmdOut(QStringLiteral("find /boot/efi/EFI/MX* -iname \"grub*.efi\" -print -quit 2>/dev/null"));
-    if (!QFile::exists(file_name)) {
-        QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find a grub*.efi file in /boot/efi/EFI/MX*."));
+    //QString file_name = cmd.getCmdOut(QStringLiteral("find /boot/efi/EFI/MX* -iname \"grub*.efi\" -print -quit 2>/dev/null"));
+    QString file_name = QFileDialog::getOpenFileName(dialogUefi, tr("Select EFI file"), QStringLiteral("/boot/efi/EFI"), tr("EFI files (*.efi *.EFI)"));
+    if (!QFile::exists(file_name))
         return;
-    }
     file_name.remove(QStringLiteral("/boot/efi"));
     QString out = cmd.getCmdOut("efibootmgr -cL MX -l " + file_name);
     if (cmd.exitCode() != 0) {
@@ -1010,7 +1009,7 @@ void MainWindow::pushUefi_clicked()
                                     "- Grayed out lines are inactive.\n"
                                     "- Items are listed in the boot order."), uefiDialog);
     auto *pushActive = new QPushButton(tr("Set &active"), uefiDialog);
-    auto *pushAddMX = new QPushButton(tr("Add MX entry"), uefiDialog);
+    auto *pushAddEntry = new QPushButton(tr("Add entry"), uefiDialog);
     auto *pushBootNext = new QPushButton(tr("Boot &next"), uefiDialog);
     auto *pushCancel = new QPushButton(tr("&Close"), uefiDialog);
     auto *pushDown = new QPushButton(tr("Move &down"), uefiDialog);
@@ -1035,7 +1034,7 @@ void MainWindow::pushUefi_clicked()
             textBootNext->setText(tr("Boot Next: %1").arg(tr("not set, will boot using list order")));
     });
     connect(pushTimeout, &QPushButton::clicked, this, [uefiDialog, textTimeout]() {setUefiTimeout(uefiDialog, textTimeout);});
-    connect(pushAddMX, &QPushButton::clicked, this, [this, uefiDialog, listEntries]() {addUefiMXentry(listEntries, uefiDialog);});
+    connect(pushAddEntry, &QPushButton::clicked, this, [this, uefiDialog, listEntries]() {addUefiEntry(listEntries, uefiDialog);});
     connect(pushBootNext, &QPushButton::clicked, this, [listEntries, textBootNext]() {setUefiBootNext(listEntries, textBootNext);});
     connect(pushRemove, &QPushButton::clicked, this, [uefiDialog, listEntries]() {removeUefiEntry(listEntries, uefiDialog);});
     connect(pushActive, &QPushButton::clicked, uefiDialog, [listEntries]() {toggleUefiActive(listEntries);});
@@ -1068,7 +1067,7 @@ void MainWindow::pushUefi_clicked()
     layout->addWidget(textIntro, row++, 0, 1, 2);
     layout->addWidget(listEntries, row, 0, rowspan, 1);
     layout->addWidget(pushRemove, row++, 1);
-    layout->addWidget(pushAddMX, row++, 1);
+    layout->addWidget(pushAddEntry, row++, 1);
     layout->addWidget(pushUp, row++, 1);
     layout->addWidget(pushDown, row++, 1);
     layout->addWidget(pushActive, row++, 1);

@@ -1015,8 +1015,8 @@ void MainWindow::pushUefi_clicked()
                                     "You can use the Up/Down buttons, or drag & drop items to change boot order.\n"
                                     "- Grayed out lines are inactive.\n"
                                     "- Items are listed in the boot order."), uefiDialog);
-    auto *pushActive = new QPushButton(tr("Set &active"), uefiDialog);
-    auto *pushAddEntry = new QPushButton(tr("Add entry"), uefiDialog);
+    auto *pushActive = new QPushButton(tr("Set ac&tive"), uefiDialog);
+    auto *pushAddEntry = new QPushButton(tr("&Add entry"), uefiDialog);
     auto *pushBootNext = new QPushButton(tr("Boot &next"), uefiDialog);
     auto *pushCancel = new QPushButton(tr("&Close"), uefiDialog);
     auto *pushDown = new QPushButton(tr("Move &down"), uefiDialog);
@@ -1055,9 +1055,9 @@ void MainWindow::pushUefi_clicked()
         pushUp->setEnabled(listEntries->currentRow() != 0);
         pushDown->setEnabled(listEntries->currentRow() != listEntries->count() - 1);
         if (listEntries->currentItem()->text().section(QStringLiteral(" "), 0, 0).endsWith(QLatin1String("*")))
-            pushActive->setText(tr("Set inactive"));
+            pushActive->setText(tr("Set &inactive"));
         else
-            pushActive->setText(tr("Set active"));
+            pushActive->setText(tr("Set ac&tive"));
     });
 
     readBootEntries(listEntries, textTimeout, textBootNext, textBootCurrent, bootorder);

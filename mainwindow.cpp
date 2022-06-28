@@ -300,7 +300,7 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
             continue;
         QString part_name = mount_point.section(QStringLiteral("/"), 2, 2);
         if (QProcess::execute(QStringLiteral("umount"), {"/boot/efi/" + part_name}) == 0)
-            QDir().remove("/boot/efi/" + part_name);
+            QDir().rmdir("/boot/efi/" + part_name);
     }
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Something went wrong, could not add entry."));

@@ -15,26 +15,26 @@ Changes:
  .
    * Add UEFI boot manager
 Checksums-Sha1:
- 4bd95f0d75ac57707cc017b32005a73dd18e4e75 1153 mx-boot-options_22.6.01.dsc
- b2cde0d9c8a77b5bdfa3886d23fa6d4fb846f1cc 148632 mx-boot-options_22.6.01.tar.xz
- 38e1f3db531885e585b3e159b6fddaef3068310f 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ 4c1561449bc4d5f4a35b515a0348efba2cb2a163 1153 mx-boot-options_22.6.01.dsc
+ 1c2fc7a36ad64b4a6b4c7b6dce078b494459f04c 148688 mx-boot-options_22.6.01.tar.xz
+ 008e48379351c2445ba1bf2caf3f1072a9a9a369 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Checksums-Sha256:
- f8e07bcded6ee3b4057c12488946b91d6278d842f8248fcb00c1f315079181cd 1153 mx-boot-options_22.6.01.dsc
- b54357ae394303fb7f903edc8fdc19725dab96f9d3e8197c4ec6d45963a58d20 148632 mx-boot-options_22.6.01.tar.xz
- 6a549d387a9abdd405fe639f4e5141c98643e6396259406162dba4c4847c59ae 10791 mx-boot-options_22.6.01_amd64.buildinfo
+ f46dac589dfd3403fad7757167a63316b4afa3c704beae2660386f42c943cc45 1153 mx-boot-options_22.6.01.dsc
+ 799ce86557b35f1e32e8c0e68121069182030b7876e81ea0d8ca3d54b1c8c400 148688 mx-boot-options_22.6.01.tar.xz
+ e234ea68a123c64b5cb3143cdb4fb84a7bda3bb80e691e06035c68315949a44c 10791 mx-boot-options_22.6.01_amd64.buildinfo
 Files:
- c5a75faad3719b93cd8380dc6e11f1d8 1153 admin optional mx-boot-options_22.6.01.dsc
- e36a10851be860d13a269437194f5989 148632 admin optional mx-boot-options_22.6.01.tar.xz
- ed2cd340783d30dd5e097a45e07a61de 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
+ e19478d530e9c71562ab89ce0f6c0dad 1153 admin optional mx-boot-options_22.6.01.dsc
+ d4d1bda1c4bec92c6855845482912058 148688 admin optional mx-boot-options_22.6.01.tar.xz
+ cb38145220cd8c99f6a0fd4b8166d581 10791 admin optional mx-boot-options_22.6.01_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK7fJsTHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAfxB/0X4hogdvZnIXRjyb32Nt+2uJG89GuL
-NObTWRaTwOoKR8r8EmZ+JF6/kNZK+oJdt28hfvAy7RTSz5xtnsTqgnJJFHxfhzLN
-1njlYE1TbZ7nxyN6rzWV2SJH3DL1zPVIs5dd+85ePxKIsaxMD53gyBd7e9IavVBP
-mv2jD9b+3ZPGSfeXh/GxuUWiK/fgEl0HGWbgXoSHaEXN0Ql6STCvx4y7MLfDreU1
-x73lB6b8lM8Bgn/MHBVYHxdLtU3ZlCjtt8dj+KsumcpajqJZ7bbepDDvcjMQvDRh
-65sciOJ8nz+CnszVa4N4Jcp34HSpSB+WB61Ks6j8KxRNqG93LI2a7m8r
-=6Ijz
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK7sf0THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumM4UCACORY/LWjKDWbjtwg6q8igFvEFdG50b
+e5neE6Lrz1Rl5iuxA+LsIdIHgHJd6ETumzS0IJTJFcWUc7MUWgFbBGqhEQmrdaTV
+z6cvKIlS7Usj35oic/1nl+VRo4uKTNEDzZ3IIhdjzqLSeV7yL0TT3wCSqQ64p71B
+F167ACe6i/Hn+pTrQcD67qFJ1WUBje/MUnBVhCvgsFZP8bsmeH0oQo7O1i1LM5lS
+DpDkAq3nXmIrHCnZT6oQu26nGCPNZDtVeVJeeXcaP1vh1r2YJXy9Ocy/10LwQ/b8
+Ccg2pI6uU8QwCw9eMGxvUCyXX9s2+Eqrz91iwXSD8CvJhwcqNUupC9Re
+=kGS9
 -----END PGP SIGNATURE-----

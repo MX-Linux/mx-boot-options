@@ -1058,9 +1058,13 @@ void MainWindow::pushUefi_clicked()
     auto *textBootNext = new QLabel(tr("Boot Next: %1").arg(tr("not set, will boot using list order")), uefiDialog);
     auto *textTimeout = new QLabel(tr("Timeout: %1 seconds").arg(QStringLiteral("0")), uefiDialog);
     listEntries->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    pushAddEntry->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     pushCancel->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
     pushDown->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
-    pushRemove->setIcon(QIcon::fromTheme(QStringLiteral("user-trash")));
+    pushRemove->setIcon(QIcon::fromTheme(QStringLiteral("trash-empty")));
+    pushResetNext->setIcon(QIcon::fromTheme(QStringLiteral("edit-undo")));
+    pushBootNext->setIcon(QIcon::fromTheme(QStringLiteral("go-next")));
+    pushTimeout->setIcon(QIcon::fromTheme(QStringLiteral("timer-symbolic")));
     pushUp->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
 
     QStringList bootorder;
@@ -1083,10 +1087,13 @@ void MainWindow::pushUefi_clicked()
     connect(listEntries, &QListWidget::itemSelectionChanged, uefiDialog, [listEntries, pushUp, pushDown, pushActive]() {
         pushUp->setEnabled(listEntries->currentRow() != 0);
         pushDown->setEnabled(listEntries->currentRow() != listEntries->count() - 1);
-        if (listEntries->currentItem()->text().section(QStringLiteral(" "), 0, 0).endsWith(QLatin1String("*")))
+        if (listEntries->currentItem()->text().section(QStringLiteral(" "), 0, 0).endsWith(QLatin1String("*"))) {
             pushActive->setText(tr("Set &inactive"));
-        else
+            pushActive->setIcon(QIcon::fromTheme(QStringLiteral("star-off")));
+        } else {
             pushActive->setText(tr("Set ac&tive"));
+            pushActive->setIcon(QIcon::fromTheme(QStringLiteral("star-on")));
+        }
     });
 
     readBootEntries(listEntries, textTimeout, textBootNext, textBootCurrent, bootorder);

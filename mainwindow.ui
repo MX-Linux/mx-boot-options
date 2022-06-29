@@ -133,6 +133,9 @@
         <property name="text">
          <string>Manage UEFI Boot Options</string>
         </property>
+        <property name="icon">
+         <iconset theme="preferences-system"/>
+        </property>
         <property name="autoDefault">
          <bool>false</bool>
         </property>

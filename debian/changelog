@@ -1,3 +1,9 @@
+mx-boot-options (22.6.02) mx; urgency=medium
+
+  * Fix: When creating UEFI entry use correct partition number rather than default #1
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 30 Jun 2022 22:08:19 -0400
+
 mx-boot-options (22.6.01) mx; urgency=medium
 
   * Add UEFI boot manager

@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 30 Jun 2022 22:08:19 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 22.6.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.6.02) mx; urgency=medium
+ .
+   * Fix: When creating UEFI entry use correct partition number rather than default #1
+Checksums-Sha1:
+ e0e36b9cde7ce97dad3e38cd6f2bfcc006685c4d 1153 mx-boot-options_22.6.02.dsc
+ 9d9ff184f4fd53c52fa1ad773c3d2c7f900001f6 148788 mx-boot-options_22.6.02.tar.xz
+ 6d3010a0113d08c9d500f43e7af6761d7a416001 10791 mx-boot-options_22.6.02_amd64.buildinfo
+ e985faf4307838db1c8036e47753da222a14a290 182344 mx-boot-options_22.6.02_amd64.deb
+Checksums-Sha256:
+ a329056af0bde8c0af619ff00693182ada011a5438690a9de811d8e1a93a311b 1153 mx-boot-options_22.6.02.dsc
+ 99605c625027784c56bd6599f3db9d0766d6b27783dea620b54a2d7cca73ef34 148788 mx-boot-options_22.6.02.tar.xz
+ 9ddc710a9c1778786855bf4d6a4e3044118d5ecaadd01b3150922e49585a6749 10791 mx-boot-options_22.6.02_amd64.buildinfo
+ fd1cab6cfc10f9e011ac8e8e3185ce582dc9b4aef2a8a8fc3986c47067fe6ff8 182344 mx-boot-options_22.6.02_amd64.deb
+Files:
+ bf869cdc4d0098993bedaf5973aae4bf 1153 admin optional mx-boot-options_22.6.02.dsc
+ 775f63e0551a96e5ac920b6ef3a7e33b 148788 admin optional mx-boot-options_22.6.02.tar.xz
+ 2bc42bb9abc2c51da6597450b4dc10b1 10791 admin optional mx-boot-options_22.6.02_amd64.buildinfo
+ ea8cb2b828b698d80ac6227d47f569b7 182344 admin optional mx-boot-options_22.6.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmK+V18THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumDbWB/9JUFeryvD+u6JJjbQ4OtWG2Mdlc+7Q
+WPY0N7DkPBjAvXzGeioNgJH7OY1w7fLv1KB/OvqzWJjDAfCRiUrXgC3R6YyoYQvx
+mA3u36gDayShB9Du0jb+sMt2YvmaxYpbh7MIj+Is7s98LllJ/eqL4o5U64EDZEyr
+/6iV5fBDChab2oUe78XRsTVhH3VRJjyx7d8wQvUtEmLHlztLYTQPlHjhIffd43t/
+z4BZD4k+Ejxksultyn2MaDKt+oOOmIrdC1eXC4XfGb/IeCDv+I6HKlNNXw4twLv5
+Wup1fxnfBRbhzlm/RQfzdPLSDUSYwEl56NQkomv7HK7ylQ0g1F4GFWHs
+=pqgD
+-----END PGP SIGNATURE-----

@@ -298,7 +298,7 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
         return;
     }
     QString partition_name = cmd.getCmdOut("df " + file_name + " --output=source | sed 1d");
-    QString disk  = "/dev/" + cmd.getCmdOut("lsblk -no KNAME " + partition_name);
+    QString disk  = "/dev/" + cmd.getCmdOut("lsblk -no PKNAME " + partition_name);
     QString partition = partition_name.mid(partition_name.lastIndexOf(QRegularExpression("[0-9]+$")));
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find the source mountpoint for %1").arg(file_name));

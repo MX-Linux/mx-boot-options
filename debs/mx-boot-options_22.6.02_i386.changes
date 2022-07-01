@@ -15,11 +15,11 @@ Changes:
  .
    * Fix: When creating UEFI entry use correct partition number rather than default #1
 Checksums-Sha1:
- 9a33ae14d1618881506a5ccadd3a26509be87904 10072 mx-boot-options_22.6.02_i386.buildinfo
- 0825ce7b9a7564774badf5da042f80246a3d3691 186400 mx-boot-options_22.6.02_i386.deb
+ a65d37f5866683a9ffcb68a1481fbfb93ebac540 10072 mx-boot-options_22.6.02_i386.buildinfo
+ c626f47a34876c15f90cd8e154f0c8c135b503c8 186408 mx-boot-options_22.6.02_i386.deb
 Checksums-Sha256:
- d3a443e23cecc8521ecdca3328769668e20f07ea7cac8df9319f871f8ea85f18 10072 mx-boot-options_22.6.02_i386.buildinfo
- 8c1648ea366aac0a60016cd6c9a90030fda6586bf345c5a846e98c2a7be03287 186400 mx-boot-options_22.6.02_i386.deb
+ 5c96d17d2fa0156a482be086542a26d231fb6c58b9d245741effbc3be59b8945 10072 mx-boot-options_22.6.02_i386.buildinfo
+ 2d024f7e6dc81da5b489768ae6053c895efae72e8097cfc94afd80fa3abeb91c 186408 mx-boot-options_22.6.02_i386.deb
 Files:
- bb7112705f8874eed072f90303b592c9 10072 admin optional mx-boot-options_22.6.02_i386.buildinfo
- a6c06ef3b9c4c6a75c948ca575dfd0e9 186400 admin optional mx-boot-options_22.6.02_i386.deb
+ 34c5c95d22042d0661087092e932f96f 10072 admin optional mx-boot-options_22.6.02_i386.buildinfo
+ 2b72863cf9a16961f52212d63c251253 186408 admin optional mx-boot-options_22.6.02_i386.deb

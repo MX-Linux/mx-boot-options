@@ -297,7 +297,9 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
         unmountAndClean(mount_list);
         return;
     }
-    QString disk  = cmd.getCmdOut("df " + file_name + " --output=source | sed 1d");
+    QString partition_name = cmd.getCmdOut("df " + file_name + " --output=source | sed 1d");
+    QString disk  = "/dev/" + cmd.getCmdOut("lsblk -no KNAME " + partition_name);
+    QString partition = partition_name.mid(partition_name.lastIndexOf(QRegularExpression("[0-9]+$")));
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Could not find the source mountpoint for %1").arg(file_name));
         unmountAndClean(mount_list);
@@ -307,7 +309,7 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
     if (name.isEmpty())
         name = QStringLiteral("New entry");
     file_name =  "/EFI/" + file_name.section(QStringLiteral("/EFI/"), 1);
-    QString out = cmd.getCmdOut("efibootmgr -cL \"" + name + "\" -d " +  disk  + " -l " + file_name);
+    QString out = cmd.getCmdOut("efibootmgr -cL \"" + name + "\" -d " +  disk  + " -p " + partition + " -l " + file_name);
     unmountAndClean(mount_list);
     if (cmd.exitCode() != 0) {
         QMessageBox::critical(dialogUefi, tr("Error"), tr("Something went wrong, could not add entry."));

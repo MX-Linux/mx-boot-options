@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Mon, 04 Jul 2022 19:18:59 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: i386
+Version: 22.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.7) mx; urgency=medium
+ .
+   * Adjust pkexec/sudo environment parameter
+   * Fix EFI System Partition detection on dos/mbr partition table
+   * Remove not needed --qtenv annotation pkexec policy
+Checksums-Sha1:
+ 4741d3496220f997f8e674580fd28a0ef2c17f14 10057 mx-boot-options_22.7_i386.buildinfo
+ cdcf8fdb1fb8e5e842ac0c892a0dec1b962677d0 252968 mx-boot-options_22.7_i386.deb
+Checksums-Sha256:
+ 3ecd16e0b6f9bffa21c16cac5a869eabe63f8848cb040d9a54219db7568b4c5d 10057 mx-boot-options_22.7_i386.buildinfo
+ cc7e7d8897fdedd177ec2c3cb2ea647050f578d9d6e874ec0816db857fc09156 252968 mx-boot-options_22.7_i386.deb
+Files:
+ 31f09b73c71bc2fb82207986278a765a 10057 admin optional mx-boot-options_22.7_i386.buildinfo
+ 1821a30df1cdbe4c4bc6680a3f93b425 252968 admin optional mx-boot-options_22.7_i386.deb

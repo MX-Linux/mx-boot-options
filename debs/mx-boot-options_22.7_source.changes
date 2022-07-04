@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 04 Jul 2022 19:18:59 -0400
+Source: mx-boot-options
+Architecture: source
+Version: 22.7
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Changes:
+ mx-boot-options (22.7) mx; urgency=medium
+ .
+   * Adjust pkexec/sudo environment parameter
+   * Fix EFI System Partition detection on dos/mbr partition table
+   * Remove not needed --qtenv annotation pkexec policy
+Checksums-Sha1:
+ 6b9a387c5634f71a6a9f8662c286e8ddb4be0124 1141 mx-boot-options_22.7.dsc
+ 295a24a31ff1e5a8e35bf3cde34d555d5fb8ec5f 216300 mx-boot-options_22.7.tar.xz
+ 5e805cd6531ac08321d978862bb9ff260477f4eb 10767 mx-boot-options_22.7_amd64.buildinfo
+Checksums-Sha256:
+ c251a9c4fba5bb5d6b2f9d76a18aad92117b86f932fc7f964e90f1e4be6519eb 1141 mx-boot-options_22.7.dsc
+ c51bb4f84ba71db0dd4b2d9a2a77c380d5bf23588a6f30e9b866abd47b75fa1d 216300 mx-boot-options_22.7.tar.xz
+ 0fc9fd5d2baaeee57e6011366cc510d896f60e8f14b1b4058563d9d2fbd947de 10767 mx-boot-options_22.7_amd64.buildinfo
+Files:
+ e803f82e08829a3de248a8d72fa1811b 1141 admin optional mx-boot-options_22.7.dsc
+ 2c730947f01aadcf0a203ddf69903362 216300 admin optional mx-boot-options_22.7.tar.xz
+ 68c6620f786727ebdad9391b21f912b9 10767 admin optional mx-boot-options_22.7_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmLDfj8THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumPgXB/9IPN3p1l9UevZ/TGUJAvRCyz/3k9s/
+Ac8hUsXk9Kq9elrwf5vgM49ruZAc3rD7Ny64TKOvDIrytLN17Ofzc+JL1qUByH7o
+aOa98TFNkLNBOPmX0C7s7mRYSkYzvxRnipjlvjvzwimI+ZfWqcLMJ7j/6HcW0RoC
+pYaSb/us6FBlXVMuqWgkp035Pz2d5nImDYotoLEenGx99nVI8LTbrLwEITQfXdG3
+B70eoLiEp3HseJ9wYsIh56hszMhEzzTv0A9Zs3yAoSKp/R74GxqCYTfZujJ5asWT
+Y/Wb7hYri4ra3xavbX7aRsw4iZnGHCo330uwOTQTKrniFX07deSFnIuh
+=uF51
+-----END PGP SIGNATURE-----

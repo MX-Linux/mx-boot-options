@@ -1,3 +1,11 @@
+mx-boot-options (22.7) mx; urgency=medium
+
+  * Adjust pkexec/sudo environment parameter
+  * Fix EFI System Partition detection on dos/mbr partition table
+  * Remove not needed --qtenv annotation pkexec policy
+
+ -- fehlix <fehlix@mxlinux.org>  Mon, 04 Jul 2022 19:18:59 -0400
+
 mx-boot-options (22.6.02) mx; urgency=medium
 
   * Fix: When creating UEFI entry use correct partition number rather than default #1

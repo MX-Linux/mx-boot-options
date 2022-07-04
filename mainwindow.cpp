@@ -278,7 +278,7 @@ void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)
 {
     QString file_name;
     // mount all ESPs
-    QStringList mount_list = cmd.getCmdOut(QStringLiteral("lsblk -no PATH,PARTTYPE |grep -i c12a7328-f81f-11d2-ba4b-00a0c93ec93b |cut -d' ' -f1")).split(QStringLiteral("\n"));
+    QStringList mount_list = cmd.getCmdOut(QStringLiteral("lsblk -no PATH,PARTTYPE |grep -iE 'c12a7328-f81f-11d2-ba4b-00a0c93ec93b|0xef' |cut -d' ' -f1")).split(QStringLiteral("\n"));
     for (const auto &mount_point : qAsConst(mount_list)) {
         if (QProcess::execute(QStringLiteral("findmnt"), {"-n", mount_point}) == 0)
             continue;

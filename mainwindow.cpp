@@ -887,7 +887,19 @@ void MainWindow::pushAbout_clicked()
 
 void MainWindow::pushHelp_clicked()
 {
-    const QString url = QStringLiteral("/usr/share/doc/mx-boot-options/mx-boot-options.html");
+    QString url = QStringLiteral("https://mxlinux.org/wiki/help-files/help-mx-boot-options/");
+
+    // If curl exists use it to test if url is accessible, otherwise fallback
+    if (cmd.run(QStringLiteral("which curl"), true)) {
+        const int timeout = 2000; // ms
+        QProcess proc;
+        proc.start(QStringLiteral("curl"), {"-fsI", "-m2", url, "-o", "/dev/null"});
+        proc.waitForFinished(timeout);
+        proc.terminate();
+        proc.waitForFinished(timeout);
+        if (proc.exitCode() != 0)
+            url = QStringLiteral("/usr/share/doc/mx-boot-options/mx-boot-options.html");
+    }
 
     qputenv("HOME", starting_home.toUtf8());
     if (system("command -v mx-viewer >/dev/null") == 0)

@@ -15,13 +15,18 @@
 
 <h2 id="Options"><a id="Options" name="Options"></a>Options</h2>
 
-<p><u>Menu timeout</u>: how long the <a href="https://opensource.com/article/17/3/introduction-grub2-configuration-linux">GRUB</a> screen remains visible until the boot process begins. If you put a zero in, the GRUB screen will simply not show at all (technically, it sets GRUB_TIMEOUT=0 in <em>/etc/default/grub</em>)</p>
+<p><u>Menu timeout</u>: how long the <a href="https://opensource.com/article/17/3/introduction-grub2-configuration-linux">GRUB</a> screen remains visible until the boot process begins. If you put a zero in, the GRUB screen will simply not show at all (technically, it sets GRUB_TIMEOUT=0 in <em>/etc/default/grub</em>).  If you put in a -1, no timeout event will even occur.</p>
 
 <p><u>Boot To</u>:&nbsp; Select the grub boot menu entry that will be used as default on next boot.</p>
 
 <p><u>Enable saving last boot choice</u>:&nbsp; Instruct grub to use whatever you last&nbsp;selected from the grub boot menu as the new default</p>
 
 <p><u>Use flat menus</u>:&nbsp; Instructs grub to create a grub menu with the subcategories merged into the top level grub&nbsp;menu.</p>
+
+<p><u>Kernel Parameters</u>:&nbsp; Shows the parameters being passed to the kernel during the boot process.
+
+<p><u>Manage UEFI Boot Options</u>:&nbsp; Edit, modify, add or delete the boot priority list.</p>
+
 
 <h2 id="Background"><a id="Background" name="Background"></a>Background</h2>
 
@@ -66,95 +71,6 @@
 		<li>If you use a splash, you can press Esc at any point to return to the boot messages.</li>
 		<li>For <u>advanced</u> boot options that involve cheat codes (kernel parameters), consult <a href="https://mxlinux.org/wiki/system/boot-parameters">this WIki page</a>.</li>
 	</ul>
-
-<h2 id="Create-your-own-theme"><a id="Create your own theme" name="Create your own theme"></a>Create your own theme</h2>
-
-<p>So, you might be asking yourself: how can I create a splash theme?</p>
-
-<p><strong><u>Complicated answer</u></strong>: covered by <a class="postlink" href="http://brej.org/blog/?p=174" rel="nofollow">a series of blog posts</a> linked below.</p>
-
-<p><strong><u>Simpler answer</u></strong>: you use the example plymouth plugin script &#8220;script.script&#8221; located in /usr/share/plymouth/themes/script/. Example:</p>
-
-	<ul>
-		<li>Dolphin_Oracle created the striking theme mx-linux this way. I ran a diff on the original and his script.script for the new theme, and you can see the small number of changes that he made (first number of each section is the line number):
-			<div>
-				<pre><em>1c1
-&lt; # This is an example plymouth plugin script
----
-&gt; # mx script theme, modified from debian script theme script.script
-
-6c6
-&lt; logo.image = Image("special://logo");
----
-&gt; logo.image = Image("mx_wall_3_night.png");
-
-8c8,10
-&lt; logo.opacity_angle = 0;
----
-&gt; logo.opacity_angle =0;
-&gt; mx_logo.image = Image("MX-logo.png");
-&gt; mx_logo.sprite = Sprite(mx_logo.image);
-
-14,18c16,20
-&lt;         logo.opacity_angle += ((2 * 3.14) / 50) * 0.5;  # 0.5 HZ
-&lt;         min_opacity = 0.3;
-&lt;         opacity = (Math.Cos(logo.opacity_angle) + 1) / 2;
-&lt;         opacity *= 1 - min_opacity;
-&lt;         opacity += min_opacity;
----
-&gt; #        logo.opacity_angle += ((2 * 3.14) / 50) * 0.5;  # 0.5 HZ
-&gt; #        min_opacity = 0.3;
-&gt; #        opacity = (Math.Cos(logo.opacity_angle) + 1) / 2;
-&gt; #        opacity *= 1 - min_opacity;
-&gt; #        opacity += min_opacity;
-
-21c23,26
-&lt;         logo.sprite.SetOpacity (opacity);
----
-&gt; 	logo.z = -10000;
-&gt; 	mx_logo.sprite.SetX (Window.GetX() + Window.GetWidth()  / 2 - mx_logo.image.GetWidth()  / 2);
-&gt;         mx_logo.sprite.SetY (Window.GetY() + Window.GetHeight() / 2 - mx_logo.image.GetHeight() / 2);
-&gt; #       logo.sprite.SetOpacity (opacity);</em>
-			</pre>
-		</div>
-		</li>
-		<li>image files being used must be placed in the same folder</li>
-		<li>a rewritten plymouth file (here: mx-linux.plymouth) needs to be created with the crucial middle section pointing to locations:
-			<div>
-				<pre><em>[Plymouth Theme]
-Name=Script
-Description=Script example plugin.
-ModuleName=script
-
-						</em></pre>
-					</div>
-			</li>
-		</ul>
-
-
-<p>[script]</p>
-
-<p>
-ImageDir=/usr/share/plymouth/themes/mx-linux
-ScriptFile=/usr/share/plymouth/themes/mx-linux/script.script
-
-</p>
-
-<p>[script-env-vars]</p>
-
-<p>
-example_env_var=example env var value
-
-</p>
-
-
-<p><strong><u>Simplest answer</u></strong>: you adapt one that already exists and works. This is what we have done to generate some of those in the beta splash theme package. Example:</p>
-
-	<ul>
-		<li>User Gerson first found the beautiful animated theme dandelion, and switched the logo. We then substituted <a class="postlink" href="https://mxlinux.org/art">a different logo</a> and deleted the existing Debian one. Ta-dah!</li>
-	</ul>
-
-<p><strong>NOTE</strong>: if you change any logo or background you must revise the *.plymouth file as indicated above.</p>
 
 <h2 id="Links"><a id="Links" name="Links"></a>Links</h2>
 

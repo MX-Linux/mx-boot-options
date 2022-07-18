@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="eu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="gu">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -10,12 +10,12 @@
     <message>
         <location filename="../dialog.cpp" line="22"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>ઓકે</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>રદ કરો</translation>
     </message>
 </context>
 <context>
@@ -129,32 +129,32 @@
     <message>
         <location filename="../mainwindow.ui" line="411"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>ડિસ્પ્લે અંગે સહાય</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>Help</source>
-        <translation>Laguntza</translation>
+        <translation>મદદ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="453"/>
         <source>About this application</source>
-        <translation type="unfinished"/>
+        <translation>આ એપ્લિકેશન વિષે</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="456"/>
         <source>About...</source>
-        <translation type="unfinished"/>
+        <translation>વિષે...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="463"/>
         <source>Alt+B</source>
-        <translation type="unfinished"/>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="498"/>
@@ -165,12 +165,12 @@
         <location filename="../mainwindow.ui" line="501"/>
         <location filename="../mainwindow.cpp" line="876"/>
         <source>Close</source>
-        <translation>Irten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="508"/>
         <source>Alt+N</source>
-        <translation type="unfinished"/>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="549"/>
@@ -242,7 +242,7 @@
         <location filename="../mainwindow.cpp" line="506"/>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>ભૂલ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="848"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>રદ કરો</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="906"/>
@@ -524,7 +524,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>ભૂલ</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="eu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="th">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -10,12 +10,12 @@
     <message>
         <location filename="../dialog.cpp" line="22"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>ตกลง</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>ยกเลิก</translation>
     </message>
 </context>
 <context>
@@ -23,7 +23,7 @@
     <message>
         <location filename="../mainwindow.ui" line="33"/>
         <source>Options</source>
-        <translation type="unfinished"/>
+        <translation>ตัวเลือก</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="39"/>
@@ -129,53 +129,53 @@
     <message>
         <location filename="../mainwindow.ui" line="411"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>แสดงหน้าช่วยเหลือ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>Help</source>
-        <translation>Laguntza</translation>
+        <translation>ช่วยเหลือ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="453"/>
         <source>About this application</source>
-        <translation type="unfinished"/>
+        <translation>เกี่ยวกับแอปพลิเคชันนี้</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="456"/>
         <source>About...</source>
-        <translation type="unfinished"/>
+        <translation>เกี่ยวกับ...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="463"/>
         <source>Alt+B</source>
-        <translation type="unfinished"/>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="498"/>
         <source>Quit application</source>
-        <translation type="unfinished"/>
+        <translation>ออกจากแอปพลิเคชัน</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="501"/>
         <location filename="../mainwindow.cpp" line="876"/>
         <source>Close</source>
-        <translation>Irten</translation>
+        <translation>ปิด</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="508"/>
         <source>Alt+N</source>
-        <translation type="unfinished"/>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="549"/>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>นำไปใช้</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="72"/>
@@ -242,7 +242,7 @@
         <location filename="../mainwindow.cpp" line="506"/>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -335,7 +335,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="829"/>
         <source>Done</source>
-        <translation type="unfinished"/>
+        <translation>เสร็จสิ้น</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="829"/>
@@ -345,12 +345,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="840"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>เกี่ยวกับ</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="842"/>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>เวอร์ชัน:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="843"/>
@@ -360,24 +360,24 @@
     <message>
         <location filename="../mainwindow.cpp" line="845"/>
         <source>Copyright (c) MX Linux</source>
-        <translation type="unfinished"/>
+        <translation>สงวนลิขสิทธิ์ (c) MX Linux</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="846"/>
         <location filename="../mainwindow.cpp" line="857"/>
         <source>License</source>
-        <translation type="unfinished"/>
+        <translation>สัญญาอนุญาต</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="847"/>
         <location filename="../mainwindow.cpp" line="864"/>
         <source>Changelog</source>
-        <translation type="unfinished"/>
+        <translation>Changelog</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="848"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>ยกเลิก</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="906"/>
@@ -457,7 +457,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="../mainwindow.cpp" line="1064"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>&amp;ปิด</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1065"/>
@@ -524,7 +524,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="eu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ku">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>Help</source>
-        <translation>Laguntza</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
@@ -165,7 +165,7 @@
         <location filename="../mainwindow.ui" line="501"/>
         <location filename="../mainwindow.cpp" line="876"/>
         <source>Close</source>
-        <translation>Irten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="508"/>

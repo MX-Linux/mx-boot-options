@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="eu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="nl_BE">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -10,12 +10,12 @@
     <message>
         <location filename="../dialog.cpp" line="22"/>
         <source>OK</source>
-        <translation type="unfinished"/>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancel</translation>
     </message>
 </context>
 <context>
@@ -23,7 +23,7 @@
     <message>
         <location filename="../mainwindow.ui" line="33"/>
         <source>Options</source>
-        <translation type="unfinished"/>
+        <translation>Opties</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="39"/>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>Help</source>
-        <translation>Laguntza</translation>
+        <translation>Help</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
@@ -165,7 +165,7 @@
         <location filename="../mainwindow.ui" line="501"/>
         <location filename="../mainwindow.cpp" line="876"/>
         <source>Close</source>
-        <translation>Irten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="508"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="848"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="906"/>

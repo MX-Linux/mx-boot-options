@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="eu">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="nb_NO">
 <context>
     <name>CustomDialog</name>
     <message>
@@ -15,7 +15,7 @@
     <message>
         <location filename="../dialog.cpp" line="23"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Avbryt</translation>
     </message>
 </context>
 <context>
@@ -23,7 +23,7 @@
     <message>
         <location filename="../mainwindow.ui" line="33"/>
         <source>Options</source>
-        <translation type="unfinished"/>
+        <translation>Alternativer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="39"/>
@@ -129,53 +129,53 @@
     <message>
         <location filename="../mainwindow.ui" line="411"/>
         <source>Display help </source>
-        <translation type="unfinished"/>
+        <translation>Vis hjelp</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>Help</source>
-        <translation>Laguntza</translation>
+        <translation>Hjelp</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>
         <source>Alt+H</source>
-        <translation type="unfinished"/>
+        <translation>Alt+H</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="453"/>
         <source>About this application</source>
-        <translation type="unfinished"/>
+        <translation>Om denne applikasjonen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="456"/>
         <source>About...</source>
-        <translation type="unfinished"/>
+        <translation>Om...</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="463"/>
         <source>Alt+B</source>
-        <translation type="unfinished"/>
+        <translation>Alt+B</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="498"/>
         <source>Quit application</source>
-        <translation type="unfinished"/>
+        <translation>Lukk programmet</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="501"/>
         <location filename="../mainwindow.cpp" line="876"/>
         <source>Close</source>
-        <translation>Irten</translation>
+        <translation>Lukk</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="508"/>
         <source>Alt+N</source>
-        <translation type="unfinished"/>
+        <translation>Alt+N</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="549"/>
         <source>Apply</source>
-        <translation type="unfinished"/>
+        <translation>Bruk</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="72"/>
@@ -242,7 +242,7 @@
         <location filename="../mainwindow.cpp" line="506"/>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -335,7 +335,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="829"/>
         <source>Done</source>
-        <translation type="unfinished"/>
+        <translation>Ferdig</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="829"/>
@@ -345,12 +345,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="840"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="842"/>
         <source>Version: </source>
-        <translation type="unfinished"/>
+        <translation>Versjon:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="843"/>
@@ -377,7 +377,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="848"/>
         <source>Cancel</source>
-        <translation type="unfinished"/>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="906"/>
@@ -457,7 +457,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="../mainwindow.cpp" line="1064"/>
         <source>&amp;Close</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Lukk</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1065"/>
@@ -524,7 +524,7 @@ OK to go ahead and install them?</source>
     <message>
         <location filename="../main.cpp" line="70"/>
         <source>Error</source>
-        <translation type="unfinished"/>
+        <translation>Feil</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="71"/>

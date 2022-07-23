@@ -74,7 +74,7 @@
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Manage UEFI Boot Options</source>
-        <translation type="unfinished"/>
+        <translation>Administroni Mundësi Nisjeje UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="150"/>
@@ -191,19 +191,19 @@
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Set timeout</source>
-        <translation type="unfinished"/>
+        <translation>Ujdisni mbarim kohe</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Timeout in seconds:</source>
-        <translation type="unfinished"/>
+        <translation>Mbarim kohe, në sekonda:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="207"/>
         <location filename="../mainwindow.cpp" line="421"/>
         <location filename="../mainwindow.cpp" line="1073"/>
         <source>Timeout: %1 seconds</source>
-        <translation type="unfinished"/>
+        <translation>Mbarim kohe: %1 sekonda</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="218"/>
@@ -211,30 +211,31 @@
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>Boot Next: %1</source>
-        <translation type="unfinished"/>
+        <translation>Nisja Pasuese: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="224"/>
         <source>Removal confirmation</source>
-        <translation type="unfinished"/>
+        <translation>Ripohim heqjeje</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="225"/>
         <source>Are you sure you want to delete this boot entry?
 %1</source>
-        <translation type="unfinished"/>
+        <translation>Jeni i sigurt se doni të fshihet ky zë nisjeje?
+%1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <location filename="../mainwindow.cpp" line="293"/>
         <source>Select EFI file</source>
-        <translation type="unfinished"/>
+        <translation>Përzgjidhni kartelë EFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>EFI files (*.efi *.EFI)</source>
-        <translation type="unfinished"/>
+        <translation>Kartela EFI (*.efi *.EFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -248,22 +249,22 @@
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
         <source>Could not find the source mountpoint for %1</source>
-        <translation type="unfinished"/>
+        <translation>S’u gjet dot pikë montimi burimi për %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Set name</source>
-        <translation type="unfinished"/>
+        <translation>I vini emër</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Enter the name for the UEFI menu item:</source>
-        <translation type="unfinished"/>
+        <translation>Jepni emrin për zërin e menusë UEFI:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="315"/>
         <source>Something went wrong, could not add entry.</source>
-        <translation type="unfinished"/>
+        <translation>Diç shkoi ters, s’u shtua dot zëri.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="333"/>
@@ -288,7 +289,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="425"/>
         <source>Boot Current: %1</source>
-        <translation type="unfinished"/>
+        <translation>Nis të Tanishmin: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="462"/>
@@ -314,7 +315,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Something went wrong, could not save boot order.</source>
-        <translation type="unfinished"/>
+        <translation>Diç shkoi ters, s’u ruajt dot rend nisjeje.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="767"/>
@@ -432,30 +433,32 @@ OK të ecet përpara dhe të instalohen?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1055"/>
         <source>Edit UEFI Boot Entries</source>
-        <translation type="unfinished"/>
+        <translation>Përpunoni Zëra Nisjeje UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1058"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
-        <translation type="unfinished"/>
+        <translation>Që të ndryshoni rendin e nisjes, mund të përdorni butonat Sipër/Poshtë, ose të merrni &amp; lini zëra.
+- Zërat paraqiten te rendi i nisjes.
+- Rreshtat e paraqitur me gri janë joaktivë.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1061"/>
         <location filename="../mainwindow.cpp" line="1108"/>
         <source>Set ac&amp;tive</source>
-        <translation type="unfinished"/>
+        <translation>Kaloje ak&amp;tiv</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1062"/>
         <source>&amp;Add entry</source>
-        <translation type="unfinished"/>
+        <translation>Shtoni &amp;zë</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
         <source>Boot &amp;next</source>
-        <translation type="unfinished"/>
+        <translation>Nis &amp;pasuesin</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1064"/>
@@ -465,12 +468,12 @@ OK të ecet përpara dhe të instalohen?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1065"/>
         <source>Move &amp;down</source>
-        <translation type="unfinished"/>
+        <translation>Ule p&amp;oshtë</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1066"/>
         <source>&amp;Remove entry</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Hiqe zërin</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1067"/>
@@ -480,23 +483,23 @@ OK të ecet përpara dhe të instalohen?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1068"/>
         <source>Change &amp;timeout</source>
-        <translation type="unfinished"/>
+        <translation>Ndryshoni &amp;mbarim kohe</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1069"/>
         <source>Move &amp;up</source>
-        <translation type="unfinished"/>
+        <translation>Ngjite &amp;sipër</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>not set, will boot using list order</source>
-        <translation type="unfinished"/>
+        <translation>e pacaktuar, do të bëhet nisje duke përdorur radhën në listë</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1105"/>
         <source>Set &amp;inactive</source>
-        <translation type="unfinished"/>
+        <translation>Kaloje &amp;joaktiv  </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1157"/>

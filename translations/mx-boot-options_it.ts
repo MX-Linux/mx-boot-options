@@ -74,7 +74,7 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Manage UEFI Boot Options</source>
-        <translation type="unfinished"/>
+        <translation>Gestisce opzioni di avvio UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="150"/>
@@ -191,19 +191,19 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Set timeout</source>
-        <translation type="unfinished"/>
+        <translation>Imposta timeout</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Timeout in seconds:</source>
-        <translation type="unfinished"/>
+        <translation>Timeout in secondi:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="207"/>
         <location filename="../mainwindow.cpp" line="421"/>
         <location filename="../mainwindow.cpp" line="1073"/>
         <source>Timeout: %1 seconds</source>
-        <translation type="unfinished"/>
+        <translation>Timeout: %1 secondi</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="218"/>
@@ -211,30 +211,31 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>Boot Next: %1</source>
-        <translation type="unfinished"/>
+        <translation>Avvia il prossimo: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="224"/>
         <source>Removal confirmation</source>
-        <translation type="unfinished"/>
+        <translation>Conferma rimozione</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="225"/>
         <source>Are you sure you want to delete this boot entry?
 %1</source>
-        <translation type="unfinished"/>
+        <translation>Sei sicuro di voler eliminare questa voce di avvio?
+%1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <location filename="../mainwindow.cpp" line="293"/>
         <source>Select EFI file</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona file EFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>EFI files (*.efi *.EFI)</source>
-        <translation type="unfinished"/>
+        <translation>File EFI (*.efi *.EFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -248,22 +249,22 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
         <source>Could not find the source mountpoint for %1</source>
-        <translation type="unfinished"/>
+        <translation>Non riesco a trovare la sorgente del punto di montaggio per %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Set name</source>
-        <translation type="unfinished"/>
+        <translation>Imposta nome</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Enter the name for the UEFI menu item:</source>
-        <translation type="unfinished"/>
+        <translation>Inserisci il nome per l&apos;elemento del menu UEFI:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="315"/>
         <source>Something went wrong, could not add entry.</source>
-        <translation type="unfinished"/>
+        <translation>Qualcosa è andato storto, non posso aggiungere la voce.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="333"/>
@@ -288,7 +289,7 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
     <message>
         <location filename="../mainwindow.cpp" line="425"/>
         <source>Boot Current: %1</source>
-        <translation type="unfinished"/>
+        <translation>Avvia corrente: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="462"/>
@@ -314,7 +315,7 @@ che si desidera modificare (vengono visualizzate solo le partizioni Linux)</tran
     <message>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Something went wrong, could not save boot order.</source>
-        <translation type="unfinished"/>
+        <translation>Qualcosa è andato storto, non posso salvare l&apos;ordine di avvio.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="767"/>
@@ -432,30 +433,32 @@ OK per andare avanti ed installarli?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1055"/>
         <source>Edit UEFI Boot Entries</source>
-        <translation type="unfinished"/>
+        <translation>Edita le voci di avvio UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1058"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
-        <translation type="unfinished"/>
+        <translation>Puoi utilizzare i pulsanti Su/Giù o trascinare e rilasciare gli elementi per modificare l&apos;ordine di avvio.
+- Gli elementi sono elencati in ordine di avvio.
+- Le linee in grigio non sono attive.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1061"/>
         <location filename="../mainwindow.cpp" line="1108"/>
         <source>Set ac&amp;tive</source>
-        <translation type="unfinished"/>
+        <translation>Imposta at&amp;tivo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1062"/>
         <source>&amp;Add entry</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Aggiungi voce</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
         <source>Boot &amp;next</source>
-        <translation type="unfinished"/>
+        <translation>Avvia &amp;prossimo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1064"/>
@@ -465,38 +468,38 @@ OK per andare avanti ed installarli?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1065"/>
         <source>Move &amp;down</source>
-        <translation type="unfinished"/>
+        <translation>Sposta %giù</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1066"/>
         <source>&amp;Remove entry</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Rimuovi voce</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1067"/>
         <source>Re&amp;set next</source>
-        <translation type="unfinished"/>
+        <translation>Re%imposta prossimo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1068"/>
         <source>Change &amp;timeout</source>
-        <translation type="unfinished"/>
+        <translation>Cambia &amp;timeout</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1069"/>
         <source>Move &amp;up</source>
-        <translation type="unfinished"/>
+        <translation>Sposta &amp;su</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>not set, will boot using list order</source>
-        <translation type="unfinished"/>
+        <translation>non impostato, si avvierà usando l&apos;ordine dell&apos;elenco</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1105"/>
         <source>Set &amp;inactive</source>
-        <translation type="unfinished"/>
+        <translation>Imposta &amp;inattivo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1157"/>

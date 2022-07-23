@@ -75,7 +75,7 @@ particions Linux)</translation>
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Manage UEFI Boot Options</source>
-        <translation type="unfinished"/>
+        <translation>Gestiona les opcions d&apos;arrencada UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="150"/>
@@ -192,19 +192,19 @@ particions Linux)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Set timeout</source>
-        <translation type="unfinished"/>
+        <translation>Defineix el temps d&apos;espera</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Timeout in seconds:</source>
-        <translation type="unfinished"/>
+        <translation>Temps d&apos;espera en segons</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="207"/>
         <location filename="../mainwindow.cpp" line="421"/>
         <location filename="../mainwindow.cpp" line="1073"/>
         <source>Timeout: %1 seconds</source>
-        <translation type="unfinished"/>
+        <translation>Temps d&apos;espera %1 segons</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="218"/>
@@ -212,30 +212,31 @@ particions Linux)</translation>
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>Boot Next: %1</source>
-        <translation type="unfinished"/>
+        <translation>Propera arrencada %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="224"/>
         <source>Removal confirmation</source>
-        <translation type="unfinished"/>
+        <translation>Elimina la confirmació</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="225"/>
         <source>Are you sure you want to delete this boot entry?
 %1</source>
-        <translation type="unfinished"/>
+        <translation>Esteu segurs d&apos;esborrar aquesta entrada de l&apos;arrencada?
+%1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <location filename="../mainwindow.cpp" line="293"/>
         <source>Select EFI file</source>
-        <translation type="unfinished"/>
+        <translation>Trieu el fitxer EFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>EFI files (*.efi *.EFI)</source>
-        <translation type="unfinished"/>
+        <translation>Fitxers EFI (*.efi *.EFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -249,22 +250,22 @@ particions Linux)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
         <source>Could not find the source mountpoint for %1</source>
-        <translation type="unfinished"/>
+        <translation>No he trobat el punt de muntatge origen per %1 </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Set name</source>
-        <translation type="unfinished"/>
+        <translation>Estableix el nom</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Enter the name for the UEFI menu item:</source>
-        <translation type="unfinished"/>
+        <translation>Entreu el nom per a l&apos;ítem del menú UEFI: </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="315"/>
         <source>Something went wrong, could not add entry.</source>
-        <translation type="unfinished"/>
+        <translation>Alguna cosa ha fallat, no puc afegir l&apos;entrada.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="333"/>
@@ -289,7 +290,7 @@ particions Linux)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="425"/>
         <source>Boot Current: %1</source>
-        <translation type="unfinished"/>
+        <translation>Arrenca l&apos;actual: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="462"/>
@@ -315,7 +316,7 @@ particions Linux)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Something went wrong, could not save boot order.</source>
-        <translation type="unfinished"/>
+        <translation>Alguna cosa ha fallat, no puc desar l&apos;ordre d&apos;arrencada.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="767"/>
@@ -433,30 +434,32 @@ Voleu continuar i instal·lar-los?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1055"/>
         <source>Edit UEFI Boot Entries</source>
-        <translation type="unfinished"/>
+        <translation>Edita les entrades d&apos;arrencada UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1058"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
-        <translation type="unfinished"/>
+        <translation>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
+- Items are listed in the boot order.
+- Grayed out lines are inactive.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1061"/>
         <location filename="../mainwindow.cpp" line="1108"/>
         <source>Set ac&amp;tive</source>
-        <translation type="unfinished"/>
+        <translation>Defineix ac&amp;tiu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1062"/>
         <source>&amp;Add entry</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Afegeix entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
         <source>Boot &amp;next</source>
-        <translation type="unfinished"/>
+        <translation>Arrenca el &amp;següent</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1064"/>
@@ -466,38 +469,38 @@ Voleu continuar i instal·lar-los?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1065"/>
         <source>Move &amp;down</source>
-        <translation type="unfinished"/>
+        <translation>Mou a&amp;vall</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1066"/>
         <source>&amp;Remove entry</source>
-        <translation type="unfinished"/>
+        <translation>T&amp;reu l&apos;entrada</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1067"/>
         <source>Re&amp;set next</source>
-        <translation type="unfinished"/>
+        <translation>Re&amp;inicia el proper</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1068"/>
         <source>Change &amp;timeout</source>
-        <translation type="unfinished"/>
+        <translation>Canvia el &amp;temps d&apos;espera</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1069"/>
         <source>Move &amp;up</source>
-        <translation type="unfinished"/>
+        <translation>Mou am&amp;unt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>not set, will boot using list order</source>
-        <translation type="unfinished"/>
+        <translation>no determinat, arrencarà usant l&apos;ordre de la llista</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1105"/>
         <source>Set &amp;inactive</source>
-        <translation type="unfinished"/>
+        <translation>Defineix &amp;inactiu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1157"/>

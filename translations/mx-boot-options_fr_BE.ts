@@ -73,7 +73,7 @@
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Manage UEFI Boot Options</source>
-        <translation type="unfinished"/>
+        <translation>Gérer les options de démarrage UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="150"/>
@@ -185,24 +185,24 @@
     <message>
         <location filename="../mainwindow.cpp" line="73"/>
         <source>Process still running. Are you sure you want to quit?</source>
-        <translation>Le processus est toujours en cours. Êtes-vous sûr de vouloir arrêter ?</translation>
+        <translation>Le processus est toujours en cours. Êtes-vous sûr de vouloir arrêter?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Set timeout</source>
-        <translation type="unfinished"/>
+        <translation>Définir un délai d&apos;attente</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Timeout in seconds:</source>
-        <translation type="unfinished"/>
+        <translation>Délai d&apos;attente en secondes:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="207"/>
         <location filename="../mainwindow.cpp" line="421"/>
         <location filename="../mainwindow.cpp" line="1073"/>
         <source>Timeout: %1 seconds</source>
-        <translation type="unfinished"/>
+        <translation>Délai d&apos;attente: %1 secondes</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="218"/>
@@ -210,30 +210,31 @@
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>Boot Next: %1</source>
-        <translation type="unfinished"/>
+        <translation>Redémarrage: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="224"/>
         <source>Removal confirmation</source>
-        <translation type="unfinished"/>
+        <translation>Confirmer l&apos;éjection</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="225"/>
         <source>Are you sure you want to delete this boot entry?
 %1</source>
-        <translation type="unfinished"/>
+        <translation>Êtes-vous sûr de vouloir supprimer cette entrée de démarrage?
+%1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <location filename="../mainwindow.cpp" line="293"/>
         <source>Select EFI file</source>
-        <translation type="unfinished"/>
+        <translation>Choisir le fichier EFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>EFI files (*.efi *.EFI)</source>
-        <translation type="unfinished"/>
+        <translation>Fichiers EFI (*.efi *.EFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -247,22 +248,22 @@
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
         <source>Could not find the source mountpoint for %1</source>
-        <translation type="unfinished"/>
+        <translation>Impossible de trouver la source du point de montage pour %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Set name</source>
-        <translation type="unfinished"/>
+        <translation>Définir le nom</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Enter the name for the UEFI menu item:</source>
-        <translation type="unfinished"/>
+        <translation>Entrez le nom de l&apos;entrée du menu UEFI:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="315"/>
         <source>Something went wrong, could not add entry.</source>
-        <translation type="unfinished"/>
+        <translation>Un problème est survenu, il n&apos;a pas été possible d&apos;ajouter l&apos;entrée.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="333"/>
@@ -282,12 +283,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="346"/>
         <source>Could not install the bootsplash.</source>
-        <translation>L&apos;écran d&apos;amorçage n&apos;a pas pu être installé</translation>
+        <translation>L&apos;écran d&apos;amorçage n&apos;a pas pu être installé.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="425"/>
         <source>Boot Current: %1</source>
-        <translation type="unfinished"/>
+        <translation>Démarrage en cours: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="462"/>
@@ -313,7 +314,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Something went wrong, could not save boot order.</source>
-        <translation type="unfinished"/>
+        <translation>Un problème est survenu, impossible de sauvegarder l&apos;ordre de démarrage.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="767"/>
@@ -426,35 +427,37 @@ OK pour continuer et les installer?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1049"/>
         <source>Could not find log at </source>
-        <translation>N&apos;a pas pu trouver de journal à</translation>
+        <translation>Impossible de trouver le journal dans </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1055"/>
         <source>Edit UEFI Boot Entries</source>
-        <translation type="unfinished"/>
+        <translation>Éditer les entrées de démarrage UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1058"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
-        <translation type="unfinished"/>
+        <translation>Vous pouvez utiliser les boutons Haut/Bas, ou faire glisser et déposer les éléments pour changer l&apos;ordre de démarrage.
+- Les éléments sont listés dans l&apos;ordre de démarrage.
+- Les lignes grisées sont inactives.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1061"/>
         <location filename="../mainwindow.cpp" line="1108"/>
         <source>Set ac&amp;tive</source>
-        <translation type="unfinished"/>
+        <translation>Ac&amp;tiver</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1062"/>
         <source>&amp;Add entry</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Ajouter une entrée</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
         <source>Boot &amp;next</source>
-        <translation type="unfinished"/>
+        <translation>Redéma&amp;rrage</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1064"/>
@@ -464,38 +467,38 @@ OK pour continuer et les installer?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1065"/>
         <source>Move &amp;down</source>
-        <translation type="unfinished"/>
+        <translation>Descen&amp;dre</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1066"/>
         <source>&amp;Remove entry</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Supprimer l&apos;entrée</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1067"/>
         <source>Re&amp;set next</source>
-        <translation type="unfinished"/>
+        <translation>Ré&amp;initialiser</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1068"/>
         <source>Change &amp;timeout</source>
-        <translation type="unfinished"/>
+        <translation>M&amp;odifier le délai d&apos;attente</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1069"/>
         <source>Move &amp;up</source>
-        <translation type="unfinished"/>
+        <translation>Mont&amp;er</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>not set, will boot using list order</source>
-        <translation type="unfinished"/>
+        <translation>non défini, le démarrage se fera dans l&apos;ordre de la liste</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1105"/>
         <source>Set &amp;inactive</source>
-        <translation type="unfinished"/>
+        <translation>Désa&amp;ctiver</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1157"/>
@@ -536,12 +539,12 @@ OK pour continuer et les installer?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="943"/>
         <source>Select image to display in bootloader</source>
-        <translation>Choisissez l&apos;image à afficher pour le chargeur de démarrage</translation>
+        <translation>Choisir l&apos;image à afficher pour le chargeur de démarrage</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1222"/>
         <source>Select GRUB theme</source>
-        <translation>Sélectionnez le thème de GRUB</translation>
+        <translation>Choisir le thème de GRUB</translation>
     </message>
 </context>
 </TS>

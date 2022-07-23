@@ -74,7 +74,7 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Manage UEFI Boot Options</source>
-        <translation type="unfinished"/>
+        <translation>Behandle oppstartsalternativer for UEFI</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="150"/>
@@ -191,19 +191,19 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Set timeout</source>
-        <translation type="unfinished"/>
+        <translation>Velg tidsavbrudd</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="203"/>
         <source>Timeout in seconds:</source>
-        <translation type="unfinished"/>
+        <translation>Tidsavbrudd i sekunder:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="207"/>
         <location filename="../mainwindow.cpp" line="421"/>
         <location filename="../mainwindow.cpp" line="1073"/>
         <source>Timeout: %1 seconds</source>
-        <translation type="unfinished"/>
+        <translation>Tidsavbrudd: %1 sekunder</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="218"/>
@@ -211,30 +211,31 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>Boot Next: %1</source>
-        <translation type="unfinished"/>
+        <translation>Neste oppstart: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="224"/>
         <source>Removal confirmation</source>
-        <translation type="unfinished"/>
+        <translation>Bekreft fjerning</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="225"/>
         <source>Are you sure you want to delete this boot entry?
 %1</source>
-        <translation type="unfinished"/>
+        <translation>Vil du virkelig slette denne oppføringen?
+%1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="290"/>
         <location filename="../mainwindow.cpp" line="293"/>
         <source>Select EFI file</source>
-        <translation type="unfinished"/>
+        <translation>Velg EFI-fil</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="291"/>
         <location filename="../mainwindow.cpp" line="294"/>
         <source>EFI files (*.efi *.EFI)</source>
-        <translation type="unfinished"/>
+        <translation>EFI-filer (*.efi *.EFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
@@ -248,22 +249,22 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="304"/>
         <source>Could not find the source mountpoint for %1</source>
-        <translation type="unfinished"/>
+        <translation>Fant ikke monteringspunkt på kilden for %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Set name</source>
-        <translation type="unfinished"/>
+        <translation>Velg navn</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Enter the name for the UEFI menu item:</source>
-        <translation type="unfinished"/>
+        <translation>Velg navn for UEFI-element i menyen:</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="315"/>
         <source>Something went wrong, could not add entry.</source>
-        <translation type="unfinished"/>
+        <translation>Noe gikk galt, klarte ikke legge til element.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="333"/>
@@ -288,7 +289,7 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="425"/>
         <source>Boot Current: %1</source>
-        <translation type="unfinished"/>
+        <translation>Gjeldende oppstart: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="462"/>
@@ -314,7 +315,7 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
     <message>
         <location filename="../mainwindow.cpp" line="581"/>
         <source>Something went wrong, could not save boot order.</source>
-        <translation type="unfinished"/>
+        <translation>Noe gikk galt, klarte ikke lagre oppstartsrekkefølge.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="767"/>
@@ -432,30 +433,32 @@ Vil du installere dem nå?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1055"/>
         <source>Edit UEFI Boot Entries</source>
-        <translation type="unfinished"/>
+        <translation>Rediger UEFI-elementer</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1058"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
-        <translation type="unfinished"/>
+        <translation>Bruk piltastene Opp/Ned eller dra og slipp for å endre oppstartsrekkefølgen.
+- Elementene er listet opp i oppstartsrekkefølge.
+- Grå linjer er ikke aktive.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1061"/>
         <location filename="../mainwindow.cpp" line="1108"/>
         <source>Set ac&amp;tive</source>
-        <translation type="unfinished"/>
+        <translation>Velg ak&amp;tiv</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1062"/>
         <source>&amp;Add entry</source>
-        <translation type="unfinished"/>
+        <translation>Legg til oppf&amp;øring</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1063"/>
         <source>Boot &amp;next</source>
-        <translation type="unfinished"/>
+        <translation>&amp;Neste oppstart</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1064"/>
@@ -465,38 +468,38 @@ Vil du installere dem nå?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1065"/>
         <source>Move &amp;down</source>
-        <translation type="unfinished"/>
+        <translation>Flytt ne&amp;d</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1066"/>
         <source>&amp;Remove entry</source>
-        <translation type="unfinished"/>
+        <translation>Fje&amp;rn oppføring</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1067"/>
         <source>Re&amp;set next</source>
-        <translation type="unfinished"/>
+        <translation>Tilbake&amp;still neste</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1068"/>
         <source>Change &amp;timeout</source>
-        <translation type="unfinished"/>
+        <translation>Endre &amp;tidsavbrudd</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1069"/>
         <source>Move &amp;up</source>
-        <translation type="unfinished"/>
+        <translation>Fl&amp;ytt opp</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1072"/>
         <location filename="../mainwindow.cpp" line="1088"/>
         <source>not set, will boot using list order</source>
-        <translation type="unfinished"/>
+        <translation>ikke valgt, vil starte med rekkefølge som i lista</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1105"/>
         <source>Set &amp;inactive</source>
-        <translation type="unfinished"/>
+        <translation>Velg &amp;inaktiv</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1157"/>

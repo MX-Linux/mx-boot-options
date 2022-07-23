@@ -1,3 +1,9 @@
+mx-boot-options (22.7.01) mx; urgency=medium
+
+  * translation refresh
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 23 Jul 2022 11:15:08 -0400
+
 mx-boot-options (22.7) mx; urgency=medium
 
   * Adjust pkexec/sudo environment parameter

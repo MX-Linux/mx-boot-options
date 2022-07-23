@@ -24,6 +24,6 @@ fi
 
 # get all translations
 if command -v tx >/dev/null; then
-   echodo tx pull -r antix-development.$APPNAME  -all
+   echodo tx pull -r antix-development.$APPNAME  --all
 fi
 

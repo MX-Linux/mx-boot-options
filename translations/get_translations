@@ -1,27 +1,29 @@
 #!/bin/bash
 
+APPNAME="mx-boot-options"
+
 echodo() {
   echo "${@}"
   ${@}
 }
 
 # prepare transifex 
-#if [ ! -s  .tx/config ]; then
+if [ ! -s  .tx/config ]; then
    mkdir -p .tx
    cat <<EOF > .tx/config
 [main]
 host = https://www.transifex.com
 
-[antix-development.mx-boot-options]
-file_filter = ./mx-boot-options_<lang>.ts
-source_file = mx-boot-options_en.ts
+[antix-development.$APPNAME]
+file_filter = ./${APPNAME}_<lang>.ts
+source_file = ${APPNAME}_en.ts
 source_lang = en
 type = ts
 EOF
-#fi    
+fi    
 
 # get all translations
 if command -v tx >/dev/null; then
-   echodo tx pull -r antix-development.mx-boot-options  --all
+   echodo tx pull -r antix-development.$APPNAME  -all
 fi
 

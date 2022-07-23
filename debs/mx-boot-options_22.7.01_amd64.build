@@ -1,0 +1,235 @@
+ dpkg-buildpackage -us -uc -ui
+dpkg-buildpackage: info: source package mx-boot-options
+dpkg-buildpackage: info: source version 22.7.01
+dpkg-buildpackage: info: source distribution mx
+dpkg-buildpackage: info: source changed by Dolphin Oracle <dolphinoracle@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --no-automatic-dbgsym --parallel 
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/media/demo/dataext/development/working/mx-boot-options/64'
+dh_auto_clean
+rm -f src/translations/*.qm
+make[1]: Leaving directory '/media/demo/dataext/development/working/mx-boot-options/64'
+   dh_autoreconf_clean -O--no-automatic-dbgsym -O--parallel
+   dh_clean -O--no-automatic-dbgsym -O--parallel
+ dpkg-source -b .
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building mx-boot-options in mx-boot-options_22.7.01.tar.xz
+dpkg-source: info: building mx-boot-options in mx-boot-options_22.7.01.dsc
+ debian/rules build
+dh build --no-automatic-dbgsym --parallel 
+   dh_update_autotools_config -O--no-automatic-dbgsym -O--parallel
+   dh_autoreconf -O--no-automatic-dbgsym -O--parallel
+   dh_auto_configure -O--no-automatic-dbgsym -O--parallel
+	qmake -makefile "QMAKE_CFLAGS_RELEASE=-g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" "QMAKE_CFLAGS_DEBUG=-g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" "QMAKE_CXXFLAGS_RELEASE=-g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" "QMAKE_CXXFLAGS_DEBUG=-g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2" QMAKE_LFLAGS_RELEASE=-Wl,-z,relro QMAKE_LFLAGS_DEBUG=-Wl,-z,relro QMAKE_STRIP=: PREFIX=/usr
+Info: creating stash file /media/demo/dataext/development/working/mx-boot-options/64/.qmake.stash
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/media/demo/dataext/development/working/mx-boot-options/64'
+lrelease *.pro
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_am.qm'...
+    Generated 25 translation(s) (25 finished and 0 unfinished)
+    Ignored 76 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_ar.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 81 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_bg.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 81 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_ca.qm'...
+    Generated 101 translation(s) (101 finished and 0 unfinished)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_cs.qm'...
+    Generated 28 translation(s) (28 finished and 0 unfinished)
+    Ignored 73 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_da.qm'...
+    Generated 71 translation(s) (71 finished and 0 unfinished)
+    Ignored 30 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_de.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_el.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_en.qm'...
+    Generated 101 translation(s) (101 finished and 0 unfinished)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_es.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_et.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+    Ignored 96 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_eu.qm'...
+    Generated 2 translation(s) (2 finished and 0 unfinished)
+    Ignored 99 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_fa.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 81 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_fi.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_fr.qm'...
+    Generated 101 translation(s) (101 finished and 0 unfinished)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_he_IL.qm'...
+    Generated 38 translation(s) (38 finished and 0 unfinished)
+    Ignored 63 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_hi.qm'...
+    Generated 73 translation(s) (73 finished and 0 unfinished)
+    Ignored 28 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_hr.qm'...
+    Generated 36 translation(s) (36 finished and 0 unfinished)
+    Ignored 65 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_hu.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 81 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_id.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 81 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_is.qm'...
+    Generated 24 translation(s) (24 finished and 0 unfinished)
+    Ignored 77 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_it.qm'...
+    Generated 101 translation(s) (101 finished and 0 unfinished)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_ja.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_kk.qm'...
+    Generated 20 translation(s) (20 finished and 0 unfinished)
+    Ignored 81 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_ko.qm'...
+    Generated 5 translation(s) (5 finished and 0 unfinished)
+    Ignored 96 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_lt.qm'...
+    Generated 26 translation(s) (26 finished and 0 unfinished)
+    Ignored 75 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_mk.qm'...
+    Generated 2 translation(s) (2 finished and 0 unfinished)
+    Ignored 99 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_mr.qm'...
+    Generated 17 translation(s) (17 finished and 0 unfinished)
+    Ignored 84 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_nb.qm'...
+    Generated 101 translation(s) (101 finished and 0 unfinished)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_nl.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_pl.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_pt.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_pt_BR.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_ro.qm'...
+    Generated 23 translation(s) (23 finished and 0 unfinished)
+    Ignored 78 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_ru.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_sk.qm'...
+    Generated 66 translation(s) (66 finished and 0 unfinished)
+    Ignored 35 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_sl.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_sq.qm'...
+    Generated 99 translation(s) (99 finished and 0 unfinished)
+    Ignored 2 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_sr.qm'...
+    Generated 8 translation(s) (8 finished and 0 unfinished)
+    Ignored 93 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_sv.qm'...
+    Generated 101 translation(s) (101 finished and 0 unfinished)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_tr.qm'...
+    Generated 74 translation(s) (74 finished and 0 unfinished)
+    Ignored 27 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_uk.qm'...
+    Generated 22 translation(s) (22 finished and 0 unfinished)
+    Ignored 79 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_zh_CN.qm'...
+    Generated 24 translation(s) (24 finished and 0 unfinished)
+    Ignored 77 untranslated source text(s)
+Updating '/media/demo/dataext/development/working/mx-boot-options/64/translations/mx-boot-options_zh_TW.qm'...
+    Generated 26 translation(s) (26 finished and 0 unfinished)
+    Ignored 75 untranslated source text(s)
+head -n1 debian/changelog | sed -e "s/.*(\([^(]*\)).*/#define VERSION \"\1\"/" > version.h
+dh_auto_build -- QMAKE=qmake-qt5 LRELEASE=lrelease-qt5 QMAKE_OPTS="DEFINES+=NO_DEBUG_ON_CONSOLE"
+	make -j4 QMAKE=qmake-qt5 LRELEASE=lrelease-qt5 QMAKE_OPTS=DEFINES\+=NO_DEBUG_ON_CONSOLE
+make[2]: Entering directory '/media/demo/dataext/development/working/mx-boot-options/64'
+/usr/lib/qt5/bin/uic mainwindow.ui -o ui_mainwindow.h
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o main.o main.cpp
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o dialog.o dialog.cpp
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o cmd.o cmd.cpp
+/usr/lib/qt5/bin/rcc -name images images.qrc -o qrc_images.cpp
+g++ -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o mainwindow.o mainwindow.cpp
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o qrc_images.o qrc_images.cpp
+/usr/lib/qt5/bin/moc -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /media/demo/dataext/development/working/mx-boot-options/64/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/media/demo/dataext/development/working/mx-boot-options/64 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+/usr/lib/qt5/bin/moc -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /media/demo/dataext/development/working/mx-boot-options/64/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/media/demo/dataext/development/working/mx-boot-options/64 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include dialog.h -o moc_dialog.cpp
+/usr/lib/qt5/bin/moc -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --include /media/demo/dataext/development/working/mx-boot-options/64/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/media/demo/dataext/development/working/mx-boot-options/64 -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/lib/gcc/x86_64-linux-gnu/8/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include cmd.h -o moc_cmd.cpp
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_mainwindow.o moc_mainwindow.cpp
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_dialog.o moc_dialog.cpp
+g++ -c -pipe -g -O2 -fdebug-prefix-map=/media/demo/dataext/development/working/mx-boot-options/64=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -std=gnu++1z -Wall -W -D_REENTRANT -fPIC -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -o moc_cmd.o moc_cmd.cpp
+mainwindow.cpp: In member function ‘void MainWindow::pushAbout_clicked()’:
+mainwindow.cpp:857:19: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
+             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mainwindow.cpp:859:19: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+             system("runuser " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mainwindow.cpp: In member function ‘void MainWindow::pushHelp_clicked()’:
+mainwindow.cpp:906:15: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+         system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
+         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mainwindow.cpp:908:15: warning: ignoring return value of ‘int system(const char*)’, declared with attribute warn_unused_result [-Wunused-result]
+         system("runuser " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
+         ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+g++ -Wl,-z,relro -o mx-boot-options main.o mainwindow.o dialog.o cmd.o qrc_images.o moc_mainwindow.o moc_dialog.o moc_cmd.o   -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
+make[2]: Leaving directory '/media/demo/dataext/development/working/mx-boot-options/64'
+make[1]: Leaving directory '/media/demo/dataext/development/working/mx-boot-options/64'
+   dh_auto_test -O--no-automatic-dbgsym -O--parallel
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary --no-automatic-dbgsym --parallel 
+   dh_testroot -O--no-automatic-dbgsym -O--parallel
+   dh_prep -O--no-automatic-dbgsym -O--parallel
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/media/demo/dataext/development/working/mx-boot-options/64'
+dh_auto_install -- QMAKE=qmake-qt5 LRELEASE=lrelease-qt5 QMAKE_OPTS="DEFINES+=NO_DEBUG_ON_CONSOLE"
+make[1]: Leaving directory '/media/demo/dataext/development/working/mx-boot-options/64'
+   dh_install -O--no-automatic-dbgsym -O--parallel
+   dh_installdocs -O--no-automatic-dbgsym -O--parallel
+   dh_installchangelogs -O--no-automatic-dbgsym -O--parallel
+   dh_systemd_enable -O--no-automatic-dbgsym -O--parallel
+   dh_installinit -O--no-automatic-dbgsym -O--parallel
+   dh_systemd_start -O--no-automatic-dbgsym -O--parallel
+   dh_icons -O--no-automatic-dbgsym -O--parallel
+   dh_perl -O--no-automatic-dbgsym -O--parallel
+   dh_link -O--no-automatic-dbgsym -O--parallel
+   dh_strip_nondeterminism -O--no-automatic-dbgsym -O--parallel
+   dh_compress -O--no-automatic-dbgsym -O--parallel
+   dh_fixperms -O--no-automatic-dbgsym -O--parallel
+   dh_missing -O--no-automatic-dbgsym -O--parallel
+   dh_strip -O--no-automatic-dbgsym -O--parallel
+   dh_makeshlibs -O--no-automatic-dbgsym -O--parallel
+   debian/rules override_dh_shlibdeps
+make[1]: Entering directory '/media/demo/dataext/development/working/mx-boot-options/64'
+dh_shlibdeps --dpkg-shlibdeps-params=--ignore-missing-info
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/mx-boot-options/usr/bin/mx-boot-options was not linked against libGL.so.1 (it uses none of the library's symbols)
+make[1]: Leaving directory '/media/demo/dataext/development/working/mx-boot-options/64'
+   dh_installdeb -O--no-automatic-dbgsym -O--parallel
+   dh_gencontrol -O--no-automatic-dbgsym -O--parallel
+   dh_md5sums -O--no-automatic-dbgsym -O--parallel
+   dh_builddeb -O--no-automatic-dbgsym -O--parallel
+dpkg-deb: building package 'mx-boot-options' in '../mx-boot-options_22.7.01_amd64.deb'.
+ dpkg-genbuildinfo
+ dpkg-genchanges  >../mx-boot-options_22.7.01_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source --after-build .
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)

@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 17 Aug 2022 21:36:22 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 22.8
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.8) mx; urgency=medium
+ .
+   * Fix: launching Firefox from Help
+Checksums-Sha1:
+ 1c770ed2c70078549ea7c7ea5ffd6f0d11a1fd6d 1141 mx-boot-options_22.8.dsc
+ 1f75763c12f93121f9eb500c9ea8f646b9e4f477 224556 mx-boot-options_22.8.tar.xz
+ da5458b59447bc7ce33888e3c5f8068036a7e1d6 10767 mx-boot-options_22.8_amd64.buildinfo
+ 94e2770ed536b87088c3c4db0eaf6144cc4c119d 256980 mx-boot-options_22.8_amd64.deb
+Checksums-Sha256:
+ 3721d4a9e86835618b2f5c8d4357857f5a1cd9b92d7a2abe276fbd9675464256 1141 mx-boot-options_22.8.dsc
+ 523778c11f1df16a8872c66a7def446514225a0d144431b6174dac5031af9d63 224556 mx-boot-options_22.8.tar.xz
+ 17893b5f33833476fc0d25a245a0a72dce94ee5f52050c143980b28b0634df05 10767 mx-boot-options_22.8_amd64.buildinfo
+ 184767cef0771abf0ab8666462b60175a5c94684f0d02d710ee8bdc68fe42c68 256980 mx-boot-options_22.8_amd64.deb
+Files:
+ 8f735a85834d9986cd0dd4f92d43cad2 1141 admin optional mx-boot-options_22.8.dsc
+ e18d5e17cb156d4ea38b80e24a926eac 224556 admin optional mx-boot-options_22.8.tar.xz
+ 5e0d7494341c2c1c9bd510d48a882d6e 10767 admin optional mx-boot-options_22.8_amd64.buildinfo
+ 84bfff73ebe421a1eea0f3cb544b8cf1 256980 admin optional mx-boot-options_22.8_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmL9l+YTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumOByCADPEx6/+jQfE9/hCxQNCVNyPxoQBFWM
+l2242zC2xPwV/UaH5neJQEZGssHLXV0SMbdcqHRAgdNtvEGdXc93E+UVJPoSND3Q
+I7Lh0hQFit05SK+Q74oe0MoqskMs+cnV9CylvQxtzn2jPFb99TKu3DBtuZl4V9NF
+1J3dulKYnPEtd3xh0xugVdC9e5IR+kKc3r55nF93WeqdIivXjz8HcN6aRl59cmxI
+i+YVx+XPosUiemQ0sLSxVsEZrE3Z0/inb1ErCjsYweiGpHu9Oq9dAvfCH5EJRdXI
+Zj0Y++N4+g/Vu/ydikC3tD1ElQZMgMHPl3gZoqg/IHmIEpL1dceE2U9Z
+=FuGG
+-----END PGP SIGNATURE-----

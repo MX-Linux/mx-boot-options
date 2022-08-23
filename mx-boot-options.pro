@@ -31,11 +31,13 @@ TEMPLATE = app
 DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
+    about.cpp \
     mainwindow.cpp \
     dialog.cpp \
     cmd.cpp
 
 HEADERS  += \
+    about.h \
     mainwindow.h \
     dialog.h \
     version.h \

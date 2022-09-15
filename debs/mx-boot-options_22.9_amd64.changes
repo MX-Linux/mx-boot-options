@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 15 Sep 2022 19:37:17 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 22.9
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.9) mx; urgency=medium
+ .
+   * Fix: toggling flatmenu. Make sure it can read both "y" and "yes"
+Checksums-Sha1:
+ 41aa836ea85fe2c019d35031d0a12d067dc95b68 1141 mx-boot-options_22.9.dsc
+ 31d09fb9716f2bfbaab3eb642beebfc0da94da21 224976 mx-boot-options_22.9.tar.xz
+ 250a1407a92c1b12d33383927d004c8bdc50ed8c 10767 mx-boot-options_22.9_amd64.buildinfo
+ 1cac18b8edba37a23acd8dae13d8e283df8252a6 257908 mx-boot-options_22.9_amd64.deb
+Checksums-Sha256:
+ 16258eb0efdc4153dedf04a580366cfa43b0fd2d082dac418a19d0530cec2933 1141 mx-boot-options_22.9.dsc
+ db613736840ac58562fd48cba457021b2bd25c451c818de8bc91d161ee2c9f7f 224976 mx-boot-options_22.9.tar.xz
+ 8ab42162b61b639a4e6179c7c61c3cf0f3a60bbcd485525d8ea3f4fb47cd02bf 10767 mx-boot-options_22.9_amd64.buildinfo
+ d749d3887c50fc0a7ac79403f0646da291260ed7f33bb88e2f4b51701230698d 257908 mx-boot-options_22.9_amd64.deb
+Files:
+ 0c6bdc4c668edf3428d7c3176db449ca 1141 admin optional mx-boot-options_22.9.dsc
+ 4d24dcac9f0c70fa6a91d374f84746fe 224976 admin optional mx-boot-options_22.9.tar.xz
+ 6d80504be077a8c7fd6b0260e645edd2 10767 admin optional mx-boot-options_22.9_amd64.buildinfo
+ ee49ed761970ee8205f5b19bb95059af 257908 admin optional mx-boot-options_22.9_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmMjt+MTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHbWCADD0RxZnuPpLk5jM2FccgYcVJlg5FNW
+dQ0lJGQVbSECxOnb+/pGHBFZC4QF7cdbPMJjL1jLegWgheEr5fL/Iv0//28yzdjP
+9SUtQaHPsHdsXCp/x6VEPdy2EA2Tp667u5iVuCAkf2iVxeK9OmprbW0A7I/0zHPl
+jKwOG+AkchDFVTgM70Bn4cI8SRnTYJgGDGxRCM5WEYuIp+FgpvqiRDLkaBX3OS+e
+dfbBQJgCZ8wTXfXRKwVHYC+fwh9TBKNe78km0LWUyY4CQc5oZG9UCz0yQbAfpCT8
+uLgHixKoqC/h4YvsFF05yRl5S8Ge1Bf7myptwCc5umabTtFI1XNsZ36e
+=oJmY
+-----END PGP SIGNATURE-----

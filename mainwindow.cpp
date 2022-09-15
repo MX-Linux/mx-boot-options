@@ -173,7 +173,7 @@ void MainWindow::setGeneralConnections()
     connect(ui->checkBootsplash, &QCheckBox::clicked, this, &MainWindow::combo_bootsplash_clicked);
     connect(ui->checkBootsplash, &QCheckBox::toggled, this, &MainWindow::combo_bootsplash_toggled);
     connect(ui->checkBootsplash, &QCheckBox::toggled, ui->comboTheme, &QComboBox::setEnabled);
-    connect(ui->checkEnableFlatmenus, &QCheckBox::clicked, this, &MainWindow::combo_bootsplash_clicked);
+    connect(ui->checkEnableFlatmenus, &QCheckBox::clicked, this, &MainWindow::combo_enable_flatmenus_clicked);
     connect(ui->checkGrubTheme, &QCheckBox::clicked, this, &MainWindow::combo_grub_theme_toggled);
     connect(ui->checkGrubTheme, &QCheckBox::clicked, ui->pushBgFile, &QPushButton::setDisabled);
     connect(ui->checkGrubTheme, &QCheckBox::clicked, ui->pushThemeFile, &QPushButton::setEnabled);
@@ -654,7 +654,7 @@ void MainWindow::readDefaultGrub()
         line = file.readLine().trimmed();
         default_grub << line;
         if (line.startsWith(QLatin1String("GRUB_DEFAULT="))) {
-            QString entry = line.section(QStringLiteral("="), 1, -1).remove(QStringLiteral("\"")).remove(QStringLiteral("'"));
+            QString entry = line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'"));
             bool ok {false};
             int number = entry.toInt(&ok);
             if (ok) {
@@ -678,13 +678,13 @@ void MainWindow::readDefaultGrub()
                     ui->comboMenuEntry->setCurrentIndex(ui->comboMenuEntry->findText(entry));
             }
         } else if (line.startsWith(QLatin1String("GRUB_TIMEOUT="))) {
-            ui->spinBoxTimeout->setValue(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'")).toInt());
+            ui->spinBoxTimeout->setValue(line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'")).toInt());
         } else if (line.startsWith(QLatin1String("export GRUB_MENU_PICTURE="))) {
-            ui->pushBgFile->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
-            ui->pushBgFile->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            ui->pushBgFile->setText(line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
+            ui->pushBgFile->setProperty("file", line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
         } else if (line.startsWith(QLatin1String("GRUB_THEME="))) {
-            ui->pushThemeFile->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
-            ui->pushThemeFile->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            ui->pushThemeFile->setText(line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
+            ui->pushThemeFile->setProperty("file", line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
             if (QFile::exists(ui->pushThemeFile->property("file").toString())) {
                 ui->pushThemeFile->setEnabled(true);
                 ui->checkGrubTheme->setChecked(true);
@@ -706,8 +706,10 @@ void MainWindow::readDefaultGrub()
             ui->checkBootsplash->setChecked(line.contains(QLatin1String("splash")));
             if (!isInstalled(QStringList() << QStringLiteral("plymouth") << QStringLiteral("plymouth-x11") << QStringLiteral("plymouth-themes") << QStringLiteral("plymouth-themes-mx")))
                 ui->checkBootsplash->setChecked(false);
-        } else if (line == QLatin1String("GRUB_DISABLE_SUBMENU=y")) {
-            ui->checkEnableFlatmenus->setChecked(true);
+        } else if (line.startsWith(QLatin1String("GRUB_DISABLE_SUBMENU="))) {
+            QString token = line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'"));
+            if (token == QLatin1String("y") || token == QLatin1String("yes"))
+                ui->checkEnableFlatmenus->setChecked(true);
         }
     }
     file.close();

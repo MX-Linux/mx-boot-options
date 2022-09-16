@@ -1,3 +1,9 @@
+mx-boot-options (22.9.01) mx; urgency=medium
+
+  * Fix: toggling flatmenu. Make sure it can read "true" last entry wins
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 15 Sep 2022 20:04:45 -0400
+
 mx-boot-options (22.9) mx; urgency=medium
 
   * Fix: toggling flatmenu. Make sure it can read both "y" and "yes"

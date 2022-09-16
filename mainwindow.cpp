@@ -708,8 +708,10 @@ void MainWindow::readDefaultGrub()
                 ui->checkBootsplash->setChecked(false);
         } else if (line.startsWith(QLatin1String("GRUB_DISABLE_SUBMENU="))) {
             QString token = line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'"));
-            if (token == QLatin1String("y") || token == QLatin1String("yes"))
+            if (token == QLatin1String("y") || token == QLatin1String("yes") || token == QLatin1String("true"))
                 ui->checkEnableFlatmenus->setChecked(true);
+            else
+                ui->checkEnableFlatmenus->setChecked(false);
         }
     }
     file.close();

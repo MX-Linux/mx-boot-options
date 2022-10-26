@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 15 Sep 2022 20:04:45 -0400
+Source: mx-boot-options
+Architecture: source
+Version: 22.9.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Changes:
+ mx-boot-options (22.9.01) mx; urgency=medium
+ .
+   * Fix: toggling flatmenu. Make sure it can read "true" last entry wins
+Checksums-Sha1:
+ 99c9948102022e6cf35d1021198349a1fc45cb79 1153 mx-boot-options_22.9.01.dsc
+ 454a227ddeda8bc1d289550ba7e66d4d57aef568 225056 mx-boot-options_22.9.01.tar.xz
+ 9fe925a8b1a8d84691d9d5f34525390aa3902f65 10791 mx-boot-options_22.9.01_amd64.buildinfo
+Checksums-Sha256:
+ af5c19de9ab9279f9ab5e8008f69bb99ea2bf7ef387ed49a5bd67e98af426b06 1153 mx-boot-options_22.9.01.dsc
+ 855dbd24350052c72c0db9bcc2c08c533e89aa91c5158a5df157584c94f98fc8 225056 mx-boot-options_22.9.01.tar.xz
+ ad53852b312b9c7b2b5a11d3f48159c52f1823768f79ce8f82f786abc88241aa 10791 mx-boot-options_22.9.01_amd64.buildinfo
+Files:
+ 272356260e9c8386f06fd00abcb71a9e 1153 admin optional mx-boot-options_22.9.01.dsc
+ 83068d6c51a309ac6f59563a3e5d3bcf 225056 admin optional mx-boot-options_22.9.01.tar.xz
+ 4ecd273fd7006d621ac69f4c43b63849 10791 admin optional mx-boot-options_22.9.01_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmMjwOUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumH9oCAClPv/ow1ZyphEiTsi4x1QW+s4tNYwb
+35CvS5VFhghNBWU+oamnl3i8aRYVbdTb5jZ2+ylw7CRUv3s4GMq6k0tRh1QwebHJ
+w8A8QBOTSb/EqB0aEKGWqRmZF6j0k+CMTx/8DJMBt12+x/ETYysIc+48CoOcMiz/
+9juzpo/KnAnCqHAGdbLsVAolr7UMaYGcIkOCkyPq94yAfwhQjU+3snA/563imZuu
++WyGhP+3obn1lM5nXGDnScr4ogl7tYU6oYbPzqcDurIAFXEOQyguEKL3BDk7+9v8
+zL2ep1JGJ8toWDWavTRdqmI3LMAulweiPVvCYo+RvKYSk1si4tyiCgkm
+=wRDs
+-----END PGP SIGNATURE-----

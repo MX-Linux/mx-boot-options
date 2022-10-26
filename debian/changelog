@@ -1,3 +1,27 @@
+mx-boot-options (22.9.01) mx; urgency=medium
+
+  * Fix: toggling flatmenu. Make sure it can read "true" last entry wins
+
+ -- fehlix <fehlix@mxlinux.org>  Thu, 15 Sep 2022 20:04:45 -0400
+
+mx-boot-options (22.9) mx; urgency=medium
+
+  * Fix: toggling flatmenu. Make sure it can read both "y" and "yes"
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 15 Sep 2022 19:37:17 -0400
+
+mx-boot-options (22.8.01) mx; urgency=medium
+
+  * Fix: launching documents from Help (fixes a problem in Plasma)
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 22 Aug 2022 21:02:26 -0400
+
+mx-boot-options (22.8) mx; urgency=medium
+
+  * Fix: launching Firefox from Help
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 17 Aug 2022 21:36:22 -0400
+
 mx-boot-options (22.7.01) mx; urgency=medium
 
   * translation refresh

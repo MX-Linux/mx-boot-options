@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 15 Sep 2022 20:04:45 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 22.9.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: fehlix <fehlix@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.9.01) mx; urgency=medium
+ .
+   * Fix: toggling flatmenu. Make sure it can read "true" last entry wins
+Checksums-Sha1:
+ 99c9948102022e6cf35d1021198349a1fc45cb79 1153 mx-boot-options_22.9.01.dsc
+ 454a227ddeda8bc1d289550ba7e66d4d57aef568 225056 mx-boot-options_22.9.01.tar.xz
+ 9fe925a8b1a8d84691d9d5f34525390aa3902f65 10791 mx-boot-options_22.9.01_amd64.buildinfo
+ 8b83f200ab60500d689f3302786dad2cba6bc32f 257864 mx-boot-options_22.9.01_amd64.deb
+Checksums-Sha256:
+ af5c19de9ab9279f9ab5e8008f69bb99ea2bf7ef387ed49a5bd67e98af426b06 1153 mx-boot-options_22.9.01.dsc
+ 855dbd24350052c72c0db9bcc2c08c533e89aa91c5158a5df157584c94f98fc8 225056 mx-boot-options_22.9.01.tar.xz
+ ad53852b312b9c7b2b5a11d3f48159c52f1823768f79ce8f82f786abc88241aa 10791 mx-boot-options_22.9.01_amd64.buildinfo
+ 51e9b4e01f45b37be41e35acf40b1017e039259cbfe8ca1fdd5415f4633886b8 257864 mx-boot-options_22.9.01_amd64.deb
+Files:
+ 272356260e9c8386f06fd00abcb71a9e 1153 admin optional mx-boot-options_22.9.01.dsc
+ 83068d6c51a309ac6f59563a3e5d3bcf 225056 admin optional mx-boot-options_22.9.01.tar.xz
+ 4ecd273fd7006d621ac69f4c43b63849 10791 admin optional mx-boot-options_22.9.01_amd64.buildinfo
+ b6d12877f9790daf8d5331043a1fd311 257864 admin optional mx-boot-options_22.9.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmMjwOUTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAwaB/9Eu6rcAvRFGcdnDUi5h3rGxCGSwV+X
+iFNouhwoUnXKLAj28Mglez8b51KF+JKhuJ4LtH3rm7I+Q3KuEhAoImDoED4+y2QT
+mVgkv8t3tcackgMdRMXGr/ehMizg41SS8Nk8k1ie+W3dxBBzZFDgYHgOMF8p3jkk
+qOC7jsRrG2F7+E8olKsgIyn/vft5JmbRQd3DtuXWac7XBUkIwuZvrSlb3GRpX5eN
+CyHV6e04yxMJ9FUhQWamL4WkGdosZ4CBXmb08EckGslTZYeh7sg6hf5EbTLLXKLZ
+ThtAKk/zgR797Pn0QcS+SmOTonrnPQUGgfIuS7l5kY+rbZfjeEZdp6m+
+=T3J9
+-----END PGP SIGNATURE-----

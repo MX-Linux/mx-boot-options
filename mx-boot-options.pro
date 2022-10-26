@@ -31,11 +31,13 @@ TEMPLATE = app
 DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
+    about.cpp \
     mainwindow.cpp \
     dialog.cpp \
     cmd.cpp
 
 HEADERS  += \
+    about.h \
     mainwindow.h \
     dialog.h \
     version.h \
@@ -59,6 +61,7 @@ TRANSLATIONS += translations/mx-boot-options_am.ts \
                 translations/mx-boot-options_fa.ts \
                 translations/mx-boot-options_fi.ts \
                 translations/mx-boot-options_fr.ts \
+                translations/mx-boot-options_fr_BE.ts \
                 translations/mx-boot-options_he_IL.ts \
                 translations/mx-boot-options_hi.ts \
                 translations/mx-boot-options_hr.ts \

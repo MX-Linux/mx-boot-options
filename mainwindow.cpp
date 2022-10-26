@@ -30,6 +30,7 @@
 #include <QTextEdit>
 #include <QTimer>
 
+#include "about.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <chrono>
@@ -172,7 +173,7 @@ void MainWindow::setGeneralConnections()
     connect(ui->checkBootsplash, &QCheckBox::clicked, this, &MainWindow::combo_bootsplash_clicked);
     connect(ui->checkBootsplash, &QCheckBox::toggled, this, &MainWindow::combo_bootsplash_toggled);
     connect(ui->checkBootsplash, &QCheckBox::toggled, ui->comboTheme, &QComboBox::setEnabled);
-    connect(ui->checkEnableFlatmenus, &QCheckBox::clicked, this, &MainWindow::combo_bootsplash_clicked);
+    connect(ui->checkEnableFlatmenus, &QCheckBox::clicked, this, &MainWindow::combo_enable_flatmenus_clicked);
     connect(ui->checkGrubTheme, &QCheckBox::clicked, this, &MainWindow::combo_grub_theme_toggled);
     connect(ui->checkGrubTheme, &QCheckBox::clicked, ui->pushBgFile, &QPushButton::setDisabled);
     connect(ui->checkGrubTheme, &QCheckBox::clicked, ui->pushThemeFile, &QPushButton::setEnabled);
@@ -653,7 +654,7 @@ void MainWindow::readDefaultGrub()
         line = file.readLine().trimmed();
         default_grub << line;
         if (line.startsWith(QLatin1String("GRUB_DEFAULT="))) {
-            QString entry = line.section(QStringLiteral("="), 1, -1).remove(QStringLiteral("\"")).remove(QStringLiteral("'"));
+            QString entry = line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'"));
             bool ok {false};
             int number = entry.toInt(&ok);
             if (ok) {
@@ -677,13 +678,13 @@ void MainWindow::readDefaultGrub()
                     ui->comboMenuEntry->setCurrentIndex(ui->comboMenuEntry->findText(entry));
             }
         } else if (line.startsWith(QLatin1String("GRUB_TIMEOUT="))) {
-            ui->spinBoxTimeout->setValue(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'")).toInt());
+            ui->spinBoxTimeout->setValue(line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'")).toInt());
         } else if (line.startsWith(QLatin1String("export GRUB_MENU_PICTURE="))) {
-            ui->pushBgFile->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
-            ui->pushBgFile->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            ui->pushBgFile->setText(line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
+            ui->pushBgFile->setProperty("file", line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
         } else if (line.startsWith(QLatin1String("GRUB_THEME="))) {
-            ui->pushThemeFile->setText(line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
-            ui->pushThemeFile->setProperty("file", line.section(QStringLiteral("="), 1, 1).remove(QStringLiteral("\"")));
+            ui->pushThemeFile->setText(line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
+            ui->pushThemeFile->setProperty("file", line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")));
             if (QFile::exists(ui->pushThemeFile->property("file").toString())) {
                 ui->pushThemeFile->setEnabled(true);
                 ui->checkGrubTheme->setChecked(true);
@@ -705,8 +706,12 @@ void MainWindow::readDefaultGrub()
             ui->checkBootsplash->setChecked(line.contains(QLatin1String("splash")));
             if (!isInstalled(QStringList() << QStringLiteral("plymouth") << QStringLiteral("plymouth-x11") << QStringLiteral("plymouth-themes") << QStringLiteral("plymouth-themes-mx")))
                 ui->checkBootsplash->setChecked(false);
-        } else if (line == QLatin1String("GRUB_DISABLE_SUBMENU=y")) {
-            ui->checkEnableFlatmenus->setChecked(true);
+        } else if (line.startsWith(QLatin1String("GRUB_DISABLE_SUBMENU="))) {
+            QString token = line.section(QStringLiteral("="), 1).remove(QStringLiteral("\"")).remove(QStringLiteral("'"));
+            if (token == QLatin1String("y") || token == QLatin1String("yes") || token == QLatin1String("true"))
+                ui->checkEnableFlatmenus->setChecked(true);
+            else
+                ui->checkEnableFlatmenus->setChecked(false);
         }
     }
     file.close();
@@ -836,53 +841,16 @@ void MainWindow::pushApply_clicked()
 
 void MainWindow::pushAbout_clicked()
 {
-    QMessageBox msgBox(QMessageBox::NoIcon,
-                       tr("About") + " MX Boot Options",
+    this->hide();
+    displayAboutMsgBox(tr("About %1").arg(this->windowTitle()),
                        R"(<p align="center"><b><h2>MX Boot Options</h2></b></p><p align="center">)" +
                        tr("Version: ") + qApp->applicationVersion() + "</p><p align=\"center\"><h3>" +
                        tr("Program for selecting common start-up choices") +
                        R"(</h3></p><p align="center"><a href="http://mxlinux.org">http://mxlinux.org</a><br /></p><p align="center">)" +
-                       tr("Copyright (c) MX Linux") + "<br /><br /></p>");
-    auto *btnLicense = msgBox.addButton(tr("License"), QMessageBox::HelpRole);
-    auto *btnChangelog = msgBox.addButton(tr("Changelog"), QMessageBox::HelpRole);
-    auto *btnCancel = msgBox.addButton(tr("Cancel"), QMessageBox::NoRole);
-    btnCancel->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
-
-    msgBox.exec();
-
-    if (msgBox.clickedButton() == btnLicense) {
-        qputenv("HOME", starting_home.toUtf8());
-        const QString url = QStringLiteral("file:///usr/share/doc/mx-boot-options/license.html");
-        if (system("command -v mx-viewer >/dev/null") == 0)
-            system("mx-viewer " + url.toUtf8() + " " + tr("License").toUtf8() + "&");
-        else
-            system("runuser " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
-                   user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
-        qputenv("HOME", "/root");
-    } else if (msgBox.clickedButton() == btnChangelog) {
-        auto *changelog = new QDialog(this);
-        changelog->setWindowTitle(tr("Changelog"));
-        changelog->resize(600, 500);
-
-        auto *text = new QTextEdit;
-        text->setReadOnly(true);
-
-        QProcess proc;
-        proc.start(QStringLiteral("zless"), QStringList{"/usr/share/doc/" + QFileInfo(QCoreApplication::applicationFilePath()).fileName() +
-                                        "/changelog.gz"}, QIODevice::ReadOnly);
-        proc.waitForFinished();
-        text->setText(proc.readAllStandardOutput());
-
-        auto *btnClose = new QPushButton(tr("Close"));
-        btnClose->setIcon(QIcon::fromTheme(QStringLiteral("window-close")));
-        connect(btnClose, &QPushButton::clicked, changelog, &QDialog::close);
-
-        auto *layout = new QVBoxLayout;
-        layout->addWidget(text);
-        layout->addWidget(btnClose);
-        changelog->setLayout(layout);
-        changelog->exec();
-    }
+                       tr("Copyright (c) MX Linux") + "<br /><br /></p>",
+                       QStringLiteral("/usr/share/doc/mx-boot-options/license.html"),
+                       tr("%1 License").arg(this->windowTitle()));
+    this->show();
 }
 
 void MainWindow::pushHelp_clicked()
@@ -900,14 +868,7 @@ void MainWindow::pushHelp_clicked()
         if (proc.exitCode() != 0)
             url = QStringLiteral("/usr/share/doc/mx-boot-options/mx-boot-options.html");
     }
-
-    qputenv("HOME", starting_home.toUtf8());
-    if (system("command -v mx-viewer >/dev/null") == 0)
-        system("mx-viewer " + url.toUtf8() + " \"" + tr("MX Boot Options").toUtf8() + "\"&");
-    else
-        system("runuser " + user.toUtf8() + " -c \"env XDG_RUNTIME_DIR=/run/user/$(id -u " +
-               user.toUtf8() + ") xdg-open " + url.toUtf8() + "\"&");
-    qputenv("HOME", "/root");
+    displayDoc(url, tr("%1 Help").arg(this->windowTitle()));
 }
 
 void MainWindow::combo_bootsplash_clicked(bool checked)

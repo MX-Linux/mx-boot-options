@@ -1,3 +1,9 @@
+mx-boot-options (22.10.01) mx; urgency=medium
+
+  * update translations 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 26 Oct 2022 19:56:18 -0400
+
 mx-boot-options (22.9.01) mx; urgency=medium
 
   * Fix: toggling flatmenu. Make sure it can read "true" last entry wins

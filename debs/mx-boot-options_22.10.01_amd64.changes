@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Wed, 26 Oct 2022 19:56:18 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 22.10.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Dolphin Oracle <dolphinoracle@gmail.com>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.10.01) mx; urgency=medium
+ .
+   * update translations
+Checksums-Sha1:
+ a956d7058751e7c6ce4382f90b56e60d27321291 595 mx-boot-options_22.10.01.dsc
+ dbddab22b5cfb87864dd988b4edf0cec64053808 979608 mx-boot-options_22.10.01.tar.xz
+ 7ee6ae5dac10e4a4851daaaa213cd0a91c3dc74b 10527 mx-boot-options_22.10.01_amd64.buildinfo
+ 2c2f638a8000a241eeafcd199eae8cbe248da17c 262780 mx-boot-options_22.10.01_amd64.deb
+Checksums-Sha256:
+ e258ba208eacf2d5a429a501338c77414a0129bf6e33ab2ed42bea7221287b3b 595 mx-boot-options_22.10.01.dsc
+ 457f24a1c6c7585c2f29597cdbf625e29a76541d38fadbee328c079a16a5a938 979608 mx-boot-options_22.10.01.tar.xz
+ e9a300b43df9a72379bc82a73324299dd31ba4d4871180ec857cdbbaf8eb56d1 10527 mx-boot-options_22.10.01_amd64.buildinfo
+ 3affa26ff63de7a6c9e9eca71ea45fee5d9d730b200095efff09acf0feff36f4 262780 mx-boot-options_22.10.01_amd64.deb
+Files:
+ 6e23dba2d26f12f7f5fd8eed07cbd080 595 admin optional mx-boot-options_22.10.01.dsc
+ 3becbffeeac150628564e3d4ab8f1752 979608 admin optional mx-boot-options_22.10.01.tar.xz
+ beb862601fda7b97d6c23c925241de35 10527 admin optional mx-boot-options_22.10.01_amd64.buildinfo
+ b0574764a2b5b441f81e2581b35a9071 262780 admin optional mx-boot-options_22.10.01_amd64.deb

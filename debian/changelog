@@ -1,3 +1,9 @@
+mx-boot-options (22.10.02) mx; urgency=medium
+
+  * Allow skipping selecting directory for chroot when running Live (useful for managing Uefi boot options)
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 27 Oct 2022 22:58:53 -0400
+
 mx-boot-options (22.10.01) mx; urgency=medium
 
   * update translations 

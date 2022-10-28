@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 27 Oct 2022 22:58:53 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 22.10.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.10.02) mx; urgency=medium
+ .
+   * Allow skipping selecting directory for chroot when running Live (useful for managing Uefi boot options)
+Checksums-Sha1:
+ 89b90782082573dba3073047044f98766c91e315 1157 mx-boot-options_22.10.02.dsc
+ 69dfeae9f27caeecb4e4abec4027a662d62040a2 229816 mx-boot-options_22.10.02.tar.xz
+ 449fd8e0d96253c130609adfdd7b26ebca07bb2e 10799 mx-boot-options_22.10.02_amd64.buildinfo
+ 7b229bab1e4b2964fdd795f99d7d4d813caef013 262728 mx-boot-options_22.10.02_amd64.deb
+Checksums-Sha256:
+ d6bce27d6828da5e015db071ad08193a0b13e704a453f330887b0e32d8ce70bc 1157 mx-boot-options_22.10.02.dsc
+ b0ff985654e588842e7e08eed7d7662269c9b196688367b2053276fded62e2ad 229816 mx-boot-options_22.10.02.tar.xz
+ c39791cb66deea65660f0bd85d3994e4f2ef4b0d2a8c283f899ebc58e6d74c4b 10799 mx-boot-options_22.10.02_amd64.buildinfo
+ 9b95ae8fbfb844f1f192d5a93ae10df50e101ae286929b2a3b51d7c2d3c7283c 262728 mx-boot-options_22.10.02_amd64.deb
+Files:
+ ce54b82d266dab20bc7e4c640dd0a0f2 1157 admin optional mx-boot-options_22.10.02.dsc
+ 36221503110eb4477ba3369ff3a415cd 229816 admin optional mx-boot-options_22.10.02.tar.xz
+ 3523dd5733eb9e534d2fe48a1c55809b 10799 admin optional mx-boot-options_22.10.02_amd64.buildinfo
+ 3008f276b1f84d102023c10b9e68e14e 262728 admin optional mx-boot-options_22.10.02_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmNbRjMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBmLB/95BqvyH+Dyrq/eZSy6K5HPrnQE1Gto
+2+0UDovOPRBS4SYIHwMDnnEVwDd4waLa56nsiQRLnGSzA5S+j7J6e0iXOKEb3/mt
+/SHHx8ZNRj9yiKL4XSCwJ/CVmmzNq0QP13DeRAdfrH5nzuChZjZZW0lzwcnUmXRG
+AAdRhG0LqOt4Dzryb1bEBEKflAhU4h4oaAj1qIR9RQOWvZ+5LIStUIFuauHPhWqc
++leri45gGGujzheR4hvyixUYI4eoEsdhcluCfvUzxAXf8YXd1Dv6QBL34uhepYl3
+oCqD5+lQSAA84dQO9FNmX2WeKrKVhIeN4Yk5cOb+rCcCuZwK6QCddYKp
+=QPie
+-----END PGP SIGNATURE-----

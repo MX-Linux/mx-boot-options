@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Thu, 27 Oct 2022 22:58:53 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: i386
+Version: 22.10.02
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (22.10.02) mx; urgency=medium
+ .
+   * Allow skipping selecting directory for chroot when running Live (useful for managing Uefi boot options)
+Checksums-Sha1:
+ 0f94b27866e264e7fbd9e5d4d96cf34dc34e9004 10077 mx-boot-options_22.10.02_i386.buildinfo
+ c115a4f5bcbf42ad4244572b00f047bd31cae463 266900 mx-boot-options_22.10.02_i386.deb
+Checksums-Sha256:
+ 63d73b9ecd3e4ca90e8c61852bcb8aa60c1655d5466783a33f178deb7b3ade32 10077 mx-boot-options_22.10.02_i386.buildinfo
+ 2e93c863800b75d1826620e5af491be3b108f58c3f426b9cd3735153c14ec375 266900 mx-boot-options_22.10.02_i386.deb
+Files:
+ bf5b86b06f58cd94fa1915634606b1b7 10077 admin optional mx-boot-options_22.10.02_i386.buildinfo
+ c3abd67df341a305538dda50854dff65 266900 admin optional mx-boot-options_22.10.02_i386.deb

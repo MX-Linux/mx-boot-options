@@ -112,7 +112,8 @@ void MainWindow::setup()
     // if running live read linux partitions and set chroot on the selected one
     if (cmd.run(QStringLiteral("mountpoint -q /live/aufs"))) {
         QString part = selectPartiton(getLinuxPartitions());
-        createChrootEnv(part);
+        if (!part.isEmpty())
+            createChrootEnv(part);
     }
     if (!cmd.run(QStringLiteral("dpkg -s grub-common | grep -q 'Status: install ok installed'"))) {
         grub_installed = false;
@@ -460,8 +461,7 @@ QString MainWindow::selectPartiton(const QStringList &list)
         return dialog->comboBox()->currentText().section(QStringLiteral(" "), 0, 0);
     } else {
         qDebug() << "exec false" << dialog->comboBox()->currentText().section(QStringLiteral(" "), 0, 0);
-        QMessageBox::critical(this, tr("Cannot continue"), tr("Nothing was selected, cannot change boot options. Exiting..."));
-        exit(EXIT_FAILURE);
+        return QString();
     }
 }
 

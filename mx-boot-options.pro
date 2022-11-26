@@ -18,8 +18,8 @@
 # * along with this package. If not, see <http://www.gnu.org/licenses/>.
 # **********************************************************************/
 
-QT       += core gui widgets
-CONFIG   += c++1z
+QT       += widgets
+CONFIG   += c++1z warn_on
 
 TARGET = mx-boot-options
 TEMPLATE = app

@@ -1026,6 +1026,7 @@ void MainWindow::combo_bootsplash_toggled(bool checked)
         line.remove(QRegularExpression(QStringLiteral("\\s*splash")));
     }
     ui->textKernel->setText(line.trimmed());
+    kernel_options_changed = true;
 }
 
 void MainWindow::pushLog_clicked()

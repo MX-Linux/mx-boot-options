@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 30 Jan 2023 20:15:16 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 23.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.1) mx; urgency=medium
+ .
+   * Fix: disable boot splash
+   * Update translations
+Checksums-Sha1:
+ 1c8c52abac45011c69bb222b2e4319d5db9cb0d8 1141 mx-boot-options_23.1.dsc
+ 07c1f840a53da3cff5f15c56edf55176f8de4f45 242224 mx-boot-options_23.1.tar.xz
+ 94aea2baa640a5d59ed16f32f015736b9f7accc2 10767 mx-boot-options_23.1_amd64.buildinfo
+ 634c60b2566ffcd8eb1ba651ce9a9affa6921892 262484 mx-boot-options_23.1_amd64.deb
+Checksums-Sha256:
+ 2f15b11def68016e4c23c3ef1da42567aa126b9018cff83cc2d405998544a62d 1141 mx-boot-options_23.1.dsc
+ f514785f234110f6cfc2a8934742eba18d29f748a05bf0fef56b5c1ac244ce8b 242224 mx-boot-options_23.1.tar.xz
+ 16ddce2f774789071a372737a25c5bef155524cb1a2427a09d84429bf7e77393 10767 mx-boot-options_23.1_amd64.buildinfo
+ c84986d2015d3fd439c3a2e9ac68873cf28cc209b9e242f1ea9fc150484a4dc3 262484 mx-boot-options_23.1_amd64.deb
+Files:
+ 2e739dfc0e3ea5b4c4b29c76e7802378 1141 admin optional mx-boot-options_23.1.dsc
+ f4b3e65c1ccf313f76079505e7fb86cb 242224 admin optional mx-boot-options_23.1.tar.xz
+ 75a8f570baddc8065a7b8bf31d5ee0b9 10767 admin optional mx-boot-options_23.1_amd64.buildinfo
+ d053bef191b6f8300ce6a883326dec09 262484 admin optional mx-boot-options_23.1_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmPYb0ATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFtJCACIqdG28U8/7EziKXBNv7e0+KHgmlRF
+KvY+1aFJKtREbEAKwIZJgcd4wPylUHedd4OZ5q3p/fNgn03H/cvzN6RIH6u+r1Yo
+p15O97khowv6X01zOBO/TBS4DX5HrWnIM/itKqUYKuduC7S3cwbt+KqZX9VYaipw
+4Q+eRLwx219Swmr81Vufs0w7w76N4D3+/btLp27Q4VcOwDYfqkxCZU2BtPQpWe7k
+TuG388ku0XJOfe9rN8kZRiqruirSdDvIf/4X5FM3V4JAaQpwhNQ58gzUmHwOO74t
+UvKnEarFUIJ/Q1oh9kMJRu6xPdk9NymJi/m+/VW2oG6eZOGej2YaQ/eq
+=nD2A
+-----END PGP SIGNATURE-----

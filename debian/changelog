@@ -1,3 +1,10 @@
+mx-boot-options (23.1) mx; urgency=medium
+
+  * Fix: disable boot splash
+  * Update translations
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 30 Jan 2023 20:15:16 -0500
+
 mx-boot-options (22.10.02) mx; urgency=medium
 
   * Allow skipping selecting directory for chroot when running Live (useful for managing Uefi boot options)

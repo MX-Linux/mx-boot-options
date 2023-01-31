@@ -1,0 +1,41 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 30 Jan 2023 20:15:16 -0500
+Source: mx-boot-options
+Architecture: source
+Version: 23.1
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-boot-options (23.1) mx; urgency=medium
+ .
+   * Fix: disable boot splash
+   * Update translations
+Checksums-Sha1:
+ 1c8c52abac45011c69bb222b2e4319d5db9cb0d8 1141 mx-boot-options_23.1.dsc
+ 07c1f840a53da3cff5f15c56edf55176f8de4f45 242224 mx-boot-options_23.1.tar.xz
+ 94aea2baa640a5d59ed16f32f015736b9f7accc2 10767 mx-boot-options_23.1_amd64.buildinfo
+Checksums-Sha256:
+ 2f15b11def68016e4c23c3ef1da42567aa126b9018cff83cc2d405998544a62d 1141 mx-boot-options_23.1.dsc
+ f514785f234110f6cfc2a8934742eba18d29f748a05bf0fef56b5c1ac244ce8b 242224 mx-boot-options_23.1.tar.xz
+ 16ddce2f774789071a372737a25c5bef155524cb1a2427a09d84429bf7e77393 10767 mx-boot-options_23.1_amd64.buildinfo
+Files:
+ 2e739dfc0e3ea5b4c4b29c76e7802378 1141 admin optional mx-boot-options_23.1.dsc
+ f4b3e65c1ccf313f76079505e7fb86cb 242224 admin optional mx-boot-options_23.1.tar.xz
+ 75a8f570baddc8065a7b8bf31d5ee0b9 10767 admin optional mx-boot-options_23.1_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmPYb0ETHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumLdNB/9dj54bC2/E3PauQPJ1C8t9reldAGbL
+YiRiP6E19ZPMSeJH+PwhAvLD/Mlx2Tyftr3ONpfmnXexYVeZanF4NYUZT53Or6eC
+mPgKyfK/ZEm2Y8TJtx+JXFLq9VVUl8PB9r0ZFrwSAE9ap45jMYitugIQuCKhlgsw
+gyHztcoEdsQDtCzyIYTPOa11FUVhcKIVJb69nyT7YQ5iehhVIW4CgNWh6KLz6dV5
+taMmUlb4FfTtnTWVbzlZKZgdtLPd2QYm/ymQYgkhBzWeEwfearIhpXzR1HhVivl1
+muNZsBhmlPtyJFsEQUbOUDrnBw9yGllAyMrms5GyO+jQgi5OrsgntkyQ
+=DorK
+-----END PGP SIGNATURE-----

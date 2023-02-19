@@ -293,18 +293,14 @@
         <translation>Jelenlegi indítása: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>Nem folytatható</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">Nem volt semmi kiválasztva, nem lehet megváltoztatni az opciókat. Kilépés...</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation>Ideiglenes mappa létrehozása nem sikerült</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>Nem folytatható</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -349,20 +345,6 @@
         <translation>%1 névjegye</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>%1 Licenc</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>%1 súgó</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Névjegy</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Verzió:</translation>
@@ -378,20 +360,14 @@
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licenc</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>%1 Licenc</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Változások listája</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Mégsem</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">MX indítási paraméterek</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>%1 súgó</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -535,26 +511,6 @@ Indulhat a telepítésük?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Hiba</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Úgy tűnik, hogy root felhasználóként van bejelentkezve. Jelentkezzen ki és jelentkezzen be normál felhasználóként a program használatához.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Válassza ki a rendszerindításkor megjelenő képet</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation>GRUB téma kiválasztása</translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Licenc</translation>
@@ -574,6 +530,26 @@ Indulhat a telepítésük?</translation>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>&amp;Bezárás</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Úgy tűnik, hogy root felhasználóként van bejelentkezve. Jelentkezzen ki és jelentkezzen be normál felhasználóként a program használatához.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Válassza ki a rendszerindításkor megjelenő képet</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation>GRUB téma kiválasztása</translation>
     </message>
 </context>
 </TS>

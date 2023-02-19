@@ -292,18 +292,14 @@ systému, ktorý chcete upraviť (zobrazené sú iba Linuxové oddiely)</transla
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>Nedá sa pokračovať</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">Nič nebolo vybrané, žiadne zmeny v nastavení zavedenia. Ukončovanie...</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>Nedá sa pokračovať</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -348,20 +344,6 @@ systému, ktorý chcete upraviť (zobrazené sú iba Linuxové oddiely)</transla
         <translation>Okolo %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>%1 Licencia</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>%1 Pomoc</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">O Programe</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Verzia:</translation>
@@ -377,20 +359,14 @@ systému, ktorý chcete upraviť (zobrazené sú iba Linuxové oddiely)</transla
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licencia</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>%1 Licencia</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">História zmien</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Zrušiť</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">MX Možnosti zavedenia</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>%1 Pomoc</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -532,26 +508,6 @@ Prajete si ho nainštalovať?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Chyba</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Vybrať obrázok pre bootloader</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Licencia</translation>
@@ -571,6 +527,26 @@ Prajete si ho nainštalovať?</translation>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>&amp;Zatvoriť</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Vybrať obrázok pre bootloader</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

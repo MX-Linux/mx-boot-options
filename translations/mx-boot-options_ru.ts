@@ -293,18 +293,14 @@
         <translation>Текущая загрузка: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>Невозможно продолжить</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">Ничего не выбрано, невозможно изменить параметры загрузки. Выход...</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation>Не удалось создать временную папку</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>Невозможно продолжить</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -349,20 +345,6 @@
         <translation>О %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>%1 Лицензия</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>%1 Справка</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">О приложении</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Версия: </translation>
@@ -378,20 +360,14 @@
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Лицензия</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>%1 Лицензия</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Список изменений</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Отменить</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">MX Опции загрузчика</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>%1 Справка</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -535,26 +511,6 @@ OK to go ahead and install them?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Ошибка</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Программа запущена суперпользователем. Для использования программы войдите в систему как обычный пользователь.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Выберите изображение для загрузчика</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation>Выбрать тему GRUB</translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Лицензия</translation>
@@ -574,6 +530,26 @@ OK to go ahead and install them?</source>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>Закрыть</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Программа запущена суперпользователем. Для использования программы войдите в систему как обычный пользователь.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Выберите изображение для загрузчика</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation>Выбрать тему GRUB</translation>
     </message>
 </context>
 </TS>

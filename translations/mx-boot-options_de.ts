@@ -292,18 +292,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>Fortfahren nicht möglich</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">Es wurde nichts ausgewählt, Bootoptionen können nicht geändert werden. Abbruch...</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation>Es konnte kein Temporärverzeichnis angelegt werden</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>Fortfahren nicht möglich</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -348,20 +344,6 @@
         <translation>Über %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>%1 Lizenz</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>%1 Hilfe</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Über</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Version:</translation>
@@ -377,20 +359,14 @@
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Lizenz</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>%1 Lizenz</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Changelog</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Abbrechen</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">MX Boot Optionen</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>%1 Hilfe</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -531,26 +507,6 @@ OK für das Weitermachen und der Installierung dieser Pakete ?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Fehler</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Sie sind als Benutzer “root” am System angemeldet. Bitte melden Sie sich ab und melden sich als normaler Benutzer an, um dieses Programm zu verwenden.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Auswahl des Bildes, das im Bootlader angezeigt wird.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation>GRUB-Thema auswählen</translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Lizenz</translation>
@@ -570,6 +526,26 @@ OK für das Weitermachen und der Installierung dieser Pakete ?</translation>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>&amp;Schließen</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Sie sind als Benutzer “root” am System angemeldet. Bitte melden Sie sich ab und melden sich als normaler Benutzer an, um dieses Programm zu verwenden.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Auswahl des Bildes, das im Bootlader angezeigt wird.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation>GRUB-Thema auswählen</translation>
     </message>
 </context>
 </TS>

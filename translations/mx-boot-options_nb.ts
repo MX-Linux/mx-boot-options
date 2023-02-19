@@ -293,18 +293,14 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
         <translation>Gjeldende oppstart: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>Kan ikke fortsette</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">Ingenting ble valgt og kan derfor ikke endre oppstartsalternativer. Avslutter …</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation>Klarte ikke å opprette midlertidig mappe</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>Kan ikke fortsette</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -349,20 +345,6 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
         <translation>Om %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>Lisens for %1</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>Hjelpetekst for %1</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Om</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Versjon:</translation>
@@ -378,20 +360,14 @@ systemet du vil endre (viser kun Linux-partisjoner)</translation>
         <translation>Opphavsrett (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Lisens</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>Lisens for %1</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Endringslogg</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Avbryt</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">MX Oppstartsalternativer</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>Hjelpetekst for %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -535,26 +511,6 @@ Vil du installere dem nå?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Feil</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Du er innlogget som root. Vennligst logg ut, og logg inn igjen som en vanlig bruker for å bruke dette programmet.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Velg bilde som skal vises i oppstartslasteren</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation>Velg Grub-tema</translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Lisens</translation>
@@ -574,6 +530,26 @@ Vil du installere dem nå?</translation>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>&amp;Lukk</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Feil</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Du er innlogget som root. Vennligst logg ut, og logg inn igjen som en vanlig bruker for å bruke dette programmet.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Velg bilde som skal vises i oppstartslasteren</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation>Velg Grub-tema</translation>
     </message>
 </context>
 </TS>

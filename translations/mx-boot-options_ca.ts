@@ -42,12 +42,12 @@ particions Linux)</translation>
     <message>
         <location filename="../mainwindow.ui" line="55"/>
         <source>Boot to</source>
-        <translation>Arrenca com </translation>
+        <translation>Arrenca amb </translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="78"/>
         <source>Set to &apos;0&apos; to boot immediately without displaying the menu, or to &apos;-1&apos; to wait indefinitely</source>
-        <translation>Es posa a &quot;0&quot; per arrencar inmediatament sense mostrar el menú, o a &quot;-1&quot; per esperar indefinidament.</translation>
+        <translation>Es posa a &quot;0&quot; per arrencar immediatament sense mostrar el menú, o a &quot;-1&quot; per esperar indefinidament.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="81"/>
@@ -224,7 +224,7 @@ particions Linux)</translation>
         <location filename="../mainwindow.cpp" line="233"/>
         <source>Are you sure you want to delete this boot entry?
 %1</source>
-        <translation>Esteu segurs d&apos;esborrar aquesta entrada de l&apos;arrencada?
+        <translation>Esteu segur d&apos;esborrar aquesta entrada de l&apos;arrencada?
 %1</translation>
     </message>
     <message>
@@ -294,18 +294,14 @@ particions Linux)</translation>
         <translation>Arrenca l&apos;actual: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>No puc continuar</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">No s&apos;ha seleccionat res, no puc canviar les opcions d&apos;arrencada. Sortint...</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation>No s&apos;ha pogut crear un directori temporal</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>No puc continuar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -350,20 +346,6 @@ particions Linux)</translation>
         <translation>Quant a %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>Llicència de %1</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>Ajuda de %1</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Quant a </translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Versió: </translation>
@@ -379,20 +361,14 @@ particions Linux)</translation>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Llicència</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>Llicència de %1</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Registre de canvis</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Cancel·la</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">MX Boot Options</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>Ajuda de %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -431,7 +407,7 @@ Voleu continuar i instal·lar-los?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1045"/>
         <source>Log not found</source>
-        <translation>No s&apos;ha trobat el registre</translation>
+        <translation>No he trobat el registre</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1045"/>
@@ -448,9 +424,9 @@ Voleu continuar i instal·lar-los?</translation>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
-        <translation>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
-- Items are listed in the boot order.
-- Grayed out lines are inactive.</translation>
+        <translation>Podeu usar els botons Amunt/Avall, o arrossegar i deixar ítems per canviar l&apos;ordre d&apos;arrencada.
+- Els ítems es llisten en l&apos;ordre d&apos;arrencada.
+- Les línies en gris són inactives.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1058"/>
@@ -536,26 +512,6 @@ Voleu continuar i instal·lar-los?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Error</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Sembla que esteu connectat com a administrador, si us plau sortiu i connecteu-vos com a usuari normal per a usar aquest programa.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Trieu la imatge que es mostrarà a l&apos;arrencada</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation>Trieu el tema del GRUB</translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Llicència</translation>
@@ -575,6 +531,26 @@ Voleu continuar i instal·lar-los?</translation>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>Tan&amp;ca </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Sembla que esteu connectat com a administrador, si us plau sortiu i connecteu-vos com a usuari normal per a usar aquest programa.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Trieu la imatge que es mostrarà a l&apos;arrencada</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation>Trieu el tema del GRUB</translation>
     </message>
 </context>
 </TS>

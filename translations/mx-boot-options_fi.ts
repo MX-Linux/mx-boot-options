@@ -292,18 +292,14 @@ jota haluat järjestelmässä muokata (vain Linux-osiot ovat näkyvillä)</trans
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>Ei voida jatkaa</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">Mitään ei valittu, käynnistysvaihtoja ei voitu vaihtaa. Poistutaan...</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation>Ei voitu luoda väliaikaista kansiota</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>Ei voida jatkaa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -348,20 +344,6 @@ jota haluat järjestelmässä muokata (vain Linux-osiot ovat näkyvillä)</trans
         <translation>%1 lisätietoja</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>%1 lupa</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>%1 Apuopas</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Tietoja</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Versio: </translation>
@@ -377,20 +359,14 @@ jota haluat järjestelmässä muokata (vain Linux-osiot ovat näkyvillä)</trans
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Lisenssi</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>%1 lupa</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Muutosloki</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Peru</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">MX Käynnistysasetukset</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>%1 Apuopas</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -532,26 +508,6 @@ Voidaanko jatkaa ja asentaa ne?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Virhe</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Olet kirjautunut sisään pääkäyttäjänä. Kirjaudu sisään normaalina käyttäjänä käyttääksesi tätä ohjelmaa.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Valitse käynnistyslataajassa näytettävä kuva</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation>Valitse GRUB:in teema</translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Lisenssi</translation>
@@ -571,6 +527,26 @@ Voidaanko jatkaa ja asentaa ne?</translation>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>&amp;Sulje</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Olet kirjautunut sisään pääkäyttäjänä. Kirjaudu sisään normaalina käyttäjänä käyttääksesi tätä ohjelmaa.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Valitse käynnistyslataajassa näytettävä kuva</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation>Valitse GRUB:in teema</translation>
     </message>
 </context>
 </TS>

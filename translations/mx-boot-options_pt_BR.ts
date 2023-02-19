@@ -293,18 +293,14 @@ sistema que você deseja modificar (apenas as  partições GNU/Linux são exibid
         <translation>Inicialização Atual % 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="527"/>
-        <source>Cannot continue</source>
-        <translation>Não é possível continuar</translation>
-    </message>
-    <message>
-        <source>Nothing was selected, cannot change boot options. Exiting...</source>
-        <translation type="vanished">Nenhuma opção foi selecionada, não é possível alterar as opções de inicialização. Saindo do programa...</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="518"/>
         <source>Could not create a temporary folder</source>
         <translation>Não foi possível criar uma pasta temporária</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="527"/>
+        <source>Cannot continue</source>
+        <translation>Não é possível continuar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="528"/>
@@ -349,20 +345,6 @@ sistema que você deseja modificar (apenas as  partições GNU/Linux são exibid
         <translation>Sobre o %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
-        <source>%1 License</source>
-        <translation>Licença do %1</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="899"/>
-        <source>%1 Help</source>
-        <translation>Ajuda do %1</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Sobre</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.cpp" line="875"/>
         <source>Version: </source>
         <translation>Versão: </translation>
@@ -378,20 +360,14 @@ sistema que você deseja modificar (apenas as  partições GNU/Linux são exibid
         <translation>Direitos de Autor (c) MX Linux</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="vanished">Licença</translation>
+        <location filename="../mainwindow.cpp" line="880"/>
+        <source>%1 License</source>
+        <translation>Licença do %1</translation>
     </message>
     <message>
-        <source>Changelog</source>
-        <translation type="vanished">Relatório de alterações</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Cancelar</translation>
-    </message>
-    <message>
-        <source>MX Boot Options</source>
-        <translation type="vanished">Opções de Inicialização do MX</translation>
+        <location filename="../mainwindow.cpp" line="899"/>
+        <source>%1 Help</source>
+        <translation>Ajuda do %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="908"/>
@@ -535,26 +511,6 @@ Você quer continuar e instalar os pacotes do Plymouth?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="73"/>
-        <source>Error</source>
-        <translation>Ocorreu um erro</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="74"/>
-        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Parece que você está conectado como usuário root. Por favor, saia da sessão e entre novamente como usuário normal para utilizar este programa.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <source>Select image to display in bootloader</source>
-        <translation>Selecione a imagem para exibir no carregador de inicialização (bootloader)</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1228"/>
-        <source>Select GRUB theme</source>
-        <translation>Selecione o tema do GRUB</translation>
-    </message>
-    <message>
         <location filename="../about.cpp" line="52"/>
         <source>License</source>
         <translation>Licença</translation>
@@ -574,6 +530,26 @@ Você quer continuar e instalar os pacotes do Plymouth?</translation>
         <location filename="../about.cpp" line="74"/>
         <source>&amp;Close</source>
         <translation>&amp;Fechar</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="73"/>
+        <source>Error</source>
+        <translation>Ocorreu um erro</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="74"/>
+        <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
+        <translation>Parece que você está conectado como usuário root. Por favor, saia da sessão e entre novamente como usuário normal para utilizar este programa.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="936"/>
+        <source>Select image to display in bootloader</source>
+        <translation>Selecione a imagem para exibir no carregador de inicialização (bootloader)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1228"/>
+        <source>Select GRUB theme</source>
+        <translation>Selecione o tema do GRUB</translation>
     </message>
 </context>
 </TS>

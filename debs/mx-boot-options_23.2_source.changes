@@ -16,26 +16,26 @@ Changes:
    * Disable saving last boot choice on Btrs (not supported)
    * Upate translations
 Checksums-Sha1:
- 2b2dad53f0fddb75d5d0253bf689cd2efa2328c6 1141 mx-boot-options_23.2.dsc
- d72a37fd5647e47ee917da3b7561071a2623d399 241280 mx-boot-options_23.2.tar.xz
- e7c29cc7e72bf73cd9e8aa0b6bf57b610ba4ccff 10767 mx-boot-options_23.2_amd64.buildinfo
+ 4658a77679dbd2a272cb84c4a1ce8a28ada7f5a6 1141 mx-boot-options_23.2.dsc
+ dd813751243cb5e46b62d86c933474cdae9a6001 241220 mx-boot-options_23.2.tar.xz
+ 3f1c8455318208752538a416e79442bcb89cb723 10767 mx-boot-options_23.2_amd64.buildinfo
 Checksums-Sha256:
- 8325aa9a4e3962e12ed30f20e0b3da7efbb6b0200f8721a87526036b73a35841 1141 mx-boot-options_23.2.dsc
- f50a206d8a3de654f50a61619c8c97479331bdfd21be24e4a298161cd34da7f4 241280 mx-boot-options_23.2.tar.xz
- 0dbddbc9c8d358faea94b6ba49a2389c2686521fd1756d2af0a6b6fd1480a5fe 10767 mx-boot-options_23.2_amd64.buildinfo
+ 76afa2e51c645ce527fb5e86fcdf1bcaf92432b6e22ed85e338d8af1891f6ba8 1141 mx-boot-options_23.2.dsc
+ 22c2225e4161958bd26ec0c1181f9f89a0c9457f3f4e3a927fa49e05c1aeb200 241220 mx-boot-options_23.2.tar.xz
+ e94445049a7c6bc253c5b89b40a6e2cd2e716e0b6c41e2727b76d5e9d7d9e76b 10767 mx-boot-options_23.2_amd64.buildinfo
 Files:
- c5a793a74819cdd453ac9245ec7ff9b5 1141 admin optional mx-boot-options_23.2.dsc
- ef7185f3241ee0afac4c929b4e089624 241280 admin optional mx-boot-options_23.2.tar.xz
- 8d70dba2de16b3a956eadef8b265b757 10767 admin optional mx-boot-options_23.2_amd64.buildinfo
+ 71e168888b2b5c9c4a546149e78d1b43 1141 admin optional mx-boot-options_23.2.dsc
+ 85c0c526dc50a8109036c280940c53ac 241220 admin optional mx-boot-options_23.2.tar.xz
+ 8f8373ae338a1a4e39ac05e5cd569f13 10767 admin optional mx-boot-options_23.2_amd64.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmPyZX4THGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumCqFB/oCUto0QaACDWbAtMyKPCr7knU1NeJ/
-Oivdny9kbXqW3eCyCiO0mJl/4Ka9Jq0j4ultKJmreV7CJnZIbr7ukqojmA3gyfYj
-VOmwa65ZUwZylKcOyAfBYDUAhJ9G4yUGFWzkYKBRj9VorB296QxPLxEcy2HSUc2h
-LkJUtIWl4oNiIZ6fWHkhn0FF9f/GpgOxbickUPKfmMT82ZDPrXFTie8eWnlKunep
-NC4AESctni6u++nuaxYw1eRGk+MHUud4j3cwvElL6345/H5kiMjDr2KKM4LRsohh
-cKDER4L4geosYzDGmmhHBV6Bcy348r2F6aGx2F2BajAaTH+2i2LkFqzY
-=gXgg
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmPyazATHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumAqiCAC04mCrNI38bWtNCsAAzikPCkKPT6Rm
+fPRUR2xaKjgg3aqUxgVz7OBEm5OZtWZji3V3wO1SLfCtKzRG9FONzNCLIy2Pzzk1
+84wIeiwP88/1A5ZF6SsNOOmiBJSqLb0dCF+MtSw1V1n9aoEShRDHGM5T26oWIRCM
+uFBJxgaWM64IE5nyCShVrH+F88s5wpSGHm9vl75H1r29a/jYqkx5I8YWNoqfZu0P
+y4j80YCb0IZesypw7oSzt9BK0z6pC43CTAtxiwHs2Hfq6otTF49xwZ9wLxRPbiXQ
+T/fjiCjRlH5f2gPkNYJ8shTNqjapdUJr1gqxiplI+6I174PZ6jbGOQaJ
+=Yn5w
 -----END PGP SIGNATURE-----

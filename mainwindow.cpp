@@ -125,7 +125,8 @@ void MainWindow::setup()
         readDefaultGrub();
     }
 
-    if (cmd.getCmdOut("df --output=fstype " + chroot + "/boot | tail -n1") == "btrfs") {
+    if (cmd.getCmdOut("df --output=fstype " + (chroot.isEmpty() ? "/boot" : tmpdir.path()) + " | tail -n1")
+        == "btrfs") {
         ui->checkSaveDefault->setChecked(false);
         ui->checkSaveDefault->setDisabled(true);
     }

@@ -4,12 +4,14 @@ mx-boot-options-desktop_ar
 mx-boot-options-desktop_be
 mx-boot-options-desktop_bg
 mx-boot-options-desktop_bn
+mx-boot-options-desktop_bs_BA
 mx-boot-options-desktop_ca
 mx-boot-options-desktop_cs
 mx-boot-options-desktop_da
 mx-boot-options-desktop_de
 mx-boot-options-desktop_el
 mx-boot-options-desktop_en_GB
+mx-boot-options-desktop_en_US
 mx-boot-options-desktop_eo
 mx-boot-options-desktop_es
 mx-boot-options-desktop_es_ES
@@ -48,6 +50,7 @@ mx-boot-options-desktop_pt
 mx-boot-options-desktop_pt_BR
 mx-boot-options-desktop_ro
 mx-boot-options-desktop_ru
+mx-boot-options-desktop_ru_RU
 mx-boot-options-desktop_rue
 mx-boot-options-desktop_sk
 mx-boot-options-desktop_sl
@@ -59,6 +62,7 @@ mx-boot-options-desktop_th
 mx-boot-options-desktop_tr
 mx-boot-options-desktop_uk
 mx-boot-options-desktop_vi
+mx-boot-options-desktop_yue_CN
 mx-boot-options-desktop_zh_CN
 mx-boot-options-desktop_zh_HK
 mx-boot-options-desktop_zh_TW

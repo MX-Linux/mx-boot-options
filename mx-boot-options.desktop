@@ -1,6 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name[ca]=MX Boot Options
+Name[cs]=MX Možnosti zavaděče
 Name[da]=MX Opstartsvalgmuligheder
 Name[de]=MX Boot Optionen
 Name[el]=Ρυθμίσεις εκκίνησης MX
@@ -30,6 +31,7 @@ Name[tr]=MX Açılış Seçenekleri
 Name[zh_CN]=MX 启动选项
 Name=MX Boot Options
 Comment[ca]=Elecció de les opcions d'arrencada
+Comment[cs]=Volby spouštění systému
 Comment[es]=Opciones comunes de inicio
 Comment[es_ES]=Opciones comunes de inicio
 Comment[fr]=Choix courants pour le démarrage
@@ -42,6 +44,7 @@ Comment[nl]=Veel voorkomende opstart keuzes
 Comment[nl_BE]=Veelvoorkomende opstartkeuzes
 Comment[pt]=Opções normais de arranque
 Comment[pt_BR]=Defina os serviços que iniciarão junto com o sistema operacional
+Comment[ru]=Часто используемые варианты запуска
 Comment[sl]=Običajne zagonske izbire
 Comment[sq]=Zgjedhje të rëndomta për gjatë nisjes
 Comment[sv]=Vanliga start-alternativ

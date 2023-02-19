@@ -125,6 +125,11 @@ void MainWindow::setup()
         readDefaultGrub();
     }
 
+    if (cmd.getCmdOut("df --output=fstype " + chroot + "/boot | tail -n1") == "btrfs") {
+        ui->checkSaveDefault->setChecked(false);
+        ui->checkSaveDefault->setDisabled(true);
+    }
+
     readKernelOpts();
     ui->radioLimitedMsg->setVisible(!ui->checkBootsplash->isChecked());
     if (inVirtualMachine())

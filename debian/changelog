@@ -1,7 +1,7 @@
 mx-boot-options (23.2) mx; urgency=medium
 
   * Disable saving last boot choice on Btrs (not supported)
-  * Upate translations
+  * Update translations
 
  -- Adrian <adrian@mxlinux.org>  Sun, 19 Feb 2023 13:03:57 -0500
 

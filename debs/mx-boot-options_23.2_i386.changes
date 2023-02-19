@@ -14,13 +14,13 @@ Changes:
  mx-boot-options (23.2) mx; urgency=medium
  .
    * Disable saving last boot choice on Btrs (not supported)
-   * Upate translations
+   * Update translations
 Checksums-Sha1:
- 07409ee7eb688b7e0887521f54d82b53f44a980f 10089 mx-boot-options_23.2_i386.buildinfo
- 9ec283d568f8ef13fe12f468bdd02922174a3fbb 268352 mx-boot-options_23.2_i386.deb
+ baffd23795c141426f3ad291b5378f6d3601415a 10089 mx-boot-options_23.2_i386.buildinfo
+ 86748e25450d62388aa2ef3421b1698e6b63241b 268328 mx-boot-options_23.2_i386.deb
 Checksums-Sha256:
- b2111d82b2af8fb95a3dc2013a2c681672bea3fd6da3f6cfa55f425243b75b0f 10089 mx-boot-options_23.2_i386.buildinfo
- b822327c6ddbe56f1defa341b2ea0bb9981a39e3d6ec365d174917f9dd42a710 268352 mx-boot-options_23.2_i386.deb
+ 035d7bf6fbe5f361c0281123379da64b4fda724f9645067b44ec832562ac165b 10089 mx-boot-options_23.2_i386.buildinfo
+ 7c5404ccdae9efa412087fff37210e4844f363161e5260862eb58c86497dc012 268328 mx-boot-options_23.2_i386.deb
 Files:
- 859df99536a56d66a61e4a0c2bfdeb65 10089 admin optional mx-boot-options_23.2_i386.buildinfo
- f16c521ab0d87399dcf51a7be62634b4 268352 admin optional mx-boot-options_23.2_i386.deb
+ b2c54a65cc7997191eb3facb0616ab6d 10089 admin optional mx-boot-options_23.2_i386.buildinfo
+ f0e19473be4dfcd9ad356084f19c2e6c 268328 admin optional mx-boot-options_23.2_i386.deb

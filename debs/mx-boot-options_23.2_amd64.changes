@@ -17,31 +17,31 @@ Changes:
  mx-boot-options (23.2) mx; urgency=medium
  .
    * Disable saving last boot choice on Btrs (not supported)
-   * Upate translations
+   * Update translations
 Checksums-Sha1:
- 4658a77679dbd2a272cb84c4a1ce8a28ada7f5a6 1141 mx-boot-options_23.2.dsc
- dd813751243cb5e46b62d86c933474cdae9a6001 241220 mx-boot-options_23.2.tar.xz
- 3f1c8455318208752538a416e79442bcb89cb723 10767 mx-boot-options_23.2_amd64.buildinfo
- d47772a41f37e2ce90825c007ebd44b57260f87e 264212 mx-boot-options_23.2_amd64.deb
+ 42344ccccd00546ff2b776e9f641145ea62cbb3f 1141 mx-boot-options_23.2.dsc
+ d1a3ac6dc98dbadd12192eed30e539c9098b2d5e 241188 mx-boot-options_23.2.tar.xz
+ 6929e1c59fd18a1d2af521a3020323dcf2e78a81 10767 mx-boot-options_23.2_amd64.buildinfo
+ 45557235c2ca6f1b8737e7d4b0dab72f16c96c37 264168 mx-boot-options_23.2_amd64.deb
 Checksums-Sha256:
- 76afa2e51c645ce527fb5e86fcdf1bcaf92432b6e22ed85e338d8af1891f6ba8 1141 mx-boot-options_23.2.dsc
- 22c2225e4161958bd26ec0c1181f9f89a0c9457f3f4e3a927fa49e05c1aeb200 241220 mx-boot-options_23.2.tar.xz
- e94445049a7c6bc253c5b89b40a6e2cd2e716e0b6c41e2727b76d5e9d7d9e76b 10767 mx-boot-options_23.2_amd64.buildinfo
- ecb8de0069b6722bae746b66dbe82aac70100e795996a505baa900ae447d5a4b 264212 mx-boot-options_23.2_amd64.deb
+ a383a8e73317e564102f45fd487455eee462298e74f4a87acce8e6cdd16e984c 1141 mx-boot-options_23.2.dsc
+ 14b617639267cbcf2261168bc920ef0797822fa5a326940ffd7afeb52ab190dd 241188 mx-boot-options_23.2.tar.xz
+ fbfa0269feb313a82001d892e09290bb802c7d0378ce02da65ee074bf8e7760f 10767 mx-boot-options_23.2_amd64.buildinfo
+ 7a98397aab5e70ea976ef61d7ba0477b39dcc7ff22417abcce68e7c198b977d4 264168 mx-boot-options_23.2_amd64.deb
 Files:
- 71e168888b2b5c9c4a546149e78d1b43 1141 admin optional mx-boot-options_23.2.dsc
- 85c0c526dc50a8109036c280940c53ac 241220 admin optional mx-boot-options_23.2.tar.xz
- 8f8373ae338a1a4e39ac05e5cd569f13 10767 admin optional mx-boot-options_23.2_amd64.buildinfo
- 86ac8d2faf293980579a38323b04261b 264212 admin optional mx-boot-options_23.2_amd64.deb
+ d7b38d1f7a84aeaddbe859888c518414 1141 admin optional mx-boot-options_23.2.dsc
+ 7e21ed0951db8997759fed5257d98eaa 241188 admin optional mx-boot-options_23.2.tar.xz
+ 60f0227c5b0787c3a476b1b29738474a 10767 admin optional mx-boot-options_23.2_amd64.buildinfo
+ 89cc709fe9b1026ce6610173b8c91c79 264168 admin optional mx-boot-options_23.2_amd64.deb
 
 -----BEGIN PGP SIGNATURE-----
 
-iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmPyazATHGFkcmlhbkBt
-eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHZPCACMxwpU+CLUmbTjJlb66L87AV/5CqL6
-IpI/1aqjWLLB7gQ6yfdpGDdZ8Zek3y5QY6mgWkKcT1ofzrfvNfBOvuW4h/O3CxIr
-d6SwokDfiIeQRlJB8fh3MjlLnyoSo1N7WXzBipy1DqungneGA/IvAfAotFTDDAJU
-qs7HdZtb2MVCVs+PS3b5uuAIVCSFEtDaTDTC/lfy/f1B3GiA47Z9iCT57UiVd7Wg
-rj0JWTfuhYMGnyHtoN/IFgfM3SGBi5j0KWnqM7BtO7dz6l8+V4rTsWmL3warJQJT
-UcxAn1mYEW6jA5qdwE2RFqWqa5vUp8CwQfCoFR9D4aFumOI3vHnsCGWu
-=INNE
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmPybOMTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumHHkB/9l5BJo3R47wcWYFGxdQppqjK7lot5u
+hZSTU0ZPGpOruD2lYp2wmgYtTuTrF2HiMgrttfdzWZVfh4DPJc8tmigGBTqCrDqr
+Csbl7ZTK4wYFFKLgJk/sJybg8Wu1ZdpJYU0Ah91eLgJnMarnAZKYBaxj1TeHpO2k
+RCRXqAKVfynOnzynQXULsGfFdIrqFsEfiVIxfzyvYcwiV8pVlUpaBCDaiBaOK1Y/
+6Rs3k9M+hmwS4IFfaLLdUN3jcDMMUpiVLRFBfO0l3nY/yDv9rMRsIGscfuof32OX
+SsP7mhf/n/luX4AS2b28ty3X0RGiIhgJirOhHeLxzpDKoBWTo/CfOw4S
+=g0Bq
 -----END PGP SIGNATURE-----

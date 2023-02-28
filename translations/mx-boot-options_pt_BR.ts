@@ -503,7 +503,7 @@ Você quer continuar e instalar os pacotes do Plymouth?</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="51"/>
+        <location filename="../main.cpp" line="56"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Programa para selecionar opções comuns de inicialização</translation>
     </message>
@@ -532,12 +532,12 @@ Você quer continuar e instalar os pacotes do Plymouth?</translation>
         <translation>&amp;Fechar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="73"/>
+        <location filename="../main.cpp" line="77"/>
         <source>Error</source>
         <translation>Ocorreu um erro</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="74"/>
+        <location filename="../main.cpp" line="78"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Parece que você está conectado como usuário root. Por favor, saia da sessão e entre novamente como usuário normal para utilizar este programa.</translation>
     </message>

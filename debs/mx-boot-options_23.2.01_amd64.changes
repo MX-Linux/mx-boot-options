@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 27 Feb 2023 19:57:54 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 23.2.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.2.01) mx; urgency=medium
+ .
+   * Change ownership of the rc file created by KDE/Plasma
+Checksums-Sha1:
+ 6e4b452180adbd4d24a59686e07104e05c87d2dd 1153 mx-boot-options_23.2.01.dsc
+ dfd669d0cfabab29f277d81cb1b3ab3e5af73a95 244008 mx-boot-options_23.2.01.tar.xz
+ e660ddeb7ff6f31e0259f1e8b52ae081f46d3e44 10791 mx-boot-options_23.2.01_amd64.buildinfo
+ 05ee5df82850c93f49455bb3c9daef81d0be03c9 264828 mx-boot-options_23.2.01_amd64.deb
+Checksums-Sha256:
+ df57e8dc772b68a8388d85a10bb6e40ea92688e06bbd48c55ce6be568f62ff61 1153 mx-boot-options_23.2.01.dsc
+ ff67910c2b8be47b49fc8f9862d1a1f10e00c05e2b032cf75e981b9ec7effa83 244008 mx-boot-options_23.2.01.tar.xz
+ f65df0aef1ec5c3f0ad409f462d8aab40d90f700846a9e2a18a34c190d5f8d46 10791 mx-boot-options_23.2.01_amd64.buildinfo
+ 067de9f4b6ea4f70916eca9c4417b8fd876430c635d15811bba7f71bec847424 264828 mx-boot-options_23.2.01_amd64.deb
+Files:
+ 39d3291f94ae52a9ef1e1cf1ae1fbbaf 1153 admin optional mx-boot-options_23.2.01.dsc
+ 5fcb4d9becb49e0f902f964a27c9b123 244008 admin optional mx-boot-options_23.2.01.tar.xz
+ b3c377a32d5147b12352ed9aecd18420 10791 admin optional mx-boot-options_23.2.01_amd64.buildinfo
+ e2b7b1e27844cf3c15f1573aa1d74070 264828 admin optional mx-boot-options_23.2.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmP9UfoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumM59B/9QxnQ1sEWJsZFHPVkzlsF5iLShNMLv
+v+IVeLcoL6zkuTCNWRUqcXoYCNnCR+5wW+r+PDF92WjF9aWNueovqY0rUIsl+924
+nEVwFj2yxnIl0HpneZ1q4AK5a3wDgCUnADF1m+z0DpAPqj0NvkWcaMolqMALicjY
+iBWA0Hy8c121tD8gbXd2gkxBcf6AFVVL82Z9uI1b861tq5B4WJcNMYN8KKPJnTBd
+3fPLfqaxLvlGvg0fFnQcejr0TUoTocvuR0I76Mi64rb6iuK2ASo0TJSLkRvpCNdC
++Fp44bzha7khRIeES1S56/aF3loaK7ogT1pybWoafX6aNkX16dC9C29Q
+=DsQU
+-----END PGP SIGNATURE-----

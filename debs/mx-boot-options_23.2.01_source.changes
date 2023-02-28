@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 27 Feb 2023 19:57:54 -0500
+Source: mx-boot-options
+Architecture: source
+Version: 23.2.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-boot-options (23.2.01) mx; urgency=medium
+ .
+   * Change ownership of the rc file created by KDE/Plasma
+Checksums-Sha1:
+ 6e4b452180adbd4d24a59686e07104e05c87d2dd 1153 mx-boot-options_23.2.01.dsc
+ dfd669d0cfabab29f277d81cb1b3ab3e5af73a95 244008 mx-boot-options_23.2.01.tar.xz
+ e660ddeb7ff6f31e0259f1e8b52ae081f46d3e44 10791 mx-boot-options_23.2.01_amd64.buildinfo
+Checksums-Sha256:
+ df57e8dc772b68a8388d85a10bb6e40ea92688e06bbd48c55ce6be568f62ff61 1153 mx-boot-options_23.2.01.dsc
+ ff67910c2b8be47b49fc8f9862d1a1f10e00c05e2b032cf75e981b9ec7effa83 244008 mx-boot-options_23.2.01.tar.xz
+ f65df0aef1ec5c3f0ad409f462d8aab40d90f700846a9e2a18a34c190d5f8d46 10791 mx-boot-options_23.2.01_amd64.buildinfo
+Files:
+ 39d3291f94ae52a9ef1e1cf1ae1fbbaf 1153 admin optional mx-boot-options_23.2.01.dsc
+ 5fcb4d9becb49e0f902f964a27c9b123 244008 admin optional mx-boot-options_23.2.01.tar.xz
+ b3c377a32d5147b12352ed9aecd18420 10791 admin optional mx-boot-options_23.2.01_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmP9UfoTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumMTuB/4/EWtvpd0xAoTCGTe8u1dGOWl97eee
+ZHmv/OoSAhf+KIYTbfedWMnXmZb+V+PWilt4XC+S0Oi2heV6E0iVkK2SodTPhoDA
+y782qXhlQghaAysQMprHUR3eZU1Gp62osS4ooEEky3mmdlrn/F8QYiRuZUGAnYWM
+m73MGXrCbBhe+kHH/1xb7OKUMpJfj3m1gQA4q0CDcyEqt4Ybo5c244fxpOKXZPwE
+t4ZJaLaXNuk2uPamyY+P7sqea3hIIO5xhN0yBa+bcP4IId2JbEAPhbaQhSIT2Ha9
+dU1KUHdYmdrBP8+he678+VwTHsrW1YcpAPPlgKqzlQlnx3mFlYUbPQNw
+=PBYR
+-----END PGP SIGNATURE-----

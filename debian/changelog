@@ -1,3 +1,9 @@
+mx-boot-options (23.2.01) mx; urgency=medium
+
+  * Change ownership of the rc file created by KDE/Plasma
+
+ -- Adrian <adrian@mxlinux.org>  Mon, 27 Feb 2023 19:57:54 -0500
+
 mx-boot-options (23.2) mx; urgency=medium
 
   * Disable saving last boot choice on Btrs (not supported)

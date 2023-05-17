@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Tue, 16 May 2023 21:24:18 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 23.5
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.5) mx; urgency=medium
+ .
+   * Update logo
+Checksums-Sha1:
+ e7d9bc9340368631a5d67a5197da32b8527d1e1a 1141 mx-boot-options_23.5.dsc
+ cbc444e514c2fa6c8a68cb5990223ba20152c172 187816 mx-boot-options_23.5.tar.xz
+ 7adc51de1eae51ce095e0bc15dc62d8d48756ea2 10767 mx-boot-options_23.5_amd64.buildinfo
+ 87ae7030f29a774c3376a08e4825ba46c31655a4 216336 mx-boot-options_23.5_amd64.deb
+Checksums-Sha256:
+ eeabada68a13a0d6917b53475930b03e8ef839f9b091cb6c7762d3456adfe40c 1141 mx-boot-options_23.5.dsc
+ e8e3eb34eea53904a29c9f4378d67ff9f4defe89a7c6bb8b3c51d4380cab8205 187816 mx-boot-options_23.5.tar.xz
+ b4e2e91a3be4a93095626ebed4058172aa0b94baef31785a62a4c39663da0ed9 10767 mx-boot-options_23.5_amd64.buildinfo
+ 91b4dd512af8b9d757f106f44d460bb47b3f3c737182817b5a78eda06dde9200 216336 mx-boot-options_23.5_amd64.deb
+Files:
+ f087036f1390ef92f35058691fb1bb47 1141 admin optional mx-boot-options_23.5.dsc
+ b3c0f2313e53d222864a3961a45e0c8c 187816 admin optional mx-boot-options_23.5.tar.xz
+ e218f2068439bc7cd2f8cfd2bb3236e9 10767 admin optional mx-boot-options_23.5_amd64.buildinfo
+ 849656fdababfb5d546dafc9510a39a8 216336 admin optional mx-boot-options_23.5_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmRkUs4THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumFNnB/9/4qB6v8rclt/ukSlYgawFLFgd+BJQ
+GYCO7KV7RQ9j5dnQRmc1MaLDhclDHIaZQcAwU5QsvfgnSfd429Y+EIFXDVFm2kC1
+hPvrHRXYj/rsWnzZgVY5M+nKQaVrp9g3P18Y5B1z8kX/GYOGDoIMXA28usH6ryJ1
+Y/jhlxbS4UibU5L/QG1mApuhOwq593Usqlj007bPUu7XgxkqsqALGjqgjfKbYCaj
+ImwOTNMUb/cOwDAYkmg/C6IvbFn3/OrqPaCnNK0hSCUu+c1xEaHFD4D/xRncKe/6
+kPG+nef0QnMcznHjgx2/J+ImxdJ2DHAWTsjVSrtJKPm1SUmq12AUAtJU
+=j4lg
+-----END PGP SIGNATURE-----

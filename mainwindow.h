@@ -53,7 +53,7 @@ public:
     bool isInstalled(const QString &package);
     bool isInstalled(const QStringList &packages);
     bool replaceGrubArg(const QString &key, const QString &item);
-    int findMenuEntryById(const QString &id) const;
+    //    int findMenuEntryById(const QString &id) const;
     static bool isUefi();
     static void removeUefiEntry(QListWidget *listEntries, QDialog *uefiDialog);
     static void sendMouseEvents();
@@ -61,7 +61,7 @@ public:
     static void setUefiTimeout(QDialog *uefiDialog, QLabel *textTimeout);
     static void sortUefiBootOrder(const QStringList &order, QListWidget *list);
     static void toggleUefiActive(QListWidget *listEntries);
-    void addGrubArg(const QString &key, const QString &item);
+    //    void addGrubArg(const QString &key, const QString &item);
     void addGrubLine(const QString &item);
     void addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi);
     void createChrootEnv(const QString &root);
@@ -73,7 +73,7 @@ public:
     void readDefaultGrub();
     void readGrubCfg();
     void readKernelOpts();
-    void remGrubArg(const QString &key, const QString &item);
+    //    void remGrubArg(const QString &key, const QString &item);
     void saveBootOrder(const QListWidget *list);
     void setGeneralConnections();
     void setup();

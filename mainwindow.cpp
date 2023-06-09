@@ -88,9 +88,9 @@ void MainWindow::setup()
     messages_changed = false;
     just_installed = false;
 
-    user = cmd.getCmdOut(QStringLiteral("logname"));
+    user = cmd.getCmdOut(QStringLiteral("logname"), true);
 
-    connect(qApp, &QApplication::aboutToQuit, this, &MainWindow::cleanup);
+    connect(QApplication::instance(), &QApplication::aboutToQuit, this, &MainWindow::cleanup);
 
     this->setWindowTitle(QStringLiteral("MX Boot Options"));
     ui->pushCancel->setEnabled(true);
@@ -277,10 +277,10 @@ bool MainWindow::isInstalled(const QString &package)
 // checks if a list of packages is installed, return false if one of them is not
 bool MainWindow::isInstalled(const QStringList &packages)
 {
-    for (const QString &package : packages)
-        if (!isInstalled(package))
-            return false;
-    return true;
+    bool allPackagesInstalled
+        = std::all_of(packages.begin(), packages.end(), [&](const QString &package) { return isInstalled(package); });
+
+    return allPackagesInstalled;
 }
 
 bool MainWindow::isUefi() { return QFile::exists(QStringLiteral("/sys/firmware/efi/efivars")); }
@@ -392,18 +392,18 @@ void MainWindow::writeDefaultGrub() const
     file.close();
 }
 
-int MainWindow::findMenuEntryById(const QString &id) const
-{
-    int count = 0;
-    for (const QString &line : grub_cfg) {
-        if (line.startsWith(QLatin1String("menuentry "))) {
-            if (line.contains("--id " + id))
-                return count;
-            ++count;
-        }
-    }
-    return -1;
-}
+// int MainWindow::findMenuEntryById(const QString &id) const
+//{
+//    int count = 0;
+//    for (const QString &line : grub_cfg) {
+//        if (line.startsWith(QLatin1String("menuentry "))) {
+//            if (line.contains("--id " + id))
+//                return count;
+//            ++count;
+//        }
+//    }
+//    return -1;
+//}
 
 QStringList MainWindow::getLinuxPartitions()
 {
@@ -470,12 +470,14 @@ QString MainWindow::selectPartiton(const QStringList &list)
     auto *dialog = new CustomDialog(list);
 
     // Guess MX install, find first partition with rootMX* label
-    for (const QString &part_info : list) {
-        if (cmd.run("lsblk -ln -o LABEL /dev/" + part_info.section(QStringLiteral(" "), 0, 0) + "| grep -q rootMX")) {
-            dialog->comboBox()->setCurrentIndex(dialog->comboBox()->findText(part_info));
-            break;
-        }
-    }
+    auto it = std::find_if(list.begin(), list.end(), [&](const QString &part_info) {
+        QString label = part_info.section(QStringLiteral(" "), 0, 0);
+        QString command = "lsblk -ln -o LABEL /dev/" + label + " | grep -q rootMX";
+        return cmd.run(command);
+    });
+    if (it != list.end())
+        dialog->comboBox()->setCurrentIndex(dialog->comboBox()->findText(*it));
+
     if (dialog->exec() == QDialog::Accepted) {
         qDebug() << "exec true" << dialog->comboBox()->currentText().section(QStringLiteral(" "), 0, 0);
         return dialog->comboBox()->currentText().section(QStringLiteral(" "), 0, 0);
@@ -486,35 +488,35 @@ QString MainWindow::selectPartiton(const QStringList &list)
 }
 
 // Add item to the key in /etc/default/grub
-void MainWindow::addGrubArg(const QString &key, const QString &item)
-{
-    QStringList new_list;
-    for (QString line : qAsConst(default_grub)) {
-        if (line.contains(key)) {      // find key
-            if (line.contains(item)) { // return if already has the item
-                return;
-            } else if (line.endsWith(QLatin1String("="))) { // empty line terminated in equal
-                line.append(item);
-            } else if (line.endsWith(QLatin1String("\"\""))) { // line that ends with a double quote
-                line.chop(1);                                  // chop last quote
-                line.append(item).append("\"");
-            } else if (line.endsWith(QLatin1String("\""))) { // line ends with one quote (has other elements
-                line.chop(1);                                // chop last quote
-                line.append(" ").append(item).append("\"");
-            } else if (line.endsWith(QLatin1String("''"))) { // line ends with 2 single quotes
-                line.chop(1);                                // chop last quote
-                line.append(item).append("'");
-            } else if (line.endsWith(QLatin1String("'"))) { // line ends with a single quote
-                line.chop(1);                               // chop last quote
-                line.append(" ").append(item).append("'");
-            } else { // line ends with another item
-                line.append(" ").append(item);
-            }
-        }
-        new_list << line;
-    }
-    default_grub = new_list;
-}
+// void MainWindow::addGrubArg(const QString &key, const QString &item)
+//{
+//    QStringList new_list;
+//    for (QString line : qAsConst(default_grub)) {
+//        if (line.contains(key)) {      // find key
+//            if (line.contains(item)) { // return if already has the item
+//                return;
+//            } else if (line.endsWith(QLatin1String("="))) { // empty line terminated in equal
+//                line.append(item);
+//            } else if (line.endsWith(QLatin1String("\"\""))) { // line that ends with a double quote
+//                line.chop(1);                                  // chop last quote
+//                line.append(item).append("\"");
+//            } else if (line.endsWith(QLatin1String("\""))) { // line ends with one quote (has other elements
+//                line.chop(1);                                // chop last quote
+//                line.append(" ").append(item).append("\"");
+//            } else if (line.endsWith(QLatin1String("''"))) { // line ends with 2 single quotes
+//                line.chop(1);                                // chop last quote
+//                line.append(item).append("'");
+//            } else if (line.endsWith(QLatin1String("'"))) { // line ends with a single quote
+//                line.chop(1);                               // chop last quote
+//                line.append(" ").append(item).append("'");
+//            } else { // line ends with another item
+//                line.append(" ").append(item);
+//            }
+//        }
+//        new_list << line;
+//    }
+//    default_grub = new_list;
+//}
 
 void MainWindow::addGrubLine(const QString &item) { default_grub << item; }
 
@@ -572,17 +574,17 @@ void MainWindow::disableGrubLine(const QString &item)
 }
 
 // Remove itme from key in /etc/default/grub
-void MainWindow::remGrubArg(const QString &key, const QString &item)
-{
-    QStringList new_list;
-    new_list.reserve(default_grub.size());
-    for (QString line : qAsConst(default_grub)) {
-        if (line.contains(key)) // find key
-            line.remove(QRegularExpression("\\s*" + item));
-        new_list << line;
-    }
-    default_grub = new_list;
-}
+// void MainWindow::remGrubArg(const QString &key, const QString &item)
+//{
+//    QStringList new_list;
+//    new_list.reserve(default_grub.size());
+//    for (QString line : qAsConst(default_grub)) {
+//        if (line.contains(key)) // find key
+//            line.remove(QRegularExpression("\\s*" + item));
+//        new_list << line;
+//    }
+//    default_grub = new_list;
+//}
 
 void MainWindow::saveBootOrder(const QListWidget *list)
 {

@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Fri, 09 Jun 2023 00:22:39 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: i386
+Version: 23.6
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.6) mx; urgency=medium
+ .
+   * Update policy file
+   * Refresh translations
+Checksums-Sha1:
+ f5dcdb9a96edc468237b475fc13e1343dd74735d 10089 mx-boot-options_23.6_i386.buildinfo
+ 87ae3192e4417dd1b987fe5165cafb47c6b561c7 220736 mx-boot-options_23.6_i386.deb
+Checksums-Sha256:
+ b130f9c64d4fa2146d0ae4617ddc3e742a1e1f2c8edf9c3e39b98bbd57d0aa75 10089 mx-boot-options_23.6_i386.buildinfo
+ 93c60836bce4d3c7768fdd9aef6354237e99cbfd9241f4ccc46ee0ef21a51def 220736 mx-boot-options_23.6_i386.deb
+Files:
+ 3ed36778c02a0febfe947f2c6c85128a 10089 admin optional mx-boot-options_23.6_i386.buildinfo
+ 7b7dbdd3ca29f6e2e77c84a572c8cbb5 220736 admin optional mx-boot-options_23.6_i386.deb

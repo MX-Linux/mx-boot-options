@@ -202,15 +202,15 @@
     <message>
         <location filename="../mainwindow.cpp" line="220"/>
         <location filename="../mainwindow.cpp" line="441"/>
-        <location filename="../mainwindow.cpp" line="1076"/>
+        <location filename="../mainwindow.cpp" line="1078"/>
         <source>Timeout: %1 seconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="231"/>
         <location filename="../mainwindow.cpp" line="443"/>
-        <location filename="../mainwindow.cpp" line="1075"/>
-        <location filename="../mainwindow.cpp" line="1091"/>
+        <location filename="../mainwindow.cpp" line="1077"/>
+        <location filename="../mainwindow.cpp" line="1093"/>
         <source>Boot Next: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -241,8 +241,8 @@
         <location filename="../mainwindow.cpp" line="319"/>
         <location filename="../mainwindow.cpp" line="331"/>
         <location filename="../mainwindow.cpp" line="362"/>
-        <location filename="../mainwindow.cpp" line="524"/>
-        <location filename="../mainwindow.cpp" line="604"/>
+        <location filename="../mainwindow.cpp" line="526"/>
+        <location filename="../mainwindow.cpp" line="606"/>
         <source>Error</source>
         <translation>त्रुटि</translation>
     </message>
@@ -292,207 +292,207 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="524"/>
+        <location filename="../mainwindow.cpp" line="526"/>
         <source>Could not create a temporary folder</source>
         <translation>अस्थायी फोल्डर बनाना विफल</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="533"/>
+        <location filename="../mainwindow.cpp" line="535"/>
         <source>Cannot continue</source>
         <translation>प्रक्रिया जारी रखना संभव नहीं है</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="534"/>
+        <location filename="../mainwindow.cpp" line="536"/>
         <source>Cannot create chroot environment, cannot change boot options. Exiting...</source>
         <translation>Chroot वातावरण बनाना विफल, बूट विकल्प परिवर्तन विफल। बंद करना जारी...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="604"/>
+        <location filename="../mainwindow.cpp" line="606"/>
         <source>Something went wrong, could not save boot order.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="801"/>
-        <location filename="../mainwindow.cpp" line="1191"/>
+        <location filename="../mainwindow.cpp" line="803"/>
+        <location filename="../mainwindow.cpp" line="1193"/>
         <source>Updating configuration, please wait</source>
         <translation>विन्यास अपडेट करना जारी, प्रतीक्षा करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="853"/>
+        <location filename="../mainwindow.cpp" line="855"/>
         <source>Updating initramfs...</source>
         <translation>Initramfs अपडेट करना जारी...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="864"/>
-        <location filename="../mainwindow.cpp" line="1203"/>
+        <location filename="../mainwindow.cpp" line="866"/>
+        <location filename="../mainwindow.cpp" line="1205"/>
         <source>Updating grub...</source>
         <translation>Grub अपडेट करना जारी...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="868"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>Done</source>
         <translation>पूर्ण</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="868"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>Changes have been successfully applied.</source>
         <translation>परिवर्तन लागू करना सफल।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
+        <location filename="../mainwindow.cpp" line="882"/>
         <source>About %1</source>
         <translation>%1 के बारे में</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="881"/>
+        <location filename="../mainwindow.cpp" line="883"/>
         <source>Version: </source>
         <translation>संस्करण :</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="885"/>
         <source>Program for selecting common start-up choices</source>
         <translation>सामान्य सिस्टम आरंभ विकल्प चयन हेतु प्रोग्राम</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="887"/>
         <source>Copyright (c) MX Linux</source>
         <translation>कॉपीराइट (c) एमएक्स लिनक्स</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="888"/>
         <source>%1 License</source>
         <translation>%1 लाइसेंस</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="905"/>
+        <location filename="../mainwindow.cpp" line="907"/>
         <source>%1 Help</source>
         <translation>%1 सहायता</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="914"/>
+        <location filename="../mainwindow.cpp" line="916"/>
         <source>Running in a Virtual Machine</source>
         <translation>वर्चुअल मशीन में कार्यरत</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="915"/>
+        <location filename="../mainwindow.cpp" line="917"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>आपका वर्तमान सिस्टम में वर्चुअल मशीन में कार्यरत है।
 प्लाईमाउथ बूट स्प्लैश की कार्यक्षमता सीमित है, आप द्वारा थीम का पूर्वावलोकन संभव नहीं है</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="922"/>
+        <location filename="../mainwindow.cpp" line="924"/>
         <source>Plymouth packages not installed</source>
         <translation> प्लाईमाउथ पैकेज इंस्टॉल नहीं हैं</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="923"/>
+        <location filename="../mainwindow.cpp" line="925"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>प्लाईमाउथ पैकेज इंस्टॉल नहीं हैं।
 क्या आप उन्हें इंस्टॉल करना चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="945"/>
+        <location filename="../mainwindow.cpp" line="947"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>चित्र (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1049"/>
+        <location filename="../mainwindow.cpp" line="1051"/>
         <source>Press any key to close</source>
         <translation>बंद करने के लिए कोई भी कुंजी दबाएँ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1051"/>
+        <location filename="../mainwindow.cpp" line="1053"/>
         <source>Log not found</source>
         <translation>लॉग प्राप्ति विफल</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1051"/>
+        <location filename="../mainwindow.cpp" line="1053"/>
         <source>Could not find log at </source>
         <translation>यहाँ पर लॉग प्राप्ति विफल</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1057"/>
+        <location filename="../mainwindow.cpp" line="1059"/>
         <source>Edit UEFI Boot Entries</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1060"/>
+        <location filename="../mainwindow.cpp" line="1062"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1064"/>
-        <location filename="../mainwindow.cpp" line="1117"/>
+        <location filename="../mainwindow.cpp" line="1066"/>
+        <location filename="../mainwindow.cpp" line="1119"/>
         <source>Set ac&amp;tive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1065"/>
+        <location filename="../mainwindow.cpp" line="1067"/>
         <source>&amp;Add entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1066"/>
+        <location filename="../mainwindow.cpp" line="1068"/>
         <source>Boot &amp;next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1067"/>
+        <location filename="../mainwindow.cpp" line="1069"/>
         <source>&amp;Close</source>
         <translation>बंद करें (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1068"/>
+        <location filename="../mainwindow.cpp" line="1070"/>
         <source>Move &amp;down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1069"/>
+        <location filename="../mainwindow.cpp" line="1071"/>
         <source>&amp;Remove entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1070"/>
+        <location filename="../mainwindow.cpp" line="1072"/>
         <source>Re&amp;set next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1071"/>
+        <location filename="../mainwindow.cpp" line="1073"/>
         <source>Change &amp;timeout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1072"/>
+        <location filename="../mainwindow.cpp" line="1074"/>
         <source>Move &amp;up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1075"/>
-        <location filename="../mainwindow.cpp" line="1091"/>
+        <location filename="../mainwindow.cpp" line="1077"/>
+        <location filename="../mainwindow.cpp" line="1093"/>
         <source>not set, will boot using list order</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1114"/>
+        <location filename="../mainwindow.cpp" line="1116"/>
         <source>Set &amp;inactive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1167"/>
+        <location filename="../mainwindow.cpp" line="1169"/>
         <source>Needs reboot</source>
         <translation>सिस्टम पुनः आरंभ करना आवश्यक</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1168"/>
+        <location filename="../mainwindow.cpp" line="1170"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>प्लाईमाउथ अभी इंस्टॉल किया गया, पूर्वावलोकन प्रदर्शित करने हेतु पुनः आरंभ आवश्यक है</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1224"/>
+        <location filename="../mainwindow.cpp" line="1226"/>
         <source>Click to select theme</source>
         <translation>थीम चयन हेतु क्लिक करें</translation>
     </message>
@@ -539,12 +539,12 @@ OK to go ahead and install them?</source>
         <translation>प्रतीत होता है कि आप रुट के रूप में लॉगिन हैं, प्रोग्राम उपयोग करने हेतु लॉगआउट कर सामान्य उपयोक्ता के रूप में लॉगिन करें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="942"/>
+        <location filename="../mainwindow.cpp" line="944"/>
         <source>Select image to display in bootloader</source>
         <translation>बूट लोड साधन हेतु चित्र चयन</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1234"/>
+        <location filename="../mainwindow.cpp" line="1236"/>
         <source>Select GRUB theme</source>
         <translation>Grub थीम चयन</translation>
     </message>

@@ -1,1 +1,1 @@
-#define VERSION "21.1.01"
+const QString VERSION {"23.6"};

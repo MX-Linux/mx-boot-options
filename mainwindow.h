@@ -43,7 +43,7 @@ class MainWindow : public QDialog
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    ~MainWindow() override;
 
     QString selectPartiton(const QStringList &list);
     QStringList getLinuxPartitions();
@@ -68,7 +68,7 @@ public:
     void enableGrubLine(const QString &item);
     void loadPlymouthThemes();
     void readBootEntries(QListWidget *list, QLabel *textTimeout, QLabel *textBootNext, QLabel *textBootCurrent,
-                         QStringList &bootorder);
+                         QStringList *bootorder);
     void readDefaultGrub();
     void readGrubCfg();
     void readKernelOpts();
@@ -109,7 +109,7 @@ private slots:
     void spinBoxTimeout_valueChanged(int val);
 
 protected:
-    void keyPressEvent(QKeyEvent *event);
+    void keyPressEvent(QKeyEvent *event) override;
     QProgressBar *bar {};
 
 private:

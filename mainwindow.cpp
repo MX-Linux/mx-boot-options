@@ -429,7 +429,7 @@ QStringList MainWindow::getLinuxPartitions()
 }
 
 void MainWindow::readBootEntries(QListWidget *listEntries, QLabel *textTimeout, QLabel *textBootNext,
-                                 QLabel *textBootCurrent, QStringList &bootorder)
+                                 QLabel *textBootCurrent, QStringList *bootorder)
 {
     QStringList entries = cmd.getCmdOut(QStringLiteral("efibootmgr")).split(QStringLiteral("\n"));
     for (const auto &item : qAsConst(entries)) {
@@ -444,7 +444,7 @@ void MainWindow::readBootEntries(QListWidget *listEntries, QLabel *textTimeout, 
         } else if (item.startsWith(QLatin1String("BootCurrent:"))) {
             textBootCurrent->setText(tr("Boot Current: %1").arg(item.section(QStringLiteral(" "), 1, 1)));
         } else if (item.startsWith(QLatin1String("BootOrder:"))) {
-            bootorder = item.section(QStringLiteral(" "), 1, 1).split(QStringLiteral(","));
+            *bootorder = item.section(QStringLiteral(" "), 1, 1).split(QStringLiteral(","));
         }
     }
 }
@@ -1121,7 +1121,7 @@ void MainWindow::pushUefi_clicked()
         }
     });
 
-    readBootEntries(listEntries, textTimeout, textBootNext, textBootCurrent, bootorder);
+    readBootEntries(listEntries, textTimeout, textBootNext, textBootCurrent, &bootorder);
     sortUefiBootOrder(bootorder, listEntries);
 
     listEntries->setDragDropMode(QAbstractItemView::InternalMove);

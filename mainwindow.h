@@ -31,7 +31,6 @@
 
 #include <cmd.h>
 #include <dialog.h>
-#include <version.h>
 
 namespace Ui
 {

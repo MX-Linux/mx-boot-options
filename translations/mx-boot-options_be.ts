@@ -136,7 +136,7 @@
     <message>
         <location filename="../mainwindow.ui" line="414"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Даведка</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="421"/>

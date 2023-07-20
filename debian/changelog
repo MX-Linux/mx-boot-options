@@ -1,3 +1,9 @@
+mx-boot-options (23.7) mx; urgency=medium
+
+  * Update translations
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 20 Jul 2023 16:05:36 -0400
+
 mx-boot-options (23.6) mx; urgency=medium
 
   * Update policy file

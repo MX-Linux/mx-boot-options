@@ -7,8 +7,8 @@
         <location filename="../dialog.cpp" line="16"/>
         <source>Live environment detected. Please select the root partition of the
  system you want to modify (only Linux partitions are displayed)</source>
-        <translation>Live Umgebung festgestellt. Bitte die Root-Partition des
- zu modifizierenden Systems auswählen (nur Linux Partitionen werden angezeigt)</translation>
+        <translation>Live Umgebung festgestellt. Bitte die root-Partition des
+ zu modifizierenden Systems auswählen (nur Linux-Partitionen werden angezeigt)</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="22"/>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../mainwindow.ui" line="127"/>
         <source>Enable saving last boot choice</source>
-        <translation>Abspeichern der letzten Auswahl beim Booten aktiv schalten</translation>
+        <translation>Abspeichern der letzten Auswahl beim Booten aktivieren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="134"/>
         <source>Manage UEFI Boot Options</source>
-        <translation type="unfinished"></translation>
+        <translation>UEFI-Boot-Optionen verwalten</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="150"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../mainwindow.ui" line="358"/>
         <source>Display log</source>
-        <translation>Log anzeigen</translation>
+        <translation>Protokoll anzeigen</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="411"/>
@@ -187,12 +187,12 @@
     <message>
         <location filename="../mainwindow.cpp" line="74"/>
         <source>Process still running. Are you sure you want to quit?</source>
-        <translation>Der Prozess arbeitet noch. Sind Sie sicher, daß Sie abbrechen wollen?</translation>
+        <translation>Der Prozess läuft noch. Sind sie sicher, daß sie abbrechen wollen?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="216"/>
         <source>Set timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Timeout einstellen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="216"/>
@@ -204,7 +204,7 @@
         <location filename="../mainwindow.cpp" line="441"/>
         <location filename="../mainwindow.cpp" line="1078"/>
         <source>Timeout: %1 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Timeout: %1 Sekunden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="231"/>
@@ -212,30 +212,31 @@
         <location filename="../mainwindow.cpp" line="1077"/>
         <location filename="../mainwindow.cpp" line="1093"/>
         <source>Boot Next: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Boote nächstes: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="238"/>
         <source>Removal confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation>Entfernen bestätigen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="239"/>
         <source>Are you sure you want to delete this boot entry?
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sind Sie sicher, dass Sie diesen Booteintrag löschen wollen??
+%1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="305"/>
         <location filename="../mainwindow.cpp" line="308"/>
         <source>Select EFI file</source>
-        <translation type="unfinished"></translation>
+        <translation>EFI-Datei auswählen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="306"/>
         <location filename="../mainwindow.cpp" line="309"/>
         <source>EFI files (*.efi *.EFI)</source>
-        <translation type="unfinished"></translation>
+        <translation>EFI-Dateien (*.efi *.EFI)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="319"/>
@@ -249,22 +250,22 @@
     <message>
         <location filename="../mainwindow.cpp" line="320"/>
         <source>Could not find the source mountpoint for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Konnte den Quell-Einhängepunkt für %1 nicht finden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="324"/>
         <source>Set name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name festlegen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="324"/>
         <source>Enter the name for the UEFI menu item:</source>
-        <translation type="unfinished"></translation>
+        <translation>Name des UEFI-Menüpunkts eingeben</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="331"/>
         <source>Something went wrong, could not add entry.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etwas lief schief, Eintrag konnte nicht erstellt werden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="349"/>
@@ -289,7 +290,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="445"/>
         <source>Boot Current: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Boote aktuelles: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="526"/>
@@ -299,7 +300,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="535"/>
         <source>Cannot continue</source>
-        <translation>Fortfahren nicht möglich</translation>
+        <translation>Fortsetzen nicht möglich</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="536"/>
@@ -309,7 +310,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="606"/>
         <source>Something went wrong, could not save boot order.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etwas lief schief, Boot-Reihenfolge konnte nicht gespeichert werden.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="803"/>
@@ -336,7 +337,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="870"/>
         <source>Changes have been successfully applied.</source>
-        <translation>Änderungen erfolgreich durchgeführt</translation>
+        <translation>Die Änderungen wurden erfolgreich durchgeführt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="882"/>
@@ -404,40 +405,42 @@ OK für das Weitermachen und der Installierung dieser Pakete ?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1053"/>
         <source>Log not found</source>
-        <translation>Kein Log gefunden</translation>
+        <translation>Kein Protokoll gefunden</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1053"/>
         <source>Could not find log at </source>
-        <translation>Log konnte nicht gefunden werden unter</translation>
+        <translation>Das Protokoll konnte nicht gefunden werden unter</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1059"/>
         <source>Edit UEFI Boot Entries</source>
-        <translation type="unfinished"></translation>
+        <translation>UEFI-Boot-Einträge bearbeiten</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1062"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mit den Schaltflächen Auf/Ab oder durch Ziehen und Ablegen von Elementen können sie die Boot-Reihenfolge ändern.
+- Die Elemente werden in der Startreihenfolge aufgelistet.
+- Ausgegraute Zeilen sind inaktiv.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1066"/>
         <location filename="../mainwindow.cpp" line="1119"/>
         <source>Set ac&amp;tive</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf ak&amp;tiv setzen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1067"/>
         <source>&amp;Add entry</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Eintrag hinzufügen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1068"/>
         <source>Boot &amp;next</source>
-        <translation type="unfinished"></translation>
+        <translation>Boote &amp;nächstes</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1069"/>
@@ -447,38 +450,38 @@ OK für das Weitermachen und der Installierung dieser Pakete ?</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1070"/>
         <source>Move &amp;down</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Verschieben abwärts</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1071"/>
         <source>&amp;Remove entry</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Eintrag entfernen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1072"/>
         <source>Re&amp;set next</source>
-        <translation type="unfinished"></translation>
+        <translation>Näch&amp;stes zurücksetzen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1073"/>
         <source>Change &amp;timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern &amp;Timeout</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1074"/>
         <source>Move &amp;up</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Verschieben aufwärts</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1077"/>
         <location filename="../mainwindow.cpp" line="1093"/>
         <source>not set, will boot using list order</source>
-        <translation type="unfinished"></translation>
+        <translation>nicht gesetzt, boote mit Reihenfolge in Liste</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1116"/>
         <source>Set &amp;inactive</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf &amp;inaktiv setzen</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1169"/>
@@ -535,7 +538,7 @@ OK für das Weitermachen und der Installierung dieser Pakete ?</translation>
     <message>
         <location filename="../main.cpp" line="82"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
-        <translation>Sie sind als Benutzer “root” am System angemeldet. Bitte melden Sie sich ab und melden sich als normaler Benutzer an, um dieses Programm zu verwenden.</translation>
+        <translation>Sie sind als Administrator am System angemeldet. Bitte melden sie sich ab und dann als normaler Benutzer wieder an, um dieses Programm zu verwenden.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="944"/>

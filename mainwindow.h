@@ -67,7 +67,7 @@ public:
     void disableGrubLine(const QString &item);
     void enableGrubLine(const QString &item);
     void loadPlymouthThemes();
-    void readBootEntries(QListWidget *list, QLabel *textTimeout, QLabel *textBootNext, QLabel *textBootCurrent,
+    void readBootEntries(QListWidget *listEntries, QLabel *textTimeout, QLabel *textBootNext, QLabel *textBootCurrent,
                          QStringList *bootorder);
     void readDefaultGrub();
     void readGrubCfg();
@@ -101,7 +101,7 @@ private slots:
     void combo_save_default_clicked();
     void combo_menu_entry_currentIndexChanged();
     void combo_theme_activated(int);
-    void combo_theme_currentIndexChanged(int index1);
+    void combo_theme_currentIndexChanged(int index);
     void lineEdit_kernel_textEdited();
     void radio_detailed_msg_toggled(bool checked);
     void radio_limited_msg_toggled(bool checked);

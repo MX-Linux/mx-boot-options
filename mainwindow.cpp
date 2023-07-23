@@ -487,37 +487,6 @@ QString MainWindow::selectPartiton(const QStringList &list)
     }
 }
 
-// Add item to the key in /etc/default/grub
-// void MainWindow::addGrubArg(const QString &key, const QString &item)
-//{
-//    QStringList new_list;
-//    for (QString line : qAsConst(default_grub)) {
-//        if (line.contains(key)) {      // find key
-//            if (line.contains(item)) { // return if already has the item
-//                return;
-//            } else if (line.endsWith(QLatin1String("="))) { // empty line terminated in equal
-//                line.append(item);
-//            } else if (line.endsWith(QLatin1String("\"\""))) { // line that ends with a double quote
-//                line.chop(1);                                  // chop last quote
-//                line.append(item).append("\"");
-//            } else if (line.endsWith(QLatin1String("\""))) { // line ends with one quote (has other elements
-//                line.chop(1);                                // chop last quote
-//                line.append(" ").append(item).append("\"");
-//            } else if (line.endsWith(QLatin1String("''"))) { // line ends with 2 single quotes
-//                line.chop(1);                                // chop last quote
-//                line.append(item).append("'");
-//            } else if (line.endsWith(QLatin1String("'"))) { // line ends with a single quote
-//                line.chop(1);                               // chop last quote
-//                line.append(" ").append(item).append("'");
-//            } else { // line ends with another item
-//                line.append(" ").append(item);
-//            }
-//        }
-//        new_list << line;
-//    }
-//    default_grub = new_list;
-//}
-
 void MainWindow::addGrubLine(const QString &item) { default_grub << item; }
 
 void MainWindow::createChrootEnv(const QString &root)
@@ -572,19 +541,6 @@ void MainWindow::disableGrubLine(const QString &item)
             new_list << line;
     default_grub = new_list;
 }
-
-// Remove itme from key in /etc/default/grub
-// void MainWindow::remGrubArg(const QString &key, const QString &item)
-//{
-//    QStringList new_list;
-//    new_list.reserve(default_grub.size());
-//    for (QString line : qAsConst(default_grub)) {
-//        if (line.contains(key)) // find key
-//            line.remove(QRegularExpression("\\s*" + item));
-//        new_list << line;
-//    }
-//    default_grub = new_list;
-//}
 
 void MainWindow::saveBootOrder(const QListWidget *list)
 {

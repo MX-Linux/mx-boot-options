@@ -270,7 +270,7 @@ void MainWindow::toggleUefiActive(QListWidget *listEntries)
 
 bool MainWindow::isInstalled(const QString &package)
 {
-    QString cmd_str = QString(chroot + "dpkg -s %1 | grep Status").arg(package);
+    QString cmd_str = (chroot + "dpkg -s %1 | grep Status").arg(package);
     return (cmd.getCmdOut(cmd_str) == QLatin1String("Status: install ok installed"));
 }
 
@@ -483,7 +483,7 @@ QString MainWindow::selectPartiton(const QStringList &list)
         return dialog->comboBox()->currentText().section(QStringLiteral(" "), 0, 0);
     } else {
         qDebug() << "exec false" << dialog->comboBox()->currentText().section(QStringLiteral(" "), 0, 0);
-        return QString();
+        return {};
     }
 }
 

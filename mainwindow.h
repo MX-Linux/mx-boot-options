@@ -110,11 +110,11 @@ private slots:
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
-    QProgressBar *bar {};
 
 private:
     Ui::MainWindow *ui;
     Cmd cmd;
+    QProgressBar *bar {};
     QTimer timer;
 
     bool grub_installed {};

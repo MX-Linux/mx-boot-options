@@ -1,3 +1,9 @@
+mx-boot-options (23.8.01) mx; urgency=medium
+
+  * Fix applying different message levels
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 10 Aug 2023 13:12:39 -0400
+
 mx-boot-options (23.8) mx; urgency=medium
 
   * Fix displaying bootlog

@@ -1,0 +1,40 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 10 Aug 2023 13:12:39 -0400
+Source: mx-boot-options
+Architecture: source
+Version: 23.8.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-boot-options (23.8.01) mx; urgency=medium
+ .
+   * Fix applying different message levels
+Checksums-Sha1:
+ df0f4a87178578b1c8d51e2bfd3411b94efb47dd 1153 mx-boot-options_23.8.01.dsc
+ b09bb3fb1aa1202f5d17c24c058c8b5f051b004b 190348 mx-boot-options_23.8.01.tar.xz
+ e29f327bc7392f5eef53c4496367bec62ab02651 10968 mx-boot-options_23.8.01_amd64.buildinfo
+Checksums-Sha256:
+ 76af6a5ee2913cc006de04e8172cb86aa375540f4ab8057b838be04eb3fa4f8f 1153 mx-boot-options_23.8.01.dsc
+ aaa653e2599130829932b8de619898590dbe5f334ca79c021d3c4abc8f196a16 190348 mx-boot-options_23.8.01.tar.xz
+ 3ae8763f8521ead266ef97f4cae13397071306014a1dbfc11830d1b29906d824 10968 mx-boot-options_23.8.01_amd64.buildinfo
+Files:
+ cc639552c4d9f4b594c812e2c75453f9 1153 admin optional mx-boot-options_23.8.01.dsc
+ 0eb7319f8ea62c36b47c1fc74b58092e 190348 admin optional mx-boot-options_23.8.01.tar.xz
+ ed0d8cb1ce2619934379c38cc564eee5 10968 admin optional mx-boot-options_23.8.01_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmTVGusTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumOhlB/9s0Bu7pcWHU7dMKd3l0i1IY8AYAB8h
+e2T+Gw5KkYxrLUvVKlK3aKVdLJ8ASYd2uQOFIF9Juo1msl4uLURUKeh1eLsiU+Jo
+RXs117UNip5V0pQffhUScQABOusvGD+l+goU794Qm3Lp1v79vuxsNDXUCGmJ6bEZ
+GJitqMaOOQSg5+m9YeG2rZo5i0bNF/kObtqSWL1gZ9x9G3eZQnv/8hk5HMUm7Dwr
+5O7v7S2gM/JIyHeYJNoZ8KyGbvFfXeeakEJkx73VahqW8BEskeHeFJhR9iAYHydh
+GKB9d8lLO7Rdgj0iWnz83I9khwy7SgdZA77FPdacz79MuqlYITE7aLBW
+=z50m
+-----END PGP SIGNATURE-----

@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 10 Aug 2023 13:12:39 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 23.8.01
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.8.01) mx; urgency=medium
+ .
+   * Fix applying different message levels
+Checksums-Sha1:
+ df0f4a87178578b1c8d51e2bfd3411b94efb47dd 1153 mx-boot-options_23.8.01.dsc
+ b09bb3fb1aa1202f5d17c24c058c8b5f051b004b 190348 mx-boot-options_23.8.01.tar.xz
+ e29f327bc7392f5eef53c4496367bec62ab02651 10968 mx-boot-options_23.8.01_amd64.buildinfo
+ 91385f250688bb2c4c1d62f8bcbb2a2d8cfd59a6 216912 mx-boot-options_23.8.01_amd64.deb
+Checksums-Sha256:
+ 76af6a5ee2913cc006de04e8172cb86aa375540f4ab8057b838be04eb3fa4f8f 1153 mx-boot-options_23.8.01.dsc
+ aaa653e2599130829932b8de619898590dbe5f334ca79c021d3c4abc8f196a16 190348 mx-boot-options_23.8.01.tar.xz
+ 3ae8763f8521ead266ef97f4cae13397071306014a1dbfc11830d1b29906d824 10968 mx-boot-options_23.8.01_amd64.buildinfo
+ eafdbb36d3fc0ff5e4001f1e4fff52da3a8fa136a9d3252f2de1ef62e74ecf03 216912 mx-boot-options_23.8.01_amd64.deb
+Files:
+ cc639552c4d9f4b594c812e2c75453f9 1153 admin optional mx-boot-options_23.8.01.dsc
+ 0eb7319f8ea62c36b47c1fc74b58092e 190348 admin optional mx-boot-options_23.8.01.tar.xz
+ ed0d8cb1ce2619934379c38cc564eee5 10968 admin optional mx-boot-options_23.8.01_amd64.buildinfo
+ c21a4c4c8ee13c74e2841147fdac0c17 216912 admin optional mx-boot-options_23.8.01_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmTVGusTHGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumBLvB/9g6N5WPAEpEU4oU/cVi0X35q4/33G0
+LN4Ko2rsGw6igiqlC38O0aKIXQdc6Nq0Cl7Oggn8pbNmLmGf0hPdMxeGjDix7VFk
+q7Uurw6EnkOalfXTxBMip/7/Ocws1UuoOa+UGjWes/8A92kZuS5lxbVsipbwHz6f
+cZ+f+cIigcfTxu710TAyqs2bA7dgD/J4u0qpnXHcwfPG7RC9UOwAcwaJjLwiWy7f
+ww8jSlqq0FNu2YbIFcJM8E1UowVVfECNB63kHt5b3qFc2GKu4VKC1Z/RH8lwaWEL
+HqQHAnNqpNFC0kKthEC/Ivr45UbMYZVaVVISccL5gAf0rmkuKqh85XIO
+=kW4G
+-----END PGP SIGNATURE-----

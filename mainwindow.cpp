@@ -1061,14 +1061,14 @@ void MainWindow::pushLog_clicked()
     if (kernel_options.contains(QLatin1String("hush"))) {
         location = QStringLiteral("/run/rc.log");
     }
-    QString sed = QStringLiteral(R"(sed 's/\^\[/\x1b/g')"); // remove formatting escape char
-    if (!QFile::exists(location)) {                         // try aternate location
+    if (!QFile::exists(location)) { // try aternate location
         location = QStringLiteral("/var/log/boot");
     }
 
     if (QFile::exists(location)) {
+        QString sed = QStringLiteral(R"(sed 's/\^\[/\x1b/g')"); // remove formatting escape char
         cmd.run("x-terminal-emulator -e bash -c \"" + sed + " " + location + "; read -n1 -srp '"
-                + tr("Press any key to close") + "'\"&");
+                + tr("Press any key to close") + "'\"");
     } else {
         QMessageBox::critical(this, tr("Log not found"), tr("Could not find log at ") + location);
     }

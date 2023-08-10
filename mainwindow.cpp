@@ -215,7 +215,7 @@ void MainWindow::setGeneralConnections()
     connect(ui->radioVeryDetailedMsg, &QRadioButton::toggled, this, &MainWindow::radio_very_detailed_msg_toggled);
     connect(ui->spinBoxTimeout, qOverload<int>(&QSpinBox::valueChanged), this,
             &MainWindow::spinBoxTimeout_valueChanged);
-    connect(ui->textKernel, &QLineEdit::textEdited, this, &MainWindow::lineEdit_kernel_textEdited);
+    connect(ui->textKernel, &QLineEdit::textChanged, this, &MainWindow::lineEdit_kernel_textEdited);
 }
 
 void MainWindow::setUefiTimeout(QDialog *uefiDialog, QLabel *textTimeout)

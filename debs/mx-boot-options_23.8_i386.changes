@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Thu, 10 Aug 2023 00:34:18 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: i386
+Version: 23.8
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.8) mx; urgency=medium
+ .
+   * Fix displaying bootlog
+Checksums-Sha1:
+ fb1de99d5fded0267a75bf439fdecc76d147ae41 10089 mx-boot-options_23.8_i386.buildinfo
+ 22368108e3b5ba6d7ad9b460cd073e5c9f5c442b 221340 mx-boot-options_23.8_i386.deb
+Checksums-Sha256:
+ bd3590090f1eb642a2299e9d47debe8b73df51746b611cdba3178dd41fe7a2b3 10089 mx-boot-options_23.8_i386.buildinfo
+ 80f99ba68e9acaae88d130c63e9c09cf2e980d6781bf5371e35519e44467fea0 221340 mx-boot-options_23.8_i386.deb
+Files:
+ 0696754338f0c24fd2ce1374ed01e294 10089 admin optional mx-boot-options_23.8_i386.buildinfo
+ dc2412ee47a5317b2b652293b0940f57 221340 admin optional mx-boot-options_23.8_i386.deb

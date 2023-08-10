@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Thu, 10 Aug 2023 00:34:18 -0400
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: source amd64
+Version: 23.8
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.8) mx; urgency=medium
+ .
+   * Fix displaying bootlog
+Checksums-Sha1:
+ 7d183cd1436b6780e3dba96c665bf6e73469fd71 1141 mx-boot-options_23.8.dsc
+ 04b2360ae4cf74add2923f186594c58e7cdf7d29 189644 mx-boot-options_23.8.tar.xz
+ 2b0b2a875c16b4f1677e0beba81d7f24d246f5c3 10943 mx-boot-options_23.8_amd64.buildinfo
+ caa0864b85cfbe729f7c4743dad2e3d4cf539ee6 216680 mx-boot-options_23.8_amd64.deb
+Checksums-Sha256:
+ 1c0d72c24f1bd5d7b249b9077d77acf928795a43a25e6928c057f85c8a89895b 1141 mx-boot-options_23.8.dsc
+ 48691d143b8e91dd3684ad44f60f8bdd382911e1e4c32008bad0842888388b2f 189644 mx-boot-options_23.8.tar.xz
+ 57074d9e2f6d869e9c27a26c5caa143e29c423daf9370151330ae820b5e99c92 10943 mx-boot-options_23.8_amd64.buildinfo
+ 11535a900ff4bbafc8f8857fc95cdb3a69f844dd4fd0b3cac683cb199f3da14d 216680 mx-boot-options_23.8_amd64.deb
+Files:
+ ced1b54f151e00e05b218b158ab76dac 1141 admin optional mx-boot-options_23.8.dsc
+ f4831426fa930da6d03a31d1f76eef9a 189644 admin optional mx-boot-options_23.8.tar.xz
+ c5dfca096ccadf397c347f4a1ebb2862 10943 admin optional mx-boot-options_23.8_amd64.buildinfo
+ 410c5fa55ffe3dd02661e06f2b2ed9bf 216680 admin optional mx-boot-options_23.8_amd64.deb
+
+-----BEGIN PGP SIGNATURE-----
+
+iQFHBAEBCgAxFiEE8ndToY6S45N+YzXncJOMeAZ57pgFAmTUaW0THGFkcmlhbkBt
+eGxpbnV4Lm9yZwAKCRBwk4x4BnnumCo2B/0eUd/1qa/4hzgGlhTc+B5P8CoRWh4y
+vWCMb8m6SnF1J+VcdT/daH4q3YJDuoZ+uT7y7hmQZpS2qvWxipQVmVIIjhcx5nyP
+irJnojyw6JEyGLjCvcNcSX2J3rvBZ+4RnyYx9N71dVxhBNL+AiRpgohnacwNuvzL
+dA3OWyC0KY2nWQ3l6B7GlP6YM5PtecpO7ddMbBll6z+hIewThgbRY6btoyqeGkM6
+usZ0ntTEV3EePnE1SJCYyUBS759Dgeq1hozihDzj3XaX/j6hODZmTaOOfxCQBSU5
+XloJXk82RzM0uvWYBlrLU9a2uF0lcdzGif38ralKFtb6Gzcf9JvZXqgB
+=Cx1d
+-----END PGP SIGNATURE-----

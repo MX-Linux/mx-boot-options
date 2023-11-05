@@ -548,8 +548,8 @@ OK të ecet përpara dhe të instalohen?</translation>
         <translation>Duket të keni hyrë si rrënjë, ju lutemi, që të përdorni këtë program, dilni dhe bëni hyrjen si përdorues normal.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
-        <source>You must run this program as root.</source>
+        <location filename="../main.cpp" line="96"/>
+        <source>You must run this program with root access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

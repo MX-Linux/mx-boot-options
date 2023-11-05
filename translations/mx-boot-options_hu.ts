@@ -548,8 +548,8 @@ Indulhat a telepítésük?</translation>
         <translation>Úgy tűnik, hogy root felhasználóként van bejelentkezve. Jelentkezzen ki és jelentkezzen be normál felhasználóként a program használatához.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
-        <source>You must run this program as root.</source>
+        <location filename="../main.cpp" line="96"/>
+        <source>You must run this program with root access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

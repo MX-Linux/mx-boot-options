@@ -548,8 +548,8 @@ OK per andare avanti ed installarli?</translation>
         <translation>Sembra che tu sia loggato come root, fai il log out e poi il log in come utente normale per usare questo programma.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
-        <source>You must run this program as root.</source>
+        <location filename="../main.cpp" line="96"/>
+        <source>You must run this program with root access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -549,8 +549,8 @@ Voleu continuar i instal·lar-los?</translation>
         <translation>Sembla que esteu connectat com a administrador, si us plau sortiu i connecteu-vos com a usuari normal per a usar aquest programa.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
-        <source>You must run this program as root.</source>
+        <location filename="../main.cpp" line="96"/>
+        <source>You must run this program with root access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

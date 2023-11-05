@@ -91,8 +91,9 @@ int main(int argc, char *argv[])
     }
 
     QString executablePath = QStandardPaths::findExecutable("pkexec");
-    if (!executablePath.isEmpty() && getuid() != 0) {
-        QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("You must run this program as root."));
+    if (executablePath.isEmpty() && getuid() != 0) {
+        QMessageBox::critical(nullptr, QObject::tr("Error"),
+                              QObject::tr("You must run this program with root access."));
         exit(EXIT_FAILURE);
     }
 

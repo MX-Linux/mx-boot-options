@@ -542,8 +542,8 @@ OK to go ahead and install them?</source>
         <translation>כנראה שנכנסת למערכת בתור משתמש על (root), נא לצאת ולהיכנס כמשתמש רגיל כדי להשתמש בתוכנית הזאת.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
-        <source>You must run this program as root.</source>
+        <location filename="../main.cpp" line="96"/>
+        <source>You must run this program with root access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

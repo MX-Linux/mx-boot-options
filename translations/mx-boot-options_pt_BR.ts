@@ -548,8 +548,8 @@ Você quer continuar e instalar os pacotes do Plymouth?</translation>
         <translation>Parece que você está conectado como usuário root. Por favor, saia da sessão e entre novamente como usuário normal para utilizar este programa.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
-        <source>You must run this program as root.</source>
+        <location filename="../main.cpp" line="96"/>
+        <source>You must run this program with root access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

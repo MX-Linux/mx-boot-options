@@ -538,8 +538,8 @@ OK to go ahead and install them?</source>
         <translation>您似乎是以 root 身份登录的，请注销并以普通用户身份登录以使用该程序。</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="95"/>
-        <source>You must run this program as root.</source>
+        <location filename="../main.cpp" line="96"/>
+        <source>You must run this program with root access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1,3 +1,11 @@
+mx-boot-options (23.11) mx; urgency=medium
+
+  * Run program as normal user and elevate only when running specific commands
+  * Display boot log in a native window instead of terminal
+  * Minor fixes
+
+ -- Adrian <adrian@mxlinux.org>  Sun, 05 Nov 2023 01:11:09 -0400
+
 mx-boot-options (23.8.01) mx; urgency=medium
 
   * Fix applying different message levels

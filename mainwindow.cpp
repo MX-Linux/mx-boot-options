@@ -520,6 +520,7 @@ void MainWindow::createChrootEnv(const QString &root)
         QMessageBox::critical(this, tr("Error"), tr("Could not create a temporary folder"));
         exit(EXIT_FAILURE);
     }
+    cmd.runAsRoot("mkdir " + tmpdir.path() + "/{dev,sys,proc,run}");
     QString cmd_str = QStringLiteral("/bin/mount /dev/%1 %2 && /bin/mount --rbind --make-rslave /dev %2/dev && "
                                      "/bin/mount --rbind --make-rslave /sys %2/sys && /bin/mount --rbind /proc %2/proc "
                                      "&& /bin/mount -t tmpfs -o size=100m,nodev,mode=755 tmpfs %2/run && /bin/mkdir "

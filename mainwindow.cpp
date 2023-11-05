@@ -395,7 +395,9 @@ bool MainWindow::installSplash()
 // Detect Virtual Machine to let user know Plymouth is not fully functional
 bool MainWindow::inVirtualMachine()
 {
-    return (!cmd.run(QStringLiteral("test -z \"$(lspci -d 80ee:beef)\"")));
+    // "lspci -d 15ad:" for VMWare detection -- but plymouth seems to work in VMWare.
+    QString out = cmd.getOut("lspci -d 80ee:beef;lspci -d 80ee:cafe", true);
+    return (!out.isEmpty());
 }
 
 // Write new config in /etc/default/grup

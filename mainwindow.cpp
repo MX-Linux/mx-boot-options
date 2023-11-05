@@ -290,8 +290,8 @@ void MainWindow::toggleUefiActive(QListWidget *listEntries)
 
 bool MainWindow::isInstalled(const QString &package)
 {
-    QString cmd_str = (chroot + "dpkg -s %1 | grep -q \"Status: install ok installed\"").arg(package);
-    return (Cmd().runAsRoot(cmd_str));
+    QString cmd_str = (chroot + "dpkg -s %1 | grep -q 'Status: install ok installed'").arg(package);
+    return (Cmd().runAsRoot(cmd_str, true));
 }
 
 // checks if a list of packages is installed, return false if one of them is not

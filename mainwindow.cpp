@@ -1046,13 +1046,14 @@ void MainWindow::pushLog_clicked()
         location = "/var/log/boot";
     }
     if (QFile::exists(location)) {
-        QString sed = QStringLiteral(R"(sed 's/\^\[/\x1b/g')"); // remove formatting escape char
+        QString sed = QStringLiteral(
+            R"(sed 's/\x1b\[?([0-9]{1,2}(;[0-9]{1,2})*)?m?//g; s/\r//;')"); // remove formatting escape char
         QString log = cmd.getOutAsRoot(sed + " " + location);
         QDialog customDialog;
         customDialog.setWindowTitle(tr("Boot log"));
         auto *textEdit = new QPlainTextEdit(&customDialog);
         textEdit->setReadOnly(true);
-        textEdit->setMinimumSize(600, 300);
+        textEdit->setMinimumSize(700, 400);
         textEdit->setPlainText(log);
         auto *closeButton = new QPushButton(tr("Close"), &customDialog);
         auto *layout = new QGridLayout(&customDialog);

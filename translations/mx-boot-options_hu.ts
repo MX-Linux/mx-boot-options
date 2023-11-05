@@ -508,7 +508,7 @@ Indulhat a telepítésük?</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="58"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Egy program az általános indítási opciók kiválasztásához</translation>
     </message>
@@ -537,14 +537,20 @@ Indulhat a telepítésük?</translation>
         <translation>&amp;Bezárás</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="95"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Úgy tűnik, hogy root felhasználóként van bejelentkezve. Jelentkezzen ki és jelentkezzen be normál felhasználóként a program használatához.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="95"/>
+        <source>You must run this program as root.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="936"/>

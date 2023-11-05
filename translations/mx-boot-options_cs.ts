@@ -507,7 +507,7 @@ Chcete pokračovat k instalaci?</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="58"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Program pro výběr možností zavedení systému.</translation>
     </message>
@@ -536,14 +536,20 @@ Chcete pokračovat k instalaci?</translation>
         <translation>&amp;Zavřít</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="95"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Spuštěno pod účtem root-a, odhlašte se a přihlašte jako bězný uživatel.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="95"/>
+        <source>You must run this program as root.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="936"/>

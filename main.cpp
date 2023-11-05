@@ -26,6 +26,7 @@
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QProcess>
+#include <QStandardPaths>
 #include <QTranslator>
 
 #include "mainwindow.h"
@@ -87,6 +88,12 @@ int main(int argc, char *argv[])
                     "You seem to be logged in as root, please log out and log in as normal user to use this program."));
             exit(EXIT_FAILURE);
         }
+    }
+
+    QString executablePath = QStandardPaths::findExecutable("pkexec");
+    if (!executablePath.isEmpty() && getuid() != 0) {
+        QMessageBox::critical(nullptr, QObject::tr("Error"), QObject::tr("You must run this program as root."));
+        exit(EXIT_FAILURE);
     }
 
     MainWindow w;

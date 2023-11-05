@@ -508,7 +508,7 @@ Onları kurmak için devam etmeye hazır mısın?</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="57"/>
+        <location filename="../main.cpp" line="58"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Ortak başlangıç tercihlerinin seçimi için program</translation>
     </message>
@@ -537,14 +537,20 @@ Onları kurmak için devam etmeye hazır mısın?</translation>
         <translation>&amp;Kapat</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="95"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="87"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Görünüşe göre root olarak girmişsiniz, lütfen çıkın ve bu programı kullanmak için normal kullanıcı olarak girin. </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="95"/>
+        <source>You must run this program as root.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="936"/>

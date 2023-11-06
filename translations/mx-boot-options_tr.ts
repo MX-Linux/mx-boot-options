@@ -166,7 +166,7 @@ kök bölümünü seçin (yalnızca linux bölümleri görüntülenir)</translat
     </message>
     <message>
         <location filename="../mainwindow.ui" line="501"/>
-        <location filename="../mainwindow.cpp" line="1060"/>
+        <location filename="../mainwindow.cpp" line="1067"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
@@ -202,16 +202,16 @@ kök bölümünü seçin (yalnızca linux bölümleri görüntülenir)</translat
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="233"/>
-        <location filename="../mainwindow.cpp" line="462"/>
-        <location filename="../mainwindow.cpp" line="1095"/>
+        <location filename="../mainwindow.cpp" line="469"/>
+        <location filename="../mainwindow.cpp" line="1102"/>
         <source>Timeout: %1 seconds</source>
         <translation>Zaman aşımı: %1 saniye</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="246"/>
-        <location filename="../mainwindow.cpp" line="464"/>
-        <location filename="../mainwindow.cpp" line="1094"/>
-        <location filename="../mainwindow.cpp" line="1110"/>
+        <location filename="../mainwindow.cpp" line="471"/>
+        <location filename="../mainwindow.cpp" line="1101"/>
+        <location filename="../mainwindow.cpp" line="1117"/>
         <source>Boot Next: %1</source>
         <translation>Sonraki Önyükleme: %1</translation>
     </message>
@@ -228,181 +228,181 @@ kök bölümünü seçin (yalnızca linux bölümleri görüntülenir)</translat
 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="327"/>
-        <location filename="../mainwindow.cpp" line="330"/>
+        <location filename="../mainwindow.cpp" line="334"/>
+        <location filename="../mainwindow.cpp" line="337"/>
         <source>Select EFI file</source>
         <translation>EFİ dosyasını seçin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="328"/>
-        <location filename="../mainwindow.cpp" line="331"/>
+        <location filename="../mainwindow.cpp" line="335"/>
+        <location filename="../mainwindow.cpp" line="338"/>
         <source>EFI files (*.efi *.EFI)</source>
         <translation>EFI dosyaları (*.efi *.EFI)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="341"/>
-        <location filename="../mainwindow.cpp" line="355"/>
-        <location filename="../mainwindow.cpp" line="386"/>
-        <location filename="../mainwindow.cpp" line="521"/>
-        <location filename="../mainwindow.cpp" line="592"/>
+        <location filename="../mainwindow.cpp" line="348"/>
+        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="393"/>
+        <location filename="../mainwindow.cpp" line="528"/>
+        <location filename="../mainwindow.cpp" line="599"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="342"/>
+        <location filename="../mainwindow.cpp" line="349"/>
         <source>Could not find the source mountpoint for %1</source>
         <translation>%1 için kaynak bağlama noktası bulunamadı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="346"/>
+        <location filename="../mainwindow.cpp" line="353"/>
         <source>Set name</source>
         <translation>Adı ayarlayın</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="346"/>
+        <location filename="../mainwindow.cpp" line="353"/>
         <source>Enter the name for the UEFI menu item:</source>
         <translation>UEFI menü öğesi için ad girin:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="355"/>
+        <location filename="../mainwindow.cpp" line="362"/>
         <source>Something went wrong, could not add entry.</source>
         <translation>Bir şeyler ters gitti, girdi ekle nemedi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="373"/>
+        <location filename="../mainwindow.cpp" line="380"/>
         <source>Installing bootsplash, please wait</source>
         <translation>bootsplash kuruluyor, lütfen bekleyin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="380"/>
+        <location filename="../mainwindow.cpp" line="387"/>
         <source>Updating sources</source>
         <translation>kaynaklar güncelleniyor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="389"/>
         <source>Installing</source>
         <translation>Kuruluyor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="393"/>
         <source>Could not install the bootsplash.</source>
         <translation>bootsplash kurulamadı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="466"/>
+        <location filename="../mainwindow.cpp" line="473"/>
         <source>Boot Current: %1</source>
         <translation>Şimdiki Önyükleme: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="521"/>
+        <location filename="../mainwindow.cpp" line="528"/>
         <source>Could not create a temporary folder</source>
         <translation>Geçici klasör oluşturulamadı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="531"/>
+        <location filename="../mainwindow.cpp" line="538"/>
         <source>Cannot continue</source>
         <translation>Devam edilemez</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="532"/>
+        <location filename="../mainwindow.cpp" line="539"/>
         <source>Cannot create chroot environment, cannot change boot options. Exiting...</source>
         <translation>Chroot ortamı oluşturulamıyor, önyükleme seçenekleri değiştirilemiyor. Çıkılıyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="592"/>
+        <location filename="../mainwindow.cpp" line="599"/>
         <source>Something went wrong, could not save boot order.</source>
         <translation>Bir şeyler ters gitti, önyükleme sırası kaydedilemedi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="794"/>
-        <location filename="../mainwindow.cpp" line="1218"/>
+        <location filename="../mainwindow.cpp" line="801"/>
+        <location filename="../mainwindow.cpp" line="1225"/>
         <source>Updating configuration, please wait</source>
         <translation>Yapılandırma güncelleniyor, lütfen bekleyin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="847"/>
+        <location filename="../mainwindow.cpp" line="854"/>
         <source>Updating initramfs...</source>
         <translation>İnitramfs güncelleniyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="859"/>
-        <location filename="../mainwindow.cpp" line="1231"/>
+        <location filename="../mainwindow.cpp" line="866"/>
+        <location filename="../mainwindow.cpp" line="1238"/>
         <source>Updating grub...</source>
         <translation>Grub güncelleniyor...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="863"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>Done</source>
         <translation>Bitti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="863"/>
+        <location filename="../mainwindow.cpp" line="870"/>
         <source>Changes have been successfully applied.</source>
         <translation>Değişiklikler başarıyla uygulandı.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="875"/>
+        <location filename="../mainwindow.cpp" line="882"/>
         <source>About %1</source>
         <translation>%1 Hakkında </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="876"/>
+        <location filename="../mainwindow.cpp" line="883"/>
         <source>Version: </source>
         <translation>Sürüm</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="878"/>
+        <location filename="../mainwindow.cpp" line="885"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Ortak başlangıç tercihlerinin seçimi için program</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
+        <location filename="../mainwindow.cpp" line="887"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="881"/>
+        <location filename="../mainwindow.cpp" line="888"/>
         <source>%1 License</source>
         <translation>%1 Lisans</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="902"/>
+        <location filename="../mainwindow.cpp" line="909"/>
         <source>%1 Help</source>
         <translation>%1 Yardım</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="911"/>
-        <location filename="../mainwindow.cpp" line="1196"/>
+        <location filename="../mainwindow.cpp" line="918"/>
+        <location filename="../mainwindow.cpp" line="1203"/>
         <source>Running in a Virtual Machine</source>
         <translation>Sanal Makinede Çalışıyor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="912"/>
-        <location filename="../mainwindow.cpp" line="1197"/>
+        <location filename="../mainwindow.cpp" line="919"/>
+        <location filename="../mainwindow.cpp" line="1204"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Mevcut sisteminiz bir Sanal Makinede çalışıyor,
 Plymouth bootsplash sınırlı bir şekilde çalışacak, ayrıca tema önizlemesi yapamayacaksınız</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="919"/>
+        <location filename="../mainwindow.cpp" line="926"/>
         <source>Plymouth packages not installed</source>
         <translation>Playmouth paketleri kurulmadı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="920"/>
+        <location filename="../mainwindow.cpp" line="927"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>Plymouth paketleri şu anda yüklü değil.
 Onları kurmak için devam etmeye hazır mısın?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="943"/>
+        <location filename="../mainwindow.cpp" line="950"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Resimler (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1055"/>
+        <location filename="../mainwindow.cpp" line="1062"/>
         <source>Boot log</source>
         <translation type="unfinished"></translation>
     </message>
@@ -411,22 +411,22 @@ Onları kurmak için devam etmeye hazır mısın?</translation>
         <translation type="vanished">Kapatmak için herhangi bir tuşa basın</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1069"/>
+        <location filename="../mainwindow.cpp" line="1076"/>
         <source>Log not found</source>
         <translation>Kayıt bulunamadı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1069"/>
+        <location filename="../mainwindow.cpp" line="1076"/>
         <source>Could not find log at </source>
         <translation>Şurada günlük bulunamadı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1076"/>
+        <location filename="../mainwindow.cpp" line="1083"/>
         <source>Edit UEFI Boot Entries</source>
         <translation>UEFI Önyükleme Girdilerini Düzenle</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1079"/>
+        <location filename="../mainwindow.cpp" line="1086"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
@@ -435,74 +435,74 @@ Onları kurmak için devam etmeye hazır mısın?</translation>
 - Gri çizgililer etkin değil.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1083"/>
-        <location filename="../mainwindow.cpp" line="1137"/>
+        <location filename="../mainwindow.cpp" line="1090"/>
+        <location filename="../mainwindow.cpp" line="1144"/>
         <source>Set ac&amp;tive</source>
         <translation>&amp;Aktif olarak ayarla</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1084"/>
+        <location filename="../mainwindow.cpp" line="1091"/>
         <source>&amp;Add entry</source>
         <translation>&amp;Girdi ekle</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1085"/>
+        <location filename="../mainwindow.cpp" line="1092"/>
         <source>Boot &amp;next</source>
         <translation>&amp;Sonraki önyükleme</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1086"/>
+        <location filename="../mainwindow.cpp" line="1093"/>
         <source>&amp;Close</source>
         <translation>&amp;Kapat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1087"/>
+        <location filename="../mainwindow.cpp" line="1094"/>
         <source>Move &amp;down</source>
         <translation>&amp;Aşağı taşı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1088"/>
+        <location filename="../mainwindow.cpp" line="1095"/>
         <source>&amp;Remove entry</source>
         <translation>Girdi &amp;sil</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1089"/>
+        <location filename="../mainwindow.cpp" line="1096"/>
         <source>Re&amp;set next</source>
         <translation>Son&amp;rakini sıfırla</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1090"/>
+        <location filename="../mainwindow.cpp" line="1097"/>
         <source>Change &amp;timeout</source>
         <translation>&amp;Zaman aşımını değiştir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1091"/>
+        <location filename="../mainwindow.cpp" line="1098"/>
         <source>Move &amp;up</source>
         <translation>&amp;Yukarı taşı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1094"/>
-        <location filename="../mainwindow.cpp" line="1110"/>
+        <location filename="../mainwindow.cpp" line="1101"/>
+        <location filename="../mainwindow.cpp" line="1117"/>
         <source>not set, will boot using list order</source>
         <translation>ayarlanmadı, listedeki sırayla önyüklenecek</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1134"/>
+        <location filename="../mainwindow.cpp" line="1141"/>
         <source>Set &amp;inactive</source>
         <translation>&amp;Pasif yap</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1187"/>
+        <location filename="../mainwindow.cpp" line="1194"/>
         <source>Needs reboot</source>
         <translation>Yeniden başlatma gerekli</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1188"/>
+        <location filename="../mainwindow.cpp" line="1195"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Plymouth henüz kuruldu, önizlemeleri görüntüleyebilmek için önce yeniden başlatmanız gerekebilir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1252"/>
+        <location filename="../mainwindow.cpp" line="1259"/>
         <source>Click to select theme</source>
         <translation>Temayı seçmek için tıklayın</translation>
     </message>
@@ -555,12 +555,12 @@ Onları kurmak için devam etmeye hazır mısın?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="940"/>
+        <location filename="../mainwindow.cpp" line="947"/>
         <source>Select image to display in bootloader</source>
         <translation>Önyükleyicide görüntülenecek görseli seçin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1262"/>
+        <location filename="../mainwindow.cpp" line="1269"/>
         <source>Select GRUB theme</source>
         <translation>Grub temasını seçin</translation>
     </message>

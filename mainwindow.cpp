@@ -304,7 +304,14 @@ bool MainWindow::isInstalled(const QStringList &packages)
 
 bool MainWindow::isUefi()
 {
-    return QFile::exists(QStringLiteral("/sys/firmware/efi/efivars"));
+    QDir dir("/sys/firmware/efi/efivars");
+    if (dir.exists()) {
+        QStringList fileList = dir.entryList(QDir::NoDotAndDotDot | QDir::AllEntries);
+        if (!fileList.isEmpty()) {
+            return true;
+        }
+    }
+    return false;
 }
 
 void MainWindow::addUefiEntry(QListWidget *listEntries, QDialog *dialogUefi)

@@ -1,4 +1,4 @@
-mx-boot-options (23.11) mx; urgency=medium
+mx-boot-options (23.11.02) mx; urgency=medium
 
   * Run program as normal user and elevate only when running specific commands
   * Display boot log in a native window instead of terminal

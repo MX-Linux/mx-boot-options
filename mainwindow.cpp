@@ -141,9 +141,9 @@ void MainWindow::setup()
 
     readKernelOpts();
     ui->radioLimitedMsg->setVisible(!ui->checkBootsplash->isChecked());
-    if (inVirtualMachine()) {
-        ui->pushPreview->setDisabled(true);
-    }
+    //    if (inVirtualMachine()) {
+    //        ui->pushPreview->setDisabled(true);
+    //    }
     ui->pushApply->setDisabled(true);
     this->adjustSize();
 }
@@ -395,7 +395,8 @@ bool MainWindow::installSplash()
 // Detect Virtual Machine to let user know Plymouth is not fully functional
 bool MainWindow::inVirtualMachine()
 {
-    // "lspci -d 15ad:" for VMWare detection -- but plymouth seems to work in VMWare.
+    // "lspci -d 15ad:" for VMWare detection
+    // -- plymouth seems to work in VMWare, might work in VM depending on driver setup
     QString out = cmd.getOut("lspci -d 80ee:beef;lspci -d 80ee:cafe", true);
     return (!out.isEmpty());
 }
@@ -910,7 +911,7 @@ void MainWindow::combo_bootsplash_clicked(bool checked)
                 this, tr("Running in a Virtual Machine"),
                 tr("You current system is running in a Virtual Machine,\n"
                    "Plymouth bootsplash will work in a limited way, you also won't be able to preview the theme"));
-            ui->pushPreview->setDisabled(true);
+            // ui->pushPreview->setDisabled(true);
         }
         if (!isInstalled(QStringList() << QStringLiteral("plymouth") << QStringLiteral("plymouth-x11")
                                        << QStringLiteral("plymouth-themes") << QStringLiteral("plymouth-themes-mx"))) {

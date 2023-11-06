@@ -315,7 +315,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="794"/>
-        <location filename="../mainwindow.cpp" line="1212"/>
+        <location filename="../mainwindow.cpp" line="1218"/>
         <source>Updating configuration, please wait</source>
         <translation>A actualizar a configuração. Aguardar.</translation>
     </message>
@@ -326,7 +326,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="859"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>Updating grub...</source>
         <translation>A actualizar o GRUB...</translation>
     </message>
@@ -372,11 +372,13 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="911"/>
+        <location filename="../mainwindow.cpp" line="1196"/>
         <source>Running in a Virtual Machine</source>
         <translation>Em execução numa Máquina Virtual</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="912"/>
+        <location filename="../mainwindow.cpp" line="1197"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>O sistema está a ser executado numa Máquina Virtual.
@@ -500,7 +502,7 @@ Continuar e instalar estes pacotes?</translation>
         <translation>O Plymouth acabou de ser instalado. Pode ser necessário reiniciar para exibir as pré-visualizações</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1246"/>
+        <location filename="../mainwindow.cpp" line="1252"/>
         <source>Click to select theme</source>
         <translation>Clicar para seleccionar o tema</translation>
     </message>
@@ -558,7 +560,7 @@ Continuar e instalar estes pacotes?</translation>
         <translation>Seleccionar a imagem de fundo do carregador do arranque</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1256"/>
+        <location filename="../mainwindow.cpp" line="1262"/>
         <source>Select GRUB theme</source>
         <translation>Seleccionar o tema do GRUB</translation>
     </message>

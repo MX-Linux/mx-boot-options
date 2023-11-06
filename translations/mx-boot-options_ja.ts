@@ -314,7 +314,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="794"/>
-        <location filename="../mainwindow.cpp" line="1212"/>
+        <location filename="../mainwindow.cpp" line="1218"/>
         <source>Updating configuration, please wait</source>
         <translation>設定更新中なのでお待ちください</translation>
     </message>
@@ -325,7 +325,7 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="859"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>Updating grub...</source>
         <translation>grub 更新中...</translation>
     </message>
@@ -371,11 +371,13 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="911"/>
+        <location filename="../mainwindow.cpp" line="1196"/>
         <source>Running in a Virtual Machine</source>
         <translation>仮想マシンで実行中</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="912"/>
+        <location filename="../mainwindow.cpp" line="1197"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>現在のシステムは仮想マシンで動作しています。
@@ -499,7 +501,7 @@ OK to go ahead and install them?</source>
         <translation>Plymouth のインストール直後なので、プレビューを表示するには再起動が必要かもしれません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1246"/>
+        <location filename="../mainwindow.cpp" line="1252"/>
         <source>Click to select theme</source>
         <translation>クリックしてテーマを選択</translation>
     </message>
@@ -557,7 +559,7 @@ OK to go ahead and install them?</source>
         <translation>ブートローダに表示するイメージを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1256"/>
+        <location filename="../mainwindow.cpp" line="1262"/>
         <source>Select GRUB theme</source>
         <translation>GRUB のテーマ選択</translation>
     </message>

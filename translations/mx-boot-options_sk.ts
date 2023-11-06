@@ -314,7 +314,7 @@ systému, ktorý chcete upraviť (zobrazené sú iba Linuxové oddiely)</transla
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="794"/>
-        <location filename="../mainwindow.cpp" line="1212"/>
+        <location filename="../mainwindow.cpp" line="1218"/>
         <source>Updating configuration, please wait</source>
         <translation>Aktualizácia konfigurácie, prosím čakajte</translation>
     </message>
@@ -325,7 +325,7 @@ systému, ktorý chcete upraviť (zobrazené sú iba Linuxové oddiely)</transla
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="859"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>Updating grub...</source>
         <translation>Aktualizácia GRUBu...</translation>
     </message>
@@ -371,11 +371,13 @@ systému, ktorý chcete upraviť (zobrazené sú iba Linuxové oddiely)</transla
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="911"/>
+        <location filename="../mainwindow.cpp" line="1196"/>
         <source>Running in a Virtual Machine</source>
         <translation>Spustené vo Virtuálnej Mašine</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="912"/>
+        <location filename="../mainwindow.cpp" line="1197"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Váš systém beží vo Virtuálnej Mašine,
@@ -497,7 +499,7 @@ Prajete si ho nainštalovať?</translation>
         <translation>Plymouth bolo nainštalované, pre zobrazenie náhľadov možno bude potrebné reštartovať PC</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1246"/>
+        <location filename="../mainwindow.cpp" line="1252"/>
         <source>Click to select theme</source>
         <translation type="unfinished"></translation>
     </message>
@@ -555,7 +557,7 @@ Prajete si ho nainštalovať?</translation>
         <translation>Vybrať obrázok pre bootloader</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1256"/>
+        <location filename="../mainwindow.cpp" line="1262"/>
         <source>Select GRUB theme</source>
         <translation type="unfinished"></translation>
     </message>

@@ -315,7 +315,7 @@ sistema, ki ga želite spreminjati (prikazani so le Linux razdelki)</translation
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="794"/>
-        <location filename="../mainwindow.cpp" line="1212"/>
+        <location filename="../mainwindow.cpp" line="1218"/>
         <source>Updating configuration, please wait</source>
         <translation>Posodabljanje konfiguracije, prosimo počakajte</translation>
     </message>
@@ -326,7 +326,7 @@ sistema, ki ga želite spreminjati (prikazani so le Linux razdelki)</translation
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="859"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>Updating grub...</source>
         <translation>Posodabljam grub...</translation>
     </message>
@@ -372,11 +372,13 @@ sistema, ki ga želite spreminjati (prikazani so le Linux razdelki)</translation
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="911"/>
+        <location filename="../mainwindow.cpp" line="1196"/>
         <source>Running in a Virtual Machine</source>
         <translation>Izvajanje v navideznem sistemu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="912"/>
+        <location filename="../mainwindow.cpp" line="1197"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Vaš trenutni sistem je zagnan v navidezem sistemu,
@@ -500,7 +502,7 @@ Naj nadaljujem in jih namestim?</translation>
         <translation>Plymouth je bil ravnokar nameščen, zato je morda potreben ponovni zagon, da bi lahko prikazal predoglede.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1246"/>
+        <location filename="../mainwindow.cpp" line="1252"/>
         <source>Click to select theme</source>
         <translation>Kliknite za izbiro teme</translation>
     </message>
@@ -558,7 +560,7 @@ Naj nadaljujem in jih namestim?</translation>
         <translation>Izberite sliko, ki naj se prikaže v zagonskem nalagalniku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1256"/>
+        <location filename="../mainwindow.cpp" line="1262"/>
         <source>Select GRUB theme</source>
         <translation>Izberite temo za GRUB</translation>
     </message>

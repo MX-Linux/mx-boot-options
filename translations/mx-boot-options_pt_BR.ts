@@ -315,7 +315,7 @@ sistema que você deseja modificar (apenas as  partições GNU/Linux são exibid
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="794"/>
-        <location filename="../mainwindow.cpp" line="1212"/>
+        <location filename="../mainwindow.cpp" line="1218"/>
         <source>Updating configuration, please wait</source>
         <translation>Atualizando a configuração, por favor, aguarde a finalização do processo.</translation>
     </message>
@@ -326,7 +326,7 @@ sistema que você deseja modificar (apenas as  partições GNU/Linux são exibid
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="859"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>Updating grub...</source>
         <translation>Atualizando o Grub...</translation>
     </message>
@@ -372,11 +372,13 @@ sistema que você deseja modificar (apenas as  partições GNU/Linux são exibid
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="911"/>
+        <location filename="../mainwindow.cpp" line="1196"/>
         <source>Running in a Virtual Machine</source>
         <translation>Executando em uma Máquina Virtual</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="912"/>
+        <location filename="../mainwindow.cpp" line="1197"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Seu sistema atual está sendo executado em uma Máquina Virtual,
@@ -500,7 +502,7 @@ Você quer continuar e instalar os pacotes do Plymouth?</translation>
         <translation>O Plymouth foi instalado com sucesso, pode ser necessário reiniciar o sistema operacional antes de poder exibir as pré-visualizações </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1246"/>
+        <location filename="../mainwindow.cpp" line="1252"/>
         <source>Click to select theme</source>
         <translation>Clique para selecionar o tema</translation>
     </message>
@@ -558,7 +560,7 @@ Você quer continuar e instalar os pacotes do Plymouth?</translation>
         <translation>Selecione a imagem para exibir no carregador de inicialização (bootloader)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1256"/>
+        <location filename="../mainwindow.cpp" line="1262"/>
         <source>Select GRUB theme</source>
         <translation>Selecione o tema do GRUB</translation>
     </message>

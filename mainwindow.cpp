@@ -1191,6 +1191,12 @@ void MainWindow::push_preview_clicked()
     if (ui->comboTheme->currentText() == "details") {
         return;
     }
+    if (inVirtualMachine()) {
+        QMessageBox::information(
+            this, tr("Running in a Virtual Machine"),
+            tr("You current system is running in a Virtual Machine,\n"
+               "Plymouth bootsplash will work in a limited way, you also won't be able to preview the theme"));
+    }
     cmd.runAsRoot("plymouth-set-default-theme " + ui->comboTheme->currentText());
     QTimer tick;
     tick.start(100ms);

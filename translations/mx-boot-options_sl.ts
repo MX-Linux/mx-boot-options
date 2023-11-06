@@ -166,7 +166,7 @@ sistema, ki ga želite spreminjati (prikazani so le Linux razdelki)</translation
     </message>
     <message>
         <location filename="../mainwindow.ui" line="501"/>
-        <location filename="../mainwindow.cpp" line="1059"/>
+        <location filename="../mainwindow.cpp" line="1060"/>
         <source>Close</source>
         <translation>Zapri</translation>
     </message>
@@ -202,16 +202,16 @@ sistema, ki ga želite spreminjati (prikazani so le Linux razdelki)</translation
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="233"/>
-        <location filename="../mainwindow.cpp" line="461"/>
-        <location filename="../mainwindow.cpp" line="1094"/>
+        <location filename="../mainwindow.cpp" line="462"/>
+        <location filename="../mainwindow.cpp" line="1095"/>
         <source>Timeout: %1 seconds</source>
         <translation>Časovna omejitev: %1 sekund</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="246"/>
-        <location filename="../mainwindow.cpp" line="463"/>
-        <location filename="../mainwindow.cpp" line="1093"/>
-        <location filename="../mainwindow.cpp" line="1109"/>
+        <location filename="../mainwindow.cpp" line="464"/>
+        <location filename="../mainwindow.cpp" line="1094"/>
+        <location filename="../mainwindow.cpp" line="1110"/>
         <source>Boot Next: %1</source>
         <translation>Naslednji zagon: %1</translation>
     </message>
@@ -243,8 +243,8 @@ sistema, ki ga želite spreminjati (prikazani so le Linux razdelki)</translation
         <location filename="../mainwindow.cpp" line="341"/>
         <location filename="../mainwindow.cpp" line="355"/>
         <location filename="../mainwindow.cpp" line="386"/>
-        <location filename="../mainwindow.cpp" line="520"/>
-        <location filename="../mainwindow.cpp" line="591"/>
+        <location filename="../mainwindow.cpp" line="521"/>
+        <location filename="../mainwindow.cpp" line="592"/>
         <source>Error</source>
         <translation>Napaka</translation>
     </message>
@@ -289,118 +289,118 @@ sistema, ki ga želite spreminjati (prikazani so le Linux razdelki)</translation
         <translation>Neuspešno nameščanje zagonske predstavitve</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="465"/>
+        <location filename="../mainwindow.cpp" line="466"/>
         <source>Boot Current: %1</source>
         <translation>Trenutni zagon: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="520"/>
+        <location filename="../mainwindow.cpp" line="521"/>
         <source>Could not create a temporary folder</source>
         <translation>Začasne mape ni bilo mogoče ustvariti.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="530"/>
+        <location filename="../mainwindow.cpp" line="531"/>
         <source>Cannot continue</source>
         <translation>Ne morem nadaljevati</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="531"/>
+        <location filename="../mainwindow.cpp" line="532"/>
         <source>Cannot create chroot environment, cannot change boot options. Exiting...</source>
         <translation>Ne morem ustvaiti chroot okolja, ne morem spremeniti opciji zagona. Končujem...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="591"/>
+        <location filename="../mainwindow.cpp" line="592"/>
         <source>Something went wrong, could not save boot order.</source>
         <translation>Nekaj je šlo narobe. Zagonskega zaporedja ni bilo mogoče dodati.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="793"/>
-        <location filename="../mainwindow.cpp" line="1211"/>
+        <location filename="../mainwindow.cpp" line="794"/>
+        <location filename="../mainwindow.cpp" line="1212"/>
         <source>Updating configuration, please wait</source>
         <translation>Posodabljanje konfiguracije, prosimo počakajte</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="846"/>
+        <location filename="../mainwindow.cpp" line="847"/>
         <source>Updating initramfs...</source>
         <translation>Posodabljam initramfs</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="858"/>
-        <location filename="../mainwindow.cpp" line="1224"/>
+        <location filename="../mainwindow.cpp" line="859"/>
+        <location filename="../mainwindow.cpp" line="1225"/>
         <source>Updating grub...</source>
         <translation>Posodabljam grub...</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="862"/>
+        <location filename="../mainwindow.cpp" line="863"/>
         <source>Done</source>
         <translation>Zaključeno</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="862"/>
+        <location filename="../mainwindow.cpp" line="863"/>
         <source>Changes have been successfully applied.</source>
         <translation>Spremembe so bile uspešne.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="874"/>
+        <location filename="../mainwindow.cpp" line="875"/>
         <source>About %1</source>
         <translation>O %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="875"/>
+        <location filename="../mainwindow.cpp" line="876"/>
         <source>Version: </source>
         <translation>Različica:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="877"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Program za določitev izbora pri običajnem zagonu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="879"/>
+        <location filename="../mainwindow.cpp" line="880"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Copyright (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="880"/>
+        <location filename="../mainwindow.cpp" line="881"/>
         <source>%1 License</source>
         <translation>%1 licenca</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="902"/>
         <source>%1 Help</source>
         <translation>%1 pomoč</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="910"/>
+        <location filename="../mainwindow.cpp" line="911"/>
         <source>Running in a Virtual Machine</source>
         <translation>Izvajanje v navideznem sistemu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="911"/>
+        <location filename="../mainwindow.cpp" line="912"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Vaš trenutni sistem je zagnan v navidezem sistemu,
 Plymouth zagonska predstavitev bo delovala omejeno, poleg tega ni predogleda teme</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="918"/>
+        <location filename="../mainwindow.cpp" line="919"/>
         <source>Plymouth packages not installed</source>
         <translation>Plymouth paketi niso nameščeni</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="919"/>
+        <location filename="../mainwindow.cpp" line="920"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>Plymouth paketi trenutno niso nameščeni.
 Naj nadaljujem in jih namestim?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="942"/>
+        <location filename="../mainwindow.cpp" line="943"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Slike (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1054"/>
+        <location filename="../mainwindow.cpp" line="1055"/>
         <source>Boot log</source>
         <translation type="unfinished"></translation>
     </message>
@@ -409,22 +409,22 @@ Naj nadaljujem in jih namestim?</translation>
         <translation type="vanished">Pritisnite poljubno tipko za izhod</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1068"/>
+        <location filename="../mainwindow.cpp" line="1069"/>
         <source>Log not found</source>
         <translation>Dnevnik ni bil najden</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1068"/>
+        <location filename="../mainwindow.cpp" line="1069"/>
         <source>Could not find log at </source>
         <translation>Nisem našel dnevnika v </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1075"/>
+        <location filename="../mainwindow.cpp" line="1076"/>
         <source>Edit UEFI Boot Entries</source>
         <translation>Uredi UEFI zagonske vnose</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1079"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
@@ -433,74 +433,74 @@ Naj nadaljujem in jih namestim?</translation>
 - Osivele vrstice niso aktivne.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1082"/>
-        <location filename="../mainwindow.cpp" line="1136"/>
+        <location filename="../mainwindow.cpp" line="1083"/>
+        <location filename="../mainwindow.cpp" line="1137"/>
         <source>Set ac&amp;tive</source>
         <translation>Določi za akt&amp;ivno</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1083"/>
+        <location filename="../mainwindow.cpp" line="1084"/>
         <source>&amp;Add entry</source>
         <translation>Dod&amp;aj vnos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1084"/>
+        <location filename="../mainwindow.cpp" line="1085"/>
         <source>Boot &amp;next</source>
         <translation>&amp;Naslednji zagon</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1085"/>
+        <location filename="../mainwindow.cpp" line="1086"/>
         <source>&amp;Close</source>
         <translation>&amp;Zapri</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1086"/>
+        <location filename="../mainwindow.cpp" line="1087"/>
         <source>Move &amp;down</source>
         <translation>Premakni &amp;dol</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1087"/>
+        <location filename="../mainwindow.cpp" line="1088"/>
         <source>&amp;Remove entry</source>
         <translation>Odst&amp;rani vnos</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1088"/>
+        <location filename="../mainwindow.cpp" line="1089"/>
         <source>Re&amp;set next</source>
         <translation>Pona&amp;stavi naslednjega</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1089"/>
+        <location filename="../mainwindow.cpp" line="1090"/>
         <source>Change &amp;timeout</source>
         <translation>Spremeni &amp;časovno omejitev</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1090"/>
+        <location filename="../mainwindow.cpp" line="1091"/>
         <source>Move &amp;up</source>
         <translation>Premakni &amp;gor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1093"/>
-        <location filename="../mainwindow.cpp" line="1109"/>
+        <location filename="../mainwindow.cpp" line="1094"/>
+        <location filename="../mainwindow.cpp" line="1110"/>
         <source>not set, will boot using list order</source>
         <translation>ni določen. Zagon bo potekal po seznamu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1133"/>
+        <location filename="../mainwindow.cpp" line="1134"/>
         <source>Set &amp;inactive</source>
         <translation>Določi za neakt&amp;ivno</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1186"/>
+        <location filename="../mainwindow.cpp" line="1187"/>
         <source>Needs reboot</source>
         <translation>Potreben je ponovni zagon</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1187"/>
+        <location filename="../mainwindow.cpp" line="1188"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Plymouth je bil ravnokar nameščen, zato je morda potreben ponovni zagon, da bi lahko prikazal predoglede.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1245"/>
+        <location filename="../mainwindow.cpp" line="1246"/>
         <source>Click to select theme</source>
         <translation>Kliknite za izbiro teme</translation>
     </message>
@@ -508,7 +508,7 @@ Naj nadaljujem in jih namestim?</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <location filename="../main.cpp" line="58"/>
+        <location filename="../main.cpp" line="57"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Program za določitev občajnih izbir ob zagonu</translation>
     </message>
@@ -537,28 +537,28 @@ Naj nadaljujem in jih namestim?</translation>
         <translation>&amp;Zapri</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="86"/>
-        <location filename="../main.cpp" line="95"/>
+        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="94"/>
         <source>Error</source>
         <translation>Napaka</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="87"/>
+        <location filename="../main.cpp" line="86"/>
         <source>You seem to be logged in as root, please log out and log in as normal user to use this program.</source>
         <translation>Prijevljeni ste kot korenski uporabnik. Izpišite se in se ponovno prijavite kot običajen uporabnik, če želite uporabljati ta program.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="96"/>
+        <location filename="../main.cpp" line="95"/>
         <source>You must run this program with admin access.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="939"/>
+        <location filename="../mainwindow.cpp" line="940"/>
         <source>Select image to display in bootloader</source>
         <translation>Izberite sliko, ki naj se prikaže v zagonskem nalagalniku</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1255"/>
+        <location filename="../mainwindow.cpp" line="1256"/>
         <source>Select GRUB theme</source>
         <translation>Izberite temo za GRUB</translation>
     </message>

@@ -26,7 +26,6 @@
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QProcess>
-#include <QStandardPaths>
 #include <QTranslator>
 
 #include "mainwindow.h"
@@ -90,11 +89,12 @@ int main(int argc, char *argv[])
         }
     }
 
-    QString executablePath = QStandardPaths::findExecutable("pkexec");
-    if (executablePath.isEmpty() && getuid() != 0) {
-        QMessageBox::critical(nullptr, QObject::tr("Error"),
-                              QObject::tr("You must run this program with admin access."));
-        exit(EXIT_FAILURE);
+    if (getuid() != 0) {
+        if (!QFile::exists("/usr/bin/pkexec") && !QFile::exists("/usr/bin/gksu")) {
+            QMessageBox::critical(nullptr, QObject::tr("Error"),
+                                  QObject::tr("You must run this program with admin access."));
+            exit(EXIT_FAILURE);
+        }
     }
 
     MainWindow w;

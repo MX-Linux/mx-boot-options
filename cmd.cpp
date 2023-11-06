@@ -35,8 +35,12 @@ bool Cmd::run(const QString &cmd, bool quiet, bool asRoot)
     QEventLoop loop;
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), &loop, &QEventLoop::quit);
     if (asRoot && getuid() != 0) {
-        QString helper {"/usr/lib/" + QApplication::applicationName() + "/helper"};
-        start("pkexec", {helper, cmd});
+        if (QFile::exists("/usr/bin/pkexec")) {
+            QString helper {"/usr/lib/" + QApplication::applicationName() + "/helper"};
+            start("/usr/bin/pkexec", {helper, cmd});
+        } else {
+            start("/usr/bin/gksu", {cmd});
+        }
     } else {
         start("/bin/bash", {"-c", cmd});
     }

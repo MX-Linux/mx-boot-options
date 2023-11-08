@@ -1062,12 +1062,12 @@ void MainWindow::pushLog_clicked()
         customDialog.setWindowTitle(tr("Boot log"));
         auto *textEdit = new QPlainTextEdit(&customDialog);
         textEdit->setReadOnly(true);
-        textEdit->setMinimumSize(700, 400);
+        textEdit->setMinimumSize(600, 500);
         textEdit->setPlainText(log);
-        auto *closeButton = new QPushButton(tr("Close"), &customDialog);
-        auto *layout = new QGridLayout(&customDialog);
-        layout->addWidget(textEdit, 1, 0);
-        layout->addWidget(closeButton, 2, 0, Qt::AlignRight);
+        auto *closeButton = new QPushButton(tr("&Close"), &customDialog);
+        auto *layout = new QVBoxLayout(&customDialog);
+        layout->addWidget(textEdit);
+        layout->addWidget(closeButton);
         QObject::connect(closeButton, &QPushButton::clicked, &customDialog, &QDialog::accept);
         customDialog.setModal(true);
         customDialog.setSizeGripEnabled(true);

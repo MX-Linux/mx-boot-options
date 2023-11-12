@@ -60,12 +60,21 @@ MainWindow::~MainWindow()
 
 void MainWindow::loadPlymouthThemes()
 {
-    // load combobox
+    // Load combobox
     ui->comboTheme->clear();
-    ui->comboTheme->addItems(cmd.getOutAsRoot(chroot + "plymouth-set-default-theme -l").split("\n"));
+    if (chroot.isEmpty()) {
+        ui->comboTheme->addItems(cmd.getOut("plymouth-set-default-theme -l").split("\n"));
+    } else {
+        ui->comboTheme->addItems(cmd.getOutAsRoot(chroot + "plymouth-set-default-theme -l").split("\n"));
+    }
 
-    // get current theme
-    QString current_theme = cmd.getOutAsRoot(chroot + "plymouth-set-default-theme").trimmed();
+    // Get current theme
+    QString current_theme;
+    if (chroot.isEmpty()) {
+        current_theme = cmd.getOut("plymouth-set-default-theme").trimmed();
+    } else {
+        current_theme = cmd.getOutAsRoot(chroot + "plymouth-set-default-theme").trimmed();
+    }
     if (!current_theme.isEmpty()) {
         ui->comboTheme->setCurrentIndex(ui->comboTheme->findText(current_theme));
     }
@@ -291,7 +300,11 @@ void MainWindow::toggleUefiActive(QListWidget *listEntries)
 bool MainWindow::isInstalled(const QString &package)
 {
     QString cmd_str = (chroot + "dpkg -s %1 | grep -q 'Status: install ok installed'").arg(package);
-    return (Cmd().runAsRoot(cmd_str, true));
+    if (chroot.isEmpty()) {
+        return (Cmd().run(cmd_str, true));
+    } else {
+        return (Cmd().runAsRoot(cmd_str, true));
+    }
 }
 
 // checks if a list of packages is installed, return false if one of them is not
@@ -528,7 +541,7 @@ void MainWindow::createChrootEnv(const QString &root)
         QMessageBox::critical(this, tr("Error"), tr("Could not create a temporary folder"));
         exit(EXIT_FAILURE);
     }
-    cmd.runAsRoot("mkdir " + tmpdir.path() + "/{dev,sys,proc,run}");
+    cmd.run("mkdir " + tmpdir.path() + "/{dev,sys,proc,run}");
     QString cmd_str = QStringLiteral("/bin/mount /dev/%1 %2 && /bin/mount --rbind --make-rslave /dev %2/dev && "
                                      "/bin/mount --rbind --make-rslave /sys %2/sys && /bin/mount --rbind /proc %2/proc "
                                      "&& /bin/mount -t tmpfs -o size=100m,nodev,mode=755 tmpfs %2/run && /bin/mkdir "
@@ -619,9 +632,13 @@ bool MainWindow::replaceGrubArg(const QString &key, const QString &item)
 
 void MainWindow::readGrubCfg()
 {
-    QStringList content
-        = cmd.getOutAsRoot("cat " + chroot.section(QStringLiteral(" "), 1, 1) + "/boot/grub/grub.cfg", true)
-              .split("\n");
+    QStringList content;
+    if (chroot.isEmpty()) {
+        content = cmd.getOut("cat /boot/grub/grub.cfg", true).split("\n");
+    } else {
+        content = cmd.getOutAsRoot("cat " + chroot.section(QStringLiteral(" "), 1, 1) + "/boot/grub/grub.cfg", true)
+                      .split("\n");
+    }
     if (content.isEmpty()) {
         qDebug() << "Could not read grub.cfg file";
         return;

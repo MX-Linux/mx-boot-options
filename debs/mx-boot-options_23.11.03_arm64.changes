@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sun, 12 Nov 2023 11:51:35 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: arm64
+Version: 23.11.03
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.11.03) mx; urgency=medium
+ .
+   * Don't prompt for admin password when loading the GUI if not running as chroot
+Checksums-Sha1:
+ 45091133ec708cdca7eafc22666540e4a9c96cec 10151 mx-boot-options_23.11.03_arm64.buildinfo
+ 97f3e0bcdc22a00e9e7228c08b1177c0ecd358c1 210740 mx-boot-options_23.11.03_arm64.deb
+Checksums-Sha256:
+ 1ac26c2e2f85122667c27635afab9972cbe56aef1da93bd0d82470fc58501c23 10151 mx-boot-options_23.11.03_arm64.buildinfo
+ 96685973895c2c3f512e0a52b2dd9b1952ed0cdbb2dec736974cff78f732b1e1 210740 mx-boot-options_23.11.03_arm64.deb
+Files:
+ 7f14a8546548b46b2237b5d2c1f62395 10151 admin optional mx-boot-options_23.11.03_arm64.buildinfo
+ 5d03bea2c7caf13596324c0d86ae122b 210740 admin optional mx-boot-options_23.11.03_arm64.deb

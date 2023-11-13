@@ -634,7 +634,7 @@ void MainWindow::readGrubCfg()
 {
     QStringList content;
     if (chroot.isEmpty()) {
-        content = cmd.getOut("cat /boot/grub/grub.cfg", true).split("\n");
+        content = cmd.getOutAsRoot("cat /boot/grub/grub.cfg", true).split("\n");
     } else {
         content = cmd.getOutAsRoot("cat " + chroot.section(QStringLiteral(" "), 1, 1) + "/boot/grub/grub.cfg", true)
                       .split("\n");

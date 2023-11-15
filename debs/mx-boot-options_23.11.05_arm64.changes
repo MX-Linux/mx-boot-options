@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 15 Nov 2023 16:29:46 -0500
+Source: mx-boot-options
+Binary: mx-boot-options
+Architecture: arm64
+Version: 23.11.05
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Description:
+ mx-boot-options - mx-boot-options
+Changes:
+ mx-boot-options (23.11.05) mx; urgency=medium
+ .
+   * Fix: use full path for plymouth-set-theme
+Checksums-Sha1:
+ f2fdd169cf73192da23ed19ea4e19a93083f541b 10151 mx-boot-options_23.11.05_arm64.buildinfo
+ b9e8b6097aff5ef361d046f06216ed204efe8592 211044 mx-boot-options_23.11.05_arm64.deb
+Checksums-Sha256:
+ dc1b634f56eaff5cd7a5aa6d5755bea6894b454e9cfa5be09ffd1c3fd9ca130a 10151 mx-boot-options_23.11.05_arm64.buildinfo
+ 9137817b9ca59dea2e2d88449919d048c01b27800c38451d220b8016929d1f9e 211044 mx-boot-options_23.11.05_arm64.deb
+Files:
+ 556c9be2b7be609c7d2fbf4eb42ca6a9 10151 admin optional mx-boot-options_23.11.05_arm64.buildinfo
+ ca8d78fb09a1546a3c9fb2be9a462fd5 211044 admin optional mx-boot-options_23.11.05_arm64.deb

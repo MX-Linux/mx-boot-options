@@ -1,3 +1,9 @@
+mx-boot-options (23.11.05) mx; urgency=medium
+
+  * Fix: use full path for plymouth-set-theme
+
+ -- Adrian <adrian@mxlinux.org>  Wed, 15 Nov 2023 16:29:46 -0500
+
 mx-boot-options (23.11.04) mx; urgency=medium
 
   * Fix listing Grub entries, it does require elevation unfortunately

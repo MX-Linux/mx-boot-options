@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sun, 12 Nov 2023 21:17:03 -0500
+Source: mx-boot-options
+Architecture: source
+Version: 23.11.04
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-boot-options (23.11.04) mx; urgency=medium
+ .
+   * Fix listing Grub entries, it does require elevation unfortunately
+Checksums-Sha1:
+ 947c7cbeca60482cc85557e591168a46c70a511d 595 mx-boot-options_23.11.04.dsc
+ fcd6d0a403c3bd3b63ca6f4ca2af85acd1913cfa 189892 mx-boot-options_23.11.04.tar.xz
+ e4e7ef0a5d312cf340d1a8d5aa76bc9a160a9f53 10151 mx-boot-options_23.11.04_arm64.buildinfo
+Checksums-Sha256:
+ 73b3fd8907ef4d818ca746aea2b71280ab4c93aa698ea8d0d6db87257a51aff5 595 mx-boot-options_23.11.04.dsc
+ 7e551ba00659082f168962afa94a720b0043fb42defdd7206935580109faebc1 189892 mx-boot-options_23.11.04.tar.xz
+ ba8252ac451ff07c3f06179d6c00c8746578f04db431b7e9b3ba46a5e26f738e 10151 mx-boot-options_23.11.04_arm64.buildinfo
+Files:
+ 92fc1953207081e2bfa6a374521ceef7 595 admin optional mx-boot-options_23.11.04.dsc
+ 2cc4f1291dc96232065ea0501e53c897 189892 admin optional mx-boot-options_23.11.04.tar.xz
+ 104857392656a9ffb115a1a0cdf599b5 10151 admin optional mx-boot-options_23.11.04_arm64.buildinfo

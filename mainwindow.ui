@@ -6,53 +6,64 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>648</width>
-    <height>511</height>
+    <width>703</width>
+    <height>654</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Program_Name</string>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowIcon">
-   <iconset theme="boot">
+   <iconset theme="mx-boot-options">
     <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="groupBoxOptions">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Options</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_bg_image">
-        <property name="text">
-         <string>Default background </string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_timeout">
+      <item row="2" column="3">
+       <widget class="QCheckBox" name="checkEnableFlatmenus">
         <property name="toolTip">
-         <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
+         <string>Use simplified menu structure without submenus</string>
         </property>
         <property name="text">
-         <string>Menu timeout (sec)</string>
+         <string>Use flat menus (no submenus)</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QRadioButton" name="rb_predefined">
-        <property name="text">
-         <string>Predefined</string>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelDefaultEntry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="checked">
-         <bool>true</bool>
+        <property name="text">
+         <string>Boot to</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1" alignment="Qt::AlignLeft">
+      <item row="0" column="1">
        <widget class="QSpinBox" name="spinBoxTimeout">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimum">
          <number>-1</number>
         </property>
@@ -61,63 +72,207 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1" colspan="2">
-       <widget class="QPushButton" name="button_filename">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lableTimeout">
+        <property name="toolTip">
+         <string>Set to '0' to boot immediately without displaying the menu, or to '-1' to wait indefinitely</string>
+        </property>
         <property name="text">
-         <string/>
+         <string>Menu timeout</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="3">
+       <widget class="QLineEdit" name="textKernel"/>
+      </item>
+      <item row="1" column="1" colspan="4">
+       <widget class="QComboBox" name="comboMenuEntry">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentText">
+         <string notr="true"/>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lableKernel">
+        <property name="text">
+         <string>Kernel parameters</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="labelSeconds">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>seconds</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="checkSaveDefault">
+        <property name="toolTip">
+         <string>With this option enabled whatever entry you select from the grub boot menu will be saved as the new default for future boots</string>
+        </property>
+        <property name="text">
+         <string>Enable saving last boot choice</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="5">
+       <widget class="QPushButton" name="pushUefi">
+        <property name="text">
+         <string>Manage UEFI Boot Options</string>
+        </property>
+        <property name="icon">
+         <iconset theme="preferences-system"/>
         </property>
         <property name="autoDefault">
          <bool>false</bool>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxBackground">
+     <property name="title">
+      <string>Background</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelBgImage">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="sizeHint" stdset="0">
+        <property name="minimumSize">
          <size>
-          <width>40</width>
-          <height>20</height>
+          <width>120</width>
+          <height>0</height>
          </size>
         </property>
-       </spacer>
-      </item>
-      <item row="2" column="1">
-       <widget class="QRadioButton" name="rb_lastbooted">
         <property name="text">
-         <string>Last booted</string>
+         <string>Image</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_default_entry">
+       <widget class="QCheckBox" name="checkGrubTheme">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Default OS</string>
+         <string>Enable theme</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <widget class="QComboBox" name="combo_menu_entry"/>
+      <item row="0" column="1" colspan="2">
+       <widget class="QPushButton" name="pushBgFile">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string notr="true"/>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QPushButton" name="pushThemeFile">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string notr="true"/>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="0">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="groupBoxSplash">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Splash</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboTheme">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
-       <widget class="QCheckBox" name="cb_bootsplash">
+       <widget class="QCheckBox" name="checkBootsplash">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -125,23 +280,27 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Enable</string>
+         <string>Enable theme</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
-       <widget class="QComboBox" name="combo_theme"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_theme">
+      <item row="0" column="2">
+       <widget class="QPushButton" name="pushPreview">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Theme</string>
+         <string>Preview</string>
+        </property>
+        <property name="icon">
+         <iconset theme="document-preview">
+          <normaloff>.</normaloff>.</iconset>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -150,19 +309,25 @@
    </item>
    <item>
     <widget class="QGroupBox" name="groupBoxMessages">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Messages</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QRadioButton" name="rb_very_detailed_msg">
+       <widget class="QRadioButton" name="radioVeryDetailedMsg">
         <property name="text">
          <string>Very detailed</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="rb_detailed_msg">
+       <widget class="QRadioButton" name="radioDetailedMsg">
         <property name="text">
          <string>Detailed (default setting)</string>
         </property>
@@ -172,7 +337,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="rb_limited_msg">
+       <widget class="QRadioButton" name="radioLimitedMsg">
         <property name="text">
          <string>Limited</string>
         </property>
@@ -182,9 +347,19 @@
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="pb_log">
+    <widget class="QPushButton" name="pushLog">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>Display log</string>
+     </property>
+     <property name="icon">
+      <iconset theme="emblem-documents">
+       <normaloff>.</normaloff>.</iconset>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
@@ -225,7 +400,7 @@
       <number>5</number>
      </property>
      <item row="0" column="1">
-      <widget class="QPushButton" name="buttonHelp">
+      <widget class="QPushButton" name="pushHelp">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -256,7 +431,7 @@
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
+        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -267,7 +442,7 @@
       </spacer>
      </item>
      <item row="0" column="0">
-      <widget class="QPushButton" name="buttonAbout">
+      <widget class="QPushButton" name="pushAbout">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -298,7 +473,7 @@
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType">
-        <enum>QSizePolicy::Minimum</enum>
+        <enum>QSizePolicy::Expanding</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -309,7 +484,10 @@
       </spacer>
      </item>
      <item row="0" column="9">
-      <widget class="QPushButton" name="buttonCancel">
+      <widget class="QPushButton" name="pushCancel">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -330,10 +508,10 @@
         <string>Alt+N</string>
        </property>
        <property name="autoDefault">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="default">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -352,7 +530,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="images.qrc">:/icons/images/logo.png</pixmap>
+        <pixmap resource="images.qrc">:/icons/images/logo.svg</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -360,7 +538,7 @@
       </widget>
      </item>
      <item row="0" column="7">
-      <widget class="QPushButton" name="buttonApply">
+      <widget class="QPushButton" name="pushApply">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
          <horstretch>0</horstretch>
@@ -389,73 +567,45 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>spinBoxTimeout</tabstop>
+  <tabstop>comboMenuEntry</tabstop>
+  <tabstop>checkSaveDefault</tabstop>
+  <tabstop>checkEnableFlatmenus</tabstop>
+  <tabstop>textKernel</tabstop>
+  <tabstop>pushUefi</tabstop>
+  <tabstop>pushBgFile</tabstop>
+  <tabstop>checkGrubTheme</tabstop>
+  <tabstop>pushThemeFile</tabstop>
+  <tabstop>checkBootsplash</tabstop>
+  <tabstop>comboTheme</tabstop>
+  <tabstop>pushPreview</tabstop>
+  <tabstop>radioVeryDetailedMsg</tabstop>
+  <tabstop>radioDetailedMsg</tabstop>
+  <tabstop>radioLimitedMsg</tabstop>
+  <tabstop>pushLog</tabstop>
+  <tabstop>pushHelp</tabstop>
+  <tabstop>pushAbout</tabstop>
+  <tabstop>pushApply</tabstop>
+  <tabstop>pushCancel</tabstop>
+  <tabstop>comboTheme</tabstop>
+  <tabstop>pushThemeFile</tabstop>
+  <tabstop>checkBootsplash</tabstop>
+  <tabstop>checkGrubTheme</tabstop>
+  <tabstop>pushPreview</tabstop>
+  <tabstop>checkEnableFlatmenus</tabstop>
+  <tabstop>spinBoxTimeout</tabstop>
+  <tabstop>textKernel</tabstop>
+  <tabstop>comboMenuEntry</tabstop>
+  <tabstop>checkSaveDefault</tabstop>
+  <tabstop>pushBgFile</tabstop>
+  <tabstop>radioVeryDetailedMsg</tabstop>
+  <tabstop>radioDetailedMsg</tabstop>
+  <tabstop>radioLimitedMsg</tabstop>
+  <tabstop>pushUefi</tabstop>
+ </tabstops>
  <resources>
   <include location="images.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>buttonCancel</sender>
-   <signal>pressed()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>723</x>
-     <y>519</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>388</x>
-     <y>272</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cb_bootsplash</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>combo_theme</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>128</x>
-     <y>214</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>433</x>
-     <y>247</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cb_bootsplash</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>label_theme</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>128</x>
-     <y>214</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>171</x>
-     <y>247</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>rb_lastbooted</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>combo_menu_entry</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>220</x>
-     <y>115</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>454</x>
-     <y>83</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

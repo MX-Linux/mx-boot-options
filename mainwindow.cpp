@@ -63,17 +63,17 @@ void MainWindow::loadPlymouthThemes()
     // Load combobox
     ui->comboTheme->clear();
     if (chroot.isEmpty()) {
-        ui->comboTheme->addItems(cmd.getOut("plymouth-set-default-theme -l").split("\n"));
+        ui->comboTheme->addItems(cmd.getOut("/sbin/plymouth-set-default-theme -l").split("\n"));
     } else {
-        ui->comboTheme->addItems(cmd.getOutAsRoot(chroot + "plymouth-set-default-theme -l").split("\n"));
+        ui->comboTheme->addItems(cmd.getOutAsRoot(chroot + "/sbin/plymouth-set-default-theme -l").split("\n"));
     }
 
     // Get current theme
     QString current_theme;
     if (chroot.isEmpty()) {
-        current_theme = cmd.getOut("plymouth-set-default-theme").trimmed();
+        current_theme = cmd.getOut("/sbin/plymouth-set-default-theme").trimmed();
     } else {
-        current_theme = cmd.getOutAsRoot(chroot + "plymouth-set-default-theme").trimmed();
+        current_theme = cmd.getOutAsRoot(chroot + "/sbin/plymouth-set-default-theme").trimmed();
     }
     if (!current_theme.isEmpty()) {
         ui->comboTheme->setCurrentIndex(ui->comboTheme->findText(current_theme));
@@ -862,7 +862,7 @@ void MainWindow::pushApply_clicked()
     if (splash_changed) {
         if (ui->checkBootsplash->isChecked()) {
             if (!ui->comboTheme->currentText().isEmpty()) {
-                cmd.runAsRoot(chroot + "plymouth-set-default-theme " + ui->comboTheme->currentText());
+                cmd.runAsRoot(chroot + "/sbin/plymouth-set-default-theme " + ui->comboTheme->currentText());
             }
             cmd.runAsRoot(chroot + "update-rc.d bootlogd disable");
         } else {
@@ -1211,7 +1211,7 @@ void MainWindow::push_preview_clicked()
             this, tr("Needs reboot"),
             tr("Plymouth was just installed, you might need to reboot before being able to display previews"));
     }
-    QString current_theme = cmd.getOut("plymouth-set-default-theme");
+    QString current_theme = cmd.getOut("/sbin/plymouth-set-default-theme");
     if (ui->comboTheme->currentText() == "details") {
         return;
     }
@@ -1221,7 +1221,7 @@ void MainWindow::push_preview_clicked()
             tr("You current system is running in a Virtual Machine,\n"
                "Plymouth bootsplash will work in a limited way, you also won't be able to preview the theme"));
     }
-    cmd.runAsRoot("plymouth-set-default-theme " + ui->comboTheme->currentText());
+    cmd.runAsRoot("/sbin/plymouth-set-default-theme " + ui->comboTheme->currentText());
     QTimer tick;
     tick.start(100ms);
     connect(&tick, &QTimer::timeout, this, &MainWindow::sendMouseEvents);

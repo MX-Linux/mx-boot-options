@@ -201,16 +201,16 @@
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="242"/>
-        <location filename="../mainwindow.cpp" line="482"/>
-        <location filename="../mainwindow.cpp" line="1119"/>
+        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="1123"/>
         <source>Timeout: %1 seconds</source>
         <translation>Mbarim kohe: %1 sekonda</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="255"/>
-        <location filename="../mainwindow.cpp" line="484"/>
-        <location filename="../mainwindow.cpp" line="1118"/>
-        <location filename="../mainwindow.cpp" line="1134"/>
+        <location filename="../mainwindow.cpp" line="488"/>
+        <location filename="../mainwindow.cpp" line="1122"/>
+        <location filename="../mainwindow.cpp" line="1138"/>
         <source>Boot Next: %1</source>
         <translation>Nisja Pasuese: %1</translation>
     </message>
@@ -242,8 +242,8 @@
         <location filename="../mainwindow.cpp" line="361"/>
         <location filename="../mainwindow.cpp" line="375"/>
         <location filename="../mainwindow.cpp" line="406"/>
-        <location filename="../mainwindow.cpp" line="541"/>
-        <location filename="../mainwindow.cpp" line="612"/>
+        <location filename="../mainwindow.cpp" line="545"/>
+        <location filename="../mainwindow.cpp" line="616"/>
         <source>Error</source>
         <translation>Gabim</translation>
     </message>
@@ -288,120 +288,120 @@
         <translation>S’u instalua dot sigla.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="486"/>
+        <location filename="../mainwindow.cpp" line="490"/>
         <source>Boot Current: %1</source>
         <translation>Nis të Tanishmin: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="541"/>
+        <location filename="../mainwindow.cpp" line="545"/>
         <source>Could not create a temporary folder</source>
         <translation>S’u krijua një dosje e përkohshme</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="551"/>
+        <location filename="../mainwindow.cpp" line="555"/>
         <source>Cannot continue</source>
         <translation>S’mund të vazhdohet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="552"/>
+        <location filename="../mainwindow.cpp" line="556"/>
         <source>Cannot create chroot environment, cannot change boot options. Exiting...</source>
         <translation>S’krijohet dot mjedis chroot, s’ndryshohen dot mundësi nisjeje. Po dilet…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="612"/>
+        <location filename="../mainwindow.cpp" line="616"/>
         <source>Something went wrong, could not save boot order.</source>
         <translation>Diç shkoi ters, s’u ruajt dot rend nisjeje.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="818"/>
-        <location filename="../mainwindow.cpp" line="1242"/>
+        <location filename="../mainwindow.cpp" line="822"/>
+        <location filename="../mainwindow.cpp" line="1246"/>
         <source>Updating configuration, please wait</source>
         <translation>Po përditësohet formësimi, ju lutemi, prisni</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="875"/>
         <source>Updating initramfs...</source>
         <translation>Po përditësohet initramfs…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="883"/>
-        <location filename="../mainwindow.cpp" line="1255"/>
+        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="1259"/>
         <source>Updating grub...</source>
         <translation>Po përditësohet grub-i…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="891"/>
         <source>Done</source>
         <translation>U bë</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="891"/>
         <source>Changes have been successfully applied.</source>
         <translation>Ndryshimet u aplikuan me sukses.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="899"/>
+        <location filename="../mainwindow.cpp" line="903"/>
         <source>About %1</source>
         <translation>Mbi %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="900"/>
+        <location filename="../mainwindow.cpp" line="904"/>
         <source>Version: </source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="902"/>
+        <location filename="../mainwindow.cpp" line="906"/>
         <source>Program for selecting common start-up choices</source>
         <translation>Program për përzgjedhje mundësish të rëndomta nisjeje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="904"/>
+        <location filename="../mainwindow.cpp" line="908"/>
         <source>Copyright (c) MX Linux</source>
         <translation>Të drejta kopjimi (c) MX Linux</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="905"/>
+        <location filename="../mainwindow.cpp" line="909"/>
         <source>%1 License</source>
         <translation>Licencë %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="926"/>
+        <location filename="../mainwindow.cpp" line="930"/>
         <source>%1 Help</source>
         <translation>Ndihmë për %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="935"/>
-        <location filename="../mainwindow.cpp" line="1220"/>
+        <location filename="../mainwindow.cpp" line="939"/>
+        <location filename="../mainwindow.cpp" line="1224"/>
         <source>Running in a Virtual Machine</source>
         <translation>Xhirim në një Makinë Virtuale</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="936"/>
-        <location filename="../mainwindow.cpp" line="1221"/>
+        <location filename="../mainwindow.cpp" line="940"/>
+        <location filename="../mainwindow.cpp" line="1225"/>
         <source>You current system is running in a Virtual Machine,
 Plymouth bootsplash will work in a limited way, you also won&apos;t be able to preview the theme</source>
         <translation>Sistemi juaj i tanishëm po xhiron në një Makinë Virtuale,
 Sigla Plymouth do të funksionojë në mënyrë të kufizuar, s’do të jeni gjithashtu në gjendje të bëni paraparje të temës</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="943"/>
+        <location filename="../mainwindow.cpp" line="947"/>
         <source>Plymouth packages not installed</source>
         <translation>Paketa Plymouth të painstaluara</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="944"/>
+        <location filename="../mainwindow.cpp" line="948"/>
         <source>Plymouth packages are not currently installed.
 OK to go ahead and install them?</source>
         <translation>Paketat Plymouth janë të painstaluara.
 OK të ecet përpara dhe të instalohen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="967"/>
+        <location filename="../mainwindow.cpp" line="971"/>
         <source>Images (*.png *.jpg *.jpeg *.tga)</source>
         <translation>Figura (*.png *.jpg *.jpeg *.tga)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1079"/>
+        <location filename="../mainwindow.cpp" line="1083"/>
         <source>Boot log</source>
         <translation type="unfinished"></translation>
     </message>
@@ -410,22 +410,22 @@ OK të ecet përpara dhe të instalohen?</translation>
         <translation type="vanished">Që të mbyllet, shtypni çfarëdo tasti</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1093"/>
+        <location filename="../mainwindow.cpp" line="1097"/>
         <source>Log not found</source>
         <translation>S’u gjet regjistër</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1093"/>
+        <location filename="../mainwindow.cpp" line="1097"/>
         <source>Could not find log at </source>
         <translation>S’u gjet dot regjistër te</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1100"/>
+        <location filename="../mainwindow.cpp" line="1104"/>
         <source>Edit UEFI Boot Entries</source>
         <translation>Përpunoni Zëra Nisjeje UEFI</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1103"/>
+        <location filename="../mainwindow.cpp" line="1107"/>
         <source>You can use the Up/Down buttons, or drag &amp; drop items to change boot order.
 - Items are listed in the boot order.
 - Grayed out lines are inactive.</source>
@@ -434,75 +434,75 @@ OK të ecet përpara dhe të instalohen?</translation>
 - Rreshtat e paraqitur me gri janë joaktivë.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1107"/>
-        <location filename="../mainwindow.cpp" line="1161"/>
+        <location filename="../mainwindow.cpp" line="1111"/>
+        <location filename="../mainwindow.cpp" line="1165"/>
         <source>Set ac&amp;tive</source>
         <translation>Kaloje ak&amp;tiv</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1108"/>
+        <location filename="../mainwindow.cpp" line="1112"/>
         <source>&amp;Add entry</source>
         <translation>Shtoni &amp;zë</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1109"/>
+        <location filename="../mainwindow.cpp" line="1113"/>
         <source>Boot &amp;next</source>
         <translation>Nis &amp;pasuesin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1084"/>
-        <location filename="../mainwindow.cpp" line="1110"/>
+        <location filename="../mainwindow.cpp" line="1088"/>
+        <location filename="../mainwindow.cpp" line="1114"/>
         <source>&amp;Close</source>
         <translation>&amp;Mbylle</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1111"/>
+        <location filename="../mainwindow.cpp" line="1115"/>
         <source>Move &amp;down</source>
         <translation>Ule p&amp;oshtë</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1112"/>
+        <location filename="../mainwindow.cpp" line="1116"/>
         <source>&amp;Remove entry</source>
         <translation>&amp;Hiqe zërin</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1113"/>
+        <location filename="../mainwindow.cpp" line="1117"/>
         <source>Re&amp;set next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1114"/>
+        <location filename="../mainwindow.cpp" line="1118"/>
         <source>Change &amp;timeout</source>
         <translation>Ndryshoni &amp;mbarim kohe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1115"/>
+        <location filename="../mainwindow.cpp" line="1119"/>
         <source>Move &amp;up</source>
         <translation>Ngjite &amp;sipër</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1118"/>
-        <location filename="../mainwindow.cpp" line="1134"/>
+        <location filename="../mainwindow.cpp" line="1122"/>
+        <location filename="../mainwindow.cpp" line="1138"/>
         <source>not set, will boot using list order</source>
         <translation>e pacaktuar, do të bëhet nisje duke përdorur radhën në listë</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1158"/>
+        <location filename="../mainwindow.cpp" line="1162"/>
         <source>Set &amp;inactive</source>
         <translation>Kaloje &amp;joaktiv  </translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1211"/>
+        <location filename="../mainwindow.cpp" line="1215"/>
         <source>Needs reboot</source>
         <translation>Lyp rinisje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1212"/>
+        <location filename="../mainwindow.cpp" line="1216"/>
         <source>Plymouth was just installed, you might need to reboot before being able to display previews</source>
         <translation>Plymouth-i sapo u instaluar, mund t’ju duhet ta rinisni, përpara se të jeni në gjendje të shfaqni paraparje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1276"/>
+        <location filename="../mainwindow.cpp" line="1280"/>
         <source>Click to select theme</source>
         <translation>Klikoni që të përzgjidhni temë</translation>
     </message>
@@ -555,12 +555,12 @@ OK të ecet përpara dhe të instalohen?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="964"/>
+        <location filename="../mainwindow.cpp" line="968"/>
         <source>Select image to display in bootloader</source>
         <translation>Përzgjidhni figurë për t’u shfaqur te nisësngarkuesi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1286"/>
+        <location filename="../mainwindow.cpp" line="1290"/>
         <source>Select GRUB theme</source>
         <translation>Përzgjidhni temë GRUB</translation>
     </message>

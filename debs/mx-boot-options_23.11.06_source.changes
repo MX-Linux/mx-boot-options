@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Thu, 16 Nov 2023 15:57:10 -0500
+Source: mx-boot-options
+Architecture: source
+Version: 23.11.06
+Distribution: mx
+Urgency: medium
+Maintainer: Adrian <adrian@mxlinux.org>
+Changed-By: Adrian <adrian@mxlinux.org>
+Changes:
+ mx-boot-options (23.11.06) mx; urgency=medium
+ .
+   * Fix: ownership for /etc/default/grub file
+Checksums-Sha1:
+ 4ca34b5d61b4ddc8f22e4c48429943232b21aa2c 595 mx-boot-options_23.11.06.dsc
+ fbd8c3d61d39c03183fddd4f98102211dfe4211b 190024 mx-boot-options_23.11.06.tar.xz
+ 68045869a9afbf13693dee56b242cc4e6f003860 10151 mx-boot-options_23.11.06_arm64.buildinfo
+Checksums-Sha256:
+ 455272d7e8d5e878b42805702aeef9548d7ace1a6ce46a4b651a859364786026 595 mx-boot-options_23.11.06.dsc
+ 62b1c51481d52ca66699316b7b48cdbfbc9779f4ba9268bbf0dd16791f83af51 190024 mx-boot-options_23.11.06.tar.xz
+ 9bdd4dd3d50904ec35b7e5b57a7e21e7b15363a9e88496801dbd5ea506ba3034 10151 mx-boot-options_23.11.06_arm64.buildinfo
+Files:
+ a65f4be7df5a00bafaf539a85bf2b46f 595 admin optional mx-boot-options_23.11.06.dsc
+ 610d172a25667bb1e6db8299209e47a3 190024 admin optional mx-boot-options_23.11.06.tar.xz
+ 9fbd570b0f0bd9562bca6cc9013d9ebb 10151 admin optional mx-boot-options_23.11.06_arm64.buildinfo

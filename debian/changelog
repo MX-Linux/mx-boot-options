@@ -1,3 +1,9 @@
+mx-boot-options (23.11.06) mx; urgency=medium
+
+  * Fix: ownership for /etc/default/grub file
+
+ -- Adrian <adrian@mxlinux.org>  Thu, 16 Nov 2023 15:57:10 -0500
+
 mx-boot-options (23.11.05) mx; urgency=medium
 
   * Fix: use full path for plymouth-set-theme

@@ -431,6 +431,8 @@ void MainWindow::writeDefaultGrub()
     cmd.runAsRoot("cp " + chr + "/etc/default/grub.bak " + chr + "/etc/default/grub.bak.0");
     cmd.runAsRoot("rm " + chr + "/etc/default/grub.bak");
     cmd.runAsRoot("cp \'" + file.fileName() + " " + chr + "/etc/default/grub.bak\'");
+    cmd.runAsRoot("chown root: " + chr + "/etc/default/grub.bak", true);
+    cmd.runAsRoot("chmod +r " + chr + "/etc/default/grub.bak", true);
 
     QTemporaryFile tmpFile;
     tmpFile.open();
@@ -440,6 +442,8 @@ void MainWindow::writeDefaultGrub()
     }
     tmpFile.close();
     cmd.runAsRoot("mv " + tmpFile.fileName() + " " + chr + "/etc/default/grub");
+    cmd.runAsRoot("chown root: " + chr + "/etc/default/grub", true);
+    cmd.runAsRoot("chmod +r " + chr + "/etc/default/grub", true);
 }
 
 QStringList MainWindow::getLinuxPartitions()
